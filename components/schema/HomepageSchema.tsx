@@ -56,7 +56,7 @@ export default function HomepageSchema() {
       name: "Piedmont Dental By Design — Cosmetic dentistry in Piedmont, CA",
       isPartOf: { "@id": `${SITE}/#website` },
       about: { "@id": `${SITE}/#org` },
-      primaryImageOfPage: `${SITE}/hero-poster.jpg`,
+      primaryImageOfPage: `${SITE}/og-doctors.jpg`,
       speakable: {
         "@type": "SpeakableSpecification",
         cssSelector: [

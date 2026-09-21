@@ -8,14 +8,14 @@ import SiteFooter from "@/components/SiteFooter";
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 
 export const metadata: Metadata = {
-  title: "Dr. David Ma — Co-Owner & Cosmetic Dentist",
+  title: "Dr. David Ma — Cosmetic & General Dentistry",
   description:
-    "Dr. David Ma — co-owner of Piedmont Dental By Design and a UPenn Dental Medicine graduate with honors. Restorative, cosmetic and full-mouth rehabilitation.",
+    "Dr. David Ma of Piedmont Dental By Design — a UPenn Dental Medicine graduate with honors, practicing cosmetic and general dentistry: bonding, veneers, Invisalign® and crowns.",
   alternates: { canonical: "/about/dr-ma" },
   openGraph: {
     title: "Dr. David Ma — Piedmont Dental By Design",
     description:
-      "Co-Owner · restorative and cosmetic dentistry · UPenn-trained · expert in full mouth rehabilitations.",
+      "Cosmetic & general dentistry · UPenn-trained · bonding, porcelain veneers, Invisalign® and porcelain crowns.",
     url: "https://piedmontdentalbydesign.com/about/dr-ma",
     type: "profile",
     images: ["/team/dr-ma.webp"],
@@ -32,10 +32,10 @@ export default function DrMaPage() {
           index="i"
           pronoun="he"
           name="Dr. David Ma"
-          role="Co-Owner of Piedmont Dental By Design · Restorative & Cosmetic Dentistry"
+          role="Cosmetic & General Dentistry"
           intro="Dr. David Ma is a compassionate, highly skilled dentist caring for patients at our Piedmont practice — combining advanced clinical expertise with a personalized approach to comprehensive, patient-focused care."
           photo="/team/dr-ma.webp"
-          photoAlt="Dr. David Ma, restorative dentist"
+          photoAlt="Dr. David Ma, cosmetic and general dentist"
           credentials={[
             { value: "4 yrs", label: "Experience" },
             { value: "UPenn", label: "School of Dental Medicine" },
@@ -62,16 +62,16 @@ export default function DrMaPage() {
           ]}
           specializations={[
             {
+              title: "Cosmetic dentistry",
+              body: "Cosmetic bonding, porcelain veneers, Invisalign® and porcelain crowns — reshaping, realigning and brightening smiles so the result still looks like your own teeth.",
+            },
+            {
               title: "Full mouth rehabilitations",
               body: "Comprehensive treatments designed to restore the function and aesthetics of the entire mouth, addressing complex dental issues with tailored solutions.",
             },
             {
               title: "Complex treatment planning",
               body: "Detailed and personalized treatment plans focused on proactive, effective strategies to manage and improve dental health.",
-            },
-            {
-              title: "Cosmetic dentistry",
-              body: "Range of cosmetic procedures aimed at enhancing the appearance of patients' smiles — including teeth whitening, veneers, and other aesthetic treatments.",
             },
             {
               title: "Preventive & restorative",

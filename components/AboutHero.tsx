@@ -46,7 +46,7 @@ export default function AboutHero() {
               <span className="meta-num">2</span>
               <span>
                 <b>Dr. Martenson &amp; Dr. Ma</b>
-                Co-Owners of the practice
+                Cosmetic & General Dentistry
               </span>
             </li>
             <li>

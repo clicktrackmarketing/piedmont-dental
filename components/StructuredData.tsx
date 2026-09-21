@@ -86,7 +86,7 @@ export default function StructuredData() {
       alternateName: ["PDxD", "Piedmont Dental"],
       url: `${SITE}/`,
       logo: `${SITE}/icon-512.png`,
-      image: `${SITE}/hero-poster.jpg`,
+      image: `${SITE}/og-doctors.jpg`,
       telephone: "+1-510-350-3937",
       priceRange: "$$",
       /* Payment facts come from /resources/financing, which lists exactly these.
@@ -219,7 +219,7 @@ export default function StructuredData() {
       givenName: "Jill",
       familyName: "Martenson",
       honorificSuffix: "DDS",
-      jobTitle: "Co-Owner · Cosmetic Dentistry",
+      jobTitle: "Cosmetic & General Dentist",
       worksFor: { "@id": `${SITE}/#org` },
       /* A degree marked up as EducationalOccupationalCredential is a verifiable,
          machine-readable qualification an answer engine can cite when asked who
@@ -278,9 +278,19 @@ export default function StructuredData() {
       "@type": "Person",
       "@id": `${SITE}/#dr-ma`,
       name: "David Ma",
-      jobTitle: "Co-Owner · Restorative Dentistry",
+      jobTitle: "Cosmetic & General Dentist",
       worksFor: { "@id": `${SITE}/#org` },
-      knowsAbout: ["Restorative Dentistry", "Dental Implants", "Crowns"],
+      knowsAbout: [
+        "Cosmetic Dentistry",
+        "Cosmetic Bonding",
+        "Porcelain Veneers",
+        "Invisalign®",
+        "Porcelain Crowns",
+        "Full Mouth Rehabilitation",
+        "Dental Implants",
+        "Restorative Dentistry",
+        "Preventive Dental Care",
+      ],
       /* Schools only. His graduation years are one of the open client questions,
          so no dates are asserted here — alumniOf does not require them. */
       alumniOf: [
