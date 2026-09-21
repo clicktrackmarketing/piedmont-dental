@@ -72,10 +72,10 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/hero-poster.jpg",
-        width: 1280,
-        height: 720,
-        alt: "Piedmont Dental By Design — Dr. Jill Martenson, Dr. David Ma, and team in Piedmont, California",
+        url: "/og-doctors.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dr. Jill Martenson, DDS and Dr. David Ma, DMD of Piedmont Dental By Design in Piedmont, California",
       },
     ],
   },
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/hero-poster.jpg"],
+    images: ["/og-doctors.jpg"],
   },
   robots: {
     index: true,

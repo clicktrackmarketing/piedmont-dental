@@ -27,13 +27,13 @@ const DOCTORS = [
   {
     href: "/about/dr-martenson",
     name: "Dr. Jill A. Martenson",
-    role: "Co-Owner · Cosmetic",
+    role: "Cosmetic & General Dentistry",
     photo: "/team/dr-martenson.webp",
   },
   {
     href: "/about/dr-ma",
     name: "Dr. David Ma",
-    role: "Co-Owner · Restorative & Cosmetic",
+    role: "Cosmetic & General Dentistry",
     photo: "/team/dr-ma.webp",
   },
   {
