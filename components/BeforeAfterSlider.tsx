@@ -69,7 +69,8 @@ export default function BeforeAfterSlider({
           src={afterSrc}
           alt={afterAlt}
           fill
-          sizes="(max-width: 720px) 100vw, 540px"
+          sizes="(max-width: 1080px) 100vw, 1016px"
+          quality={90}
           style={{ objectFit: "cover" }}
         />
         <span className="ba-slider-pill ba-slider-pill--after">After</span>
@@ -84,7 +85,8 @@ export default function BeforeAfterSlider({
           src={beforeSrc}
           alt={beforeAlt}
           fill
-          sizes="(max-width: 720px) 100vw, 540px"
+          sizes="(max-width: 1080px) 100vw, 1016px"
+          quality={90}
           style={{ objectFit: "cover" }}
         />
         <span className="ba-slider-pill ba-slider-pill--before">Before</span>

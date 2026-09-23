@@ -115,6 +115,16 @@ const securityHeaders = [
 const nextConfig = {
   poweredByHeader: false,
   compress: true,
+  images: {
+    /* AVIF ahead of WebP: same visual quality at roughly 20-30% smaller, so a
+       higher quality tier costs little. Next falls back to WebP, then the
+       original, for browsers without AVIF. */
+    formats: ["image/avif", "image/webp"],
+    /* Next 15 whitelists the quality values a page may request. 75 is the
+       default and stays for decorative imagery; 90 is for the clinical
+       before/after photography, where compression artefacts read as blur. */
+    qualities: [75, 90],
+  },
   async headers() {
     return [
       {
