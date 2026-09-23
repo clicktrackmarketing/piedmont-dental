@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title:
     "Dental Restoration in Piedmont, CA",
   description:
-    "Fillings, crowns, bridges, dentures and implants in Piedmont, CA — which one you need, what each costs, and how to choose. From $200 fillings to implants.",
+    "Fillings, crowns, bridges, dentures and implants in Piedmont, CA — which one you need, what each costs, and how to choose. From $361 fillings to implants.",
   alternates: { canonical: "/procedures/restoration" },
   openGraph: {
     title: "Restoration — Piedmont Dental By Design",
@@ -42,10 +42,10 @@ const category = getCategory("restoration");
    change them there and here together. Dentures carry no published figure, so
    the cell says so rather than inventing one. */
 const COSTS = [
-  { treatment: "Composite filling", slug: "composite-fillings", range: "$200–$400", unit: "per filling", visits: "1 visit" },
-  { treatment: "Porcelain crown", slug: "crowns-caps", range: "$1,200–$1,800", unit: "per tooth", visits: "Same day with CEREC®, or 2 visits" },
-  { treatment: "Fixed bridge", slug: "fixed-bridges", range: "$3,000–$4,500", unit: "typical three-unit", visits: "2+ visits" },
-  { treatment: "Dental implant", slug: "dental-implants", range: "$4,000–$6,000", unit: "single tooth", visits: "Several visits over months" },
+  { treatment: "Composite filling", slug: "composite-fillings", range: "$361–$565", unit: "per filling", visits: "1 visit" },
+  { treatment: "Porcelain crown", slug: "crowns-caps", range: "$1,949–$2,351", unit: "back tooth — front teeth from $2,379", visits: "Same day with CEREC®, or 2 visits" },
+  { treatment: "Fixed bridge", slug: "fixed-bridges", range: "$5,847–$6,651", unit: "typical three-unit", visits: "2+ visits" },
+  { treatment: "Dental implant", slug: "dental-implants", range: "$8,474+", unit: "single tooth", visits: "Several visits over months" },
   { treatment: "Dentures & partials", slug: "dentures-partial-dentures", range: "Ask us", unit: "varies by arch", visits: "Several visits over weeks" },
 ];
 
@@ -81,7 +81,7 @@ const HUB_FAQS = [
   },
   {
     q: "How much does each restoration cost?",
-    a: "Composite fillings run $200–$400 depending on size. Porcelain crowns are $1,200–$1,800 per tooth. A typical three-unit fixed bridge is $3,000–$4,500. A single dental implant is $4,000–$6,000 in our area; cases needing bone grafting or a sinus lift cost more. We give you a written estimate before treatment, and we submit a pre-treatment estimate to your insurer so you know your share up front.",
+    a: "Composite fillings run $361–$565 depending on size. Porcelain crowns are $1,949–$2,351 per tooth at the back of the mouth; front teeth start at $2,379. A typical three-unit fixed bridge is $5,847–$6,651. A single dental implant starts at $8,474; cases needing bone grafting or a sinus lift cost more. We give you a written estimate before treatment, and we submit a pre-treatment estimate to your insurer so you know your share up front.",
   },
   {
     q: "Can a badly damaged tooth be saved, or does it have to come out?",

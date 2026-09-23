@@ -99,7 +99,7 @@ export default function FixedBridgesPage() {
             },
             {
               q: "How much does a fixed bridge cost?",
-              a: "A 3-unit bridge (2 anchor crowns + 1 artificial tooth) typically runs $3,000–$4,500 at our practice. Larger bridges (replacing multiple teeth) scale up from there. Dental insurance often covers a meaningful portion for medically necessary cases. We provide exact quotes and verify insurance ahead of time.",
+              a: "A 3-unit bridge (2 anchor crowns + 1 artificial tooth) typically runs $5,847–$6,651 at our practice. Larger bridges (replacing multiple teeth) scale up from there. Dental insurance often covers a meaningful portion for medically necessary cases. We provide exact quotes and verify insurance ahead of time.",
             },
           ]}
         />

@@ -94,7 +94,7 @@ export default function DentalImplantsPage() {
             },
             {
               q: "How much do dental implants cost in Piedmont, CA?",
-              a: "A single-tooth implant (post + abutment + crown) typically ranges from $4,000–$6,000 in our area. Cases requiring bone grafting, sinus lifts, or multiple implants will be priced individually. We provide a complete written estimate at your consultation and offer financing through CareCredit and Sunbit — no surprise charges.",
+              a: "A single-tooth implant (post + abutment + crown) starts at $8,474 at our practice. Cases requiring bone grafting, sinus lifts, or multiple implants will be priced individually. We provide a complete written estimate at your consultation and offer financing through CareCredit and Sunbit — no surprise charges.",
             },
             {
               q: "Are dental implants covered by insurance?",

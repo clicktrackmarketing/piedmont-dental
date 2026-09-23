@@ -107,7 +107,7 @@ export default function CrownsCapsPage() {
             },
             {
               q: "How much does a porcelain crown cost?",
-              a: "Most porcelain crowns at our practice run $1,200–$1,800 depending on the tooth, material choice, and lab used. Dental insurance typically covers a substantial portion (often around 50%) when the crown is for a damaged tooth. We provide exact quotes and verify insurance benefits before starting.",
+              a: "Most porcelain crowns at our practice run $1,949–$2,351 for a back tooth. Crowns on front teeth start at $2,379, since they take more shade-matching and shaping to blend with the rest of the smile. Dental insurance typically covers a substantial portion (often around 50%) when the crown is for a damaged tooth. We provide exact quotes and verify insurance benefits before starting.",
             },
           ]}
         />

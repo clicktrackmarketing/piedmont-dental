@@ -74,7 +74,7 @@ const PREVENTION_FAQS = [
   },
   {
     q: "My teeth feel fine. Do I still need to come?",
-    a: "Yes — and that is rather the point of prevention. Decay and gum disease are both painless in their early stages; by the time a tooth hurts, the cheap fix has usually passed. A filling costs $200–$400. Once a tooth needs a crown that becomes $1,200–$1,800, and a tooth lost entirely becomes an implant at $4,000–$6,000. The exam is what keeps you at the first number.",
+    a: "Yes — and that is rather the point of prevention. Decay and gum disease are both painless in their early stages; by the time a tooth hurts, the cheap fix has usually passed. A filling costs $361–$565. Once a tooth needs a crown that becomes $1,949–$2,351, and a tooth lost entirely becomes an implant starting at $8,474. The exam is what keeps you at the first number.",
   },
   {
     q: "Does insurance cover cleanings?",
@@ -204,7 +204,7 @@ export default function CleaningsPreventionCategoryPage() {
                   <li>
                     <strong>Every six months</strong>
                     <span>
-                      Decay found small is a filling at $200–$400. Gum disease
+                      Decay found small is a filling at $361–$565. Gum disease
                       found early is reversed with cleaning and better home care.
                     </span>
                   </li>
@@ -221,14 +221,14 @@ export default function CleaningsPreventionCategoryPage() {
                 <h3>Restoration, not prevention</h3>
                 <ul>
                   <li>
-                    <strong>Crown — $1,200–$1,800</strong>
+                    <strong>Crown — $1,949–$2,351</strong>
                     <span>
                       Once decay or a fracture leaves too little sound tooth for a
                       filling.
                     </span>
                   </li>
                   <li>
-                    <strong>Implant — $4,000–$6,000</strong>
+                    <strong>Implant — from $8,474</strong>
                     <span>
                       Once the tooth is lost altogether, plus months of healing
                       before the final tooth goes on.

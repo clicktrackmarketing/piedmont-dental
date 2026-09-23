@@ -98,7 +98,7 @@ export default function CompositeFillingsPage() {
             },
             {
               q: "How much does a composite filling cost?",
-              a: "Most composite fillings at our practice run $200–$400 depending on size and number of surfaces involved. Dental insurance typically covers a significant portion. We provide an exact quote before starting work and verify insurance benefits ahead of time.",
+              a: "Most composite fillings at our practice run $361–$565 depending on size and number of surfaces involved. Dental insurance typically covers a significant portion. We provide an exact quote before starting work and verify insurance benefits ahead of time.",
             },
           ]}
         />

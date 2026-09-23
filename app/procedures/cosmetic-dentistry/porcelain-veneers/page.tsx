@@ -74,7 +74,7 @@ export default function PorcelainVeneersPage() {
           faqs={[
             {
               q: "How much do porcelain veneers cost per tooth?",
-              a: "In our area, porcelain veneers typically run $1,500–$2,500 per tooth depending on the case complexity, lab used, and how much shape design is involved. A full smile makeover (6–10 upper veneers) is a significant investment but lasts 15+ years with care. You'll get an exact written quote at your consultation.",
+              a: "Porcelain veneers at our practice start at $2,379 per tooth, depending on the case complexity, lab used, and how much shape design is involved. A full smile makeover (6–10 upper veneers) is a significant investment but lasts 15+ years with care. You'll get an exact written quote at your consultation.",
             },
             {
               q: "How many veneers do most patients get?",
