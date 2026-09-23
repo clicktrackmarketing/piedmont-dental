@@ -46,7 +46,7 @@ const COSTS = [
   { treatment: "Porcelain crown", slug: "crowns-caps", range: "$1,949–$2,351", unit: "back tooth — front teeth from $2,379", visits: "Same day with CEREC®, or 2 visits" },
   { treatment: "Fixed bridge", slug: "fixed-bridges", range: "$5,847–$6,651", unit: "typical three-unit", visits: "2+ visits" },
   { treatment: "Dental implant", slug: "dental-implants", range: "$8,474+", unit: "single tooth", visits: "Several visits over months" },
-  { treatment: "Dentures & partials", slug: "dentures-partial-dentures", range: "Ask us", unit: "varies by arch", visits: "Several visits over weeks" },
+  { treatment: "Dentures & partials", slug: "dentures-partial-dentures", range: "$2,976–$3,173", unit: "varies by arch", visits: "Several visits over weeks" },
 ];
 
 /* The decision aid. This is the thing a hub owes a visitor that a list of links
@@ -81,7 +81,7 @@ const HUB_FAQS = [
   },
   {
     q: "How much does each restoration cost?",
-    a: "Composite fillings run $361–$565 depending on size. Porcelain crowns are $1,949–$2,351 per tooth at the back of the mouth; front teeth start at $2,379. A typical three-unit fixed bridge is $5,847–$6,651. A single dental implant starts at $8,474; cases needing bone grafting or a sinus lift cost more. We give you a written estimate before treatment, and we submit a pre-treatment estimate to your insurer so you know your share up front.",
+    a: "Composite fillings run $361–$565 depending on size. Porcelain crowns are $1,949–$2,351 per tooth at the back of the mouth; front teeth start at $2,379. A typical three-unit fixed bridge is $5,847–$6,651. A single dental implant starts at $8,474; cases needing bone grafting or a sinus lift cost more. Dentures and partials run $2,976–$3,173 depending on the arch. We give you a written estimate before treatment, and we submit a pre-treatment estimate to your insurer so you know your share up front.",
   },
   {
     q: "Can a badly damaged tooth be saved, or does it have to come out?",
