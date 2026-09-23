@@ -36,11 +36,11 @@ const CASES: Case[] = [
   {
     id: "case-1",
     number: "01",
-    title: "Replacing a poorly contoured front crown",
-    before: "/img/crowns-caps/case1-before.jpg",
-    after: "/img/crowns-caps/case1-after.jpg",
+    title: "Mismatched front crowns rebuilt to match the arch",
+    before: "/img/cases/crowns/case1-before.jpg",
+    after: "/img/cases/crowns/case1-after.jpg",
     description:
-      "The patient's front central tooth had a poor restoration — it didn't look natural and wasn't contoured to match the gumline of the surrounding teeth. Replaced with an all-porcelain crown (no metal), now contoured to match the rest of the gumline and shaded to blend seamlessly with the patient's natural teeth.",
+      "Two existing front crowns sat brighter and bulkier than the teeth either side of them, so they read as obvious dental work against worn, darker neighbours. Rebuilt in all-porcelain (no metal) and re-shaded across the arch, so shape, texture and colour now run evenly from tooth to tooth.",
     procedures: ["Porcelain Crown", "No-Metal"],
   },
   {

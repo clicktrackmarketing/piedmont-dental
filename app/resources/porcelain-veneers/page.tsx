@@ -54,9 +54,9 @@ const SECONDARY_CASES: Case[] = [
   {
     id: "case-2",
     number: "02",
-    title: "Brighter, balanced smile line",
-    before: "/img/veneers/case2-before.jpg",
-    after: "/img/veneers/case2-after.jpg",
+    title: "Worn, discoloured front teeth restored",
+    before: "/img/cases/veneers/case2-before.jpg",
+    after: "/img/cases/veneers/case2-after.jpg",
     procedures: ["Porcelain Veneers"],
   },
   {
@@ -165,8 +165,8 @@ export default function PorcelainVeneersResultsPage() {
               <div className="veneers-feature-layout">
                 <div className="veneers-feature-slider">
                   <BeforeAfterSlider
-                    beforeSrc="/img/veneers/case1-before.jpg"
-                    afterSrc="/img/veneers/case1-after.jpg"
+                    beforeSrc="/img/cases/veneers/case1-before.jpg"
+                    afterSrc="/img/cases/veneers/case1-after.jpg"
                     beforeAlt="Featured case — before veneers"
                     afterAlt="Featured case — after veneers"
                   />

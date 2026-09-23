@@ -22,9 +22,9 @@ export const metadata: Metadata = {
 };
 
 const MOSAIC = [
-  { src: "/img/veneers/case1-after.jpg", alt: "Porcelain veneers — after", size: "tall" },
-  { src: "/img/crowns-caps/case2-after.jpg", alt: "Porcelain crown — after", size: "wide" },
-  { src: "/img/invisalign-results/case1-after.jpg", alt: "Invisalign® — after", size: "square" },
+  { src: "/img/cases/veneers/case1-after.jpg", alt: "Porcelain veneers — after", size: "tall" },
+  { src: "/img/cases/crowns/case1-after.jpg", alt: "Porcelain crown — after", size: "wide" },
+  { src: "/img/cases/invisalign/case1-after.jpg", alt: "Invisalign® — after", size: "square" },
   { src: "/img/full-mouth/case3-after.jpg", alt: "Full mouth restoration — after", size: "square" },
   { src: "/img/surgery/case2-after.jpg", alt: "Cosmetic surgery — after", size: "wide" },
   { src: "/img/dentures/case2-after.jpg", alt: "Implant denture — after", size: "tall" },
@@ -43,7 +43,7 @@ type GalleryCard = {
 const GALLERIES: GalleryCard[] = [
   {
     href: "/resources/porcelain-veneers",
-    image: "/img/veneers/case1-after.jpg",
+    image: "/img/cases/veneers/case1-after.jpg",
     imageAlt: "Porcelain veneer case",
     title: "Porcelain Veneers",
     blurb: "Thin custom shells that refine shape, color, and the way light catches the smile.",
@@ -51,12 +51,28 @@ const GALLERIES: GalleryCard[] = [
     featured: true,
   },
   {
+    href: "/resources/cosmetic-bonding",
+    image: "/img/cases/bonding/case1-after.jpg",
+    imageAlt: "Cosmetic bonding case",
+    title: "Cosmetic Bonding",
+    blurb: "Chips, gaps and worn edges rebuilt in tooth-coloured composite — usually in one visit.",
+    count: "2 cases",
+  },
+  {
     href: "/resources/invisalign-results",
-    image: "/img/invisalign-results/case1-after.jpg",
+    image: "/img/cases/invisalign/case1-after.jpg",
     imageAlt: "Invisalign® clear aligners case",
     title: "Invisalign®",
     blurb: "Clear aligners that straighten teeth without metal — comparable results to braces.",
     count: "2 cases",
+  },
+  {
+    href: "/resources/restorations/crowns-caps",
+    image: "/img/cases/crowns/case1-after.jpg",
+    imageAlt: "Porcelain crown case",
+    title: "Porcelain Crowns",
+    blurb: "All-porcelain crowns shaded and contoured to match the rest of your smile.",
+    count: "4 cases",
   },
   {
     href: "/resources/full-mouth-restoration",
@@ -64,14 +80,6 @@ const GALLERIES: GalleryCard[] = [
     imageAlt: "Full mouth restoration case",
     title: "Full Mouth Restoration",
     blurb: "Coordinated implants, crowns, and prosthetics for total smile and function rebuilds.",
-    count: "4 cases",
-  },
-  {
-    href: "/resources/restorations/crowns-caps",
-    image: "/img/crowns-caps/case2-after.jpg",
-    imageAlt: "Porcelain crown case",
-    title: "Porcelain Crowns",
-    blurb: "All-porcelain crowns shaded and contoured to match the rest of your smile.",
     count: "4 cases",
   },
   {

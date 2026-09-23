@@ -38,22 +38,22 @@ const CASES: IVCase[] = [
   {
     id: "case-1",
     number: "01",
-    title: "Crowding & alignment refined",
-    before: "/img/invisalign-results/case1-before.jpg",
-    after: "/img/invisalign-results/case1-after.jpg",
+    title: "Severe crowding and rotation corrected",
+    before: "/img/cases/invisalign/case1-before.jpg",
+    after: "/img/cases/invisalign/case1-after.jpg",
     procedures: ["Invisalign®"],
     duration: "~12 months",
     beforeStory:
-      "Crowding and uneven alignment had made the patient self-conscious in photos and meetings. They wanted a straighter, more balanced smile without committing to visible metal braces.",
+      "Significant crowding and rotation across both arches, with the lower front teeth overlapping heavily. The patient wanted the teeth straightened without committing to visible metal braces.",
     afterStory:
-      "A custom Invisalign® aligner series reshaped the smile gradually over the course of treatment — completed entirely with clear, removable trays. The result reads as a broader, more balanced smile.",
+      "A custom Invisalign® aligner series brought both arches into alignment — completed entirely with clear, removable trays. The crowding is resolved and the bite sits evenly.",
   },
   {
     id: "case-2",
     number: "02",
-    title: "Gaps closed, smile line refined",
-    before: "/img/invisalign-results/case2-before.jpg",
-    after: "/img/invisalign-results/case2-after.jpg",
+    title: "Crowding relieved, smile line evened",
+    before: "/img/cases/invisalign/case2-before.jpg",
+    after: "/img/cases/invisalign/case2-after.jpg",
     procedures: ["Invisalign®"],
     duration: "~10 months",
     beforeStory:
