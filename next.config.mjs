@@ -59,6 +59,8 @@ const INTENTWAVE = [
 const CLICK_TRACK = [
   "https://app.clicktrackanalytics.com",
   "https://www.clicktrackanalytics.com",
+  // ct.js v2: the script (ct.v2.js) and its hits (/c) are both on the collector host.
+  "https://c.clicktrackanalytics.com",
 ];
 
 const THIRD_PARTY = [...GTM, ...GOOGLE_ANALYTICS, ...LEADCONNECTOR, ...INTENTWAVE, ...CLICK_TRACK];
