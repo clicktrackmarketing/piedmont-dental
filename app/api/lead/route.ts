@@ -11,14 +11,20 @@
  *      time-to-submit, content heuristics. Honeypot/timing hits get a fake
  *      {ok:true} with no contactId and nothing is written.
  *   1. Parse + minimum-validate the incoming JSON.
- *   2. Look up an existing contact by email (idempotency).
+ *   2. Look up an existing contact by email (idempotency), or by phone when
+ *      no email was submitted.
  *   3. New contact  -> POST /contacts/ with the full payload (incl. locked
  *      first-touch fields).
  *   4. Existing contact:
- *      - Name/phone: SENT every time -> updated to the latest submission
+ *      - Phone: SENT every time -> updated to the latest submission
  *        (Piedmont Dental wants "latest wins" here, not first-touch preserve —
  *        this deviates from the CTM-standard PRESERVE default on purpose)
- *      - Email: NOT sent -> preserved (it's the lookup key)
+ *      - Name and email (David, 2026-10-02, lib/ghl-identity.ts): never
+ *        changed, only filled when empty on the contact. The name counts as
+ *        one field: filled only when the contact has no name at all.
+ *      - Phone-only match (no email submitted): one new note "Form submitted
+ *        as: <name>" and the tag "name-mismatch" when the typed name clearly
+ *        differs from the contact's.
  *      - LOCKED first-touch attribution fields (visitor_source_first, UTMs,
  *        click IDs, etc.): NOT sent -> preserved, true first-touch record
  *      - WRITE_ONCE fields (SMS consent grant + timestamp + text): NOT sent
@@ -57,6 +63,14 @@ import {
   isCtVisitorId,
   isDuplicatePhoneRejection,
 } from "@/lib/ghl-join-keys";
+import {
+  NAME_MISMATCH_TAG,
+  addFormSubmittedAsNote,
+  fillEmptyIdentity,
+  getContactIdentity,
+  namesClearlyDiffer,
+  submittedName,
+} from "@/lib/ghl-identity";
 
 const GHL_API = "https://services.leadconnectorhq.com";
 const API_VERSION = "2021-07-28";
@@ -142,8 +156,8 @@ const WRITE_ONCE_FIELD_KEYS = new Set<string>([
 // payload, not as customFields entries. Never treated as customFields
 // (STANDARD_FIELDS just excludes them from buildCustomFields); whether
 // they're actually sent on UPDATE is decided explicitly in the POST
-// handler below (name/phone: yes, latest wins; email: no, it's the
-// lookup key and stays preserved).
+// handler below (phone: yes, latest wins; name/email: only when empty on
+// the contact, lib/ghl-identity.ts).
 const STANDARD_FIELDS = new Set<string>([
   "first_name",
   "last_name",
@@ -328,19 +342,27 @@ export async function POST(request: NextRequest) {
     let contactId: string | null = null;
     let created = false;
 
+    let matchedBy: "email" | "phone" | null = null;
     if (body.email) {
       contactId = await findContactByEmail(body.email, PIT, LOCATION_ID);
+      if (contactId) matchedBy = "email";
     }
     // No email submitted: look the contact up by phone (`number`, as HighLevel
     // documents it). With an email, a phone match is never used: it may be
     // another person (a household), and their contact must not be overwritten.
     if (!contactId && !body.email && body.phone) {
       contactId = await findContactByPhone(String(body.phone), PIT, LOCATION_ID);
+      if (contactId) matchedBy = "phone";
     }
 
     if (contactId) {
-      // ── EXISTING CONTACT — latest wins on name/phone/qualification,
-      // true first-touch attribution + SMS consent record still preserved ──
+      // ── EXISTING CONTACT — latest wins on phone/qualification, true
+      // first-touch attribution + SMS consent record still preserved. Name
+      // and email are never overwritten: only filled when the contact has
+      // them empty (David, 2026-10-02) ──
+      const existing = await getContactIdentity(contactId, PIT);
+      const identityFill = fillEmptyIdentity(body, existing);
+      const nameMismatch = matchedBy === "phone" && namesClearlyDiffer(body, existing);
       const recentCustomFields = [
         ...buildCustomFields(body, "update"),
         // visitor_id / ga_client_id: only when the contact has none yet.
@@ -352,12 +374,10 @@ export async function POST(request: NextRequest) {
 
       const updatePayload: Record<string, unknown> = {
         customFields: recentCustomFields,
-        // Intentionally NO email — preserved, it's the lookup key
+        // firstName / lastName / name / email only where the contact has none.
+        ...identityFill,
         // Intentionally NO tags — handled by appendTags below
       };
-      if (body.first_name) updatePayload.firstName = body.first_name;
-      if (body.last_name) updatePayload.lastName = body.last_name;
-      if (body.full_name) updatePayload.name = body.full_name;
       if (body.phone) updatePayload.phone = body.phone;
 
       const updateRes = await ghlFetch(
@@ -399,10 +419,13 @@ export async function POST(request: NextRequest) {
         `form:${formSource}`,
         ...(channelTag ? [channelTag] : []),
         ...(phoneConflict ? [PHONE_CONFLICT_TAG] : []),
+        ...(nameMismatch ? [NAME_MISMATCH_TAG] : []),
         "website contact form submitted",
       ];
       await appendTags(contactId, tagsToAppend, PIT);
       await addSubmissionNote(contactId, noteText, PIT);
+      // Phone-only match: one NEW note with the name the visitor typed.
+      if (matchedBy === "phone") await addFormSubmittedAsNote(contactId, submittedName(body), PIT);
       if (phoneConflict) {
         await addPhoneConflictNote(contactId, String(body.phone), otherContactId, PIT);
       }

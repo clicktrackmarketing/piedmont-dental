@@ -1,0 +1,33 @@
+name: Lead route tests
+
+# Offline checks of app/api/lead against a mocked HighLevel (no token, no
+# network calls to HighLevel):
+#   - notes are append-only: no DELETE, PUT or PATCH to a notes endpoint;
+#   - a matched contact's name and email are never overwritten, only filled
+#     when empty; a phone-only match adds one "Form submitted as" note, the
+#     website tag, and "name-mismatch" only when the names differ
+#     (David, 2026-10-02);
+#   - the lead join keys (visitor_id, ga_client_id, gbraid/wbraid).
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  lead-route:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Notes append-only and identity on a match
+        run: npm run test:notes
+      - name: Lead join keys
+        run: npm run test:attribution

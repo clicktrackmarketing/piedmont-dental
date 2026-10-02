@@ -226,7 +226,8 @@ ok(!JSON.stringify(calls).includes(VID2), "the new visitor_id is never sent when
 
 u = await returning(() => { defsStatus = 403; });
 ok(u.result.json.ok === true && !("visitor_id" in u.put) && !("ga_client_id" in u.put), "no View Custom Fields scope (403) -> create-only, lead still stored");
-ok(!calls.some(isRead), "no contact read when the field ids are unknown");
+// One read remains: the identity check (lib/ghl-identity.ts), not the join keys.
+ok(calls.filter(isRead).length === 1, "no join-key contact read when the field ids are unknown (only the identity read)");
 calls.length = 0;
 await postLead(lead({ visitor_id: VID2 }));
 ok(!calls.some(isDefs), "a failed field lookup is not retried on every lead");

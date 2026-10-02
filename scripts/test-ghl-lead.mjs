@@ -134,11 +134,16 @@ async function createContact(body) {
 async function updateContact(id, body) {
   const recentCustomFields = buildCustomFields(body, "update");
   const payload = { customFields: recentCustomFields };
-  // Mirror app/api/lead/route.ts: name/phone update on every submission
-  // (latest wins) — email intentionally excluded, it's the lookup key.
-  if (body.first_name) payload.firstName = body.first_name;
-  if (body.last_name) payload.lastName = body.last_name;
-  if (body.full_name) payload.name = body.full_name;
+  // Mirror app/api/lead/route.ts: phone updates on every submission (latest
+  // wins). Name and email are never overwritten, only filled when the contact
+  // has them empty (lib/ghl-identity.ts, David 2026-10-02).
+  const current = await fetchContact(id);
+  if (!current.firstName && !current.lastName && !current.name) {
+    if (body.first_name) payload.firstName = body.first_name;
+    if (body.last_name) payload.lastName = body.last_name;
+    if (!body.first_name && !body.last_name && body.full_name) payload.name = body.full_name;
+  }
+  if (!current.email && body.email) payload.email = body.email;
   if (body.phone) payload.phone = body.phone;
   const r = await fetch(`${GHL}/contacts/${id}`, { method: "PUT", headers, body: JSON.stringify(payload) });
   if (!r.ok) throw new Error(`update HTTP ${r.status}: ${await r.text()}`);
@@ -289,10 +294,12 @@ const secondTouch = {
   form_source_url: "https://piedmontdentalbydesign.com/resources/smile-analysis",
 };
 
-// Only true first-touch attribution + the SMS consent legal record are
-// preserved for this client — everything else is "latest wins" by design.
+// True first-touch attribution, the SMS consent legal record and the
+// contact's name/email are preserved — everything else is "latest wins".
 const EXPECTED_PRESERVED = {
   email: TEST_EMAIL,
+  firstName: "Smoke",
+  lastName: "Test",
   visitor_source_first: "Paid Search",
   attribution_method: "gclid",
   gclid_captured: "TEST_GCLID_001",
@@ -301,8 +308,6 @@ const EXPECTED_PRESERVED = {
 };
 
 const EXPECTED_UPDATED = {
-  firstName: "OVERWRITE",
-  lastName: "ATTEMPTED",
   phone: "+15555550000",
   visitor_source_recent: "AI Search",
   landing_page_recent: "/procedures/cosmetic-dentistry/porcelain-veneers",
