@@ -11,7 +11,8 @@
     "indexnow:submit": "node scripts/indexnow-submit.mjs",
     "indexnow:submit-sitemap": "node scripts/indexnow-submit.mjs --sitemap",
     "bwt:submit": "node scripts/bwt-submit-urls.mjs",
-    "test:ghl": "node scripts/test-ghl-lead.mjs"
+    "test:ghl": "node scripts/test-ghl-lead.mjs",
+    "test:attribution": "npx --yes tsx scripts/check-attribution.mts"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

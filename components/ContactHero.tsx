@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { getAttributionData } from "@/lib/attribution";
+import { attributionForDataLayer, getAttributionData } from "@/lib/attribution";
 import SmsConsent, { SMS_CONSENT_TEXT } from "@/components/SmsConsent";
 import HoneypotField from "@/components/HoneypotField";
 import { FILL_MS_FIELD, HONEYPOT_FIELD } from "@/lib/spam-guard-fields";
@@ -101,7 +101,8 @@ export default function ContactHero() {
           event: "generate_lead",
           form_source: FORM_SOURCE,
           form_intent_type: "contact",
-          ...attribution,
+          // visitor_id (the HighLevel join key) stays out of GTM.
+          ...attributionForDataLayer(attribution),
         });
       }
 
