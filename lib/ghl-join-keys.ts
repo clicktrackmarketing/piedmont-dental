@@ -107,8 +107,15 @@ async function fillFieldIds(pit: string, locationId: string): Promise<Map<string
   const json = (await res.json().catch(() => null)) as {
     customFields?: Array<{ id?: string; fieldKey?: string }>;
   } | null;
+  if (!Array.isArray(json?.customFields)) {
+    // A body we don't understand is a failure, not "no fields": cached as a
+    // failure so it is retried later instead of disabling the fill for good.
+    console.warn("GHL custom field lookup unreadable; join keys stay create-only");
+    fieldIdCache.set(locationId, { ok: false, until: Date.now() + FIELD_ID_FAILURE_TTL_MS });
+    return null;
+  }
   const ids = new Map<string, string>();
-  for (const f of json?.customFields ?? []) {
+  for (const f of json.customFields) {
     // fieldKey looks like "contact.visitor_id".
     const key = (f.fieldKey ?? "").replace(/^contact\./, "");
     if (f.id && FILL_IF_EMPTY_KEYS.has(key)) ids.set(key, f.id);

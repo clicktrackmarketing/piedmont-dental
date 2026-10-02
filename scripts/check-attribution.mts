@@ -140,6 +140,7 @@ let existing: string | null = null;
 let existingByPhone: string | null = null;
 let defsStatus = 200;
 let defs: Array<{ id: string; fieldKey: string }> = [];
+let defsMalformed = false;
 let contactStatus = 200;
 let contactFields: Array<{ id: string; value: unknown }> | undefined;
 let putFails: Array<{ status: number; json: unknown }> = [];
@@ -161,7 +162,7 @@ g.fetch = async (url: string, init: { method?: string; body?: string } = {}) => 
     if (createFails.length) { const f = createFails.shift()!; return res(f.status, f.json); }
     return res(201, { contact: { id: "c_new" } });
   }
-  if (method === "GET" && url.includes("/customFields")) return res(defsStatus, { customFields: defs });
+  if (method === "GET" && url.includes("/customFields")) return res(defsStatus, defsMalformed ? { unexpected: true } : { customFields: defs });
   if (method === "GET" && /\/contacts\/[^/?]+$/.test(url)) {
     return res(contactStatus, { contact: { id: existing, ...(contactFields ? { customFields: contactFields } : {}) } });
   }
@@ -229,6 +230,13 @@ ok(!calls.some(isRead), "no contact read when the field ids are unknown");
 calls.length = 0;
 await postLead(lead({ visitor_id: VID2 }));
 ok(!calls.some(isDefs), "a failed field lookup is not retried on every lead");
+
+u = await returning(() => { defsMalformed = true; });
+ok(u.result.json.ok === true && !("visitor_id" in u.put), "unreadable field list -> create-only");
+defsMalformed = false;
+calls.length = 0;
+await postLead(lead({ visitor_id: VID2 }));
+ok(!calls.some(isDefs), "an unreadable field list is cached as a failure (retried later), not as success");
 
 u = await returning(() => { contactStatus = 500; });
 ok(u.result.json.ok === true && !("visitor_id" in u.put) && !("ga_client_id" in u.put), "contact read fails -> create-only");
