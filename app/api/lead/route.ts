@@ -218,7 +218,7 @@ async function findContactByEmail(
 
 /** Same lookup by phone, used only when there is no email match. */
 async function findContactByPhone(phone: string, pit: string, locationId: string): Promise<string | null> {
-  const url = `/contacts/search/duplicate?locationId=${encodeURIComponent(locationId)}&phone=${encodeURIComponent(phone)}`;
+  const url = `/contacts/search/duplicate?locationId=${encodeURIComponent(locationId)}&number=${encodeURIComponent(phone)}`;
   const res = await ghlFetch(url, { method: "GET" }, pit);
   if (!res.ok) return null;
   const json = (await res.json()) as { contact?: { id: string } };
@@ -278,11 +278,14 @@ async function replaceNote(contactId: string, body: string, pit: string) {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- kept so call sites document what failed
 function jsonError(status: number, message: string, extra?: unknown) {
   // Status and message only: `extra` can carry the GHL response body, which
   // can echo the lead's details back.
   console.error(`[lead] ${status} ${message}`);
-  return Response.json({ ok: false, error: message, detail: extra }, { status });
+  // Never `extra` in the response either: a GHL error body can carry the
+  // lead's details or another contact's id.
+  return Response.json({ ok: false, error: message }, { status });
 }
 
 export async function POST(request: NextRequest) {
@@ -342,10 +345,10 @@ export async function POST(request: NextRequest) {
     if (body.email) {
       contactId = await findContactByEmail(body.email, PIT, LOCATION_ID);
     }
-    // No email match: try the phone, as the San Diego Solar lead API does. A
-    // location that refuses duplicate phones would otherwise reject the
-    // create (and lose the lead) when the phone is already on a contact.
-    if (!contactId && body.phone) {
+    // No email submitted: look the contact up by phone (`number`, as HighLevel
+    // documents it). With an email, a phone match is never used: it may be
+    // another person (a household), and their contact must not be overwritten.
+    if (!contactId && !body.email && body.phone) {
       contactId = await findContactByPhone(String(body.phone), PIT, LOCATION_ID);
     }
 
@@ -448,15 +451,53 @@ export async function POST(request: NextRequest) {
         { method: "POST", body: JSON.stringify(createPayload) },
         PIT
       );
+      let createOk: Response = createRes;
+      let createPhoneConflict = false;
+      let createConflictWith: string | null = null;
       if (!createRes.ok) {
         const detail = await createRes.text();
-        return jsonError(502, `GHL create failed (HTTP ${createRes.status})`, detail);
+        // New email, but the phone already belongs to another contact and this
+        // location refuses duplicate phones. Store the lead as its own contact
+        // without the phone, tag it phone-conflict and note the typed number.
+        const retried =
+          body.email && body.phone && isDuplicatePhoneRejection(createRes.status, detail)
+            ? await ghlFetch(
+                `/contacts/`,
+                {
+                  method: "POST",
+                  body: JSON.stringify({
+                    ...createPayload,
+                    phone: undefined,
+                    tags: [...createPayload.tags, PHONE_CONFLICT_TAG],
+                  }),
+                },
+                PIT,
+              )
+            : null;
+        if (!retried?.ok) {
+          const failed = retried ?? createRes;
+          return jsonError(502, `GHL create failed (HTTP ${failed.status})`);
+        }
+        createOk = retried;
+        createPhoneConflict = true;
+        createConflictWith = duplicatePhoneContactId(detail);
       }
-      const createdJson = (await createRes.json()) as { contact?: { id: string }; id?: string };
+      const createdJson = (await createOk.json()) as { contact?: { id: string }; id?: string };
       contactId = createdJson.contact?.id || createdJson.id || null;
       created = true;
+      if (contactId && createPhoneConflict) {
+        // No contact details in the log — the ids are enough to find it.
+        console.warn("[lead] created without its phone: the phone belongs to another contact", {
+          contactId,
+          otherContactId: createConflictWith,
+        });
+      }
 
       if (contactId) await replaceNote(contactId, noteText, PIT);
+      // After replaceNote, which deletes the contact's earlier notes.
+      if (contactId && createPhoneConflict) {
+        await addPhoneConflictNote(contactId, String(body.phone), createConflictWith, PIT);
+      }
     }
 
     return Response.json({ ok: true, contactId, created, form_source: formSource });

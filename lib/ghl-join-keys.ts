@@ -217,8 +217,8 @@ export async function addPhoneConflictNote(
         body: JSON.stringify({
           body:
             `Website form: the visitor entered phone ${phone}, which already belongs to another ` +
-            `contact${otherContactId ? ` (${otherContactId})` : ""}. This contact's phone was not ` +
-            `changed. Check whether they are the same person or one household.`,
+            `contact${otherContactId ? ` (${otherContactId})` : ""}. The phone was not saved on ` +
+            `this contact. Check whether they are the same person or one household.`,
         }),
       },
       pit

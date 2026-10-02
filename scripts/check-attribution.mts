@@ -143,6 +143,7 @@ let defs: Array<{ id: string; fieldKey: string }> = [];
 let contactStatus = 200;
 let contactFields: Array<{ id: string; value: unknown }> | undefined;
 let putFails: Array<{ status: number; json: unknown }> = [];
+let createFails: Array<{ status: number; json: unknown }> = [];
 type Body = { customFields?: Array<{ key: string; field_value: unknown }>; tags?: string[]; phone?: string; body?: string };
 const calls: { method: string; url: string; body?: Body }[] = [];
 g.fetch = async (url: string, init: { method?: string; body?: string } = {}) => {
@@ -156,7 +157,10 @@ g.fetch = async (url: string, init: { method?: string; body?: string } = {}) => 
     const id = url.includes("email=") ? existing : existingByPhone;
     return id ? res(200, { contact: { id } }) : res(404, {});
   }
-  if (method === "POST" && /\/contacts\/?$/.test(url)) return res(201, { contact: { id: "c_new" } });
+  if (method === "POST" && /\/contacts\/?$/.test(url)) {
+    if (createFails.length) { const f = createFails.shift()!; return res(f.status, f.json); }
+    return res(201, { contact: { id: "c_new" } });
+  }
   if (method === "GET" && url.includes("/customFields")) return res(defsStatus, { customFields: defs });
   if (method === "GET" && /\/contacts\/[^/?]+$/.test(url)) {
     return res(contactStatus, { contact: { id: existing, ...(contactFields ? { customFields: contactFields } : {}) } });
@@ -254,13 +258,31 @@ ok(lastNote.includes("+16195550100"), "the conflict note is posted after the not
 u = await returning(() => { putFails = [{ status: 400, json: { message: "Something else" } }]; }, { phone: "+16195550100" });
 ok(u.result.status === 502 && u.puts.length === 1, "any other update failure is returned as an error, no retry");
 
-// ── server: phone fallback lookup ────────────────────────────────────────
+// ── server: phone lookup and duplicate phone on create ───────────────────
 resetFieldIdCache();
-calls.length = 0; existing = null; existingByPhone = "c_phone"; putFails = [];
-r = await postLead(lead({ email: "new@example.invalid", phone: "+16195550101", visitor_id: VID }));
-ok(r.json.ok === true && !calls.some(isCreate) && calls.some((c) => c.method === "PUT" && c.url.endsWith("/contacts/c_phone")),
-  "no email match but a phone match -> that contact is updated, not a rejected duplicate create");
+calls.length = 0; existing = null; existingByPhone = "c_phone"; putFails = []; createFails = [];
+r = await postLead(lead({ email: "new@example.invalid", phone: "+16195550101" }));
+ok(!calls.some((c) => c.url.includes("number=") || c.url.includes("phone=")) && calls.some(isCreate),
+  "with an email, a phone match is never looked up: another person's contact is not overwritten");
+calls.length = 0;
+r = await postLead(lead({ email: undefined, phone: "+16195550101", visitor_id: VID }));
+ok(r.json.ok === true && calls.some((c) => c.url.includes("number=%2B16195550101"))
+  && calls.some((c) => c.method === "PUT" && c.url.endsWith("/contacts/c_phone")),
+  "no email: looked up by phone (`number`) and that contact is updated");
 existingByPhone = null;
+calls.length = 0; createFails = [DUP];
+r = await postLead(lead({ email: "new2@example.invalid", phone: "+16195550102" }));
+const creates = calls.filter(isCreate);
+ok(r.status === 200 && r.json.ok === true && creates.length === 2 && creates[0].body?.phone === "+16195550102"
+  && !("phone" in (creates[1].body ?? {})), "duplicate phone on create -> created again without the phone");
+ok(!!creates[1].body?.tags?.includes("phone-conflict") && !!creates[1].body?.tags?.includes(BASELINE_TAG),
+  "the new contact is tagged phone-conflict plus the standard tag");
+ok(calls.filter(isNotePost).some((c) => (c.body?.body ?? "").includes("+16195550102")), "a note records the typed phone");
+calls.length = 0; createFails = [{ status: 400, json: { message: "echo sim@example.invalid", meta: { contactId: "c_secret" } } }];
+r = await postLead(lead({ email: "new3@example.invalid" }));
+ok(r.status === 502 && !JSON.stringify(r.json).includes("sim@example.invalid") && !JSON.stringify(r.json).includes("c_secret"),
+  "a failed create returns no GHL response body to the browser");
+createFails = [];
 
 // ── logging ──────────────────────────────────────────────────────────────
 const logs: unknown[] = [];
