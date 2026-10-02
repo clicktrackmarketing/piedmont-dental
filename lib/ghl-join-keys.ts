@@ -116,6 +116,7 @@ async function fillFieldIds(pit: string, locationId: string): Promise<Map<string
   }
   const ids = new Map<string, string>();
   for (const f of json.customFields) {
+    if (!f || typeof f !== "object") continue;
     // fieldKey looks like "contact.visitor_id".
     const key = (f.fieldKey ?? "").replace(/^contact\./, "");
     if (f.id && FILL_IF_EMPTY_KEYS.has(key)) ids.set(key, f.id);
@@ -140,7 +141,7 @@ function isEmptyValue(v: unknown): boolean {
  * `createFields` is the submission's custom fields built as for a CREATE (so
  * with the same validation: UUID-only visitor_id, no empty values).
  */
-export async function fillIfEmptyFields(
+async function fillIfEmptyFieldsUnchecked(
   createFields: CustomField[],
   contactId: string,
   pit: string,
@@ -170,7 +171,25 @@ export async function fillIfEmptyFields(
   // No customFields array at all is a response we don't understand, not
   // proof the fields are empty.
   if (!Array.isArray(current)) return [];
-  return known.filter((f) => isEmptyValue(current.find((c) => c.id === ids.get(f.key))?.value));
+  return known.filter((f) => isEmptyValue(current.find((c) => c?.id === ids.get(f.key))?.value));
+}
+
+/**
+ * The join-key fields that may be written on this update ([] on any doubt).
+ * Never throws: an unexpected HighLevel response must not fail the lead.
+ */
+export async function fillIfEmptyFields(
+  createFields: CustomField[],
+  contactId: string,
+  pit: string,
+  locationId: string,
+): Promise<CustomField[]> {
+  try {
+    return await fillIfEmptyFieldsUnchecked(createFields, contactId, pit, locationId);
+  } catch {
+    console.warn("GHL join key fill skipped: unexpected response; join keys stay create-only");
+    return [];
+  }
 }
 
 // ── Duplicate phone ───────────────────────────────────────────────────

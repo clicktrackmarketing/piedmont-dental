@@ -238,6 +238,9 @@ calls.length = 0;
 await postLead(lead({ visitor_id: VID2 }));
 ok(!calls.some(isDefs), "an unreadable field list is cached as a failure (retried later), not as success");
 
+u = await returning(() => { defs = [null as unknown as { id: string; fieldKey: string }, DEFS[0]]; contactFields = [null as unknown as { id: string; value: unknown }]; });
+ok(u.result.json.ok === true && u.put.visitor_id === VID2, "null entries in HighLevel's lists are skipped, the lead is stored");
+
 u = await returning(() => { contactStatus = 500; });
 ok(u.result.json.ok === true && !("visitor_id" in u.put) && !("ga_client_id" in u.put), "contact read fails -> create-only");
 
