@@ -264,7 +264,7 @@ ok(u.tags.includes("phone-conflict") && u.tags.includes(BASELINE_TAG), "the cont
 const note = calls.filter(isNotePost).map((c) => c.body?.body ?? "").find((b) => b.includes("+16195550100"));
 ok(!!note && note.includes("c_other"), "a note records the typed phone and the other contact's id");
 const lastNote = calls.filter(isNotePost).pop()?.body?.body ?? "";
-ok(lastNote.includes("+16195550100"), "the conflict note is posted after the note replacement (which deletes earlier notes)");
+ok(lastNote.includes("+16195550100"), "the conflict note is its own separate note");
 
 u = await returning(() => { putFails = [{ status: 400, json: { message: "Something else" } }]; }, { phone: "+16195550100" });
 ok(u.result.status === 502 && u.puts.length === 1, "any other update failure is returned as an error, no retry");
@@ -294,6 +294,34 @@ r = await postLead(lead({ email: "new3@example.invalid" }));
 ok(r.status === 502 && !JSON.stringify(r.json).includes("sim@example.invalid") && !JSON.stringify(r.json).includes("c_secret"),
   "a failed create returns no GHL response body to the browser");
 createFails = [];
+
+// ── notes: append only, one submission note per submission ───────────────
+const SUBMISSION_NOTE = "Contact form submission";
+const noteCalls = () => calls.filter((c) => /\/notes(\/|$|\?)/.test(c.url));
+const submissionNotePosts = () =>
+  calls.filter((c) => isNotePost(c) && (c.body?.body ?? "") === SUBMISSION_NOTE).length;
+const notesOk = (label: string, conflictNotes: number) => {
+  ok(noteCalls().every((c) => c.method === "POST"), `${label}: no GET/PUT/DELETE on notes (append only)`);
+  ok(submissionNotePosts() === 1, `${label}: exactly one submission note POST`);
+  ok(calls.filter(isNotePost).length === 1 + conflictNotes, `${label}: ${conflictNotes ? "plus one separate conflict note" : "no other note"}`);
+};
+resetFieldIdCache();
+calls.length = 0; existing = null; existingByPhone = null; putFails = []; createFails = [];
+await postLead(lead({ visitor_id: VID }));
+notesOk("new contact", 0);
+await returning(() => {});
+notesOk("returning contact", 0);
+await returning(() => { putFails = [DUP]; }, { phone: "+16195550100" });
+notesOk("returning contact, update retried without the phone", 1);
+calls.length = 0; existing = null; createFails = [DUP];
+await postLead(lead({ email: "new4@example.invalid", phone: "+16195550103" }));
+notesOk("new contact, create retried without the phone", 1);
+createFails = [];
+calls.length = 0; existing = null;
+await postLead(lead({ visitor_id: VID }));
+await postLead(lead({ visitor_id: VID }));
+ok(submissionNotePosts() === 2 && noteCalls().every((c) => c.method === "POST"), "two submissions -> two appended notes, nothing deleted");
+// The mock answers DELETE/PUT on notes too, so a regression would be caught above.
 
 // ── logging ──────────────────────────────────────────────────────────────
 const logs: unknown[] = [];

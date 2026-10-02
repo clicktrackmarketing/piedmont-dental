@@ -34,8 +34,9 @@
  *      - Duplicate phone: if the phone belongs to another contact, the
  *        update is retried without it, tagged "phone-conflict" and noted.
  *      - Tags: APPENDED via the dedicated /tags endpoint (never replaces)
- *      - The contact note is replaced (old ones deleted, one fresh note
- *        posted) so it always reflects only the latest submission.
+ *      - Notes are APPEND ONLY: each submission adds one new note with its
+ *        details. Existing notes (including staff notes) are never edited
+ *        or deleted. A phone conflict adds its own separate note.
  *   5. Return { ok, contactId, created }.
  *
  * Required env vars (server-side only, set in .env.local AND the hosting
@@ -244,29 +245,14 @@ async function appendTags(contactId: string, tags: string[], pit: string) {
 }
 
 /**
- * Replaces the contact's note with the latest submission's content — any
- * existing notes are deleted first, then one fresh note is posted, so the
- * note always reflects only the most recent touch rather than accumulating
- * a growing history (matches the "latest wins" contract for this client).
- * Best-effort — logged loudly on failure but never blocks the overall
- * success response.
+ * Adds one new note with this submission's details. APPEND ONLY: it never
+ * lists, edits or deletes the contact's existing notes, which may be staff
+ * notes (David, 2026-10-02). Called once per submission, after any retry of
+ * the contact write, so a retry never adds a second note. Best-effort —
+ * logged on failure but never blocks the overall success response.
  */
-async function replaceNote(contactId: string, body: string, pit: string) {
+async function addSubmissionNote(contactId: string, body: string, pit: string) {
   if (!body) return;
-
-  const listRes = await ghlFetch(`/contacts/${contactId}/notes`, { method: "GET" }, pit);
-  if (listRes.ok) {
-    const listJson = (await listRes.json()) as { notes?: Array<{ id: string }> };
-    for (const note of listJson.notes || []) {
-      const delRes = await ghlFetch(`/contacts/${contactId}/notes/${note.id}`, { method: "DELETE" }, pit);
-      if (!delRes.ok) {
-        console.error(`[lead] note delete failed for ${note.id} (HTTP ${delRes.status})`);
-      }
-    }
-  } else {
-    console.error(`[lead] note list failed (HTTP ${listRes.status}) — skipping cleanup, posting anyway`);
-  }
-
   const res = await ghlFetch(
     `/contacts/${contactId}/notes`,
     { method: "POST", body: JSON.stringify({ body }) },
@@ -416,8 +402,7 @@ export async function POST(request: NextRequest) {
         "website contact form submitted",
       ];
       await appendTags(contactId, tagsToAppend, PIT);
-      await replaceNote(contactId, noteText, PIT);
-      // After replaceNote, which deletes the contact's earlier notes.
+      await addSubmissionNote(contactId, noteText, PIT);
       if (phoneConflict) {
         await addPhoneConflictNote(contactId, String(body.phone), otherContactId, PIT);
       }
@@ -493,8 +478,7 @@ export async function POST(request: NextRequest) {
         });
       }
 
-      if (contactId) await replaceNote(contactId, noteText, PIT);
-      // After replaceNote, which deletes the contact's earlier notes.
+      if (contactId) await addSubmissionNote(contactId, noteText, PIT);
       if (contactId && createPhoneConflict) {
         await addPhoneConflictNote(contactId, String(body.phone), createConflictWith, PIT);
       }
