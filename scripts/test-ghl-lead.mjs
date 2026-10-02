@@ -53,18 +53,25 @@ const LOCKED = new Set([
   "visitor_source_first",
   "visitor_source_first_detail",
   "attribution_method",
+  "attribution_confidence",
   "utm_source_captured",
   "utm_medium_captured",
   "utm_campaign_captured",
   "utm_term_captured",
   "utm_content_captured",
   "gclid_captured",
+  "gbraid_captured",
+  "wbraid_captured",
   "fbclid_captured",
   "msclkid_captured",
   "ttclid_captured",
   "landing_page_first",
   "referrer_url_captured",
   "first_visit_at_iso",
+  // Join keys (on update the route fills these only when empty; this
+  // smoke test treats them as create-only).
+  "visitor_id",
+  "ga_client_id",
   "how_did_you_hear",
   "form_first_submitted_at",
 ]);
@@ -152,14 +159,8 @@ async function updateContact(id, body) {
   }
 }
 
-async function replaceNote(id, body) {
-  const listRes = await fetch(`${GHL}/contacts/${id}/notes`, { headers });
-  if (listRes.ok) {
-    const { notes } = await listRes.json();
-    for (const note of notes || []) {
-      await fetch(`${GHL}/contacts/${id}/notes/${note.id}`, { method: "DELETE", headers });
-    }
-  }
+// Mirrors the route: notes are append only, existing notes are never deleted.
+async function addNote(id, body) {
   const r = await fetch(`${GHL}/contacts/${id}/notes`, { method: "POST", headers, body: JSON.stringify({ body }) });
   if (!r.ok) throw new Error(`note post HTTP ${r.status}: ${await r.text()}`);
   return r.json();
@@ -344,7 +345,7 @@ try {
   console.log(`   ✓ Created contact ${createdId}`);
 
   console.log("\n2b. Posting a contact note (answer-resilience channel)…");
-  await replaceNote(createdId, "First touch note — please ignore or delete.");
+  await addNote(createdId, "First touch note — please ignore or delete.");
   const notes = await listNotes(createdId);
   console.log(notes.length > 0 ? `   ✓ Note landed (${notes.length} total)` : "   ✗ Note did not land");
 
@@ -361,7 +362,7 @@ try {
   console.log("\n4. Re-submitting same email with different channel + latest-wins values…");
   await updateContact(createdId, secondTouch);
   console.log("   ✓ Update PUT returned OK");
-  await replaceNote(createdId, "Second touch note — should REPLACE the first, not add to it.");
+  await addNote(createdId, "Second touch note — added alongside the first, never replacing it.");
 
   console.log("\n5. Verifying no-overwrite contract…");
   await new Promise((r) => setTimeout(r, 1500));
@@ -384,8 +385,8 @@ try {
   }
 
   const finalNotes = await listNotes(createdId);
-  if (finalNotes.length === 1) pass(`note replaced, not appended (1 note total)`);
-  else fail(`note count wrong: expected 1 (replaced), got ${finalNotes.length}`);
+  if (finalNotes.length === 2) pass(`note appended, the first kept (2 notes total)`);
+  else fail(`note count wrong: expected 2 (append only), got ${finalNotes.length}`);
 
   const finalTags = after2.tags || [];
   for (const t of EXPECTED_PRESERVED_TAGS) {

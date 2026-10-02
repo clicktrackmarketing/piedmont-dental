@@ -27,19 +27,36 @@
  *        -> updated to the latest submission
  *      - RECENT attribution fields (visitor_source_recent, *_recent): SENT
  *        every time -> updated
+ *      - Join keys visitor_id (the Click Track V2 pixel's `_ct_vid`) and
+ *        ga_client_id: LOCKED, except that a returning contact whose value
+ *        is empty gets one (fill-if-empty, lib/ghl-join-keys.ts); a
+ *        non-empty value is never overwritten. gbraid/wbraid stay create-only.
+ *      - Duplicate phone: if the phone belongs to another contact, the
+ *        update is retried without it, tagged "phone-conflict" and noted.
  *      - Tags: APPENDED via the dedicated /tags endpoint (never replaces)
- *      - The contact note is replaced (old ones deleted, one fresh note
- *        posted) so it always reflects only the latest submission.
+ *      - Notes are APPEND ONLY: each submission adds one new note with its
+ *        details. Existing notes (including staff notes) are never edited
+ *        or deleted. A phone conflict adds its own separate note.
  *   5. Return { ok, contactId, created }.
  *
  * Required env vars (server-side only, set in .env.local AND the hosting
  * provider's env settings — never in the client bundle):
- *   GHL_PIT          — Private Integration Token (pit-...)
+ *   GHL_PIT          — Private Integration Token (pit-...). Scopes: View
+ *                      Contacts, Edit Contacts, View Custom Fields (for
+ *                      fill-if-empty) and notes.
  *   GHL_LOCATION_ID  — the sub-account location ID
  */
 
 import type { NextRequest } from "next/server";
 import { screenLead, SPAM_META_KEYS } from "@/lib/spam-guard";
+import {
+  PHONE_CONFLICT_TAG,
+  addPhoneConflictNote,
+  duplicatePhoneContactId,
+  fillIfEmptyFields,
+  isCtVisitorId,
+  isDuplicatePhoneRejection,
+} from "@/lib/ghl-join-keys";
 
 const GHL_API = "https://services.leadconnectorhq.com";
 const API_VERSION = "2021-07-28";
@@ -58,18 +75,29 @@ const LOCKED_FIELD_KEYS = new Set<string>([
   "visitor_source_first",
   "visitor_source_first_detail",
   "attribution_method",
+  "attribution_confidence",
   "utm_source_captured",
   "utm_medium_captured",
   "utm_campaign_captured",
   "utm_term_captured",
   "utm_content_captured",
   "gclid_captured",
+  // Google's privacy-preserving click ids — sent INSTEAD of gclid when Google
+  // cannot pass one. Create-only like gclid_captured (never filled later).
+  "gbraid_captured",
+  "wbraid_captured",
   "fbclid_captured",
   "msclkid_captured",
   "ttclid_captured",
   "landing_page_first",
   "referrer_url_captured",
   "first_visit_at_iso",
+  // Join keys. visitor_id is the Click Track V2 pixel's `_ct_vid` UUID (the
+  // Customer Journey join key), not IntentWave's anonymous id; ga_client_id
+  // joins the contact to GA4. Both are also filled on a returning contact
+  // whose value is empty (fill-if-empty, lib/ghl-join-keys.ts).
+  "visitor_id",
+  "ga_client_id",
   "how_did_you_hear",
   // Group C — Universal Form
   "form_first_submitted_at",
@@ -145,6 +173,8 @@ function buildCustomFields(body: LeadBody, mode: "create" | "update") {
     if (STANDARD_FIELDS.has(key)) continue;
     if (SPAM_META_KEYS.has(key)) continue; // honeypot / fill-time, never a GHL field
     if (key === "note") continue; // handled separately via the Notes API
+    // visitor_id must be the Click Track V2 pixel's `_ct_vid` UUID.
+    if (key === "visitor_id" && !isCtVisitorId(raw)) continue;
 
     if (mode === "update") {
       if (LOCKED_FIELD_KEYS.has(key)) continue;
@@ -187,6 +217,15 @@ async function findContactByEmail(
   return json.contact?.id || null;
 }
 
+/** Same lookup by phone, used only when there is no email match. */
+async function findContactByPhone(phone: string, pit: string, locationId: string): Promise<string | null> {
+  const url = `/contacts/search/duplicate?locationId=${encodeURIComponent(locationId)}&number=${encodeURIComponent(phone)}`;
+  const res = await ghlFetch(url, { method: "GET" }, pit);
+  if (!res.ok) return null;
+  const json = (await res.json()) as { contact?: { id: string } };
+  return json.contact?.id || null;
+}
+
 /**
  * Append tags to an existing contact via the dedicated /tags endpoint.
  * Idempotent. Critically, this does NOT replace existing tags — a PUT to
@@ -206,43 +245,33 @@ async function appendTags(contactId: string, tags: string[], pit: string) {
 }
 
 /**
- * Replaces the contact's note with the latest submission's content — any
- * existing notes are deleted first, then one fresh note is posted, so the
- * note always reflects only the most recent touch rather than accumulating
- * a growing history (matches the "latest wins" contract for this client).
- * Best-effort — logged loudly on failure but never blocks the overall
- * success response.
+ * Adds one new note with this submission's details. APPEND ONLY: it never
+ * lists, edits or deletes the contact's existing notes, which may be staff
+ * notes (David, 2026-10-02). Called once per submission, after any retry of
+ * the contact write, so a retry never adds a second note. Best-effort —
+ * logged on failure but never blocks the overall success response.
  */
-async function replaceNote(contactId: string, body: string, pit: string) {
+async function addSubmissionNote(contactId: string, body: string, pit: string) {
   if (!body) return;
-
-  const listRes = await ghlFetch(`/contacts/${contactId}/notes`, { method: "GET" }, pit);
-  if (listRes.ok) {
-    const listJson = (await listRes.json()) as { notes?: Array<{ id: string }> };
-    for (const note of listJson.notes || []) {
-      const delRes = await ghlFetch(`/contacts/${contactId}/notes/${note.id}`, { method: "DELETE" }, pit);
-      if (!delRes.ok) {
-        console.error(`[lead] note delete failed for ${note.id} (HTTP ${delRes.status})`);
-      }
-    }
-  } else {
-    console.error(`[lead] note list failed (HTTP ${listRes.status}) — skipping cleanup, posting anyway`);
-  }
-
   const res = await ghlFetch(
     `/contacts/${contactId}/notes`,
     { method: "POST", body: JSON.stringify({ body }) },
     pit
   );
   if (!res.ok) {
-    const detail = await res.text();
-    console.error(`[lead] note post failed (HTTP ${res.status}): ${detail}`);
+    // Status only: the response body can echo the note, i.e. the lead's message.
+    console.error(`[lead] note post failed (HTTP ${res.status})`);
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- kept so call sites document what failed
 function jsonError(status: number, message: string, extra?: unknown) {
-  console.error(`[lead] ${status} ${message}`, extra ?? "");
-  return Response.json({ ok: false, error: message, detail: extra }, { status });
+  // Status and message only: `extra` can carry the GHL response body, which
+  // can echo the lead's details back.
+  console.error(`[lead] ${status} ${message}`);
+  // Never `extra` in the response either: a GHL error body can carry the
+  // lead's details or another contact's id.
+  return Response.json({ ok: false, error: message }, { status });
 }
 
 export async function POST(request: NextRequest) {
@@ -302,11 +331,21 @@ export async function POST(request: NextRequest) {
     if (body.email) {
       contactId = await findContactByEmail(body.email, PIT, LOCATION_ID);
     }
+    // No email submitted: look the contact up by phone (`number`, as HighLevel
+    // documents it). With an email, a phone match is never used: it may be
+    // another person (a household), and their contact must not be overwritten.
+    if (!contactId && !body.email && body.phone) {
+      contactId = await findContactByPhone(String(body.phone), PIT, LOCATION_ID);
+    }
 
     if (contactId) {
       // ── EXISTING CONTACT — latest wins on name/phone/qualification,
       // true first-touch attribution + SMS consent record still preserved ──
-      const recentCustomFields = buildCustomFields(body, "update");
+      const recentCustomFields = [
+        ...buildCustomFields(body, "update"),
+        // visitor_id / ga_client_id: only when the contact has none yet.
+        ...(await fillIfEmptyFields(buildCustomFields(body, "create"), contactId, PIT, LOCATION_ID)),
+      ];
       // form_last_submitted_at is server-authoritative (never trust client
       // clock) and always updates, so staff can see the most recent touch.
       recentCustomFields.push({ key: "form_last_submitted_at", field_value: nowIso });
@@ -326,18 +365,47 @@ export async function POST(request: NextRequest) {
         { method: "PUT", body: JSON.stringify(updatePayload) },
         PIT
       );
+      let phoneConflict = false;
+      let otherContactId: string | null = null;
       if (!updateRes.ok) {
         const detail = await updateRes.text();
-        return jsonError(502, `GHL update failed (HTTP ${updateRes.status})`, detail);
+        // The contact was matched by email, but the submitted phone already
+        // belongs to a DIFFERENT contact (e.g. two people in one household),
+        // and this location refuses duplicate phones. Store the lead anyway:
+        // retry without the phone, then flag the conflict for the team.
+        const retried =
+          body.phone && isDuplicatePhoneRejection(updateRes.status, detail)
+            ? await ghlFetch(
+                `/contacts/${contactId}`,
+                { method: "PUT", body: JSON.stringify({ ...updatePayload, phone: undefined }) },
+                PIT
+              )
+            : null;
+        if (!retried?.ok) {
+          const failed = retried ?? updateRes;
+          const failedDetail = retried ? await retried.text() : detail;
+          return jsonError(502, `GHL update failed (HTTP ${failed.status})`, failedDetail);
+        }
+        phoneConflict = true;
+        otherContactId = duplicatePhoneContactId(detail);
+        // No contact details in the log — the ids are enough to find it.
+        console.warn("[lead] stored without its phone: the phone belongs to another contact", {
+          contactId,
+          otherContactId,
+        });
       }
 
       const tagsToAppend = [
         `form:${formSource}`,
         ...(channelTag ? [channelTag] : []),
+        ...(phoneConflict ? [PHONE_CONFLICT_TAG] : []),
         "website contact form submitted",
       ];
       await appendTags(contactId, tagsToAppend, PIT);
-      await replaceNote(contactId, noteText, PIT);
+      await addSubmissionNote(contactId, noteText, PIT);
+      if (phoneConflict) {
+        await addPhoneConflictNote(contactId, String(body.phone), otherContactId, PIT);
+      }
     } else {
       // ── NEW CONTACT — write full first-touch payload ────────────────
       const customFields = buildCustomFields(body, "create");
@@ -368,15 +436,52 @@ export async function POST(request: NextRequest) {
         { method: "POST", body: JSON.stringify(createPayload) },
         PIT
       );
+      let createOk: Response = createRes;
+      let createPhoneConflict = false;
+      let createConflictWith: string | null = null;
       if (!createRes.ok) {
         const detail = await createRes.text();
-        return jsonError(502, `GHL create failed (HTTP ${createRes.status})`, detail);
+        // New email, but the phone already belongs to another contact and this
+        // location refuses duplicate phones. Store the lead as its own contact
+        // without the phone, tag it phone-conflict and note the typed number.
+        const retried =
+          body.email && body.phone && isDuplicatePhoneRejection(createRes.status, detail)
+            ? await ghlFetch(
+                `/contacts/`,
+                {
+                  method: "POST",
+                  body: JSON.stringify({
+                    ...createPayload,
+                    phone: undefined,
+                    tags: [...createPayload.tags, PHONE_CONFLICT_TAG],
+                  }),
+                },
+                PIT,
+              )
+            : null;
+        if (!retried?.ok) {
+          const failed = retried ?? createRes;
+          return jsonError(502, `GHL create failed (HTTP ${failed.status})`);
+        }
+        createOk = retried;
+        createPhoneConflict = true;
+        createConflictWith = duplicatePhoneContactId(detail);
       }
-      const createdJson = (await createRes.json()) as { contact?: { id: string }; id?: string };
+      const createdJson = (await createOk.json()) as { contact?: { id: string }; id?: string };
       contactId = createdJson.contact?.id || createdJson.id || null;
       created = true;
+      if (contactId && createPhoneConflict) {
+        // No contact details in the log — the ids are enough to find it.
+        console.warn("[lead] created without its phone: the phone belongs to another contact", {
+          contactId,
+          otherContactId: createConflictWith,
+        });
+      }
 
-      if (contactId) await replaceNote(contactId, noteText, PIT);
+      if (contactId) await addSubmissionNote(contactId, noteText, PIT);
+      if (contactId && createPhoneConflict) {
+        await addPhoneConflictNote(contactId, String(body.phone), createConflictWith, PIT);
+      }
     }
 
     return Response.json({ ok: true, contactId, created, form_source: formSource });

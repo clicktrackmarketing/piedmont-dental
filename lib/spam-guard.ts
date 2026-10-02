@@ -148,11 +148,12 @@ export function checkContent(body: Record<string, unknown>): SpamVerdict {
   const names = [str(body.full_name), str(body.first_name), str(body.last_name)];
   for (const name of names) {
     const why = nameLooksFake(name);
-    if (why) return reject(400, `${why} (${JSON.stringify(name)})`, REJECT_MESSAGE);
+    // The reason is logged by the route: never include the submitted value.
+    if (why) return reject(400, why, REJECT_MESSAGE);
   }
   const message = str(body.form_message) || str(body.patient_message);
   const why = messageLooksFake(message);
-  if (why) return reject(400, `${why} (${JSON.stringify(message.slice(0, 80))})`, REJECT_MESSAGE);
+  if (why) return reject(400, why, REJECT_MESSAGE);
   return OK;
 }
 
