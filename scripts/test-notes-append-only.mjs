@@ -233,7 +233,8 @@ async function mockedSubmissions() {
     }
     if (/\/contacts\/(search|upsert)\/?$/.test(path)) return json(200, { contacts: [], contact: null });
     if (method === "POST" && /\/contacts\/?$/.test(path)) {
-      const id = `c_new_${++seq}`;
+      // Alphanumeric like real HighLevel ids: the route refuses any other id format.
+      const id = `cNew${++seq}`;
       store.set(id, {
         firstName: body?.firstName ?? "",
         lastName: body?.lastName ?? "",
@@ -413,11 +414,11 @@ async function mockedSubmissions() {
   if (SKIP_IDENTITY) return;
   console.log(`\nMocked HighLevel: phone-only match, identity never overwritten`);
   const seed = (id, c) => store.set(id, { firstName: "", lastName: "", name: "", email: "", phone: "", ...c });
-  seed("c_same", { firstName: "Mock", lastName: "Lead", email: "kept@example.invalid", phone: "+15555550101" });
-  seed("c_other", { firstName: "Jordan", lastName: "Rivera", email: "jordan@example.invalid", phone: "+15555550102" });
-  seed("c_blank", { phone: "+15555550103" });
-  seed("c_email_blank", { email: "blank.name@example.invalid" });
-  seed("c_email_named", { firstName: "Pat", lastName: "Owner", email: "pat.owner@example.invalid", phone: "+15555550105" });
+  seed("cSame", { firstName: "Mock", lastName: "Lead", email: "kept@example.invalid", phone: "+15555550101" });
+  seed("cOther", { firstName: "Jordan", lastName: "Rivera", email: "jordan@example.invalid", phone: "+15555550102" });
+  seed("cBlank", { phone: "+15555550103" });
+  seed("cEmailBlank", { email: "blank.name@example.invalid" });
+  seed("cEmailNamed", { firstName: "Pat", lastName: "Owner", email: "pat.owner@example.invalid", phone: "+15555550105" });
 
   const phoneNotes = PHONE_MATCH_NOTES;
   // Rule 8 (David, 2026-10-03): on a phone-only match the only contact write
@@ -460,11 +461,11 @@ async function mockedSubmissions() {
     phoneLead("(555) 555-0101", { first_name: "  mock ", last_name: "LEAD.", full_name: "mock  LEAD." }),
     phoneNotes
   );
-  checkPhoneMatch("phone match, same name", r, "c_same", "mock  LEAD.", false);
+  checkPhoneMatch("phone match, same name", r, "cSame", "mock  LEAD.", false);
 
   r = await run("phone match, different name", phoneLead("+1 555 555 0102"), phoneNotes);
-  checkPhoneMatch("phone match, different name", r, "c_other", "Mock Lead", true);
-  if (store.get("c_other").firstName !== "Jordan" || store.get("c_other").email !== "jordan@example.invalid")
+  checkPhoneMatch("phone match, different name", r, "cOther", "Mock Lead", true);
+  if (store.get("cOther").firstName !== "Jordan" || store.get("cOther").email !== "jordan@example.invalid")
     fail("phone match, different name: the contact's name or email changed");
 
   r = await run("phone match, contact has no name", phoneLead("555-555-0103"), phoneNotes);
@@ -472,11 +473,11 @@ async function mockedSubmissions() {
     if (creates(r.mine).length) fail("phone match, contact has no name: created a new contact");
     // Rule 8 (David, 2026-10-03): a phone-only match updates NO contact field,
     // not even an empty name.
-    const c = store.get("c_blank");
+    const c = store.get("cBlank");
     if (c.firstName || c.lastName || c.name) fail(`phone match, contact has no name: name was filled (rule 8 forbids it)`);
     else pass("phone match, contact has no name: name NOT filled (rule 8)");
     if (tagsSent(r.mine).includes(NAME_MISMATCH_TAG)) fail("phone match, contact has no name: name-mismatch applied to a blank name");
-    const w = rule8Writes(r.mine, "c_blank");
+    const w = rule8Writes(r.mine, "cBlank");
     if (w.length) fail(`phone match, contact has no name: updated contact fields (${w.join(", ")})`);
     if (!tagsSent(r.mine).includes(BASELINE_TAG)) fail(`phone match, contact has no name: tag "${BASELINE_TAG}" missing`);
   }
@@ -491,7 +492,7 @@ async function mockedSubmissions() {
     NOTES_PER_SUBMISSION
   );
   if (r) {
-    const c = store.get("c_email_blank");
+    const c = store.get("cEmailBlank");
     if (`${c.firstName} ${c.lastName}`.trim() !== "Mock Lead" && c.name !== "Mock Lead") fail("email match: empty name not filled");
     else pass("email match: empty name filled");
     if (digits(c.phone) !== "5555550104") fail("email match: empty phone not filled");
@@ -505,12 +506,12 @@ async function mockedSubmissions() {
     Math.max(NOTES_PER_SUBMISSION, 1)
   );
   if (r) {
-    const writes = identityWrites(r.mine, "c_email_named");
+    const writes = identityWrites(r.mine, "cEmailNamed");
     if (writes.length) fail(`email match, contact already named: overwrote identity (${writes.join(", ")})`);
     else pass("email match, contact already named: name and email left as they were");
     // Name mismatch on an email match too (David, 2026-10-03).
     const want = "Form submitted as: Someone Else";
-    const onNamed = (c, what) => c.path.endsWith(`/contacts/c_email_named/${what}`);
+    const onNamed = (c, what) => c.path.endsWith(`/contacts/cEmailNamed/${what}`);
     if (!r.posts.some((c) => onNamed(c, "notes") && String(c.body?.body ?? "").includes(want)))
       fail(`email match, different name: no note containing "${want}"`);
     else pass(`email match, different name: note "${want}"`);

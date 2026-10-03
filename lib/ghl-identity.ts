@@ -42,9 +42,12 @@ export interface SubmittedIdentity {
   email?: unknown;
 }
 
+const GHL_TIMEOUT_MS = 10_000;
+
 async function ghlRequest(path: string, init: RequestInit, pit: string): Promise<Response> {
   return fetch(`${GHL_API}${path}`, {
     ...init,
+    signal: AbortSignal.timeout(GHL_TIMEOUT_MS),
     headers: {
       Authorization: `Bearer ${pit}`,
       Version: API_VERSION,
@@ -59,6 +62,7 @@ const str = (v: unknown) => (typeof v === "string" ? v.trim() : "");
 
 /** The matched contact's identity fields and phone, or null when it cannot be read. */
 export async function getContactIdentity(contactId: string, pit: string): Promise<ContactIdentity | null> {
+  if (!/^[A-Za-z0-9]{1,64}$/.test(contactId)) return null;
   try {
     const res = await ghlRequest(`/contacts/${encodeURIComponent(contactId)}`, { method: "GET" }, pit);
     if (!res.ok) {

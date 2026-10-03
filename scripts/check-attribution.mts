@@ -208,7 +208,7 @@ g.fetch = async (url: string, init: { method?: string; body?: string } = {}) => 
   }
   if (method === "POST" && /\/contacts\/?$/.test(url)) {
     if (createFails.length) { const f = createFails.shift()!; return res(f.status, f.json); }
-    return res(201, { contact: { id: "c_new" } });
+    return res(201, { contact: { id: "cNew" } });
   }
   if (method === "GET" && url.includes("/customFields")) return res(defsStatus, defsMalformed ? { unexpected: true } : { customFields: defs });
   if (method === "GET" && /\/contacts\/[^/?]+$/.test(url)) {
@@ -249,10 +249,10 @@ const DEFS = [
   { id: "f_src", fieldKey: "contact.visitor_source_first" },
 ];
 const isDefs = (c: { method: string; url: string }) => c.method === "GET" && c.url.includes("/customFields");
-const isRead = (c: { method: string; url: string }) => c.method === "GET" && /\/contacts\/c_existing$/.test(c.url);
+const isRead = (c: { method: string; url: string }) => c.method === "GET" && /\/contacts\/cExisting$/.test(c.url);
 const returning = async (setup: () => void, extra: Record<string, unknown> = {}) => {
   resetFieldIdCache();
-  calls.length = 0; existing = "c_existing";
+  calls.length = 0; existing = "cExisting";
   defsStatus = 200; defs = DEFS; contactStatus = 200; contactFields = []; putFails = []; contactExtra = {};
   setup();
   const result = await postLead(lead({ visitor_id: VID2, ga_client_id: "999.999", ...extra }));
@@ -305,29 +305,29 @@ await postLead(lead({ visitor_id: VID2 }));
 ok(!calls.some(isDefs), "field ids are looked up once per server instance");
 
 // ── server: duplicate phone ──────────────────────────────────────────────
-const DUP = { status: 400, json: { message: "This location does not allow duplicated contacts.", meta: { contactId: "c_other", matchingField: "phone" } } };
+const DUP = { status: 400, json: { message: "This location does not allow duplicated contacts.", meta: { contactId: "cOther", matchingField: "phone" } } };
 u = await returning(() => { putFails = [DUP]; }, { phone: "+16195550100" });
 ok(u.result.status === 200 && u.result.json.ok === true, "duplicate phone on update -> lead still stored");
 ok(u.puts.length === 2 && u.puts[0].body?.phone === "+16195550100" && !("phone" in (u.puts[1].body ?? {})), "the update is retried without the phone");
 ok(u.tags.includes("phone-conflict") && u.tags.includes(BASELINE_TAG), "the contact is tagged phone-conflict (plus the standard tag)");
-const note = calls.filter(isNotePost).map((c) => c.body?.body ?? "").find((b) => b.includes("+16195550100"));
-ok(!!note && note.includes("c_other"), "a note records the typed phone and the other contact's id");
-const lastNote = calls.filter(isNotePost).pop()?.body?.body ?? "";
-ok(lastNote.includes("+16195550100"), "the conflict note is its own separate note");
+const conflictNotes = calls.filter(isNotePost).map((c) => c.body?.body ?? "");
+ok(conflictNotes.length === 1 && conflictNotes[0].includes("+16195550100") && conflictNotes[0].includes("cOther")
+  && conflictNotes[0].includes("Contact form submission"),
+  "exactly ONE note: the submission note carries the typed phone and the other contact's id");
 
 u = await returning(() => { putFails = [{ status: 400, json: { message: "Something else" } }]; }, { phone: "+16195550100" });
 ok(u.result.status === 502 && u.puts.length === 1, "any other update failure is returned as an error, no retry");
 
 // ── server: phone lookup and duplicate phone on create ───────────────────
 resetFieldIdCache();
-calls.length = 0; existing = null; existingByPhone = "c_phone"; putFails = []; createFails = [];
+calls.length = 0; existing = null; existingByPhone = "cPhone"; putFails = []; createFails = [];
 r = await postLead(lead({ email: "new@example.invalid", phone: "+16195550101" }));
 ok(!calls.some((c) => c.url.includes("number=") || c.url.includes("phone=")) && calls.some(isCreate),
   "with an email, a phone match is never looked up: another person's contact is not overwritten");
 calls.length = 0;
 r = await postLead(lead({ email: undefined, phone: "+16195550101", visitor_id: VID }));
 ok(r.json.ok === true && calls.some((c) => c.url.includes("number=%2B16195550101"))
-  && calls.some((c) => c.method === "PUT" && c.url.endsWith("/contacts/c_phone")),
+  && calls.some((c) => c.method === "PUT" && c.url.endsWith("/contacts/cPhone")),
   "no email: looked up by phone (`number`) and that contact is updated");
 existingByPhone = null;
 calls.length = 0; createFails = [DUP];
@@ -338,9 +338,9 @@ ok(r.status === 200 && r.json.ok === true && creates.length === 2 && creates[0].
 ok(!!creates[1].body?.tags?.includes("phone-conflict") && !!creates[1].body?.tags?.includes(BASELINE_TAG),
   "the new contact is tagged phone-conflict plus the standard tag");
 ok(calls.filter(isNotePost).some((c) => (c.body?.body ?? "").includes("+16195550102")), "a note records the typed phone");
-calls.length = 0; createFails = [{ status: 400, json: { message: "echo sim@example.invalid", meta: { contactId: "c_secret" } } }];
+calls.length = 0; createFails = [{ status: 400, json: { message: "echo sim@example.invalid", meta: { contactId: "cSecret" } } }];
 r = await postLead(lead({ email: "new3@example.invalid" }));
-ok(r.status === 502 && !JSON.stringify(r.json).includes("sim@example.invalid") && !JSON.stringify(r.json).includes("c_secret"),
+ok(r.status === 502 && !JSON.stringify(r.json).includes("sim@example.invalid") && !JSON.stringify(r.json).includes("cSecret"),
   "a failed create returns no GHL response body to the browser");
 createFails = [];
 
@@ -348,28 +348,29 @@ createFails = [];
 const SUBMISSION_NOTE = "Contact form submission";
 const noteCalls = () => calls.filter((c) => /\/notes(\/|$|\?)/.test(c.url));
 const submissionNotePosts = () =>
-  calls.filter((c) => isNotePost(c) && (c.body?.body ?? "") === SUBMISSION_NOTE).length;
-const notesOk = (label: string, conflictNotes: number) => {
+  calls.filter((c) => isNotePost(c) && (c.body?.body ?? "").includes(SUBMISSION_NOTE)).length;
+const notesOk = (label: string, conflict: boolean) => {
   ok(noteCalls().every((c) => c.method === "POST"), `${label}: no GET/PUT/DELETE on notes (append only)`);
-  ok(submissionNotePosts() === 1, `${label}: exactly one submission note POST`);
-  ok(calls.filter(isNotePost).length === 1 + conflictNotes, `${label}: ${conflictNotes ? "plus one separate conflict note" : "no other note"}`);
+  ok(submissionNotePosts() === 1 && calls.filter(isNotePost).length === 1, `${label}: exactly one note POST, the submission note`);
+  if (conflict) ok((calls.find(isNotePost)?.body?.body ?? "").includes("already belongs to another contact"),
+    `${label}: the conflict line is folded into that one note`);
 };
 resetFieldIdCache();
 calls.length = 0; existing = null; existingByPhone = null; putFails = []; createFails = [];
 await postLead(lead({ visitor_id: VID }));
-notesOk("new contact", 0);
+notesOk("new contact", false);
 await returning(() => {});
-notesOk("returning contact", 0);
+notesOk("returning contact", false);
 await returning(() => { putFails = [DUP]; }, { phone: "+16195550100" });
-notesOk("returning contact, update retried without the phone", 1);
+notesOk("returning contact, update retried without the phone", true);
 calls.length = 0; existing = null; createFails = [DUP];
 await postLead(lead({ email: "new4@example.invalid", phone: "+16195550103" }));
-notesOk("new contact, create retried without the phone", 1);
+notesOk("new contact, create retried without the phone", true);
 createFails = [];
 calls.length = 0; existing = null;
 await postLead(lead({ visitor_id: VID }));
 await postLead(lead({ visitor_id: VID }));
-ok(submissionNotePosts() === 2 && noteCalls().every((c) => c.method === "POST"), "two submissions -> two appended notes, nothing deleted");
+ok(calls.filter(isNotePost).length === 2 && noteCalls().every((c) => c.method === "POST"), "two submissions -> two appended notes, nothing deleted");
 // The mock answers DELETE/PUT on notes too, so a regression would be caught above.
 
 // ── phone optional (David, 2026-10-03) ───────────────────────────────────
@@ -440,7 +441,7 @@ for (const [label, extra, headers] of [
   ok(cf(create?.body).gclid_captured === "gc-1" && !("tracking_opt_out" in cf(create?.body)),
     `opt-out (${label}): click ids as before; the flag itself is not a field`);
   resetFieldIdCache();
-  calls.length = 0; existing = "c_existing"; contactFields = []; defs = DEFS; defsStatus = 200; contactStatus = 200; contactExtra = {};
+  calls.length = 0; existing = "cExisting"; contactFields = []; defs = DEFS; defsStatus = 200; contactStatus = 200; contactExtra = {};
   r = await postWith(lead({ visitor_id: VID, ga_client_id: "111.222", ...extra }), headers);
   const putSent = JSON.stringify(calls.filter((c) => c.method === "PUT").map((c) => c.body));
   ok(r.json.ok === true && !putSent.includes(VID) && !putSent.includes("ga_client_id"), `opt-out (${label}), returning contact: join keys not filled`);
@@ -512,7 +513,7 @@ for (const [label, fail] of [
 // ── rule 8: a phone-only match updates NO contact field (David, 2026-10-03) ──
 const rule8 = async (label: string, setup: () => void, expectPut: boolean) => {
   resetFieldIdCache();
-  calls.length = 0; existing = null; existingByPhone = "c_existing"; contactStatus = 200; defs = DEFS; defsStatus = 200;
+  calls.length = 0; existing = null; existingByPhone = "cExisting"; contactStatus = 200; defs = DEFS; defsStatus = 200;
   contactFields = []; contactExtra = { firstName: "Robin", lastName: "Gale", phone: "+15105550160" };
   setup();
   r = await postLead(lead({ email: undefined, phone: "(510) 555-0160", first_name: "Someone", last_name: "Else", full_name: "Someone Else",
@@ -536,7 +537,7 @@ await rule8("join keys already set", () => { contactFields = [{ id: "f_vid", val
 // ── a failed tag call does not fail a stored lead or drop its note ───────
 {
   resetFieldIdCache();
-  calls.length = 0; existing = "c_existing"; contactStatus = 200; contactFields = []; defs = DEFS; defsStatus = 200;
+  calls.length = 0; existing = "cExisting"; contactStatus = 200; contactFields = []; defs = DEFS; defsStatus = 200;
   contactExtra = { firstName: "Pat", lastName: "Owner", email: "sim@example.invalid" };
   g.fetch = async (url: string, init: { method?: string; body?: string } = {}) => {
     if ((init.method || "GET") === "POST" && /\/tags$/.test(url)) return resp(500, {});
@@ -546,6 +547,165 @@ await rule8("join keys already set", () => { contactFields = [{ id: "f_vid", val
   ok(r.status === 200 && r.json.ok === true, "tag POST 500 -> the stored lead still succeeds");
   ok(calls.filter(isNotePost).some((c) => (c.body?.body ?? "").includes("Form submitted as: Sim Test")),
     "tag POST 500 -> the submission's note (with its identity line) is still posted");
+}
+
+
+// ── fix brief 2026-10-03: A–E, G, H, contact ids, phone normalisation ────
+const setFetch = (fn: (url: string, init: { method?: string; body?: string }) => unknown) => {
+  g.fetch = async (url: string, init: { method?: string; body?: string } = {}) => {
+    const out = fn(url, init);
+    return out === undefined ? realFetch(url, init) : out;
+  };
+};
+const fresh = () => {
+  resetFieldIdCache();
+  calls.length = 0; existing = null; existingByPhone = null; putFails = []; createFails = [];
+  contactStatus = 200; contactFields = []; defs = DEFS; defsStatus = 200; contactExtra = {};
+};
+const notePosts = () => calls.filter(isNotePost);
+
+// A: email lead, create refused for a duplicate phone -> created again without it, one note.
+fresh(); createFails = [DUP];
+r = await postLead(lead({ email: "a.case@example.invalid", phone: "(619) 555-0110" }));
+{
+  const cs = calls.filter(isCreate);
+  const n = notePosts();
+  ok(r.status === 200 && r.json.ok === true && cs.length === 2 && cs[0].body?.phone === "+16195550110" && !("phone" in (cs[1].body ?? {})),
+    "A: email lead + duplicate phone -> one more create without the phone (phone sent as E.164 first)");
+  ok(!!cs[1].body?.tags?.includes("phone-conflict"), "A: tagged phone-conflict");
+  ok(n.length === 1 && (n[0].body?.body ?? "").includes("(619) 555-0110") && (n[0].body?.body ?? "").includes("cOther")
+    && n[0].url.endsWith("/contacts/cNew/notes"), "A: ONE note on the new contact with the typed phone and the other contact id");
+  ok(!calls.some((c) => c.url.includes("/contacts/cOther")), "A: the phone owner's contact is never touched");
+}
+
+// B: no-email lead, create refused for a duplicate phone -> phone-only match on meta.contactId.
+fresh(); createFails = [DUP]; contactExtra = { firstName: "Robin", lastName: "Gale", phone: "+16195550111" };
+r = await postLead(lead({ email: undefined, phone: "619-555-0111", visitor_id: VID2 }));
+{
+  const cs = calls.filter(isCreate);
+  const n = notePosts();
+  const puts = calls.filter((c) => c.method === "PUT");
+  const extraKeys = puts.flatMap((c) => Object.keys(c.body ?? {}).flatMap((k) => k === "customFields"
+    ? (c.body?.customFields ?? []).map((f) => f.key).filter((k2) => k2 !== "visitor_id" && k2 !== "ga_client_id") : [k]));
+  ok(r.status === 200 && r.json.ok === true && r.json.contactId === "cOther" && cs.length === 1,
+    "B: no-email lead + duplicate phone -> no second create; attached to meta.contactId");
+  ok(extraKeys.length === 0, "B: rule 8 — no contact field changed on the owner");
+  ok(n.length === 1 && n[0].url.endsWith("/contacts/cOther/notes") && (n[0].body?.body ?? "").includes("Form submitted as: Sim Test")
+    && (n[0].body?.body ?? "").includes("Contact form submission"), "B: ONE note with the answers and \"Form submitted as\"");
+  ok(calls.filter(isTags).some((c) => c.url.endsWith("/contacts/cOther/tags") && (c.body?.tags ?? []).includes(BASELINE_TAG)), "B: tags added");
+}
+fresh(); createFails = [{ status: 400, json: { message: "This location does not allow duplicated contacts.", meta: { matchingField: "phone" } } }];
+r = await postLead(lead({ email: undefined, phone: "619-555-0112" }));
+ok(r.status === 502 && r.json.ok === false && calls.filter(isCreate).length === 1 && notePosts().length === 0,
+  "B: duplicate phone with no contact id -> 502, nothing else written");
+fresh(); createFails = [{ status: 400, json: { message: "This location does not allow duplicated contacts.", meta: { matchingField: "phone", contactId: "../locations/x" } } }];
+r = await postLead(lead({ email: undefined, phone: "619-555-0113" }));
+ok(r.status === 502 && !calls.some((c) => c.url.includes("locations/x")), "B: an invalid meta.contactId is never put in a URL -> 502");
+
+// Contact id format: a bad id from the lookup -> 502, nothing created.
+fresh();
+setFetch((url) => url.includes("/contacts/search/duplicate") ? resp(200, { contact: { id: "../../locations/evil" } }) : undefined);
+try { r = await postLead(lead({})); } finally { g.fetch = realFetch; }
+ok(r.status === 502 && r.json.ok === false && calls.every((c) => c.method === "GET") && !calls.some((c) => c.url.includes("evil")),
+  "lookup returns an invalid contact id -> 502, nothing created, id never used in a URL");
+// A 2xx create with no id / a bad id -> 502.
+for (const [label, json] of [["no id", { contact: {} }], ["bad id", { contact: { id: "a/b?c" } }], ["bad JSON", null]] as Array<[string, unknown]>) {
+  fresh();
+  setFetch((url, init) => (init.method === "POST" && /\/contacts\/?$/.test(url))
+    ? { ok: true, status: 201, json: async () => { if (json === null) throw new SyntaxError("bad"); return json; }, text: async () => "" }
+    : undefined);
+  try { r = await postLead(lead({})); } finally { g.fetch = realFetch; }
+  ok(r.status === 502 && r.json.ok === false && notePosts().length === 0, `create 2xx with ${label} -> 502 ok:false`);
+}
+
+// C: tag failure (non-2xx and network) on a new-contact-free path -> note still posted, success.
+for (const [label, fail] of [["500", () => resp(500, {})], ["network", () => { throw new TypeError("fetch failed"); }]] as Array<[string, () => unknown]>) {
+  fresh(); existing = "cExisting";
+  setFetch((url, init) => (init.method === "POST" && /\/tags$/.test(url)) ? fail() : undefined);
+  try { r = await postLead(lead({})); } finally { g.fetch = realFetch; }
+  ok(r.status === 200 && r.json.ok === true && notePosts().length === 1, `C: tag POST ${label} -> still one note, success`);
+}
+
+// D: note failure on a phone-only match -> 502; on an email match -> success.
+fresh(); existingByPhone = "cExisting";
+{
+  let failedNotes = 0;
+  setFetch((url, init) => (init.method === "POST" && /\/notes$/.test(url)) ? (failedNotes++, resp(500, {})) : undefined);
+  try { r = await postLead(lead({ email: undefined, phone: "(510) 555-0170" })); } finally { g.fetch = realFetch; }
+  ok(r.status === 502 && r.json.ok === false && failedNotes === 1, "D: note fails on a phone-only match -> 502 (posted once, not retried)");
+}
+fresh(); existing = "cExisting";
+setFetch((url, init) => (init.method === "POST" && /\/notes$/.test(url)) ? resp(500, {}) : undefined);
+try { r = await postLead(lead({})); } finally { g.fetch = realFetch; }
+ok(r.status === 200 && r.json.ok === true, "D: note fails on an email match -> success (fields stored)");
+
+// E: invalid email + phone -> phone path, typed email in the note; invalid email alone -> 400.
+fresh(); existingByPhone = "cExisting";
+r = await postLead(lead({ email: "not-an-email", phone: "(510) 555-0171" }));
+ok(r.status === 200 && r.json.ok === true && !calls.some((c) => c.url.includes("email=")) && calls.some((c) => c.url.includes("number=%2B15105550171")),
+  "E: invalid email + phone -> looked up by phone (E.164), never by the bad email");
+ok(!JSON.stringify(calls.filter((c) => !isNotePost(c)).map((c) => c.body ?? null)).includes("not-an-email")
+  && (notePosts()[0]?.body?.body ?? "").includes("not-an-email"), "E: the bad email is not written to any field, but is kept in the note");
+fresh();
+r = await postLead(lead({ email: "not-an-email" }));
+ok(r.status === 400 && calls.length === 0, "E: invalid email and no phone -> 400, nothing sent");
+fresh();
+r = await postLead(lead({ email: "new.e@example.invalid", phone: "12345" }));
+{
+  const c = calls.find(isCreate);
+  ok(r.status === 200 && !!c && !("phone" in (c.body ?? {})) && (notePosts()[0]?.body?.body ?? "").includes("12345"),
+    "an unusable phone is not sent; it is kept as typed in the note");
+}
+
+// G: missing env -> 503 generic, no env names.
+{
+  const pit = process.env.GHL_PIT;
+  delete process.env.GHL_PIT;
+  fresh();
+  try { r = await postLead(lead({})); } finally { process.env.GHL_PIT = pit; }
+  ok(r.status === 503 && r.json.ok === false && !JSON.stringify(r.json).includes("GHL_") && calls.length === 0, "G: missing env -> 503 \"CRM not configured\", no env names");
+}
+
+// H: body size, shape, key count, field caps, custom-field allowlist.
+const postRaw = async (raw: string) => {
+  const { POST } = await import("../app/api/lead/route");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- a plain Request stands in for NextRequest
+  const res = await POST(new Request(`${SITE}/api/lead`, { method: "POST", headers: { "content-type": "application/json", origin: SITE, host: new URL(SITE).host }, body: raw }) as any);
+  return { status: res.status, json: (await res.json()) as { ok?: boolean } };
+};
+fresh();
+r = await postRaw(JSON.stringify(lead({ form_message: "x".repeat(40 * 1024) })));
+ok(r.status === 413 && calls.length === 0, "H: body over 32 KB -> 413, nothing sent");
+r = await postRaw(JSON.stringify([lead({})]));
+ok(r.status === 400 && calls.length === 0, "H: an array body -> 400");
+r = await postRaw("\"just a string\"");
+ok(r.status === 400 && calls.length === 0, "H: a non-object body -> 400");
+r = await postRaw(JSON.stringify(lead(Object.fromEntries(Array.from({ length: 120 }, (_, i) => [`k${i}`, "v"])))));
+ok(r.status === 400 && calls.length === 0, "H: too many keys -> 400");
+r = await postRaw(JSON.stringify(lead({ first_name: "A".repeat(600) })));
+ok(r.status === 400 && calls.length === 0, "H: an over-long field -> 400");
+fresh();
+r = await postLead(lead({ lc_first_contacted_at: "x", rev_first_deal_value: "999", random_key: "y", how_did_you_hear: "z", smile_analysis_yes_count: 3 }));
+{
+  const f = cf(calls.find(isCreate)?.body);
+  ok(r.status === 200 && !("lc_first_contacted_at" in f) && !("rev_first_deal_value" in f) && !("random_key" in f) && !("how_did_you_hear" in f),
+    "H: keys outside the allowlist never become custom fields");
+  ok(f.smile_analysis_yes_count === "3" && f.form_message === "Hello, I would like a cleaning.", "H: allowlisted form keys still become custom fields");
+}
+
+// Phone normalisation on create and the phone lookup.
+fresh();
+r = await postLead(lead({ email: undefined, phone: "1 (510) 555-0180" }));
+ok(calls.some((c) => c.url.includes("number=%2B15105550180")) && calls.find(isCreate)?.body?.phone === "+15105550180",
+  "a typed US phone is looked up and stored as E.164");
+
+// Every HighLevel fetch carries a timeout signal.
+{
+  fresh(); existing = "cExisting";
+  const signals: boolean[] = [];
+  setFetch((_url, init) => { signals.push(!!(init as { signal?: unknown }).signal); return undefined; });
+  try { await postLead(lead({ phone: "+15105550181" })); } finally { g.fetch = realFetch; }
+  ok(signals.length > 3 && signals.every(Boolean), "every HighLevel fetch has a timeout signal");
 }
 
 // ── logging ──────────────────────────────────────────────────────────────
