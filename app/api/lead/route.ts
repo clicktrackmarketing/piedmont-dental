@@ -34,6 +34,10 @@
  *        when the typed name clearly differs. A phone-only match always gets
  *        the "Form submitted as" line.
  *      - Contact can't be read: no name, email or phone is sent.
+ *      - Phone-only match (no email; David, 2026-10-03, rule 8): NO contact
+ *        field is updated (no name fill, no form answers, no phone); only
+ *        empty visitor_id / ga_client_id are filled. The answers are in the
+ *        submission's note; tags are added as usual.
  *      - LOCKED first-touch attribution fields (visitor_source_first, UTMs,
  *        click IDs, etc.): NOT sent -> preserved, true first-touch record
  *      - WRITE_ONCE fields (SMS consent grant + timestamp + text): NOT sent
@@ -377,17 +381,20 @@ export async function POST(request: NextRequest) {
       // overwritten: only filled when the contact has them empty, and not
       // sent at all when the contact can't be read ──
       const existing = await getContactIdentity(contactId, PIT);
-      const identityFill = fillEmptyIdentity(body, existing);
+      // Phone-only match (the lead has no email): NO contact field is
+      // updated — no name fill, no latest-wins answers, no phone — only the
+      // fill-if-empty join keys (David, 2026-10-03, rule 8). The answers are
+      // in the submission's note below; tags are still added.
+      const phoneOnly = matchedBy === "phone";
+      const identityFill = phoneOnly ? {} : fillEmptyIdentity(body, existing);
       const nameMismatch = namesClearlyDiffer(body, existing);
       const phoneRule = phoneOnMatch(body.phone, existing);
-      const recentCustomFields = [
-        ...buildCustomFields(body, "update"),
-        // visitor_id / ga_client_id: only when the contact has none yet.
-        ...(await fillIfEmptyFields(buildCustomFields(body, "create"), contactId, PIT, LOCATION_ID)),
-      ];
+      // visitor_id / ga_client_id: only when the contact has none yet.
+      const joinKeyFill = await fillIfEmptyFields(buildCustomFields(body, "create"), contactId, PIT, LOCATION_ID);
+      const recentCustomFields = phoneOnly ? joinKeyFill : [...buildCustomFields(body, "update"), ...joinKeyFill];
       // form_last_submitted_at is server-authoritative (never trust client
       // clock) and always updates, so staff can see the most recent touch.
-      recentCustomFields.push({ key: "form_last_submitted_at", field_value: nowIso });
+      if (!phoneOnly) recentCustomFields.push({ key: "form_last_submitted_at", field_value: nowIso });
 
       const updatePayload: Record<string, unknown> = {
         customFields: recentCustomFields,
@@ -395,16 +402,16 @@ export async function POST(request: NextRequest) {
         ...identityFill,
         // Intentionally NO tags — handled by appendTags below
       };
-      if (phoneRule.fill) updatePayload.phone = phoneRule.fill;
+      if (phoneRule.fill && !phoneOnly) updatePayload.phone = phoneRule.fill;
 
-      const updateRes = await ghlFetch(
-        `/contacts/${contactId}`,
-        { method: "PUT", body: JSON.stringify(updatePayload) },
-        PIT
-      );
+      // A phone-only match with no join key to fill sends no PUT at all.
+      const updateRes =
+        recentCustomFields.length > 0 || Object.keys(updatePayload).length > 1
+          ? await ghlFetch(`/contacts/${contactId}`, { method: "PUT", body: JSON.stringify(updatePayload) }, PIT)
+          : null;
       let phoneConflict = false;
       let otherContactId: string | null = null;
-      if (!updateRes.ok) {
+      if (updateRes && !updateRes.ok) {
         const detail = await updateRes.text();
         // The contact was matched by email, but the submitted phone already
         // belongs to a DIFFERENT contact (e.g. two people in one household),

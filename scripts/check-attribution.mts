@@ -509,6 +509,30 @@ for (const [label, fail] of [
   ok(r.status === 200 && r.json.ok === true, `note POST ${label} -> the lead (already stored) still succeeds`);
 }
 
+// ── rule 8: a phone-only match updates NO contact field (David, 2026-10-03) ──
+const rule8 = async (label: string, setup: () => void, expectPut: boolean) => {
+  resetFieldIdCache();
+  calls.length = 0; existing = null; existingByPhone = "c_existing"; contactStatus = 200; defs = DEFS; defsStatus = 200;
+  contactFields = []; contactExtra = { firstName: "Robin", lastName: "Gale", phone: "+15105550160" };
+  setup();
+  r = await postLead(lead({ email: undefined, phone: "(510) 555-0160", first_name: "Someone", last_name: "Else", full_name: "Someone Else",
+    are_you_a_new_or_existing_patient: "New Patient", form_message: "Need a cleaning",
+    note: "Contact form submission — New Patient.\n\nMessage:\nNeed a cleaning", visitor_id: VID2, ga_client_id: "999.999" }));
+  existingByPhone = null; contactExtra = {};
+  const puts = calls.filter((c) => c.method === "PUT");
+  const extra = puts.flatMap((c) => Object.keys(c.body ?? {}).flatMap((k) => k === "customFields"
+    ? (c.body?.customFields ?? []).map((f) => f.key).filter((k2) => k2 !== "visitor_id" && k2 !== "ga_client_id") : [k]));
+  ok(r.json.ok === true && extra.length === 0, `rule 8 (${label}): no name/email/phone/form field in any PUT (got ${extra.join(", ") || "none"})`);
+  ok(expectPut ? puts.length === 1 : puts.length === 0, `rule 8 (${label}): ${expectPut ? "one PUT with the empty join keys only" : "no PUT at all"}`);
+  const notes = calls.filter(isNotePost).map((c) => c.body?.body ?? "");
+  ok(notes.length === 1 && notes[0].includes("Need a cleaning") && notes[0].includes("New Patient") && notes[0].split("\n").includes("Form submitted as: Someone Else"),
+    `rule 8 (${label}): the one note carries the answers and "Form submitted as"`);
+  const tags = calls.filter(isTags).flatMap((c) => c.body?.tags ?? []);
+  ok(tags.includes(BASELINE_TAG) && tags.includes("name-mismatch"), `rule 8 (${label}): tags added (website tag, name-mismatch)`);
+};
+await rule8("join keys empty", () => {}, true);
+await rule8("join keys already set", () => { contactFields = [{ id: "f_vid", value: VID }, { id: "f_ga", value: "1.1" }]; }, false);
+
 // ── a failed tag call does not fail a stored lead or drop its note ───────
 {
   resetFieldIdCache();

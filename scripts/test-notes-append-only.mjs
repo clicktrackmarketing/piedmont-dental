@@ -29,7 +29,10 @@
  *          must add one new note "Form submitted as: <typed name>" and the tag
  *          "website contact form submitted", and must add "name-mismatch" only
  *          when the typed name clearly differs (case, punctuation and spacing
- *          ignored). An email match never overwrites identity either; empty
+ *          ignored). A phone-only match updates NO contact field at all, not
+ *          even an empty name; only empty visitor_id / ga_client_id may be
+ *          filled (rule 8, David 2026-10-03). An email match never overwrites
+ *          identity either; empty
  *          name and phone are filled. An email match whose typed name clearly
  *          differs gets the line "Form submitted as: <typed name>" in its one
  *          note and the tag "name-mismatch"; a matching name gets neither
@@ -417,8 +420,24 @@ async function mockedSubmissions() {
   seed("c_email_named", { firstName: "Pat", lastName: "Owner", email: "pat.owner@example.invalid", phone: "+15555550105" });
 
   const phoneNotes = PHONE_MATCH_NOTES;
+  // Rule 8 (David, 2026-10-03): on a phone-only match the only contact write
+  // allowed is filling empty visitor_id / ga_client_id custom fields.
+  const JOIN_KEYS = new Set(["visitor_id", "ga_client_id"]);
+  const rule8Writes = (mine, id) =>
+    mine
+      .filter((c) => (c.method === "PUT" || c.method === "PATCH") && c.path.endsWith(`/contacts/${id}`))
+      .flatMap((c) =>
+        Object.keys(c.body ?? {}).flatMap((k) =>
+          k === "customFields"
+            ? (c.body.customFields ?? []).filter((f) => !JOIN_KEYS.has(f.key)).map((f) => `customFields.${f.key}`)
+            : [k]
+        )
+      );
   const checkPhoneMatch = (name, r, id, typed, expectMismatch) => {
     if (!r) return;
+    const w = rule8Writes(r.mine, id);
+    if (w.length) fail(`${name}: phone-only match updated contact fields (${w.join(", ")}); rule 8 forbids it`);
+    else pass(`${name}: no contact field updated (rule 8)`);
     if (creates(r.mine).length) fail(`${name}: created a new contact; a phone-only lead must match the existing one`);
     else pass(`${name}: matched the existing contact, no new contact`);
     const writes = identityWrites(r.mine, id);
@@ -451,11 +470,15 @@ async function mockedSubmissions() {
   r = await run("phone match, contact has no name", phoneLead("555-555-0103"), phoneNotes);
   if (r) {
     if (creates(r.mine).length) fail("phone match, contact has no name: created a new contact");
+    // Rule 8 (David, 2026-10-03): a phone-only match updates NO contact field,
+    // not even an empty name.
     const c = store.get("c_blank");
-    if (`${c.firstName} ${c.lastName}`.trim() !== "Mock Lead" && c.name !== "Mock Lead")
-      fail(`phone match, contact has no name: empty name not filled (now "${c.firstName} ${c.lastName}")`);
-    else pass("phone match, contact has no name: empty name filled");
+    if (c.firstName || c.lastName || c.name) fail(`phone match, contact has no name: name was filled (rule 8 forbids it)`);
+    else pass("phone match, contact has no name: name NOT filled (rule 8)");
     if (tagsSent(r.mine).includes(NAME_MISMATCH_TAG)) fail("phone match, contact has no name: name-mismatch applied to a blank name");
+    const w = rule8Writes(r.mine, "c_blank");
+    if (w.length) fail(`phone match, contact has no name: updated contact fields (${w.join(", ")})`);
+    if (!tagsSent(r.mine).includes(BASELINE_TAG)) fail(`phone match, contact has no name: tag "${BASELINE_TAG}" missing`);
   }
 
   r = await run("phone only, no match", phoneLead("+15555550199"), NOTES_PER_SUBMISSION);
