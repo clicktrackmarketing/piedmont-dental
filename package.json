@@ -13,7 +13,7 @@
     "bwt:submit": "node scripts/bwt-submit-urls.mjs",
     "test:ghl": "node scripts/test-ghl-lead.mjs",
     "test:attribution": "npx --yes tsx scripts/check-attribution.mts",
-    "test:notes": "node --experimental-strip-types --no-warnings scripts/test-notes-append-only.mjs --notes-per-submission 1 --phone-match-notes 2 --lead scripts/test-notes-lead.json"
+    "test:notes": "node --experimental-strip-types --no-warnings scripts/test-notes-append-only.mjs --notes-per-submission 1 --phone-match-notes 1 --lead scripts/test-notes-lead.json"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

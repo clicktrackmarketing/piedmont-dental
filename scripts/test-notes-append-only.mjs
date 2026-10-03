@@ -30,7 +30,10 @@
  *          "website contact form submitted", and must add "name-mismatch" only
  *          when the typed name clearly differs (case, punctuation and spacing
  *          ignored). An email match never overwrites identity either; empty
- *          name and phone are filled. `--skip-identity` skips 2b.
+ *          name and phone are filled. An email match whose typed name clearly
+ *          differs gets the line "Form submitted as: <typed name>" in its one
+ *          note and the tag "name-mismatch"; a matching name gets neither
+ *          (David, 2026-10-03). `--skip-identity` skips 2b.
  *
  * Nothing here can reach the real HighLevel: fetch is replaced before the route
  * is imported, and any call the fake does not recognise is answered locally.
@@ -475,12 +478,35 @@ async function mockedSubmissions() {
   r = await run(
     "email match, contact already named",
     emailLead({ email: "pat.owner@example.invalid", first_name: "Someone", last_name: "Else", full_name: "Someone Else" }),
-    NOTES_PER_SUBMISSION
+    // The mismatch line needs a note even on a site that writes no summary note.
+    Math.max(NOTES_PER_SUBMISSION, 1)
   );
   if (r) {
     const writes = identityWrites(r.mine, "c_email_named");
     if (writes.length) fail(`email match, contact already named: overwrote identity (${writes.join(", ")})`);
     else pass("email match, contact already named: name and email left as they were");
+    // Name mismatch on an email match too (David, 2026-10-03).
+    const want = "Form submitted as: Someone Else";
+    const onNamed = (c, what) => c.path.endsWith(`/contacts/c_email_named/${what}`);
+    if (!r.posts.some((c) => onNamed(c, "notes") && String(c.body?.body ?? "").includes(want)))
+      fail(`email match, different name: no note containing "${want}"`);
+    else pass(`email match, different name: note "${want}"`);
+    if (!tagsSent(r.mine.filter((c) => onNamed(c, "tags"))).includes(NAME_MISMATCH_TAG))
+      fail(`email match, different name: tag "${NAME_MISMATCH_TAG}" missing`);
+    else pass(`email match, different name: tag "${NAME_MISMATCH_TAG}"`);
+  }
+
+  r = await run(
+    "email match, same name",
+    emailLead({ email: "pat.owner@example.invalid", first_name: "PAT", last_name: "owner.", full_name: "PAT owner." }),
+    NOTES_PER_SUBMISSION
+  );
+  if (r) {
+    if (tagsSent(r.mine).includes(NAME_MISMATCH_TAG)) fail("email match, same name: name-mismatch applied");
+    else pass("email match, same name: no name-mismatch tag");
+    if (r.posts.some((c) => String(c.body?.body ?? "").includes("Form submitted as:")))
+      fail("email match, same name: a \"Form submitted as\" line was written");
+    else pass("email match, same name: no \"Form submitted as\" line");
   }
 }
 

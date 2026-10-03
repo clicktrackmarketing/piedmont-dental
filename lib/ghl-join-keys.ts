@@ -254,3 +254,124 @@ export async function addPhoneConflictNote(
     console.warn("GHL phone conflict note failed", { contactId });
   }
 }
+
+// ── Contact lookup (David, 2026-10-03) ────────────────────────────────
+
+/**
+ * A HighLevel contact lookup that could not give an answer. It is NOT "no
+ * contact": treating it as one would create a duplicate of a returning
+ * visitor. The route answers 502 and creates nothing. Carries only the HTTP
+ * status or error class, never a response body.
+ */
+export class GhlLookupError extends Error {
+  readonly reason: string;
+  constructor(reason: string) {
+    super(`GHL lookup failed (${reason})`);
+    this.name = "GhlLookupError";
+    this.reason = reason;
+  }
+}
+
+const LOOKUP_RETRY_DELAYS_MS = [250, 750];
+let sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
+
+/** Test hook: no real waiting in the offline tests. */
+export function setLookupSleep(fn: (ms: number) => Promise<void>): void {
+  sleep = fn;
+}
+
+/**
+ * GET /contacts/search/duplicate (a safe read, so it may be retried: up to 2
+ * retries with a short backoff on 429, 5xx or a network error).
+ *   200 with a contact → its id;  200 without one, or 404 → null (no match);
+ *   anything else, a bad body, or still failing after the retries → throws
+ *   GhlLookupError.
+ */
+export async function lookupDuplicate(
+  param: "email" | "number",
+  value: string,
+  pit: string,
+  locationId: string,
+): Promise<string | null> {
+  const url = `/contacts/search/duplicate?locationId=${encodeURIComponent(locationId)}&${param}=${encodeURIComponent(value)}`;
+  let reason = "unknown";
+  for (let attempt = 0; attempt <= LOOKUP_RETRY_DELAYS_MS.length; attempt++) {
+    if (attempt > 0) await sleep(LOOKUP_RETRY_DELAYS_MS[attempt - 1]);
+    let res: Response;
+    try {
+      res = await ghlRequest(url, { method: "GET" }, pit);
+    } catch (err) {
+      reason = err instanceof Error ? err.name : "network";
+      continue;
+    }
+    if (res.status === 404) return null;
+    if (res.status === 200) {
+      let json: unknown;
+      try {
+        json = await res.json();
+      } catch {
+        throw new GhlLookupError("bad-json");
+      }
+      if (!json || typeof json !== "object") throw new GhlLookupError("bad-json");
+      const id = (json as { contact?: { id?: unknown } | null }).contact?.id;
+      return typeof id === "string" && id ? id : null;
+    }
+    reason = `HTTP ${res.status}`;
+    if (res.status !== 429 && res.status < 500) break;
+  }
+  throw new GhlLookupError(reason);
+}
+
+// ── Phone on a matched contact (David, 2026-10-03) ────────────────────
+
+/**
+ * Phone digits for comparison: non-digits stripped, and an 11-digit number
+ * starting with 1 compared as its last 10 digits.
+ */
+export function phoneDigits(phone: unknown): string {
+  const d = String(phone ?? "").replace(/\D/g, "");
+  return d.length === 11 && d.startsWith("1") ? d.slice(1) : d;
+}
+
+/** Tag on a matched contact whose submitted phone differs from the one it has. */
+export const PHONE_MISMATCH_TAG = "phone-mismatch";
+
+/**
+ * A matched contact's existing phone is never overwritten.
+ *   - contact unreadable (null) → nothing is sent (never overwrite blind);
+ *   - contact has no phone → fill it with the submitted one;
+ *   - contact has a different phone → not sent; note line + phone-mismatch tag;
+ *   - same digits → nothing to do.
+ */
+export function phoneOnMatch(
+  submitted: unknown,
+  contact: { phone: string } | null,
+): { fill: string | null; mismatch: boolean } {
+  const typed = typeof submitted === "string" ? submitted.trim() : "";
+  if (!typed || !phoneDigits(typed) || !contact) return { fill: null, mismatch: false };
+  const have = phoneDigits(contact.phone);
+  if (!have) return { fill: typed, mismatch: false };
+  if (have === phoneDigits(typed)) return { fill: null, mismatch: false };
+  return { fill: null, mismatch: true };
+}
+
+// ── Tracking opt-out (David, 2026-10-03) ──────────────────────────────
+
+/** Join keys (and their aliases) never written for an opted-out visitor. */
+const OPT_OUT_KEYS = ["visitor_id", "ga_client_id", "ct_visitor_id", "ga_cid"];
+
+/**
+ * True when the visitor opted out of tracking: the browser said so
+ * (`tracking_opt_out: true`, from lib/attribution.ts isTrackingOptedOut) or
+ * the request carries Global Privacy Control (`Sec-GPC: 1`).
+ */
+export function trackingOptedOut(request: Request, body: Record<string, unknown>): boolean {
+  return body.tracking_opt_out === true || request.headers.get("sec-gpc") === "1";
+}
+
+/** A copy of `obj` without the visitor_id / ga_client_id join keys. */
+export function withoutJoinKeys<T extends Record<string, unknown>>(obj: T): T {
+  const rest: Record<string, unknown> = { ...obj };
+  for (const k of OPT_OUT_KEYS) delete rest[k];
+  return rest as T;
+}

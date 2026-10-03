@@ -8,10 +8,14 @@
  *    changed. Each is filled only when the contact has it empty. The name
  *    counts as one field: it is filled only when the contact has no name at
  *    all, so a typed name is never spliced onto someone else's.
- *  - On a phone-only match the route also adds ONE new note
- *    "Form submitted as: <submitted name>" (notes are append-only: POST only,
- *    never DELETE, PUT or PATCH), and the tag "name-mismatch" when the typed
- *    name clearly differs from the contact's.
+ *  - On a phone-only match the submission's one note carries the line
+ *    "Form submitted as: <submitted name>". On ANY match (email or phone)
+ *    where the typed name clearly differs from the contact's, that line is
+ *    added too, with the tag "name-mismatch" (David, 2026-10-03). Notes are
+ *    append-only: POST only, never DELETE, PUT or PATCH.
+ *  - The same read returns the contact's phone, which is never overwritten
+ *    either (lib/ghl-join-keys.ts phoneOnMatch). An unreadable contact gets
+ *    no name, email or phone written.
  *
  * Mirrors the launch-system lead API template (skills/peoplelytics-lead-api).
  * Field values and the token are never logged.
@@ -20,7 +24,7 @@
 const GHL_API = "https://services.leadconnectorhq.com";
 const API_VERSION = "2021-07-28";
 
-/** Tag on a phone-matched contact whose typed name clearly differs from its own. */
+/** Tag on a matched contact whose typed name clearly differs from its own. */
 export const NAME_MISMATCH_TAG = "name-mismatch";
 
 export interface ContactIdentity {
@@ -28,6 +32,7 @@ export interface ContactIdentity {
   lastName: string;
   name: string;
   email: string;
+  phone: string;
 }
 
 export interface SubmittedIdentity {
@@ -52,12 +57,12 @@ async function ghlRequest(path: string, init: RequestInit, pit: string): Promise
 
 const str = (v: unknown) => (typeof v === "string" ? v.trim() : "");
 
-/** The matched contact's identity fields, or null when it cannot be read. */
+/** The matched contact's identity fields and phone, or null when it cannot be read. */
 export async function getContactIdentity(contactId: string, pit: string): Promise<ContactIdentity | null> {
   try {
     const res = await ghlRequest(`/contacts/${encodeURIComponent(contactId)}`, { method: "GET" }, pit);
     if (!res.ok) {
-      console.warn("GHL contact read failed; identity not filled", { contactId, status: res.status });
+      console.warn("GHL contact read failed; name, email and phone not filled", { contactId, status: res.status });
       return null;
     }
     const c = ((await res.json()) as { contact?: Record<string, unknown> } | null)?.contact;
@@ -67,8 +72,10 @@ export async function getContactIdentity(contactId: string, pit: string): Promis
       lastName: str(c.lastName),
       name: str(c.name ?? c.contactName),
       email: str(c.email),
+      phone: str(c.phone),
     };
   } catch {
+    console.warn("GHL contact read failed; name, email and phone not filled", { contactId });
     return null;
   }
 }
@@ -134,22 +141,4 @@ export function submittedName(body: SubmittedIdentity): string {
     [str(body.first_name), str(body.last_name)].filter(Boolean).join(" ") ||
     "(no name given)"
   );
-}
-
-/**
- * Phone-only match: the contact's own name is never changed, so leave the team
- * the name the visitor typed. Always a NEW note (POST); notes are append-only.
- * Non-fatal: the lead is already stored, so a failure is only logged.
- */
-export async function addFormSubmittedAsNote(contactId: string, name: string, pit: string): Promise<void> {
-  try {
-    const res = await ghlRequest(
-      `/contacts/${encodeURIComponent(contactId)}/notes`,
-      { method: "POST", body: JSON.stringify({ body: `Form submitted as: ${name}` }) },
-      pit,
-    );
-    if (!res.ok) console.warn("GHL form-submitted-as note failed", { contactId, status: res.status });
-  } catch {
-    console.warn("GHL form-submitted-as note failed", { contactId });
-  }
 }

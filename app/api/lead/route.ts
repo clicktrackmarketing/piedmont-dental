@@ -10,21 +10,30 @@
  *   0. Spam screening (lib/spam-guard.ts): origin check, honeypot,
  *      time-to-submit, content heuristics. Honeypot/timing hits get a fake
  *      {ok:true} with no contactId and nothing is written.
- *   1. Parse + minimum-validate the incoming JSON.
+ *   1. Parse + minimum-validate the incoming JSON. A lead needs an email or a
+ *      phone (David, 2026-10-03: phone is optional on the server).
+ *      Tracking opt-out (tracking_opt_out: true from the browser, or the
+ *      Sec-GPC: 1 header): visitor_id and ga_client_id are dropped before
+ *      anything is written (David, 2026-10-03).
  *   2. Look up an existing contact by email (idempotency), or by phone when
- *      no email was submitted.
+ *      no email was submitted. A lookup that fails (not 200/404, 429/5xx
+ *      after 2 retries, network, bad JSON) is NOT "no match": 502, nothing
+ *      created (David, 2026-10-03).
  *   3. New contact  -> POST /contacts/ with the full payload (incl. locked
  *      first-touch fields).
  *   4. Existing contact:
- *      - Phone: SENT every time -> updated to the latest submission
- *        (Piedmont Dental wants "latest wins" here, not first-touch preserve —
- *        this deviates from the CTM-standard PRESERVE default on purpose)
+ *      - Phone (David, 2026-10-03): never overwritten. Filled only when the
+ *        contact has none; a different phone is not sent, the submission's
+ *        note gets "Form submitted with phone: <typed>" and the tag
+ *        "phone-mismatch". (This replaces the earlier latest-wins phone.)
  *      - Name and email (David, 2026-10-02, lib/ghl-identity.ts): never
  *        changed, only filled when empty on the contact. The name counts as
  *        one field: filled only when the contact has no name at all.
- *      - Phone-only match (no email submitted): one new note "Form submitted
- *        as: <name>" and the tag "name-mismatch" when the typed name clearly
- *        differs from the contact's.
+ *      - Name mismatch on any match (David, 2026-10-03): the submission's
+ *        note gets "Form submitted as: <name>" and the tag "name-mismatch"
+ *        when the typed name clearly differs. A phone-only match always gets
+ *        the "Form submitted as" line.
+ *      - Contact can't be read: no name, email or phone is sent.
  *      - LOCKED first-touch attribution fields (visitor_source_first, UTMs,
  *        click IDs, etc.): NOT sent -> preserved, true first-touch record
  *      - WRITE_ONCE fields (SMS consent grant + timestamp + text): NOT sent
@@ -41,8 +50,10 @@
  *        update is retried without it, tagged "phone-conflict" and noted.
  *      - Tags: APPENDED via the dedicated /tags endpoint (never replaces)
  *      - Notes are APPEND ONLY: each submission adds one new note with its
- *        details. Existing notes (including staff notes) are never edited
- *        or deleted. A phone conflict adds its own separate note.
+ *        details (plus the identity lines above). Existing notes (including
+ *        staff notes) are never edited or deleted. A phone conflict adds its
+ *        own separate note. Contact create and note create are never retried
+ *        after a 5xx/network error.
  *   5. Return { ok, contactId, created }.
  *
  * Required env vars (server-side only, set in .env.local AND the hosting
@@ -56,16 +67,21 @@
 import type { NextRequest } from "next/server";
 import { screenLead, SPAM_META_KEYS } from "@/lib/spam-guard";
 import {
+  GhlLookupError,
   PHONE_CONFLICT_TAG,
+  PHONE_MISMATCH_TAG,
   addPhoneConflictNote,
   duplicatePhoneContactId,
   fillIfEmptyFields,
   isCtVisitorId,
   isDuplicatePhoneRejection,
+  lookupDuplicate,
+  phoneOnMatch,
+  trackingOptedOut,
+  withoutJoinKeys,
 } from "@/lib/ghl-join-keys";
 import {
   NAME_MISMATCH_TAG,
-  addFormSubmittedAsNote,
   fillEmptyIdentity,
   getContactIdentity,
   namesClearlyDiffer,
@@ -156,8 +172,8 @@ const WRITE_ONCE_FIELD_KEYS = new Set<string>([
 // payload, not as customFields entries. Never treated as customFields
 // (STANDARD_FIELDS just excludes them from buildCustomFields); whether
 // they're actually sent on UPDATE is decided explicitly in the POST
-// handler below (phone: yes, latest wins; name/email: only when empty on
-// the contact, lib/ghl-identity.ts).
+// handler below (name/email/phone: only when empty on the contact,
+// lib/ghl-identity.ts and lib/ghl-join-keys.ts phoneOnMatch).
 const STANDARD_FIELDS = new Set<string>([
   "first_name",
   "last_name",
@@ -187,6 +203,7 @@ function buildCustomFields(body: LeadBody, mode: "create" | "update") {
     if (STANDARD_FIELDS.has(key)) continue;
     if (SPAM_META_KEYS.has(key)) continue; // honeypot / fill-time, never a GHL field
     if (key === "note") continue; // handled separately via the Notes API
+    if (key === "tracking_opt_out") continue; // a request flag, never a GHL field
     // visitor_id must be the Click Track V2 pixel's `_ct_vid` UUID.
     if (key === "visitor_id" && !isCtVisitorId(raw)) continue;
 
@@ -218,28 +235,6 @@ async function ghlFetch(path: string, init: RequestInit, pit: string) {
   });
 }
 
-async function findContactByEmail(
-  email: string,
-  pit: string,
-  locationId: string
-): Promise<string | null> {
-  const url = `/contacts/search/duplicate?locationId=${encodeURIComponent(locationId)}&email=${encodeURIComponent(email)}`;
-  const res = await ghlFetch(url, { method: "GET" }, pit);
-  if (res.status === 404) return null;
-  if (!res.ok) return null;
-  const json = (await res.json()) as { contact?: { id: string } };
-  return json.contact?.id || null;
-}
-
-/** Same lookup by phone, used only when there is no email match. */
-async function findContactByPhone(phone: string, pit: string, locationId: string): Promise<string | null> {
-  const url = `/contacts/search/duplicate?locationId=${encodeURIComponent(locationId)}&number=${encodeURIComponent(phone)}`;
-  const res = await ghlFetch(url, { method: "GET" }, pit);
-  if (!res.ok) return null;
-  const json = (await res.json()) as { contact?: { id: string } };
-  return json.contact?.id || null;
-}
-
 /**
  * Append tags to an existing contact via the dedicated /tags endpoint.
  * Idempotent. Critically, this does NOT replace existing tags — a PUT to
@@ -267,14 +262,20 @@ async function appendTags(contactId: string, tags: string[], pit: string) {
  */
 async function addSubmissionNote(contactId: string, body: string, pit: string) {
   if (!body) return;
-  const res = await ghlFetch(
-    `/contacts/${contactId}/notes`,
-    { method: "POST", body: JSON.stringify({ body }) },
-    pit
-  );
-  if (!res.ok) {
-    // Status only: the response body can echo the note, i.e. the lead's message.
-    console.error(`[lead] note post failed (HTTP ${res.status})`);
+  // Never retried: a note POST that failed or timed out may still have
+  // landed, and a retry would add a second copy (David, 2026-10-03).
+  try {
+    const res = await ghlFetch(
+      `/contacts/${contactId}/notes`,
+      { method: "POST", body: JSON.stringify({ body }) },
+      pit
+    );
+    if (!res.ok) {
+      // Status only: the response body can echo the note, i.e. the lead's message.
+      console.error(`[lead] note post failed (HTTP ${res.status})`);
+    }
+  } catch (err) {
+    console.error(`[lead] note post failed (${err instanceof Error ? err.name : "network"})`);
   }
 }
 
@@ -308,6 +309,10 @@ export async function POST(request: NextRequest) {
     return jsonError(400, "Invalid JSON body");
   }
 
+  // Opted-out visitor (tracking_opt_out from the browser, or Global Privacy
+  // Control): drop the join keys before anything can be written.
+  if (trackingOptedOut(request, body)) body = withoutJoinKeys(body);
+
   // Spam screening runs before anything touches GHL. Silent verdicts
   // return a success-shaped body (no contactId) so bots get no feedback.
   const verdict = screenLead(request, body);
@@ -320,9 +325,14 @@ export async function POST(request: NextRequest) {
     return Response.json({ ok: false, error: verdict.message }, { status: verdict.status });
   }
 
-  if (!body.email && !body.phone) {
+  // Phone is optional (David, 2026-10-03): a lead needs an email or a phone
+  // with digits. A phone that IS given still needs SMS consent (below).
+  const hasEmail = typeof body.email === "string" && body.email.trim() !== "";
+  const hasPhone = typeof body.phone === "string" && /\d/.test(body.phone);
+  if (!hasEmail && !hasPhone) {
     return jsonError(400, "email or phone is required");
   }
+  if (!hasEmail) delete body.email;
 
   // A2P 10DLC: every phone-collecting form on this site requires SMS
   // consent before submission is allowed client-side. Enforce it
@@ -342,27 +352,31 @@ export async function POST(request: NextRequest) {
     let contactId: string | null = null;
     let created = false;
 
+    // A failed lookup throws GhlLookupError (-> 502 below, nothing created):
+    // it is never treated as "no contact".
     let matchedBy: "email" | "phone" | null = null;
     if (body.email) {
-      contactId = await findContactByEmail(body.email, PIT, LOCATION_ID);
+      contactId = await lookupDuplicate("email", body.email, PIT, LOCATION_ID);
       if (contactId) matchedBy = "email";
     }
     // No email submitted: look the contact up by phone (`number`, as HighLevel
     // documents it). With an email, a phone match is never used: it may be
     // another person (a household), and their contact must not be overwritten.
     if (!contactId && !body.email && body.phone) {
-      contactId = await findContactByPhone(String(body.phone), PIT, LOCATION_ID);
+      contactId = await lookupDuplicate("number", String(body.phone), PIT, LOCATION_ID);
       if (contactId) matchedBy = "phone";
     }
 
     if (contactId) {
-      // ── EXISTING CONTACT — latest wins on phone/qualification, true
-      // first-touch attribution + SMS consent record still preserved. Name
-      // and email are never overwritten: only filled when the contact has
-      // them empty (David, 2026-10-02) ──
+      // ── EXISTING CONTACT — latest wins on qualification, true first-touch
+      // attribution + SMS consent record still preserved. Name, email
+      // (David, 2026-10-02) and phone (David, 2026-10-03) are never
+      // overwritten: only filled when the contact has them empty, and not
+      // sent at all when the contact can't be read ──
       const existing = await getContactIdentity(contactId, PIT);
       const identityFill = fillEmptyIdentity(body, existing);
-      const nameMismatch = matchedBy === "phone" && namesClearlyDiffer(body, existing);
+      const nameMismatch = namesClearlyDiffer(body, existing);
+      const phoneRule = phoneOnMatch(body.phone, existing);
       const recentCustomFields = [
         ...buildCustomFields(body, "update"),
         // visitor_id / ga_client_id: only when the contact has none yet.
@@ -378,7 +392,7 @@ export async function POST(request: NextRequest) {
         ...identityFill,
         // Intentionally NO tags — handled by appendTags below
       };
-      if (body.phone) updatePayload.phone = body.phone;
+      if (phoneRule.fill) updatePayload.phone = phoneRule.fill;
 
       const updateRes = await ghlFetch(
         `/contacts/${contactId}`,
@@ -394,7 +408,7 @@ export async function POST(request: NextRequest) {
         // and this location refuses duplicate phones. Store the lead anyway:
         // retry without the phone, then flag the conflict for the team.
         const retried =
-          body.phone && isDuplicatePhoneRejection(updateRes.status, detail)
+          "phone" in updatePayload && isDuplicatePhoneRejection(updateRes.status, detail)
             ? await ghlFetch(
                 `/contacts/${contactId}`,
                 { method: "PUT", body: JSON.stringify({ ...updatePayload, phone: undefined }) },
@@ -420,12 +434,22 @@ export async function POST(request: NextRequest) {
         ...(channelTag ? [channelTag] : []),
         ...(phoneConflict ? [PHONE_CONFLICT_TAG] : []),
         ...(nameMismatch ? [NAME_MISMATCH_TAG] : []),
+        ...(phoneRule.mismatch ? [PHONE_MISMATCH_TAG] : []),
         "website contact form submitted",
       ];
       await appendTags(contactId, tagsToAppend, PIT);
-      await addSubmissionNote(contactId, noteText, PIT);
-      // Phone-only match: one NEW note with the name the visitor typed.
-      if (matchedBy === "phone") await addFormSubmittedAsNote(contactId, submittedName(body), PIT);
+      // One note per submission: the identity lines go into it. A phone-only
+      // match always records the typed name; any match does when the name
+      // clearly differs.
+      const identityLines = [
+        matchedBy === "phone" || nameMismatch ? `Form submitted as: ${submittedName(body)}` : null,
+        phoneRule.mismatch ? `Form submitted with phone: ${String(body.phone).trim()}` : null,
+      ].filter(Boolean);
+      await addSubmissionNote(
+        contactId,
+        [identityLines.join("\n"), noteText].filter(Boolean).join("\n\n"),
+        PIT
+      );
       if (phoneConflict) {
         await addPhoneConflictNote(contactId, String(body.phone), otherContactId, PIT);
       }
@@ -509,6 +533,9 @@ export async function POST(request: NextRequest) {
 
     return Response.json({ ok: true, contactId, created, form_source: formSource });
   } catch (err) {
+    // A failed lookup is not "no contact": 502 (the form shows the call-us
+    // error) and nothing is created. Status / error class only.
+    if (err instanceof GhlLookupError) return jsonError(502, `GHL contact lookup failed (${err.reason})`);
     return jsonError(
       500,
       "Lead handler exception",

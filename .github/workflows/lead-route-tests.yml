@@ -3,11 +3,13 @@ name: Lead route tests
 # Offline checks of app/api/lead against a mocked HighLevel (no token, no
 # network calls to HighLevel):
 #   - notes are append-only: no DELETE, PUT or PATCH to a notes endpoint;
-#   - a matched contact's name and email are never overwritten, only filled
-#     when empty; a phone-only match adds one "Form submitted as" note, the
-#     website tag, and "name-mismatch" only when the names differ
-#     (David, 2026-10-02);
-#   - the lead join keys (visitor_id, ga_client_id, gbraid/wbraid).
+#   - a matched contact's name, email and phone are never overwritten, only
+#     filled when empty; a phone-only match puts "Form submitted as" in the
+#     submission's note, and any match adds it with "name-mismatch" when the
+#     names differ; a different phone adds "Form submitted with phone" and
+#     "phone-mismatch" (David, 2026-10-02 and 2026-10-03);
+#   - the lead join keys (visitor_id, ga_client_id, gbraid/wbraid), tracking
+#     opt-out, lookup failures (502, nothing created), no retried creates.
 
 on:
   pull_request:

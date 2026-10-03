@@ -371,7 +371,8 @@ export function captureAttribution() {
     updated.first_visit_at_iso = now;
     // Locked with the rest of first touch: the _ga cookie can be cleared or
     // regenerated, and a value that changes is not a join key.
-    updated.ga_client_id = readGaClientId();
+    // Not read at all for an opted-out visitor (isTrackingOptedOut).
+    updated.ga_client_id = isTrackingOptedOut() ? undefined : readGaClientId();
   }
 
   // RECENT TOUCH — update visitor_source_recent + last_* fields each external visit
@@ -498,8 +499,72 @@ export function attributionForDataLayer(data: AttributionData): AttributionData 
   return out;
 }
 
+function readCookie(name: string): string | undefined {
+  try {
+    const raw = document.cookie
+      .split("; ")
+      .find((c) => c.startsWith(`${name}=`))
+      ?.slice(name.length + 1);
+    return raw === undefined ? undefined : decodeURIComponent(raw);
+  } catch {
+    return undefined;
+  }
+}
+
+type ConsentGlobals = {
+  google_tag_data?: { ics?: { entries?: { analytics_storage?: { default?: unknown; update?: unknown } } } };
+  CT_CONFIG?: { consent?: unknown };
+};
+
+/**
+ * True when the visitor has opted out of tracking (David, 2026-10-03). Then
+ * the lead forms send no ga_client_id / visitor_id (and _ga / _ct_vid are not
+ * read for them) and send `tracking_opt_out: true`; the lead still goes
+ * through. Opted out means ANY of:
+ *   - Global Privacy Control (navigator.globalPrivacyControl === true), which
+ *     wins over any other signal;
+ *   - the CTM consent cookie `ctm_track=0` (read by ct.v2.js);
+ *   - Google Consent Mode analytics_storage denied (ct.v2.js's own check);
+ *   - window.CT_CONFIG.consent (value or function) false / "denied".
+ * This site has no cookie banner or Do Not Sell flag of its own. ct.v2.js has
+ * no consent getter (window.CT.consent is a setter), so the signals are
+ * checked here. A signal that can't be read counts as not opted out.
+ */
+export function isTrackingOptedOut(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    if ((navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl === true) return true;
+  } catch {
+    // ignore
+  }
+  if (typeof document !== "undefined" && readCookie("ctm_track") === "0") return true;
+  const w = window as unknown as ConsentGlobals;
+  try {
+    const e = w.google_tag_data?.ics?.entries?.analytics_storage;
+    if (e && (e.update !== undefined ? e.update : e.default) === false) return true;
+  } catch {
+    // ignore
+  }
+  try {
+    const c = w.CT_CONFIG?.consent;
+    const v = typeof c === "function" ? (c as () => unknown)() : c;
+    if (v === false || v === "denied") return true;
+  } catch {
+    // ignore
+  }
+  return false;
+}
+
 export function getAttributionData(): AttributionData {
   let stored = getStored();
+  if (isTrackingOptedOut()) {
+    // Opted out: no join keys, and _ga / _ct_vid are not read for them. A
+    // ga_client_id captured before the opt-out is not sent either.
+    const rest: AttributionData = { ...stored };
+    delete rest.visitor_id;
+    delete rest.ga_client_id;
+    return rest;
+  }
   // The first-touch read in captureAttribution runs on the first page load,
   // usually before GA4 (loaded through GTM) has set the _ga cookie, so it is
   // often empty. Fill it at submit time when it is missing; a value already

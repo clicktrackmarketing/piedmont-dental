@@ -62,7 +62,7 @@ const VID = "3f2a9c1e-8b4d-4e7a-9c2f-1a2b3c4d5e6f";
 const VID2 = "aaaaaaaa-bbbb-4ccc-8ddd-eeeeeeeeeeee";
 const pixel = (fields: Array<{ key: string; field_value: unknown }>) => ({ ghlCustomFields: () => fields });
 
-const { getAttributionData, attributionForDataLayer, captureAttribution } = await import("../lib/attribution");
+const { getAttributionData, attributionForDataLayer, captureAttribution, isTrackingOptedOut } = await import("../lib/attribution");
 
 // ── client: gbraid / wbraid at first touch ───────────────────────────────
 g.window.location.href = `${SITE}/?gbraid=CTMTEST_GB&utm_source=google&utm_medium=cpc`;
@@ -127,6 +127,51 @@ ok(a.ga_client_id === "111.222", "ga_client_id is filled at submit when missing"
 g.document.cookie = `_ga=GA1.1.333.444`;
 ok(getAttributionData().ga_client_id === "111.222", "a ga_client_id already captured is kept");
 
+// ── client: tracking opt-out (David, 2026-10-03) ─────────────────────────
+// Opted out → no visitor_id / ga_client_id (even one captured earlier), and
+// _ga / _ct_vid are not read for them.
+// Node has its own read-only navigator; replace it for the GPC cases.
+const setGpc = (on: boolean) =>
+  Object.defineProperty(globalThis, "navigator", { value: { globalPrivacyControl: on }, configurable: true, writable: true });
+setGpc(false);
+store.set("_ct_vid", VID);
+g.document.cookie = `_ga=GA1.1.333.444; _ct_vid=${VID}`;
+ok(!isTrackingOptedOut(), "no opt-out signal -> not opted out");
+const optOutCases: Array<[string, () => void, () => void]> = [
+  ["GPC", () => setGpc(true), () => setGpc(false)],
+  ["ctm_track=0", () => { g.document.cookie = `_ga=GA1.1.333.444; ctm_track=0`; }, () => { g.document.cookie = `_ga=GA1.1.333.444`; }],
+  ["Consent Mode analytics_storage denied (update)", () => { g.window.google_tag_data = { ics: { entries: { analytics_storage: { default: true, update: false } } } }; }, () => { delete g.window.google_tag_data; }],
+  ["Consent Mode analytics_storage denied (default)", () => { g.window.google_tag_data = { ics: { entries: { analytics_storage: { default: false } } } }; }, () => { delete g.window.google_tag_data; }],
+  ["CT_CONFIG.consent = \"denied\"", () => { g.window.CT_CONFIG = { consent: "denied" }; }, () => { delete g.window.CT_CONFIG; }],
+  ["CT_CONFIG.consent() = false", () => { g.window.CT_CONFIG = { consent: () => false }; }, () => { delete g.window.CT_CONFIG; }],
+];
+for (const [label, on, off] of optOutCases) {
+  on();
+  const d = getAttributionData();
+  ok(isTrackingOptedOut() && !("visitor_id" in d) && !("ga_client_id" in d), `opted out (${label}) -> no visitor_id, no ga_client_id`);
+  off();
+}
+g.window.google_tag_data = { ics: { entries: { analytics_storage: { default: false, update: true } } } };
+setGpc(true);
+ok(isTrackingOptedOut(), "GPC wins even when Consent Mode grants");
+setGpc(false);
+ok(!isTrackingOptedOut(), "Consent Mode granted by update -> not opted out");
+delete g.window.google_tag_data;
+{
+  // First touch while opted out: the _ga cookie is not read into the record.
+  const saved = store.get(STORAGE_KEY);
+  store.delete(STORAGE_KEY);
+  setGpc(true);
+  g.window.location.href = `${SITE}/?utm_source=google&utm_medium=cpc`;
+  captureAttribution();
+  setGpc(false);
+  ok(!JSON.parse(store.get(STORAGE_KEY) ?? "{}").ga_client_id, "first touch while opted out: ga_client_id is not captured");
+  g.window.location.href = `${SITE}/contact`;
+  if (saved) store.set(STORAGE_KEY, saved);
+}
+store.delete("_ct_vid");
+g.document.cookie = `_ga=GA1.1.333.444`;
+
 // ── client: dataLayer copy ───────────────────────────────────────────────
 const dl = attributionForDataLayer({ ...a, visitor_id: VID });
 ok(!("visitor_id" in dl), "dataLayer copy has no visitor_id");
@@ -135,7 +180,8 @@ ok(dl.ga_client_id === "111.222" && dl.visitor_source_first === "Direct", "dataL
 // ── server: mocked HighLevel ─────────────────────────────────────────────
 process.env.GHL_PIT = "test-pit";
 process.env.GHL_LOCATION_ID = "loc_test";
-const { resetFieldIdCache } = await import("../lib/ghl-join-keys");
+const { resetFieldIdCache, setLookupSleep } = await import("../lib/ghl-join-keys");
+setLookupSleep(async () => {});
 let existing: string | null = null;
 let existingByPhone: string | null = null;
 let defsStatus = 200;
@@ -143,6 +189,8 @@ let defs: Array<{ id: string; fieldKey: string }> = [];
 let defsMalformed = false;
 let contactStatus = 200;
 let contactFields: Array<{ id: string; value: unknown }> | undefined;
+/** Standard fields of the matched contact (phone, name, email) as GET /contacts/{id} returns them. */
+let contactExtra: Record<string, unknown> = {};
 let putFails: Array<{ status: number; json: unknown }> = [];
 let createFails: Array<{ status: number; json: unknown }> = [];
 type Body = { customFields?: Array<{ key: string; field_value: unknown }>; tags?: string[]; phone?: string; body?: string };
@@ -164,7 +212,7 @@ g.fetch = async (url: string, init: { method?: string; body?: string } = {}) => 
   }
   if (method === "GET" && url.includes("/customFields")) return res(defsStatus, defsMalformed ? { unexpected: true } : { customFields: defs });
   if (method === "GET" && /\/contacts\/[^/?]+$/.test(url)) {
-    return res(contactStatus, { contact: { id: existing, ...(contactFields ? { customFields: contactFields } : {}) } });
+    return res(contactStatus, { contact: { id: existing, ...contactExtra, ...(contactFields ? { customFields: contactFields } : {}) } });
   }
   if (method === "PUT" && putFails.length) {
     const f = putFails.shift()!;
@@ -205,7 +253,7 @@ const isRead = (c: { method: string; url: string }) => c.method === "GET" && /\/
 const returning = async (setup: () => void, extra: Record<string, unknown> = {}) => {
   resetFieldIdCache();
   calls.length = 0; existing = "c_existing";
-  defsStatus = 200; defs = DEFS; contactStatus = 200; contactFields = []; putFails = [];
+  defsStatus = 200; defs = DEFS; contactStatus = 200; contactFields = []; putFails = []; contactExtra = {};
   setup();
   const result = await postLead(lead({ visitor_id: VID2, ga_client_id: "999.999", ...extra }));
   const puts = calls.filter((c) => c.method === "PUT");
@@ -323,6 +371,143 @@ await postLead(lead({ visitor_id: VID }));
 await postLead(lead({ visitor_id: VID }));
 ok(submissionNotePosts() === 2 && noteCalls().every((c) => c.method === "POST"), "two submissions -> two appended notes, nothing deleted");
 // The mock answers DELETE/PUT on notes too, so a regression would be caught above.
+
+// ── phone optional (David, 2026-10-03) ───────────────────────────────────
+resetFieldIdCache();
+calls.length = 0; existing = null; existingByPhone = null;
+r = await postLead(lead({ email: "email.only@example.invalid" }));
+create = calls.find(isCreate);
+ok(r.status === 200 && r.json.ok === true && !!create && !create.body?.phone, "email-only lead (no phone) is accepted and created without a phone");
+calls.length = 0;
+r = await postLead(lead({ email: "", phone: "" }));
+ok(r.status === 400 && calls.length === 0, "neither email nor phone -> 400, nothing sent to HighLevel");
+calls.length = 0;
+r = await postLead(lead({ email: undefined, phone: "call me" }));
+ok(r.status === 400 && calls.length === 0, "a phone with no digits and no email -> 400");
+
+// ── a matched contact's phone is never overwritten (David, 2026-10-03) ───
+const notesText = () => calls.filter(isNotePost).map((c) => c.body?.body ?? "").join("\n---\n");
+u = await returning(() => { contactExtra = { firstName: "Sim", lastName: "Test", phone: "+15105550100" }; }, { phone: "(510) 555-0199" });
+ok(u.result.json.ok === true && u.puts.every((c) => !("phone" in (c.body ?? {}))), "contact has a different phone -> no phone in the PUT");
+ok(u.tags.includes("phone-mismatch"), "contact has a different phone -> tag phone-mismatch");
+ok(calls.filter(isNotePost).length === 1 && notesText().split("\n").includes("Form submitted with phone: (510) 555-0199"),
+  "contact has a different phone -> the one note carries \"Form submitted with phone: (510) 555-0199\" as typed");
+ok(!u.tags.includes("name-mismatch") && !notesText().includes("Form submitted as:"), "same name -> no name-mismatch line or tag");
+
+u = await returning(() => { contactExtra = { firstName: "Sim", lastName: "Test", phone: "+15105550100" }; }, { phone: "1 (510) 555-0100" });
+ok(u.puts.every((c) => !("phone" in (c.body ?? {}))) && !u.tags.includes("phone-mismatch") && !notesText().includes("Form submitted with phone"),
+  "same digits (11-digit with a leading 1) -> nothing sent, no tag, no line");
+
+u = await returning(() => { contactExtra = { firstName: "Sim", lastName: "Test" }; }, { phone: "+15105550101" });
+ok(u.puts[0]?.body?.phone === "+15105550101" && !u.tags.includes("phone-mismatch"), "contact has no phone -> the submitted phone fills it");
+
+u = await returning(() => { contactStatus = 500; }, { phone: "+15105550102", first_name: "Other", last_name: "Person", email: "sim@example.invalid" });
+ok(u.puts.every((c) => !["phone", "firstName", "lastName", "name", "email"].some((k) => k in (c.body ?? {}))),
+  "contact can't be read -> no name, email or phone in the PUT (never overwrite blind)");
+
+// ── name mismatch on an EMAIL match (David, 2026-10-03) ──────────────────
+u = await returning(() => { contactExtra = { firstName: "Pat", lastName: "Owner", email: "sim@example.invalid" }; });
+ok(u.tags.includes("name-mismatch"), "email match, different name -> tag name-mismatch");
+ok(calls.filter(isNotePost).length === 1 && notesText().split("\n").includes("Form submitted as: Sim Test"),
+  "email match, different name -> the one note carries \"Form submitted as: Sim Test\"");
+ok(u.puts.every((c) => !["firstName", "lastName", "name", "email"].some((k) => k in (c.body ?? {}))), "email match, different name -> name and email unchanged");
+u = await returning(() => { contactExtra = { firstName: "SIM", lastName: "test.", email: "sim@example.invalid" }; });
+ok(!u.tags.includes("name-mismatch") && !notesText().includes("Form submitted as:"), "email match, same name in another case -> nothing");
+
+// ── tracking opt-out on the server (David, 2026-10-03) ───────────────────
+const postWith = async (body: Record<string, unknown>, headers: Record<string, string>) => {
+  const { POST } = await import("../app/api/lead/route");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- a plain Request stands in for NextRequest
+  const res = await POST(new Request(`${SITE}/api/lead`, {
+    method: "POST",
+    headers: { "content-type": "application/json", origin: SITE, host: new URL(SITE).host, ...headers },
+    body: JSON.stringify(body),
+  }) as any);
+  return { status: res.status, json: (await res.json()) as { ok?: boolean; contactId?: string } };
+};
+for (const [label, extra, headers] of [
+  ["tracking_opt_out: true", { tracking_opt_out: true }, {}],
+  ["Sec-GPC: 1", {}, { "sec-gpc": "1" }],
+] as Array<[string, Record<string, unknown>, Record<string, string>]>) {
+  resetFieldIdCache();
+  calls.length = 0; existing = null;
+  r = await postWith(lead({ visitor_id: VID, ga_client_id: "111.222", gclid_captured: "gc-1", ...extra }), headers);
+  const sent = JSON.stringify(calls.map((c) => c.body ?? null));
+  create = calls.find(isCreate);
+  ok(r.status === 200 && r.json.ok === true && !!create, `opt-out (${label}): the lead is still created`);
+  ok(!sent.includes(VID) && !sent.includes("111.222") && !sent.includes("visitor_id") && !sent.includes("ga_client_id"),
+    `opt-out (${label}): no visitor_id / ga_client_id anywhere (create, fields, note)`);
+  ok(cf(create?.body).gclid_captured === "gc-1" && !("tracking_opt_out" in cf(create?.body)),
+    `opt-out (${label}): click ids as before; the flag itself is not a field`);
+  resetFieldIdCache();
+  calls.length = 0; existing = "c_existing"; contactFields = []; defs = DEFS; defsStatus = 200; contactStatus = 200; contactExtra = {};
+  r = await postWith(lead({ visitor_id: VID, ga_client_id: "111.222", ...extra }), headers);
+  const putSent = JSON.stringify(calls.filter((c) => c.method === "PUT").map((c) => c.body));
+  ok(r.json.ok === true && !putSent.includes(VID) && !putSent.includes("ga_client_id"), `opt-out (${label}), returning contact: join keys not filled`);
+}
+
+// ── lookup failure is not "no match" (David, 2026-10-03) ─────────────────
+const realFetch = g.fetch;
+const resp = (status: number, json: unknown) => ({ ok: status < 300, status, json: async () => json, text: async () => "" });
+const lookupFailing = async (label: string, fail: () => unknown, body = lead({})) => {
+  calls.length = 0; existing = null; existingByPhone = null;
+  let lookups = 0;
+  g.fetch = async (url: string, init: { method?: string; body?: string } = {}) => {
+    if (url.includes("/contacts/search/duplicate")) {
+      lookups++;
+      calls.push({ method: "GET", url });
+      return fail();
+    }
+    return realFetch(url, init);
+  };
+  try { r = await postLead(body); } finally { g.fetch = realFetch; }
+  ok(r.status === 502 && r.json.ok === false, `lookup ${label} -> 502 (got ${r.status})`);
+  // Only reads happened: no create, update, tag or note.
+  ok(calls.every((c) => c.method === "GET"), `lookup ${label} -> nothing created or written`);
+  return lookups;
+};
+ok((await lookupFailing("500", () => resp(500, {}))) === 3, "a 500 lookup is retried twice (GET is safe), then fails");
+ok((await lookupFailing("429", () => resp(429, {}))) === 3, "a 429 lookup is retried twice, then fails");
+await lookupFailing("network error", () => { throw new TypeError("fetch failed"); });
+ok((await lookupFailing("401", () => resp(401, {}))) === 1, "a 401 lookup is not retried and fails");
+await lookupFailing("bad JSON", () => ({ ok: true, status: 200, json: async () => { throw new SyntaxError("bad"); }, text: async () => "" }));
+await lookupFailing("phone-only 500", () => resp(500, {}), lead({ email: undefined, phone: "+15105550103" }));
+{
+  calls.length = 0; existing = null;
+  let n = 0;
+  g.fetch = async (url: string, init: { method?: string; body?: string } = {}) => {
+    if (url.includes("/contacts/search/duplicate") && n++ === 0) return resp(503, {});
+    return realFetch(url, init);
+  };
+  try { r = await postLead(lead({})); } finally { g.fetch = realFetch; }
+  ok(r.status === 200 && calls.filter(isCreate).length === 1, "a lookup that recovers on retry -> the lead is stored once");
+}
+
+// ── non-idempotent POSTs are never retried (David, 2026-10-03) ───────────
+for (const [label, fail] of [
+  ["500", () => resp(500, {})],
+  ["network error", () => { throw new TypeError("fetch failed"); }],
+] as Array<[string, () => unknown]>) {
+  calls.length = 0; existing = null;
+  let creates = 0;
+  g.fetch = async (url: string, init: { method?: string; body?: string } = {}) => {
+    if ((init.method || "GET") === "POST" && /\/contacts\/?$/.test(url)) { creates++; return fail(); }
+    return realFetch(url, init);
+  };
+  try { r = await postLead(lead({})); } finally { g.fetch = realFetch; }
+  ok(r.status >= 500 && r.json.ok === false, `create ${label} -> error answered (got ${r.status})`);
+  ok(creates === 1, `create ${label} -> exactly one create attempt, no blind retry`);
+
+  calls.length = 0; existing = null;
+  let notes = 0;
+  g.fetch = async (url: string, init: { method?: string; body?: string } = {}) => {
+    if ((init.method || "GET") === "POST" && /\/notes$/.test(url)) { notes++; return fail(); }
+    return realFetch(url, init);
+  };
+  try { r = await postLead(lead({})); } finally { g.fetch = realFetch; }
+  ok(notes === 1, `note POST ${label} -> posted once, never retried`);
+  ok(r.status === 200 && r.json.ok === true, `note POST ${label} -> the lead (already stored) still succeeds`);
+}
 
 // ── logging ──────────────────────────────────────────────────────────────
 const logs: unknown[] = [];
