@@ -509,6 +509,21 @@ for (const [label, fail] of [
   ok(r.status === 200 && r.json.ok === true, `note POST ${label} -> the lead (already stored) still succeeds`);
 }
 
+// ── a failed tag call does not fail a stored lead or drop its note ───────
+{
+  resetFieldIdCache();
+  calls.length = 0; existing = "c_existing"; contactStatus = 200; contactFields = []; defs = DEFS; defsStatus = 200;
+  contactExtra = { firstName: "Pat", lastName: "Owner", email: "sim@example.invalid" };
+  g.fetch = async (url: string, init: { method?: string; body?: string } = {}) => {
+    if ((init.method || "GET") === "POST" && /\/tags$/.test(url)) return resp(500, {});
+    return realFetch(url, init);
+  };
+  try { r = await postLead(lead({})); } finally { g.fetch = realFetch; contactExtra = {}; }
+  ok(r.status === 200 && r.json.ok === true, "tag POST 500 -> the stored lead still succeeds");
+  ok(calls.filter(isNotePost).some((c) => (c.body?.body ?? "").includes("Form submitted as: Sim Test")),
+    "tag POST 500 -> the submission's note (with its identity line) is still posted");
+}
+
 // ── logging ──────────────────────────────────────────────────────────────
 const logs: unknown[] = [];
 const origWarn = console.warn, origError = console.error, origLog = console.log;

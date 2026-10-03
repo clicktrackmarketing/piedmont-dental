@@ -242,14 +242,17 @@ async function ghlFetch(path: string, init: RequestInit, pit: string) {
  */
 async function appendTags(contactId: string, tags: string[], pit: string) {
   if (tags.length === 0) return;
-  const res = await ghlFetch(
-    `/contacts/${contactId}/tags`,
-    { method: "POST", body: JSON.stringify({ tags }) },
-    pit
-  );
-  if (!res.ok) {
-    const detail = await res.text();
-    throw new Error(`Tag append failed (HTTP ${res.status}): ${detail}`);
+  // Non-fatal: the contact is already stored, so a failed tag call is logged
+  // (status / error class only) and the submission's note still goes out.
+  try {
+    const res = await ghlFetch(
+      `/contacts/${contactId}/tags`,
+      { method: "POST", body: JSON.stringify({ tags }) },
+      pit
+    );
+    if (!res.ok) console.error(`[lead] tag append failed (HTTP ${res.status})`);
+  } catch (err) {
+    console.error(`[lead] tag append failed (${err instanceof Error ? err.name : "network"})`);
   }
 }
 
