@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { attributionForDataLayer, getAttributionData } from "@/lib/attribution";
+import { attributionForDataLayer, getAttributionData, isTrackingOptedOut } from "@/lib/attribution";
+import { BUSINESS_PHONE_DISPLAY, BUSINESS_PHONE_TEL } from "@/lib/contact-info";
 import SmsConsent, { SMS_CONSENT_TEXT } from "@/components/SmsConsent";
 import HoneypotField from "@/components/HoneypotField";
 import { FILL_MS_FIELD, HONEYPOT_FIELD } from "@/lib/spam-guard-fields";
@@ -91,6 +92,8 @@ export default function SmileAnalysisForm() {
 
     const nowIso = new Date().toISOString();
     const attribution = getAttributionData();
+    // Opted-out visitors send no join keys (lib/attribution.ts).
+    const trackingOptOut = isTrackingOptedOut();
 
     const payload = {
       [HONEYPOT_FIELD]: honeypot,
@@ -113,6 +116,7 @@ export default function SmileAnalysisForm() {
       form_consent_sms_text: SMS_CONSENT_TEXT,
       note: `Smile Analysis quiz — ${yesCount}/${QUESTIONS.length} yes answers.\n\n${formattedAnswers}`,
       ...attribution,
+      ...(trackingOptOut ? { tracking_opt_out: true } : {}),
     };
 
     try {
@@ -121,12 +125,14 @@ export default function SmileAnalysisForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      const json = await res.json();
+      const json = await res.json().catch(() => ({}));
       if (!res.ok || !json.ok) {
         console.error("[smile analysis] submission failed", json);
+        // A fixable problem (4xx) shows the server's message; a server
+        // failure shows the generic one. Both get the phone link below.
         setErrorMessage(
-          json?.error ||
-            "Something went wrong sending your analysis. Please call us at (510) 350-3937 or try again."
+          (res.status < 500 && json?.error) ||
+            "Something went wrong sending your analysis. Please try again."
         );
         setSubmitting(false);
         return;
@@ -149,9 +155,7 @@ export default function SmileAnalysisForm() {
       setSubmitting(false);
     } catch (err) {
       console.error("[smile analysis] network error", err);
-      setErrorMessage(
-        "Something went wrong sending your analysis. Please call us at (510) 350-3937 or try again."
-      );
+      setErrorMessage("Something went wrong sending your analysis. Please try again.");
       setSubmitting(false);
     }
   }
@@ -351,7 +355,7 @@ export default function SmileAnalysisForm() {
 
         {errorMessage && (
           <p className="form-error" role="alert">
-            {errorMessage}
+            {errorMessage} Or call us at <a href={BUSINESS_PHONE_TEL}>{BUSINESS_PHONE_DISPLAY}</a>.
           </p>
         )}
 

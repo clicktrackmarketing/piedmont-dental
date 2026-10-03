@@ -6,7 +6,9 @@
  *  - visitor_id validation: only the Click Track V2 pixel's `_ct_vid` UUID.
  *  - Fill-if-empty: visitor_id and ga_client_id on a returning contact.
  *  - Duplicate phone: recognising HighLevel's duplicate-phone rejection, and
- *    the note left for the team when the phone is held back.
+ *    the line the submission's one note gets when the phone is held back.
+ *  - Contact ids (validated before they go in a URL), phone normalisation
+ *    (E.164) and the request timeout shared by every HighLevel call.
  *
  * Kept out of route.ts because a Next.js route file may only export route
  * handlers, and the field-id cache needs a test hook.
@@ -19,9 +21,13 @@ const API_VERSION = "2021-07-28";
 
 export type CustomField = { key: string; field_value: string | boolean | string[] };
 
+/** Every HighLevel call gives up after this long (a hung call must not hang the form). */
+export const GHL_TIMEOUT_MS = 10_000;
+
 async function ghlRequest(path: string, init: RequestInit, pit: string): Promise<Response> {
   return fetch(`${GHL_API}${path}`, {
     ...init,
+    signal: AbortSignal.timeout(GHL_TIMEOUT_MS),
     headers: {
       Authorization: `Bearer ${pit}`,
       Version: API_VERSION,
@@ -30,6 +36,41 @@ async function ghlRequest(path: string, init: RequestInit, pit: string): Promise
       ...(init.headers || {}),
     },
   });
+}
+
+// ── Contact ids ───────────────────────────────────────────────────────
+
+const CONTACT_ID_RE = /^[A-Za-z0-9]{1,64}$/;
+
+/**
+ * A HighLevel contact id we are willing to put in a URL. Anything else (from a
+ * lookup, a create, a duplicate-rejection body or the browser) is refused, so
+ * no value can steer a request to another path (SSRF / path injection).
+ */
+export function isValidContactId(v: unknown): v is string {
+  return typeof v === "string" && CONTACT_ID_RE.test(v);
+}
+
+// ── Phone normalisation ───────────────────────────────────────────────
+
+/**
+ * The typed phone as E.164, or null when it is not a usable number:
+ *   - US: 10 digits, or 11 starting with 1 → +1XXXXXXXXXX;
+ *   - an explicit international number (+ then 8–15 digits) → kept as +digits.
+ * An unusable phone is never sent to HighLevel (it stays, as typed, in the note)
+ * and does not count as a phone for matching.
+ */
+export function normalizePhone(raw: unknown): string | null {
+  if (typeof raw !== "string") return null;
+  const typed = raw.trim();
+  if (!typed) return null;
+  const digits = typed.replace(/\D/g, "");
+  if (typed.startsWith("+") && !typed.startsWith("+1")) {
+    return digits.length >= 8 && digits.length <= 15 ? `+${digits}` : null;
+  }
+  if (digits.length === 10) return `+1${digits}`;
+  if (digits.length === 11 && digits.startsWith("1")) return `+${digits}`;
+  return null;
 }
 
 // ── visitor_id ────────────────────────────────────────────────────────
@@ -194,12 +235,12 @@ export async function fillIfEmptyFields(
 
 // ── Duplicate phone ───────────────────────────────────────────────────
 
-/** Tag on a contact whose submitted phone was held back (see addPhoneConflictNote). */
+/** Tag on a contact whose submitted phone was held back (see phoneConflictLine). */
 export const PHONE_CONFLICT_TAG = "phone-conflict";
 
 /**
- * GHL's answer when a PUT would give this contact a phone another contact
- * already has, in a location set to refuse duplicates:
+ * GHL's answer when a create/PUT would give this contact a phone another
+ * contact already has, in a location set to refuse duplicates:
  *   400 {"message":"This location does not allow duplicated contacts.",
  *        "meta":{"contactId":"<other>","matchingField":"phone"}}
  */
@@ -209,8 +250,8 @@ function parseDuplicateRejection(detail: string): { matchingField?: string; cont
       message?: string;
       meta?: { matchingField?: string; contactId?: string };
     };
-    if (!/duplicated contacts/i.test(json.message ?? "")) return null;
-    return json.meta ?? {};
+    if (!/duplicated contacts/i.test(json?.message ?? "")) return null;
+    return json.meta && typeof json.meta === "object" ? json.meta : {};
   } catch {
     return null;
   }
@@ -220,37 +261,146 @@ export function isDuplicatePhoneRejection(status: number, detail: string): boole
   return status === 400 && parseDuplicateRejection(detail)?.matchingField === "phone";
 }
 
+/** The other contact's id from a duplicate rejection, or null when absent or not a valid id. */
 export function duplicatePhoneContactId(detail: string): string | null {
-  return parseDuplicateRejection(detail)?.contactId ?? null;
+  const id = parseDuplicateRejection(detail)?.contactId;
+  return isValidContactId(id) ? id : null;
 }
 
 /**
- * Leaves the team a note on the contact with the phone the visitor typed, so
- * the number is not lost when GHL refused it. Non-fatal: the lead is already
- * stored, so a failure is only logged (status only).
+ * The line the submission's ONE note gets when HighLevel refused the typed
+ * phone because another contact holds it (notes are append-only and one per
+ * submission: this is never a note of its own).
  */
-export async function addPhoneConflictNote(
-  contactId: string,
-  phone: string,
-  otherContactId: string | null,
-  pit: string
-): Promise<void> {
-  try {
-    const res = await ghlRequest(
-      `/contacts/${encodeURIComponent(contactId)}/notes`,
-      {
-        method: "POST",
-        body: JSON.stringify({
-          body:
-            `Website form: the visitor entered phone ${phone}, which already belongs to another ` +
-            `contact${otherContactId ? ` (${otherContactId})` : ""}. The phone was not saved on ` +
-            `this contact. Check whether they are the same person or one household.`,
-        }),
-      },
-      pit
-    );
-    if (!res.ok) console.warn("GHL phone conflict note failed", { contactId, status: res.status });
-  } catch {
-    console.warn("GHL phone conflict note failed", { contactId });
+export function phoneConflictLine(typedPhone: string, otherContactId: string | null): string {
+  return (
+    `Website form: the visitor entered phone ${typedPhone}, which already belongs to another ` +
+    `contact${otherContactId ? ` (${otherContactId})` : ""}. The phone was not saved on ` +
+    `this contact. Check whether they are the same person or one household.`
+  );
+}
+
+// ── Contact lookup (David, 2026-10-03) ────────────────────────────────
+
+/**
+ * A HighLevel contact lookup that could not give an answer. It is NOT "no
+ * contact": treating it as one would create a duplicate of a returning
+ * visitor. The route answers 502 and creates nothing. Carries only the HTTP
+ * status or error class, never a response body.
+ */
+export class GhlLookupError extends Error {
+  readonly reason: string;
+  constructor(reason: string) {
+    super(`GHL lookup failed (${reason})`);
+    this.name = "GhlLookupError";
+    this.reason = reason;
   }
+}
+
+const LOOKUP_RETRY_DELAYS_MS = [250, 750];
+let sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
+
+/** Test hook: no real waiting in the offline tests. */
+export function setLookupSleep(fn: (ms: number) => Promise<void>): void {
+  sleep = fn;
+}
+
+/**
+ * GET /contacts/search/duplicate (a safe read, so it may be retried: up to 2
+ * retries with a short backoff on 429, 5xx, a network error or a timeout).
+ *   200 with a contact → its id;  200 without one, or 404 → null (no match);
+ *   anything else, a bad body, or still failing after the retries → throws
+ *   GhlLookupError.
+ */
+export async function lookupDuplicate(
+  param: "email" | "number",
+  value: string,
+  pit: string,
+  locationId: string,
+): Promise<string | null> {
+  const url = `/contacts/search/duplicate?locationId=${encodeURIComponent(locationId)}&${param}=${encodeURIComponent(value)}`;
+  let reason = "unknown";
+  for (let attempt = 0; attempt <= LOOKUP_RETRY_DELAYS_MS.length; attempt++) {
+    if (attempt > 0) await sleep(LOOKUP_RETRY_DELAYS_MS[attempt - 1]);
+    let res: Response;
+    try {
+      res = await ghlRequest(url, { method: "GET" }, pit);
+    } catch (err) {
+      reason = err instanceof Error ? err.name : "network";
+      continue;
+    }
+    if (res.status === 404) return null;
+    if (res.status === 200) {
+      let json: unknown;
+      try {
+        json = await res.json();
+      } catch {
+        throw new GhlLookupError("bad-json");
+      }
+      if (!json || typeof json !== "object") throw new GhlLookupError("bad-json");
+      const id = (json as { contact?: { id?: unknown } | null }).contact?.id;
+      if (id === undefined || id === null || id === "") return null;
+      // A contact id we can't safely put in a URL is a lookup failure, not "no
+      // match" (which would create a duplicate).
+      if (!isValidContactId(id)) throw new GhlLookupError("bad-id");
+      return id;
+    }
+    reason = `HTTP ${res.status}`;
+    if (res.status !== 429 && res.status < 500) break;
+  }
+  throw new GhlLookupError(reason);
+}
+
+// ── Phone on a matched contact (David, 2026-10-03) ────────────────────
+
+/**
+ * Phone digits for comparison: non-digits stripped, and an 11-digit number
+ * starting with 1 compared as its last 10 digits.
+ */
+export function phoneDigits(phone: unknown): string {
+  const d = String(phone ?? "").replace(/\D/g, "");
+  return d.length === 11 && d.startsWith("1") ? d.slice(1) : d;
+}
+
+/** Tag on a matched contact whose submitted phone differs from the one it has. */
+export const PHONE_MISMATCH_TAG = "phone-mismatch";
+
+/**
+ * A matched contact's existing phone is never overwritten.
+ *   - contact unreadable (null) → nothing is sent (never overwrite blind);
+ *   - contact has no phone → fill it with the submitted one;
+ *   - contact has a different phone → not sent; note line + phone-mismatch tag;
+ *   - same digits → nothing to do.
+ */
+export function phoneOnMatch(
+  submitted: unknown,
+  contact: { phone: string } | null,
+): { fill: string | null; mismatch: boolean } {
+  const typed = typeof submitted === "string" ? submitted.trim() : "";
+  if (!typed || !phoneDigits(typed) || !contact) return { fill: null, mismatch: false };
+  const have = phoneDigits(contact.phone);
+  if (!have) return { fill: typed, mismatch: false };
+  if (have === phoneDigits(typed)) return { fill: null, mismatch: false };
+  return { fill: null, mismatch: true };
+}
+
+// ── Tracking opt-out (David, 2026-10-03) ──────────────────────────────
+
+/** Join keys (and their aliases) never written for an opted-out visitor. */
+const OPT_OUT_KEYS = ["visitor_id", "ga_client_id", "ct_visitor_id", "ga_cid"];
+
+/**
+ * True when the visitor opted out of tracking: the browser said so
+ * (`tracking_opt_out: true`, from lib/attribution.ts isTrackingOptedOut) or
+ * the request carries Global Privacy Control (`Sec-GPC: 1`).
+ */
+export function trackingOptedOut(request: Request, body: Record<string, unknown>): boolean {
+  return body.tracking_opt_out === true || request.headers.get("sec-gpc") === "1";
+}
+
+/** A copy of `obj` without the visitor_id / ga_client_id join keys. */
+export function withoutJoinKeys<T extends Record<string, unknown>>(obj: T): T {
+  const rest: Record<string, unknown> = { ...obj };
+  for (const k of OPT_OUT_KEYS) delete rest[k];
+  return rest as T;
 }
