@@ -37,7 +37,7 @@ export default function CrownLengtheningPage() {
           slug="crown-lengthening"
           title="Crown Lengthening"
           tagline="Expose more tooth — for restorations, aesthetics, or to correct a 'gummy' smile."
-          featuredImage="/img/lIVE Piedmont website images/Crown Lengthening.png"
+          featuredImage="/img/lIVE Piedmont website images/gum-grafting.webp"
           intro={[
             "Crown lengthening is generally performed to improve the health of the gum tissue or to prepare the mouth for restorative or cosmetic procedures. It can also correct a 'gummy' smile, where teeth are covered with excess gum tissue.",
             "The procedure exposes more of the natural tooth by reshaping or recontouring bone and gum tissue. It can be performed on a single tooth, several teeth, or the entire gum line — exposing a more aesthetically pleasing smile.",

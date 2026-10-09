@@ -35,7 +35,7 @@ export default function TreatmentPage() {
           slug="treatment"
           title="Periodontal Treatment"
           tagline="Stage-appropriate care — from cleanings to deep cleanings to surgery."
-          featuredImage="/img/lIVE Piedmont website images/periodental treatment .png"
+          featuredImage="/img/lIVE Piedmont website images/Periodontal-Services-1024x683-1.jpg"
           intro={[
             "Periodontal treatment methods depend upon the type and severity of the disease. Your dentist and dental hygienist will evaluate for periodontal disease and recommend the appropriate treatment.",
             "Periodontal disease progresses as the sulcus (pocket) between the tooth and gums fills with bacteria, plaque, and tartar — irritating surrounding tissue. Left unchecked, these irritants can damage gums and the bone that supports your teeth.",

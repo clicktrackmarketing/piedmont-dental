@@ -35,7 +35,7 @@ export default function CompositeFillingsPage() {
           slug="composite-fillings"
           title="Composite Fillings"
           tagline="Tooth-colored, single-visit restorations for cavities, chips, and worn teeth."
-          featuredImage="/img/lIVE Piedmont website images/Composite fillings.png"
+          featuredImage="/img/lIVE Piedmont website images/composite-fillings-2109.jpg"
           intro={[
             "A composite (tooth-colored) filling is used to repair a tooth that is affected by decay, cracks, fractures, etc. The decayed or affected portion of the tooth will be removed and then filled with a composite filling.",
             "There are many types of filling materials available, each with their own advantages and disadvantages. You and your dentist can discuss the best options for restoring your teeth. Composite fillings, along with silver amalgam fillings, are the most widely used today. Because composite fillings are tooth colored, they can be closely matched to the color of existing teeth, and are more aesthetically suited for use in front teeth or the more visible areas of the teeth.",

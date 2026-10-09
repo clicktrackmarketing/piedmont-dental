@@ -37,7 +37,7 @@ export default function ScalingRootPlaningPage() {
           slug="periodontal-scaling-root-planing"
           title="Periodontal Scaling & Root Planing"
           tagline="The foundational non-surgical treatment for gum disease."
-          featuredImage="/img/lIVE Piedmont website images/Periodontal Scaling & Root Planing.png"
+          featuredImage="/img/lIVE Piedmont website images/periodental treatment .png"
           intro={[
             "The objective of scaling and root planing is to remove etiologic agents — primarily dental plaque and tartar (calculus) — that cause inflammation to gum tissue and surrounding bone.",
             "These non-surgical procedures completely cleanse the periodontium and work very effectively for individuals with gingivitis (mild gum inflammation) and moderate to severe periodontal disease.",

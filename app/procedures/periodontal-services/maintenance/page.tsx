@@ -35,7 +35,7 @@ export default function MaintenancePage() {
           slug="maintenance"
           title="Periodontal Maintenance"
           tagline="Keeping gum disease in remission — quarterly cleanings, pocket checks, and screening."
-          featuredImage="/img/lIVE Piedmont website images/how-long-should-you-brush-your-teeth-for.avif"
+          featuredImage="/img/lIVE Piedmont website images/dental-cleaning-prevention.jpg"
           intro={[
             "It only takes twenty-four hours for plaque that isn't removed from your teeth to harden into calculus (tartar). Daily home care helps control plaque and tartar formation, but those hard-to-reach areas always need special attention.",
             "Once your periodontal treatment has been completed, your dentist and hygienist will recommend regular maintenance cleanings — usually four times a year. At each visit, pocket depths are carefully checked to make sure they're healthy, and plaque and calculus that's difficult to remove on a daily basis are taken from above and below the gum line.",
