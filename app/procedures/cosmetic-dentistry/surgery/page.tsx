@@ -35,7 +35,7 @@ export default function SurgeryPage() {
           slug="surgery"
           title="Surgical Crown Lengthening"
           tagline="Reshape the gumline to expose more tooth — often paired with veneers."
-          featuredImage="/img/lIVE Piedmont website images/Surgical crown lenghtning .png"
+          featuredImage="/img/lIVE Piedmont website images/Fusion-Dental-Care-Raleigh-NC-Oral-Surgery-1596x1024-1.jpeg"
           intro={[
             "Surgical crown lengthening is a surgical technique that raises the gums, exposing more of the teeth. It is most commonly used cosmetically when teeth appear short or when the gum line shows too much during smiling — sometimes called a 'gummy smile.'",
             "The procedure is performed in our office with local numbing of the area. Nitrous oxide is often used for added comfort. Surgical crown lengthening is frequently combined with porcelain veneers to create the most pleasing final tooth shape and proportion.",

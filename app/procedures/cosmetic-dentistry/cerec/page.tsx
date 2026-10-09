@@ -120,7 +120,7 @@ export default function CerecPage() {
               a: "Yes — CEREC ceramic blocks come in a full range of tooth shades and translucencies. We choose a block matched to your existing teeth and then characterize it (glaze, staining) before bonding. Most patients can't tell their CEREC crown from their natural teeth.",
             },
           ]}
-          featuredImage="/img/lIVE Piedmont website images/CEREC® Same-Day Crowns.png"
+          featuredImage="/img/lIVE Piedmont website images/CEREC.jpg"
         />
         <AwardsStrip />
         <AboutCTA />
