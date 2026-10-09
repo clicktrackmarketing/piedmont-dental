@@ -1,0 +1,42 @@
+{
+  "business": {
+    "name": "Piedmont Dental By Design",
+    "address": "1331 Grand Ave, Piedmont, CA 94610",
+    "phone": "(510) 350-3937",
+    "website": "https://piedmontdentalbydesign.com",
+    "hours": "Mon & Wed 7:00 AM – 5:00 PM · Tue & Thu 7:00 AM – 3:00 PM · Closed Fri–Sun",
+    "placeId": "ChIJRXRi3F2Hj4ARneUpH7lqi3I",
+    "ownership": [],
+    "primaryCategory": "Dentist",
+    "secondaryCategories": ["Cosmetic dentist", "Dental clinic", "Teeth whitening service", "Dental implants provider (verify exact GBP category name)"]
+  },
+  "region": "Piedmont & the East Bay",
+  "stats": {
+    "reviews": "4.9 stars with 350+ Google reviews — a strength; keep velocity up, competitors in Oakland are adding reviews monthly"
+  },
+  "cities": ["Piedmont", "Oakland", "Lake Merritt", "Montclair", "Rockridge", "Berkeley"],
+  "priorityKeywords": [
+    "dentist piedmont ca",
+    "cosmetic dentist oakland",
+    "teeth whitening piedmont",
+    "invisalign piedmont",
+    "veneers piedmont",
+    "dental implants piedmont"
+  ],
+  "badCitations": [],
+  "chambers": ["Oakland Metropolitan Chamber of Commerce"],
+  "services": [
+    { "name": "Invisalign Clear Aligners", "category": "Cosmetic Dentistry", "priority": true, "blurb": "Invisalign clear aligner treatment planned and supervised in-office. Straighten teeth discreetly without brackets or wires; digital scans, no goopy impressions" },
+    { "name": "Teeth Whitening", "category": "Cosmetic Dentistry", "priority": true, "blurb": "Professional teeth whitening with custom take-home trays or in-office treatment. ADA-approved methods calibrated to your enamel; results in about two visits" },
+    { "name": "Porcelain Veneers", "category": "Cosmetic Dentistry", "priority": true, "blurb": "Custom porcelain veneers that reshape chipped, stained, or uneven front teeth into a natural, durable smile — planned with smile-design photography" },
+    { "name": "Dental Implants", "category": "Restoration", "priority": true, "blurb": "Dental implant restoration to replace missing teeth with a natural look and bite. Planning, placement coordination, and the final crown handled with 3D imaging" },
+    { "name": "CEREC Same-Day Crowns", "category": "Restoration", "blurb": "Porcelain crowns designed, milled, and bonded in one visit with CEREC — no impressions sent away, no temporary crown, no two-week wait" },
+    { "name": "Dental Exams & Cleanings", "category": "Preventive", "blurb": "Thorough exams and professional cleanings with digital X-rays and oral cancer screening. The foundation visit for every new patient" },
+    { "name": "Composite Fillings", "category": "Restoration", "blurb": "Tooth-colored composite fillings that repair decay and small fractures invisibly — matched to your enamel shade" },
+    { "name": "Dentures & Partial Dentures", "category": "Restoration", "blurb": "Full and partial dentures custom-fitted for comfort and a natural appearance, with adjustment visits included" },
+    { "name": "Fixed Bridges", "category": "Restoration", "blurb": "Fixed porcelain bridges that permanently replace one or more missing teeth without removable appliances" },
+    { "name": "Periodontal (Gum) Care", "category": "Periodontal", "blurb": "Gum disease treatment from deep cleanings (scaling and root planing) through maintenance visits — protect teeth and bone before damage spreads" },
+    { "name": "Gum & Bone Grafting", "category": "Periodontal", "blurb": "Gum grafting for recession and bone grafting to rebuild support for teeth and implants, performed in-office with local anesthetic" },
+    { "name": "Crown Lengthening", "category": "Periodontal", "blurb": "Surgical crown lengthening to reshape a gummy smile or expose more tooth for a crown — often paired with veneers for final proportions" }
+  ]
+}
