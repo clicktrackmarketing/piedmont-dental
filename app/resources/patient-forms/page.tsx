@@ -7,18 +7,16 @@ import AboutCTA from "@/components/AboutCTA";
 import SiteFooter from "@/components/SiteFooter";
 
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
-const PORTAL_URL =
-  "https://piedmontdentalbydesign.dentalsymphony.com/Patient/Newpatient.aspx";
 
 export const metadata: Metadata = {
   title: "New Patient Forms",
   description:
-    "Save time at your visit — fill out new-patient and update forms online before your appointment. Forms upload directly into our system.",
+    "New-patient and update forms for your visit — call the office ahead or arrive 10 minutes early and we'll hand you an iPad to complete them.",
   alternates: { canonical: "/resources/patient-forms" },
   openGraph: {
     title: "Patient Forms — Piedmont Dental By Design",
     description:
-      "Save time at your visit — fill out new-patient and update forms online before your appointment.",
+      "New-patient and update forms for your visit — call the office ahead or arrive 10 minutes early and we'll hand you an iPad.",
     url: "https://piedmontdentalbydesign.com/resources/patient-forms",
     type: "article",
   },
@@ -41,10 +39,10 @@ export default function PatientFormsPage() {
               </div>
               <h1 className="resource-hero-title">Patient Forms</h1>
               <p className="resource-hero-description">
-                Save time at your visit — fill out your new-patient or update
-                forms online before your appointment. Everything you submit
-                uploads directly into our system, so we can attend to your
-                medical needs the moment you walk through the door.
+                New patient, or an existing patient updating your details?
+                Give us a call before your appointment and we&apos;ll get your
+                paperwork started, so we can attend to your medical needs the
+                moment you walk through the door.
               </p>
             </div>
           </div>
@@ -53,24 +51,22 @@ export default function PatientFormsPage() {
         <section className="forms-body">
           <div className="forms-inner">
             <div className="forms-portal-card">
-              <span className="num">i. — Online portal</span>
-              <h2>Fill out your forms online</h2>
+              <span className="num">i. — Get your forms</span>
+              <h2>Call ahead and we&apos;ll set you up</h2>
               <p>
                 Existing patient updating your info, or new patient prepping
-                for your first visit? Use our secure online forms portal —
-                everything uploads automatically, no printing required.
+                for your first visit? Call the office and we&apos;ll take care
+                of your paperwork before you arrive.
               </p>
               <a
-                href={PORTAL_URL}
+                href="tel:5103503937"
                 className="btn btn-primary btn-lg forms-portal-cta"
-                target="_blank"
-                rel="noopener noreferrer"
               >
-                Click here for patient forms →
-                <span className="sr-only"> (opens in a new window)</span>
+                Call (510) 350-3937 →
               </a>
               <p className="forms-portal-note">
-                Opens our patient portal in a new tab (dentalsymphony.com).
+                Prefer to write? <Link href="/contact">Send us a message</Link>{" "}
+                and we&apos;ll follow up.
               </p>
             </div>
 
@@ -79,18 +75,18 @@ export default function PatientFormsPage() {
               <h2>A few things to know</h2>
               <ul className="forms-info-list">
                 <li>
-                  <strong>No printing needed.</strong> Forms you complete
-                  online upload directly into our system.
+                  <strong>No printing needed.</strong> We&apos;ll hand you an
+                  iPad in the office — nothing for you to print or post.
                 </li>
                 <li>
-                  <strong>New patients:</strong> we ask that you complete your
-                  forms online before your appointment. It lets us focus on
-                  your care the moment you arrive instead of paperwork.
+                  <strong>New patients:</strong> arrive 10 minutes before your
+                  appointment to complete your forms. It lets us focus on your
+                  care rather than paperwork.
                 </li>
                 <li>
-                  <strong>Can&apos;t fill them out online?</strong> No problem
-                  — arrive 10 minutes before your appointment and we&apos;ll
-                  hand you an iPad to complete them in office.
+                  <strong>Short on time?</strong> Call us ahead of your visit
+                  and we&apos;ll get as much of your paperwork started as we
+                  can before you arrive.
                 </li>
               </ul>
               <p className="forms-info-callout">
@@ -103,9 +99,8 @@ export default function PatientFormsPage() {
             <div className="forms-cta">
               <h2>Ready for your next visit?</h2>
               <p>
-                Once your forms are submitted, send us a message or call and
-                we&apos;ll set up a comprehensive exam with Dr. Martenson or Dr.
-                Ma at a time that works for you.
+                Send us a message or call and we&apos;ll set up a comprehensive
+                exam with Dr. Martenson or Dr. Ma at a time that works for you.
               </p>
               <div className="forms-cta-actions">
                 <Link href="/contact" className="btn btn-primary btn-lg">

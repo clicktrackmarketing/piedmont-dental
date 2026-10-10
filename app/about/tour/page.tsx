@@ -71,7 +71,7 @@ const STOPS: Stop[] = [
     title: "The front desk",
     caption: "Where you check in",
     description:
-      "Patient services and treatment scheduling are handled here by Christine and Elaina (see Meet the Team). New-patient paperwork can be completed online ahead of time through the Dental Symphony portal.",
+      "Patient services and treatment scheduling are handled here by Christine and Elaina (see Meet the Team). New-patient paperwork is handled here too — call ahead and we'll get yours started before you arrive.",
     src: "/office/02.webp",
   },
   {

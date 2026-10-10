@@ -104,10 +104,10 @@
 
 ## Patient Resources
 
-- Patient Forms: complete new patient paperwork online (Dental Symphony portal)
+- Patient Forms: how to complete new patient paperwork before your visit
 - Post-Op Instructions: care after procedures
 - Account Access: view statements, treatment history, balance
-- Referral Portal: for referring dental practices (Dental Symphony)
+- Referral Portal: for referring dental practices
 - Dental Videos: educational videos by procedure
 - Smile Analysis: interactive cosmetic treatment recommender
 - Smile Gallery: before/after results by procedure (Invisalign, full mouth, cosmetic, gummy smile, restorations)
