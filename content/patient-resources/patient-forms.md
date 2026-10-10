@@ -32,4 +32,4 @@ Piedmont Dentists, Dr Jill Martenson is a dental professional dedicated to Gener
 
 ## CTA
 
-[CLICK HERE FOR PATIENT FORMS](https://piedmontdentalbydesign.dentalsymphony.com/Patient/Newpatient.aspx)
+[CALL US ABOUT PATIENT FORMS](tel:5103503937)

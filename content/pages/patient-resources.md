@@ -13,7 +13,7 @@ sectionHeadings:
 
 ## Direct Resource Links (verbatim from live page)
 
-1. **Patient Forms** — External link to Dental Symphony portal
+1. **Patient Forms** — Internal page: how to complete new-patient paperwork
 2. **Post Op Instructions** — (Link referenced; URL not visible)
 3. **View Your Account** — (Referenced)
 4. **Dental Videos** — Internal page
@@ -21,7 +21,7 @@ sectionHeadings:
 6. **Smile Gallery** — Internal page with subsections
 7. **Insurance** — Internal page
 8. **Financing** — Internal page
-9. **Referral Portal** — External Dental Symphony link
+9. **Referral Portal** — Internal link to the patient forms page
 
 ## Smile Gallery Subsections
 

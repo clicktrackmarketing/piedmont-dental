@@ -30,9 +30,8 @@ const ICONS = {
 const resources: Resource[] = [
   {
     title: "Patient Forms",
-    desc: "Complete new-patient paperwork online via Dental Symphony before your visit — saves time at the office.",
-    href: "https://piedmontdentalbydesign.dentalsymphony.com/Patient/Newpatient.aspx",
-    external: true,
+    desc: "New-patient paperwork for your visit — how to get it done before you arrive.",
+    href: "/resources/patient-forms",
     iconPath: ICONS.forms,
   },
   {
@@ -43,9 +42,8 @@ const resources: Resource[] = [
   },
   {
     title: "View Your Account",
-    desc: "Access statements, treatment history, and account balance via Dental Symphony.",
-    href: "https://piedmontdentalbydesign.dentalsymphony.com/",
-    external: true,
+    desc: "Questions about statements, treatment history, or your balance? Get in touch and we'll pull it up.",
+    href: "/contact",
     iconPath: ICONS.account,
   },
   {
