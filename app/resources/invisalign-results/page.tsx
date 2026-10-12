@@ -38,19 +38,6 @@ const CASES: IVCase[] = [
   {
     id: "case-1",
     number: "01",
-    title: "Severe crowding and rotation corrected",
-    before: "/img/cases/invisalign/case1-before.jpg",
-    after: "/img/cases/invisalign/case1-after.jpg",
-    procedures: ["Invisalign®"],
-    duration: "~12 months",
-    beforeStory:
-      "Significant crowding and rotation across both arches, with the lower front teeth overlapping heavily. The patient wanted the teeth straightened without committing to visible metal braces.",
-    afterStory:
-      "A custom Invisalign® aligner series brought both arches into alignment — completed entirely with clear, removable trays. The crowding is resolved and the bite sits evenly.",
-  },
-  {
-    id: "case-2",
-    number: "02",
     title: "Crowding relieved, smile line evened",
     before: "/img/cases/invisalign/case2-before.jpg",
     after: "/img/cases/invisalign/case2-after.jpg",
@@ -80,10 +67,10 @@ export default function InvisalignResultsPage() {
               </div>
               <h1 className="resource-hero-title">Invisalign® Results</h1>
               <p className="resource-hero-description">
-                Real before-and-after Invisalign® cases from Dr. Martenson and Dr. Ma —
-                clear aligners that straightened smiles with no metal, no
+                A real before-and-after Invisalign® case from Dr. Martenson and Dr. Ma —
+                clear aligners that straightened a smile with no metal, no
                 wires, and trays that come out for meals and special
-                occasions. Drag any slider below to compare.
+                occasions. Drag the slider below to compare.
               </p>
             </div>
           </div>
