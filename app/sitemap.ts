@@ -27,7 +27,7 @@ const EDITED: Record<string, string> = {
   "/resources/financing": "2026-08-13", // out-of-network disclosure, title
   "/resources/dental-implants": "2026-08-13", // description
   "/resources/full-mouth-restoration": "2026-08-13", // description
-  "/resources/invisalign-results": "2026-08-13", // description
+  "/resources/invisalign-results": "2026-10-12", // bonding case moved out to /resources/cosmetic-bonding
   "/resources/patient-forms": "2026-08-13", // title
   "/resources/restorations/crowns-caps": "2026-08-13", // description
   "/resources/smile-analysis": "2026-08-13", // description
@@ -37,11 +37,14 @@ const EDITED: Record<string, string> = {
   "/smile-gallery/porcelain-crowns-caps": "2026-08-13", // crown timing label
   "/procedures/restoration": "2026-08-13", // hub rebuilt: choosing guide, prices, FAQ
   "/procedures/cleanings-prevention": "2026-08-13", // hub rebuilt: visit table, cost-of-delay, FAQ
+  // 2026-10-12 — Dr. Ma's image + case-placement fixes.
+  "/resources/cosmetic-bonding": "2026-10-12", // gap-closure case 03 (moved from Invisalign)
+  "/smile-gallery": "2026-10-12", // Invisalign tile no longer shows the bonding case
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const editedOn = (path: string) =>
-    EDITED[path] ? new Date(EDITED[path]) : undefined;
+    EDITED[path] ? new Date(EDITED[path]) : undefined;
   const blogPosts: MetadataRoute.Sitemap = posts.map((p) => ({
     url: `${SITE}/blog/${p.slug}`,
     lastModified: new Date(p.dateISO),
@@ -100,6 +103,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/resources/dental-implants`, lastModified: editedOn("/resources/dental-implants"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE}/resources/porcelain-veneers`, lastModified: editedOn("/resources/porcelain-veneers"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE}/resources/invisalign-results`, lastModified: editedOn("/resources/invisalign-results"), changeFrequency: "monthly", priority: 0.55 },
+    { url: `${SITE}/resources/cosmetic-bonding`, lastModified: editedOn("/resources/cosmetic-bonding"), changeFrequency: "monthly", priority: 0.55 },
     { url: `${SITE}/resources/full-mouth-restoration`, lastModified: editedOn("/resources/full-mouth-restoration"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE}/resources/restorations`, lastModified: editedOn("/resources/restorations"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE}/resources/restorations/crowns-caps`, lastModified: editedOn("/resources/restorations/crowns-caps"), changeFrequency: "monthly", priority: 0.55 },

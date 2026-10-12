@@ -8501,7 +8501,7 @@ a.gummy-treatment-card:hover .gummy-treatment-cta { color: var(--ink); }
 }
 .veneers-feature-layout {
   display: grid;
-  grid-template-columns: 1.15fr 1fr;
+  grid-template-columns: 1.45fr 1fr;
   gap: 36px;
   align-items: start;
 }
@@ -8510,8 +8510,10 @@ a.gummy-treatment-card:hover .gummy-treatment-cta { color: var(--ink); }
   flex-direction: column;
   gap: 10px;
 }
+/* Match the case photos (16:10) so the whole smile shows — a 4:3 frame
+   cropped the sides off, cutting the teeth beyond the canines. */
 .veneers-feature-slider .ba-slider {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
 }
 .veneers-slider-hint {
   margin: 0;

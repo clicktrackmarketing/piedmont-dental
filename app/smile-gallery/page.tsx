@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const MOSAIC = [
   { src: "/img/cases/veneers/case1-after.jpg", alt: "Porcelain veneers — after", size: "tall" },
   { src: "/img/cases/crowns/case1-after.jpg", alt: "Porcelain crown — after", size: "wide" },
-  { src: "/img/cases/invisalign/case1-after.jpg", alt: "Invisalign® — after", size: "square" },
+  { src: "/img/cases/invisalign/case2-after.jpg", alt: "Invisalign® — after", size: "square" },
   { src: "/img/full-mouth/case3-after.jpg", alt: "Full mouth restoration — after", size: "square" },
   { src: "/img/surgery/case2-after.jpg", alt: "Cosmetic surgery — after", size: "wide" },
   { src: "/img/dentures/case2-after.jpg", alt: "Implant denture — after", size: "tall" },
@@ -56,15 +56,15 @@ const GALLERIES: GalleryCard[] = [
     imageAlt: "Cosmetic bonding case",
     title: "Cosmetic Bonding",
     blurb: "Chips, gaps and worn edges rebuilt in tooth-coloured composite — usually in one visit.",
-    count: "2 cases",
+    count: "3 cases",
   },
   {
     href: "/resources/invisalign-results",
-    image: "/img/cases/invisalign/case1-after.jpg",
+    image: "/img/cases/invisalign/case2-after.jpg",
     imageAlt: "Invisalign® clear aligners case",
     title: "Invisalign®",
     blurb: "Clear aligners that straighten teeth without metal — comparable results to braces.",
-    count: "2 cases",
+    count: "1 case",
   },
   {
     href: "/resources/restorations/crowns-caps",

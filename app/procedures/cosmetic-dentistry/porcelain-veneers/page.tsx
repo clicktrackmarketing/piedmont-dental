@@ -109,7 +109,7 @@ export default function PorcelainVeneersPage() {
               a: "Composite bonding uses tooth-colored filling material applied directly to the tooth and shaped chairside — cheaper, single visit, and reversible, but stains over time and lasts 5–7 years. Porcelain veneers are custom-made in a lab, more expensive, and require 2 visits — but they don't stain and last 15+ years. Bonding is great for small fixes; veneers are the long-term answer.",
             },
           ]}
-          featuredImage="/img/procedures/cosmetic-dentistry/_index/figure-1.jpg"
+          featuredImage="/img/home-services/porcelain-veneers.jpg"
         />
         <AwardsStrip />
         <AboutCTA />

@@ -61,6 +61,19 @@ const CASES: BondingCase[] = [
     afterStory:
       "Composite was added back to the worn edges and contoured to restore length and proportion. The smile line runs evenly again, and because bonding is additive, none of the underlying tooth was removed to do it.",
   },
+  {
+    id: "case-3",
+    number: "03",
+    title: "Gaps between the front teeth closed",
+    before: "/img/cases/bonding/case3-before.jpg",
+    after: "/img/cases/bonding/case3-after.jpg",
+    procedures: ["Cosmetic Bonding"],
+    duration: "1–2 visits",
+    beforeStory:
+      "Open spaces between the lower front teeth showed as dark triangles at the gumline, and a small gap had opened between the two upper front teeth. The spaces, rather than the teeth themselves, were what drew the eye.",
+    afterStory:
+      "Tooth-coloured composite was bonded to the sides of the lower front teeth and the upper centrals, widening each just enough to close the spaces. No teeth were moved and no healthy enamel was cut away — the gaps were filled by adding material, not removing it.",
+  },
 ];
 
 const WHY_BONDING = [
