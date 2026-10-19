@@ -126,6 +126,8 @@ const nextConfig = {
        default and stays for decorative imagery; 90 is for the clinical
        before/after photography, where compression artefacts read as blur. */
     qualities: [75, 90],
+    /* BabyLoveGrowth blog articles ship hero images from their own CDN. */
+    remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
   async headers() {
     return [

@@ -203,8 +203,8 @@ function PostCard({ post, featured = false }: { post: Post; featured?: boolean }
   );
 }
 
-export default function BlogIndex() {
-  const [featured, ...rest] = posts;
+export default function BlogIndex({ posts: all = posts }: { posts?: Post[] }) {
+  const [featured, ...rest] = all;
   return (
     <section className="blog-index" id="latest">
       <div className="blog-index-inner">

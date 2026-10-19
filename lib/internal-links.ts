@@ -341,13 +341,17 @@ export function getServiceLinksForPost(postSlug: string): InternalLink[] {
  * post up; ties broken by recency; the list is filled to `limit` with the
  * most recent remaining posts so the grid never collapses.
  */
-export function getRelatedPostMeta(postSlug: string, limit = 3): Post[] {
-  const current = POST_META.find((p) => p.slug === postSlug);
+export function getRelatedPostMeta(
+  postSlug: string,
+  limit = 3,
+  pool: Post[] = POST_META,
+): Post[] {
+  const current = pool.find((p) => p.slug === postSlug);
   const currentTokens = new Set(tokensOf(postSlug));
   // "ca"/"vs" and geography carry no topical signal between posts
   const STOP = new Set(["ca", "vs", "a", "the", "to", "how", "what", "is", "in", "piedmont", "oakland", "east", "bay", "2026"]);
 
-  const scored = POST_META.filter((p) => p.slug !== postSlug).map((p) => {
+  const scored = pool.filter((p) => p.slug !== postSlug).map((p) => {
     let score = 0;
     for (const t of tokensOf(p.slug)) {
       if (!STOP.has(t) && currentTokens.has(t)) score += 2;
