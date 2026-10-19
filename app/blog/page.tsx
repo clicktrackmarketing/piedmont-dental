@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import type { Post } from "@/components/BlogIndex";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import SiteHeader from "@/components/SiteHeader";
 import BlogHero from "@/components/BlogHero";
-import BlogIndex, { posts } from "@/components/BlogIndex";
+import BlogIndex from "@/components/BlogIndex";
+import { getAllPostMeta } from "@/lib/blog";
 import AboutCTA from "@/components/AboutCTA";
 import SiteFooter from "@/components/SiteFooter";
 
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
   },
 };
 
-function BlogStructuredData() {
+function BlogStructuredData({ posts }: { posts: Post[] }) {
   const json = {
     "@context": "https://schema.org",
     "@type": "Blog",
@@ -33,7 +35,9 @@ function BlogStructuredData() {
       headline: p.title,
       url: `https://piedmontdentalbydesign.com/blog/${p.slug}`,
       datePublished: p.dateISO,
-      image: `https://piedmontdentalbydesign.com${p.image}`,
+      image: p.image.startsWith("http")
+        ? p.image
+        : `https://piedmontdentalbydesign.com${p.image}`,
       author: { "@id": "https://piedmontdentalbydesign.com/#dr-martenson" },
       publisher: { "@id": "https://piedmontdentalbydesign.com/#org" },
       articleSection: p.category,
@@ -48,18 +52,22 @@ function BlogStructuredData() {
   );
 }
 
-export default function BlogPage() {
+/** BabyLoveGrowth articles are re-fetched at most once a day. */
+export const revalidate = 86400;
+
+export default async function BlogPage() {
+  const posts = await getAllPostMeta();
   return (
     <>
       <AnnouncementBar />
       <SiteHeader />
       <main>
         <BlogHero />
-        <BlogIndex />
+        <BlogIndex posts={posts} />
         <AboutCTA />
       </main>
       <SiteFooter />
-      <BlogStructuredData />
+      <BlogStructuredData posts={posts} />
     </>
   );
 }

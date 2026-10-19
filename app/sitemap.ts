@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/components/BlogIndex";
+import { getRemotePosts } from "@/lib/blog-remote";
 
 const SITE = "https://piedmontdentalbydesign.com";
 
@@ -42,7 +43,13 @@ const EDITED: Record<string, string> = {
   "/smile-gallery": "2026-10-12", // Invisalign tile no longer shows the bonding case
 };
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const revalidate = 86400;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const localSlugs = new Set(posts.map((p) => p.slug));
+  const remotePosts = (await getRemotePosts()).filter(
+    (p) => !localSlugs.has(p.slug),
+  );
   const editedOn = (path: string) =>
     EDITED[path] ? new Date(EDITED[path]) : undefined;
   const blogPosts: MetadataRoute.Sitemap = posts.map((p) => ({
@@ -51,6 +58,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "yearly",
     priority: 0.6,
   }));
+  // BabyLoveGrowth articles: lastmod is the real last-edit time from the API.
+  blogPosts.push(
+    ...remotePosts.map((p) => ({
+      url: `${SITE}/blog/${p.slug}`,
+      lastModified: new Date(p.updatedISO),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  );
 
   return [
     { url: `${SITE}/`, lastModified: editedOn("/"), changeFrequency: "weekly", priority: 1.0 },

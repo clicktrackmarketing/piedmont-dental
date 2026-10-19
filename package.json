@@ -16,6 +16,7 @@
     "test:notes": "node --experimental-strip-types --no-warnings scripts/test-notes-append-only.mjs --notes-per-submission 1 --phone-match-notes 1 --lead scripts/test-notes-lead.json"
   },
   "dependencies": {
+    "babylovegrowth-next-js-blog": "^0.2.4",
     "gray-matter": "^4.0.3",
     "next": "^15.1.0",
     "react": "^19.0.0",
