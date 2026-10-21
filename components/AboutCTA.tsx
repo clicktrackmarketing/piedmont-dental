@@ -34,6 +34,10 @@ export default function AboutCTA() {
             </span>
           </div>
         </div>
+
+        <p className="about-cta-oakland">
+          Coming from Oakland? <a href="/oakland">See our page for Oakland patients →</a>
+        </p>
       </div>
     </section>
   );

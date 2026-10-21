@@ -13,6 +13,7 @@ const cols = [
     links: [
       { label: "About", href: "/about" },
       { label: "Meet the team", href: "/about/team" },
+      { label: "For Oakland patients", href: "/oakland" },
       { label: "Smile gallery", href: "/smile-gallery" },
       { label: "Patient resources", href: "/resources" },
     ],

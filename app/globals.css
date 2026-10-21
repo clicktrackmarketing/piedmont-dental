@@ -14080,3 +14080,155 @@ footer.site-footer {
   opacity: 0;
   pointer-events: none;
 }
+
+/* ============================================================
+   Oakland patients page (/oakland)
+   ============================================================ */
+.oak-crumb {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+.oak-crumb a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 4px;
+}
+.oak-crumb a:hover { color: var(--teal-deep); }
+.oak-crumb [aria-current] { font-style: italic; color: var(--teal-deep); }
+.oak-hero .page-hero-content h1 { max-width: 16ch; }
+.oak-hero .page-hero-sub { margin-bottom: 18px; }
+.oak-factcard {
+  background: white;
+  border-radius: 18px;
+  padding: 32px 34px;
+  box-shadow: var(--shadow-md);
+}
+.oak-factcard h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 24px;
+  margin: 0 0 12px;
+}
+.oak-factcard p { font-size: 15.5px; color: var(--ink-soft); margin: 0; }
+.oak-factcard-phone {
+  display: inline-block;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  margin: 16px 0 18px;
+}
+.oak-factcard-phone:hover { color: var(--teal-deep); }
+.oak-factcard dl {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 8px 14px;
+  font-size: 14.5px;
+  border-top: 1px solid var(--rule);
+  padding-top: 16px;
+  margin: 0 0 24px;
+}
+.oak-factcard dt { font-weight: 600; color: var(--ink); }
+.oak-factcard dd { margin: 0; color: var(--ink-soft); }
+
+section.bay.oak-section { padding-top: 80px; padding-bottom: 80px; border-bottom: 1px solid var(--rule); }
+.oak-section .section-head { margin-bottom: 40px; }
+
+.oak-docs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.oak-doc { background: white; border-radius: 16px; padding: 30px; box-shadow: var(--shadow-sm); }
+.oak-doc-role {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.oak-doc h3 { font-family: var(--serif); font-weight: 400; font-size: 25px; margin: 0 0 10px; }
+.oak-doc p { font-size: 15.5px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+.oak-doc a {
+  display: inline-block;
+  margin-top: 16px;
+  font-weight: 500;
+  color: var(--teal-deep);
+  text-decoration: none;
+}
+.oak-doc a:hover { color: var(--ink); }
+
+.oak-care {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 56px;
+}
+.oak-care a {
+  display: grid;
+  grid-template-columns: 44px 1fr 20px;
+  gap: 4px 14px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  text-decoration: none;
+}
+.oak-care a:hover h3, .oak-care a:hover .oak-care-ar { color: var(--teal-deep); }
+.oak-care-n { font-family: var(--serif); font-style: italic; color: var(--teal-deep); font-size: 17px; padding-top: 3px; }
+.oak-care h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; margin: 0; transition: color .2s; }
+.oak-care p { grid-column: 2; font-size: 15.5px; color: var(--ink-soft); margin: 0; }
+.oak-care-ar { grid-row: 1; grid-column: 3; color: var(--teal-deep); font-size: 20px; }
+
+.oak-two { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.oak-head-tight { grid-template-columns: 1fr; margin-bottom: 20px; }
+.oak-intro { font-size: 17px; color: var(--ink-soft); margin: 0 0 16px; }
+.oak-hoods { list-style: none; margin: 0 0 28px; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.oak-hoods li {
+  background: white;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 15px;
+}
+.oak-photo { position: relative; aspect-ratio: 3 / 2; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-md); }
+.oak-panel { background: var(--paper-2); border-radius: 18px; padding: 34px; }
+.oak-panel h3 { font-family: var(--serif); font-weight: 400; font-size: 24px; margin: 0 0 12px; }
+.oak-panel h3 + p, .oak-panel p { font-size: 16px; line-height: 1.65; color: var(--ink-soft); margin: 0; }
+.oak-panel a { color: var(--teal-deep); text-underline-offset: 3px; }
+.oak-hours { width: 100%; border-collapse: collapse; font-size: 16px; margin: 0 0 28px; }
+.oak-hours td { padding: 10px 0; border-bottom: 1px solid var(--rule); }
+.oak-hours td:last-child { text-align: right; font-weight: 500; white-space: nowrap; padding-left: 16px; }
+
+.oak-reads { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.oak-reads a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--serif);
+  font-size: 22px;
+}
+.oak-reads a span { color: var(--teal-deep); font-family: var(--sans); }
+.oak-reads a:hover { color: var(--teal-deep); }
+
+@media (max-width: 1080px) {
+  .oak-docs { grid-template-columns: 1fr; }
+  .oak-care { grid-template-columns: 1fr; }
+  .oak-two { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 640px) {
+  .oak-factcard { padding: 26px 22px; }
+  .oak-reads a { font-size: 19px; }
+  section.bay.oak-section { padding-top: 56px; padding-bottom: 56px; }
+}
+.about-cta-oakland { margin: 28px 0 0; font-size: 14px; color: rgba(250, 246, 239, 0.7); }
+.about-cta-oakland a { color: var(--teal); text-underline-offset: 3px; }
+.about-cta-oakland a:hover { color: var(--paper); }
+.visit-areas li a { color: inherit; text-decoration: underline; text-decoration-color: var(--teal); text-underline-offset: 3px; }
+.visit-areas li a:hover { color: var(--teal-deep); }
