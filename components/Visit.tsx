@@ -95,7 +95,9 @@ export default function Visit() {
           <span className="visit-areas-lbl">Patients travel from</span>
           <ul>
             {SERVICE_AREAS.map((area) => (
-              <li key={area}>{area}</li>
+              <li key={area}>
+                {area === "Oakland" ? <a href="/oakland">{area}</a> : area}
+              </li>
             ))}
           </ul>
         </div>

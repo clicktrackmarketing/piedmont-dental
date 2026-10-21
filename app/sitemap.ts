@@ -41,6 +41,8 @@ const EDITED: Record<string, string> = {
   // 2026-10-12 — Dr. Ma's image + case-placement fixes.
   "/resources/cosmetic-bonding": "2026-10-12", // gap-closure case 03 (moved from Invisalign)
   "/smile-gallery": "2026-10-12", // Invisalign tile no longer shows the bonding case
+  // 2026-10-21 — Oakland patients page (GeoReputation October report).
+  "/oakland": "2026-10-21", // new page
 };
 
 export const revalidate = 86400;
@@ -76,6 +78,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE}/about/dr-ma`, lastModified: editedOn("/about/dr-ma"), changeFrequency: "monthly", priority: 0.6 },
     { url: `${SITE}/about/team`, lastModified: editedOn("/about/team"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE}/about/tour`, lastModified: editedOn("/about/tour"), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE}/oakland`, lastModified: editedOn("/oakland"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/procedures`, lastModified: editedOn("/procedures"), changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE}/procedures/restoration`, lastModified: editedOn("/procedures/restoration"), changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/procedures/restoration/dental-implants`, lastModified: editedOn("/procedures/restoration/dental-implants"), changeFrequency: "monthly", priority: 0.8 },
