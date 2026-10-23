@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 const MOSAIC = [
-  { src: "/img/cases/veneers/case1-after.jpg", alt: "Porcelain veneers — after", size: "tall" },
+  { src: "/img/cases/veneers/case1-after-tile.jpg", alt: "Porcelain veneers — after", size: "tall" },
   { src: "/img/cases/crowns/case1-after.jpg", alt: "Porcelain crown — after", size: "wide" },
   { src: "/img/cases/invisalign/case2-after.jpg", alt: "Invisalign® — after", size: "square" },
   { src: "/img/full-mouth/case3-after.jpg", alt: "Full mouth restoration — after", size: "square" },
@@ -43,7 +43,7 @@ type GalleryCard = {
 const GALLERIES: GalleryCard[] = [
   {
     href: "/resources/porcelain-veneers",
-    image: "/img/cases/veneers/case1-after.jpg",
+    image: "/img/cases/veneers/case1-after-tile.jpg",
     imageAlt: "Porcelain veneer case",
     title: "Porcelain Veneers",
     blurb: "Thin custom shells that refine shape, color, and the way light catches the smile.",

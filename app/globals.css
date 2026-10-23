@@ -8499,10 +8499,12 @@ a.gummy-treatment-card:hover .gummy-treatment-cta { color: var(--ink); }
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+/* Stacked: the featured case is a wide smile shot (~2.4:1), so the slider
+   takes the full width and the checklist sits underneath. */
 .veneers-feature-layout {
   display: grid;
-  grid-template-columns: 1.45fr 1fr;
-  gap: 36px;
+  grid-template-columns: 1fr;
+  gap: 28px;
   align-items: start;
 }
 .veneers-feature-slider {
@@ -8510,10 +8512,10 @@ a.gummy-treatment-card:hover .gummy-treatment-cta { color: var(--ink); }
   flex-direction: column;
   gap: 10px;
 }
-/* Match the case photos (16:10) so the whole smile shows — a 4:3 frame
-   cropped the sides off, cutting the teeth beyond the canines. */
+/* Match Dr. Ma's photos (1280x528) so the whole smile shows, corner to
+   corner. Any narrower frame crops the teeth beyond the canines. */
 .veneers-feature-slider .ba-slider {
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 1280 / 528;
 }
 .veneers-slider-hint {
   margin: 0;
@@ -8543,9 +8545,9 @@ a.gummy-treatment-card:hover .gummy-treatment-cta { color: var(--ink); }
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 32px;
 }
 .veneers-feature-list li {
   display: grid;
@@ -13740,6 +13742,7 @@ footer.site-footer {
   .veneers-stats > div:last-child { border-bottom: none; }
   .veneers-feature-head { flex-direction: column; align-items: flex-start; gap: 12px; padding-bottom: 16px; }
   .veneers-feature-list { padding: 24px 22px; }
+  .veneers-feature-list ul { grid-template-columns: 1fr; }
   .veneers-care-list li { padding: 18px 22px; gap: 16px; }
   .veneers-care-num { font-size: 22px; min-width: 32px; }
   .veneers-cta { padding: 36px 24px; border-radius: 12px; }
