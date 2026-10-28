@@ -60,13 +60,79 @@ export type CityPage = {
 };
 
 export const CITY_PAGES: CityPage[] = [
-  // Month 2 — append entries here; links appear automatically. Example:
-  // {
-  //   href: "/oakland/dental-implants",
-  //   title: "Dental Implants in Oakland",
-  //   city: "Oakland",
-  //   service: { category: "restoration", slug: "dental-implants" },
-  // },
+  // Month 2 — append entries here; links appear automatically.
+  {
+    href: "/oakland/invisalign",
+    title: "Invisalign® in Oakland",
+    city: "Oakland",
+    service: { category: "cosmetic-dentistry", slug: "invisalign" },
+  },
+  {
+    href: "/oakland/dental-implants",
+    title: "Dental Implants in Oakland",
+    city: "Oakland",
+    service: { category: "restoration", slug: "dental-implants" },
+  },
+  {
+    href: "/oakland/porcelain-veneers",
+    title: "Porcelain Veneers in Oakland",
+    city: "Oakland",
+    service: { category: "cosmetic-dentistry", slug: "porcelain-veneers" },
+  },
+  {
+    href: "/oakland/dental-crowns",
+    title: "Dental Crowns in Oakland",
+    city: "Oakland",
+    service: { category: "restoration", slug: "crowns-caps" },
+  },
+  {
+    href: "/oakland/teeth-whitening",
+    title: "Teeth Whitening in Oakland",
+    city: "Oakland",
+    service: { category: "cosmetic-dentistry", slug: "tooth-whitening" },
+  },
+  {
+    href: "/oakland/gum-disease-treatment",
+    title: "Gum Disease Treatment in Oakland",
+    city: "Oakland",
+    service: { category: "periodontal-services", slug: "treatment" },
+  },
+  {
+    href: "/berkeley/invisalign",
+    title: "Invisalign® in Berkeley",
+    city: "Berkeley",
+    service: { category: "cosmetic-dentistry", slug: "invisalign" },
+  },
+  {
+    href: "/berkeley/dental-implants",
+    title: "Dental Implants in Berkeley",
+    city: "Berkeley",
+    service: { category: "restoration", slug: "dental-implants" },
+  },
+  {
+    href: "/berkeley/porcelain-veneers",
+    title: "Porcelain Veneers in Berkeley",
+    city: "Berkeley",
+    service: { category: "cosmetic-dentistry", slug: "porcelain-veneers" },
+  },
+  {
+    href: "/berkeley/dental-crowns",
+    title: "Dental Crowns in Berkeley",
+    city: "Berkeley",
+    service: { category: "restoration", slug: "crowns-caps" },
+  },
+  {
+    href: "/berkeley/teeth-whitening",
+    title: "Teeth Whitening in Berkeley",
+    city: "Berkeley",
+    service: { category: "cosmetic-dentistry", slug: "tooth-whitening" },
+  },
+  {
+    href: "/berkeley/gum-disease-treatment",
+    title: "Gum Disease Treatment in Berkeley",
+    city: "Berkeley",
+    service: { category: "periodontal-services", slug: "treatment" },
+  },
 ];
 
 /**
@@ -124,6 +190,40 @@ const EXPLICIT_POST_SERVICES: Record<string, string[]> = {
   "trusted-dentist-oakland-ca": [
     "/procedures",
     "/procedures/cleanings-prevention/dental-exams-cleanings",
+  ],
+  // Month 2 guides — the seven whose slug tokens derive nothing or only part
+  // of the right set (the other three derive correctly and are left to it).
+  "dental-bridge-vs-implant": [
+    "/procedures/restoration/fixed-bridges",
+    "/procedures/restoration/dental-implants",
+  ],
+  "can-invisalign-fix-a-gummy-smile": [
+    "/procedures/cosmetic-dentistry/invisalign",
+    "/procedures/periodontal-services/crown-lengthening",
+  ],
+  "same-day-veneers-east-bay": [
+    "/procedures/cosmetic-dentistry/porcelain-veneers",
+    "/procedures/cosmetic-dentistry/cerec",
+  ],
+  "what-is-facelift-dentistry": [
+    "/procedures/cosmetic-dentistry/porcelain-veneers",
+    "/procedures/restoration/crowns-caps",
+    "/procedures/restoration/dental-implants",
+  ],
+  "gum-disease-stages": [
+    "/procedures/periodontal-services/what-is-periodontal-gum-disease",
+    "/procedures/periodontal-services/treatment",
+    "/procedures/periodontal-services/periodontal-scaling-root-planing",
+  ],
+  "when-to-see-a-gum-specialist": [
+    "/procedures/periodontal-services",
+    "/procedures/periodontal-services/treatment",
+    "/procedures/periodontal-services/periodontal-scaling-root-planing",
+  ],
+  "gum-recession-treatment": [
+    "/procedures/periodontal-services/gum-grafting",
+    "/procedures/periodontal-services/treatment",
+    "/procedures/periodontal-services",
   ],
 };
 
@@ -314,6 +414,35 @@ function tokensOf(slug: string): string[] {
  * "Looking for a service?" card. Explicit map first; otherwise derived
  * from the slug's tokens (bigrams before single tokens), capped.
  */
+/**
+ * City pages a guide should point at (run-plan #50: "a supporting guide
+ * pointing up to it").
+ *
+ * Derived from the SAME service mapping the post already links to — a post
+ * only ever gets a city link for a service page it is already pointing at.
+ * There is no anchor- or text-matching here, deliberately: the automated
+ * cross-linker that matched on phrases over-reached badly on the Month-2 blog
+ * batch and needed six links reverted. Mapping-derived links cannot do that.
+ *
+ * Covers EVERY service the post links to, not just the first: three Month-2
+ * guides (gum-disease-stages, dental-bridge-vs-implant, cerec-same-day-crowns-
+ * oakland) carry their city-page service second in the list, so a primary-only
+ * rule silently dropped them. Capped so the card stays short.
+ */
+const POST_CITY_LINK_CAP = 4;
+
+export function getCityLinksForPost(postSlug: string): InternalLink[] {
+  const serviceHrefs = new Set(
+    getServiceLinksForPost(postSlug).map((l) => l.href),
+  );
+  if (serviceHrefs.size === 0) return [];
+  return CITY_PAGES.filter((p) =>
+    serviceHrefs.has(procedureHref(p.service.category, p.service.slug)),
+  )
+    .slice(0, POST_CITY_LINK_CAP)
+    .map((p) => ({ href: p.href, title: p.title }));
+}
+
 export function getServiceLinksForPost(postSlug: string): InternalLink[] {
   const explicit = EXPLICIT_POST_SERVICES[postSlug];
   if (explicit) {

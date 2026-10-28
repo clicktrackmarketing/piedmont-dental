@@ -53,7 +53,8 @@ function BlogStructuredData({ posts }: { posts: Post[] }) {
 }
 
 /** BabyLoveGrowth articles are re-fetched at most once a day. */
-export const revalidate = 86400;
+// Hourly, so scheduled posts (lib/publish) appear on their release day.
+export const revalidate = 3600;
 
 export default async function BlogPage() {
   const posts = await getAllPostMeta();
