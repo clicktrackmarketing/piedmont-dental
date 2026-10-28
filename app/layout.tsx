@@ -85,17 +85,25 @@ export const metadata: Metadata = {
     description: DESCRIPTION,
     images: ["/og-doctors.jpg"],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
-  },
+  // Production indexes normally. Any non-production deploy (a Vercel branch
+  // preview shown to the client, or local dev) emits noindex/nofollow so a
+  // review URL can never be crawled and compete with the live site for its own
+  // content. Vercel also sends X-Robots-Tag: noindex on previews; this is the
+  // belt to that braces, and it travels with the code.
+  robots:
+    process.env.VERCEL_ENV === "production"
+      ? {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+            "max-video-preview": -1,
+          },
+        }
+      : { index: false, follow: false, nocache: true },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },

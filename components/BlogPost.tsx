@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { defaultUrlTransform } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import type { BlogPost as BlogPostData } from "@/lib/blog";
 import type { Post } from "@/components/BlogIndex";
-import { getServiceLinksForPost } from "@/lib/internal-links";
+import { isUnreleasedPostHref } from "@/lib/publish";
+import {
+  getServiceLinksForPost,
+  getCityLinksForPost,
+} from "@/lib/internal-links";
 
 export default function BlogPost({
   post,
@@ -14,6 +18,7 @@ export default function BlogPost({
   post: BlogPostData;
   related: Post[];
 }) {
+  const cityLinks = getCityLinksForPost(post.slug);
   return (
     <>
       {/* Hero */}
@@ -58,10 +63,18 @@ export default function BlogPost({
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               rehypePlugins={[rehypeRaw]}
+              // react-markdown's default urlTransform strips any protocol outside
+              // http/https/mailto, which silently emptied `tel:` hrefs — click-to-call
+              // links in post bodies rendered as <a href="">. Allow tel: through.
+              urlTransform={(url) =>
+                url.startsWith("tel:") ? url : defaultUrlTransform(url)
+              }
               components={{
                 // Skip the H1 — the hero already shows the title
                 h1: () => null,
                 a: ({ href, children, ...rest }) => {
+                  // A link to one of our posts that isn't released yet would 404 — show its text only.
+                  if (isUnreleasedPostHref(href)) return <>{children}</>;
                   const isExternal =
                     href?.startsWith("http") &&
                     !href.startsWith("https://piedmontdentalbydesign.com");
@@ -106,6 +119,19 @@ export default function BlogPost({
                   <Link href="/procedures">All procedures →</Link>
                 </li>
               </ul>
+              {/* City pages for the service this guide supports (#50) */}
+              {cityLinks.length > 0 && (
+                <>
+                  <h3 className="post-sidebar-subhead">In your area</h3>
+                  <ul>
+                    {cityLinks.map((l) => (
+                      <li key={l.href}>
+                        <Link href={l.href}>{l.title} →</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
               <a href="/contact" className="btn btn-primary post-sidebar-cta">
                 Contact us →
               </a>

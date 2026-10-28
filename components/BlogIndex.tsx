@@ -15,6 +15,128 @@ export type Post = {
 };
 
 export const posts: Post[] = [
+  // ---- Month 2 guides ----
+  {
+    slug: "dental-implant-cost-east-bay",
+    title:
+      "What Dental Implants Really Cost in the East Bay (2026 Breakdown)",
+    date: "October 28, 2026",
+    dateISO: "2026-10-28",
+    category: "Restorative",
+    image: "/img/blog/dental-implant-cost-east-bay/hero.jpg",
+    alt: "Illustration of a dental implant: the post, the connector (abutment) and the crown",
+    excerpt:
+      "What dental implants cost in the East Bay in 2026 \u2014 single tooth, All-on-4 and full mouth, itemised, with what insurance really pays.",
+  },
+  {
+    slug: "dental-bridge-vs-implant",
+    title:
+      "Dental Bridge or Implant? How East Bay Patients Actually Choose",
+    date: "October 31, 2026",
+    dateISO: "2026-10-31",
+    category: "Restorative",
+    image: "/img/blog/dental-bridge-vs-implant/hero.jpg",
+    alt: "A dental bridge being fitted onto a model of the teeth",
+    excerpt:
+      "Bridge or implant for a missing tooth? The real trade-offs \u2014 cost, lifespan, the teeth either side, and why each one eventually fails.",
+  },
+  {
+    slug: "invisalign-cost-east-bay",
+    title:
+      "Invisalign in the East Bay: What It Costs and How Long It Takes for Adults",
+    date: "November 3, 2026",
+    dateISO: "2026-11-03",
+    category: "Cosmetic",
+    image: "/img/blog/invisalign-cost-east-bay/hero.jpg",
+    alt: "Woman putting in a clear Invisalign aligner",
+    excerpt:
+      "What Invisalign costs for adults in the East Bay, which tier your quote buys, how insurance really works, and what the research says about speed.",
+  },
+  {
+    slug: "can-invisalign-fix-a-gummy-smile",
+    title:
+      "Can Invisalign Fix a Gummy Smile?",
+    date: "November 6, 2026",
+    dateISO: "2026-11-06",
+    category: "Periodontal",
+    image: "/img/blog/can-invisalign-fix-a-gummy-smile/hero.jpg",
+    alt: "Smiling woman, illustrating smile and gum-line treatment options",
+    excerpt:
+      "Sometimes. Aligners help when tooth position causes the gum display, not when gum tissue, lip or jaw does. Here is how to tell which one you have.",
+  },
+  {
+    slug: "same-day-veneers-east-bay",
+    title:
+      "Same-Day Veneers in the East Bay: What's Real and What's Marketing",
+    date: "November 9, 2026",
+    dateISO: "2026-11-09",
+    category: "Cosmetic",
+    image: "/img/blog/same-day-veneers-east-bay/hero.jpg",
+    alt: "CEREC milling unit making a same-day restoration in the office",
+    excerpt:
+      "Same-day veneers in the East Bay, honestly: what chairside CEREC\u00ae really does in one visit, when lab porcelain is worth the wait, and what research shows.",
+  },
+  {
+    slug: "veneers-vs-crowns",
+    title:
+      "Veneers or Crowns? Choosing the Right Fix for a Damaged Front Tooth",
+    date: "November 12, 2026",
+    dateISO: "2026-11-12",
+    category: "Restorative",
+    image: "/img/blog/veneers-vs-crowns/hero.jpg",
+    alt: "A porcelain veneer being placed over a discolored front tooth",
+    excerpt:
+      "Veneer or crown for a chipped or cracked front tooth? The real triage \u2014 surface damage versus structural loss \u2014 with the published survival data.",
+  },
+  {
+    slug: "what-is-facelift-dentistry",
+    title:
+      "What Is 'Facelift Dentistry'? The Full-Mouth Rejuvenation Trend, Explained",
+    date: "November 15, 2026",
+    dateISO: "2026-11-15",
+    category: "Cosmetic",
+    image: "/img/blog/what-is-facelift-dentistry/hero.jpg",
+    alt: "Smiling mature woman, illustrating lower-face and smile rejuvenation",
+    excerpt:
+      "Facelift dentistry is a marketing term, not a dental specialty. What the treatment really is, what the evidence shows, and what it cannot do.",
+  },
+  {
+    slug: "gum-disease-stages",
+    title:
+      "Gum Disease Stages: From Gingivitis to Periodontitis (And When Each Is Reversible)",
+    date: "November 18, 2026",
+    dateISO: "2026-11-18",
+    category: "Periodontal",
+    image: "/img/blog/gum-disease-stages/hero.jpg",
+    alt: "Woman showing red, inflamed gums, an early sign of gum disease",
+    excerpt:
+      "The four stages of gum disease, plainly explained: gingivitis is reversible, periodontitis is not. What each stage looks like and how each is treated.",
+  },
+  {
+    slug: "when-to-see-a-gum-specialist",
+    title:
+      "When Should You See a Gum Specialist? 7 Signs It's Beyond a Regular Cleaning",
+    date: "November 21, 2026",
+    dateISO: "2026-11-21",
+    category: "Periodontal",
+    image: "/img/blog/when-to-see-a-gum-specialist/hero.jpg",
+    alt: "The Piedmont Dental By Design team at the Grand Avenue office",
+    excerpt:
+      "Seven signs your gums need a periodontist rather than another cleaning \u2014 what a gum specialist treats, what a referral involves, and what to ask for.",
+  },
+  {
+    slug: "gum-recession-treatment",
+    title:
+      "Gum Recession: Why It Happens and Every Treatment That Actually Works",
+    date: "November 24, 2026",
+    dateISO: "2026-11-24",
+    category: "Periodontal",
+    image: "/img/blog/gum-recession-treatment/hero.jpg",
+    alt: "Illustration of a gum graft covering an exposed tooth root",
+    excerpt:
+      "Why gums recede, why they do not grow back on their own, and the real treatment ladder from monitoring to grafting, with the evidence behind each step.",
+  },
+  // ---- END PREVIEW DRAFTS ----
   {
     slug: "what-is-smile-design-consultation",
     title: "What Is a Smile Design Consultation?",

@@ -14,6 +14,7 @@ import {
   getRemotePostBySlug,
   getRemotePosts,
 } from "@/lib/blog-remote";
+import { isPublished } from "@/lib/publish";
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "blog");
 
@@ -22,8 +23,13 @@ export type BlogPost = Post & {
   body: string;
 };
 
+/** Hand-written posts whose release date has arrived (see lib/publish). */
+function releasedMeta(): Post[] {
+  return POST_META.filter((p) => isPublished(p.dateISO));
+}
+
 export function getPostSlugs(): string[] {
-  return POST_META.map((p) => p.slug);
+  return releasedMeta().map((p) => p.slug);
 }
 
 /**
@@ -42,7 +48,7 @@ export function getPostBySlug(slug: string): BlogPost {
 }
 
 export function getAllPosts(): BlogPost[] {
-  return POST_META.map((p) => getPostBySlug(p.slug));
+  return releasedMeta().map((p) => getPostBySlug(p.slug));
 }
 
 export function getRelatedPosts(
@@ -64,7 +70,7 @@ export async function getAllPostMeta(): Promise<Post[]> {
   const remote = await getRemotePosts();
   const local = new Set(POST_META.map((p) => p.slug));
   const merged: Post[] = [
-    ...POST_META,
+    ...releasedMeta(),
     ...remote.filter((p) => !local.has(p.slug)),
   ];
   return merged.sort(
@@ -74,7 +80,8 @@ export async function getAllPostMeta(): Promise<Post[]> {
 
 /** Local post first, then BLG. Returns null when neither has the slug. */
 export async function findPostBySlug(slug: string): Promise<BlogPost | null> {
-  if (POST_META.some((p) => p.slug === slug)) return getPostBySlug(slug);
+  const local = POST_META.find((p) => p.slug === slug);
+  if (local) return isPublished(local.dateISO) ? getPostBySlug(slug) : null;
   const remote = await getRemotePostBySlug(slug);
   return remote ? { ...remote } : null;
 }

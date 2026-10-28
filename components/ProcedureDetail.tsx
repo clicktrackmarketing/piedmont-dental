@@ -3,7 +3,8 @@ import Link from "next/link";
 import ServiceSchema from "@/components/schema/ServiceSchema";
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 import FAQPageSchema from "@/components/schema/FAQPageSchema";
-import { getProcedureSidebar } from "@/lib/internal-links";
+import { getProcedureSidebar, getCityPageLinks } from "@/lib/internal-links";
+import type { SidebarGroup } from "@/lib/internal-links";
 
 // Schema.org category name per practice-area slug
 const SCHEMA_CATEGORY: Record<string, string> = {
@@ -50,6 +51,14 @@ export type ProcedureDetailProps = {
   /** Optional procedure-specific featured image; otherwise category-themed image is used */
   featuredImage?: string;
   featuredAlt?: string;
+  /**
+   * Month 2 city pages (run-plan #47): the same procedure, localised. Swaps
+   * the crumb and sidebar to the city-page derivation (getCityPageLinks),
+   * scopes the Service schema's areaServed, and fixes the schema URL.
+   */
+  cityPage?: { href: string; city: string };
+  /** Cited sources — rendered as a short list after the sections (YMYL) */
+  sources?: { label: string; href: string }[];
 };
 
 const CATEGORY_IMAGE: Record<string, string> = {
@@ -70,6 +79,8 @@ export default function ProcedureDetail({
   faqs,
   featuredImage,
   featuredAlt,
+  cityPage,
+  sources,
 }: ProcedureDetailProps) {
   const heroSub = intro[0];
   const remainingIntro = intro.slice(1);
@@ -77,10 +88,20 @@ export default function ProcedureDetail({
   const imageAlt = featuredAlt ?? `${title} — Piedmont Dental By Design`;
   // Sidebar links derive from the internal-linking template (decision #50),
   // so cross-category and city links appear without per-page edits.
-  const [siblingGroup, ...extraGroups] = getProcedureSidebar(
-    category.slug,
-    slug,
-  );
+  const cityLinks = cityPage ? getCityPageLinks(cityPage.href) : null;
+  const sidebarGroups: SidebarGroup[] = cityLinks
+    ? [
+        { label: "This treatment", links: [cityLinks.parentService] },
+        ...(cityLinks.sameCityOtherServices.length > 0
+          ? [{ label: `Also in ${cityPage!.city}`, links: cityLinks.sameCityOtherServices }]
+          : []),
+        ...(cityLinks.sameServiceOtherCities.length > 0
+          ? [{ label: "Other areas", links: cityLinks.sameServiceOtherCities }]
+          : []),
+      ]
+    : getProcedureSidebar(category.slug, slug);
+  const [siblingGroup, ...extraGroups] = sidebarGroups;
+  const pageHref = cityPage ? cityPage.href : `/procedures/${category.slug}/${slug}`;
 
   return (
     <>
@@ -89,10 +110,21 @@ export default function ProcedureDetail({
         <div className="page-hero-inner proc-detail-hero-inner">
           <div className="page-hero-content">
             <div className="num">
-              <Link href={`/procedures/${category.slug}`} className="proc-crumb">
-                {category.label}
-              </Link>{" "}
-              · Procedures
+              {cityLinks ? (
+                <>
+                  <Link href={cityLinks.parentService.href} className="proc-crumb">
+                    {cityLinks.parentService.title}
+                  </Link>{" "}
+                  · {cityPage!.city}
+                </>
+              ) : (
+                <>
+                  <Link href={`/procedures/${category.slug}`} className="proc-crumb">
+                    {category.label}
+                  </Link>{" "}
+                  · Procedures
+                </>
+              )}
             </div>
             <h1 className="proc-detail-title">{title}</h1>
             <p className="page-hero-sub">{heroSub}</p>
@@ -142,7 +174,7 @@ export default function ProcedureDetail({
             <aside className="proc-sidebar" aria-label="Related procedures">
               <div className="proc-sidebar-inner">
                 <span className="proc-sidebar-label">{siblingGroup.label}</span>
-                <h3 className="proc-sidebar-title">{category.label}</h3>
+                <h3 className="proc-sidebar-title">{cityPage ? cityPage.city : category.label}</h3>
                 <ol className="proc-sidebar-list">
                   {siblingGroup.links.map((r) => (
                     <li key={r.href} className={r.isCurrent ? "is-current" : ""}>
@@ -168,9 +200,9 @@ export default function ProcedureDetail({
                 ))}
                 <Link
                   className="proc-sidebar-back"
-                  href={`/procedures/${category.slug}`}
+                  href={cityLinks ? cityLinks.parentService.href : `/procedures/${category.slug}`}
                 >
-                  ← All {category.label.toLowerCase()}
+                  ← {cityLinks ? cityLinks.parentService.title : `All ${category.label.toLowerCase()}`}
                 </Link>
               </div>
             </aside>
@@ -203,6 +235,22 @@ export default function ProcedureDetail({
                 )}
               </section>
             ))}
+
+            {/* Cited sources (city pages / YMYL copy) */}
+            {sources && sources.length > 0 && (
+              <section className="proc-section proc-sources" aria-label="Sources">
+                <h2 className="proc-section-title">Sources</h2>
+                <ul className="proc-bullets">
+                  {sources.map((src) => (
+                    <li key={src.href}>
+                      <a href={src.href} target="_blank" rel="noopener noreferrer">
+                        {src.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
             {/* Frequently asked questions — server-rendered accordion */}
             {faqs && faqs.length > 0 && (
@@ -251,15 +299,24 @@ export default function ProcedureDetail({
       <ServiceSchema
         name={title}
         description={intro[0] ?? `${title} at Piedmont Dental By Design.`}
-        url={`/procedures/${category.slug}/${slug}`}
+        url={pageHref}
         category={SCHEMA_CATEGORY[category.slug] ?? "Dentistry"}
+        areaServed={cityPage ? `${cityPage.city}, CA` : undefined}
       />
       <BreadcrumbSchema
-        crumbs={[
-          { name: "Procedures", url: "/procedures" },
-          { name: category.label, url: `/procedures/${category.slug}` },
-          { name: title, url: `/procedures/${category.slug}/${slug}` },
-        ]}
+        crumbs={
+          cityLinks
+            ? [
+                { name: "Procedures", url: "/procedures" },
+                { name: cityLinks.parentService.title, url: cityLinks.parentService.href },
+                { name: cityPage!.city, url: pageHref },
+              ]
+            : [
+                { name: "Procedures", url: "/procedures" },
+                { name: category.label, url: `/procedures/${category.slug}` },
+                { name: title, url: `/procedures/${category.slug}/${slug}` },
+              ]
+        }
       />
       {faqs && faqs.length > 0 && <FAQPageSchema faqs={faqs} />}
     </>

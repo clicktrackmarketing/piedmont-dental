@@ -3211,6 +3211,10 @@ a { color: inherit; text-decoration: none; }
   margin: 1.6em 0 0.5em;
 }
 .post-prose p { margin: 0; }
+/* `.post-prose > * + *` (specificity 0,1,0) is out-specified by `.post-prose p` (0,1,1) above,
+   so paragraphs lost the stack rhythm and consecutive paragraphs rendered flush against each
+   other on every blog post. This selector (0,1,2) restores the intended 1.1em gap. */
+.post-prose > p + p { margin-top: 1.1em; }
 .post-prose strong { font-weight: 600; color: var(--ink); }
 .post-prose em { font-style: italic; }
 .post-prose a:not(.btn) {

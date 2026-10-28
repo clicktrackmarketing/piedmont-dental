@@ -18,7 +18,7 @@ type Params = { slug: string };
 
 /** BabyLoveGrowth articles are re-fetched at most once a day. New slugs
  *  published between deploys render on first request (dynamicParams). */
-export const revalidate = 86400;
+export const revalidate = 3600; // hourly: scheduled posts release on their day (lib/publish)
 
 export async function generateStaticParams(): Promise<Params[]> {
   return (await getAllPostMeta()).map((p) => ({ slug: p.slug }));

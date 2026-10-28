@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { posts } from "@/components/BlogIndex";
 import { getRemotePosts } from "@/lib/blog-remote";
+import { isPublished } from "@/lib/publish";
 
 const SITE = "https://piedmontdentalbydesign.com";
 
@@ -43,9 +44,23 @@ const EDITED: Record<string, string> = {
   "/smile-gallery": "2026-10-12", // Invisalign tile no longer shows the bonding case
   // 2026-10-21 — Oakland patients page (GeoReputation October report).
   "/oakland": "2026-10-21", // new page
+  // 2026-10-28 — Month 2 city service pages (Oakland + Berkeley).
+  "/oakland/invisalign": "2026-10-28", // Month 2 city page
+  "/oakland/dental-implants": "2026-10-28", // Month 2 city page
+  "/oakland/porcelain-veneers": "2026-10-28", // Month 2 city page
+  "/oakland/dental-crowns": "2026-10-28", // Month 2 city page
+  "/oakland/teeth-whitening": "2026-10-28", // Month 2 city page
+  "/oakland/gum-disease-treatment": "2026-10-28", // Month 2 city page
+  "/berkeley/invisalign": "2026-10-28", // Month 2 city page
+  "/berkeley/dental-implants": "2026-10-28", // Month 2 city page
+  "/berkeley/porcelain-veneers": "2026-10-28", // Month 2 city page
+  "/berkeley/dental-crowns": "2026-10-28", // Month 2 city page
+  "/berkeley/teeth-whitening": "2026-10-28", // Month 2 city page
+  "/berkeley/gum-disease-treatment": "2026-10-28", // Month 2 city page
 };
 
-export const revalidate = 86400;
+// Hourly, so a scheduled post (lib/publish) enters the sitemap on its release day.
+export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const localSlugs = new Set(posts.map((p) => p.slug));
@@ -54,7 +69,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   );
   const editedOn = (path: string) =>
     EDITED[path] ? new Date(EDITED[path]) : undefined;
-  const blogPosts: MetadataRoute.Sitemap = posts.map((p) => ({
+  const blogPosts: MetadataRoute.Sitemap = posts
+    .filter((p) => isPublished(p.dateISO))
+    .map((p) => ({
     url: `${SITE}/blog/${p.slug}`,
     lastModified: new Date(p.dateISO),
     changeFrequency: "yearly",
@@ -91,6 +108,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE}/procedures/cosmetic-dentistry/tooth-whitening`, lastModified: editedOn("/procedures/cosmetic-dentistry/tooth-whitening"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/procedures/cosmetic-dentistry/cerec`, lastModified: editedOn("/procedures/cosmetic-dentistry/cerec"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/procedures/cosmetic-dentistry/invisalign`, lastModified: editedOn("/procedures/cosmetic-dentistry/invisalign"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/oakland/invisalign`, lastModified: editedOn("/oakland/invisalign"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/oakland/dental-implants`, lastModified: editedOn("/oakland/dental-implants"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/oakland/porcelain-veneers`, lastModified: editedOn("/oakland/porcelain-veneers"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/oakland/dental-crowns`, lastModified: editedOn("/oakland/dental-crowns"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/oakland/teeth-whitening`, lastModified: editedOn("/oakland/teeth-whitening"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/oakland/gum-disease-treatment`, lastModified: editedOn("/oakland/gum-disease-treatment"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/berkeley/invisalign`, lastModified: editedOn("/berkeley/invisalign"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/berkeley/dental-implants`, lastModified: editedOn("/berkeley/dental-implants"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/berkeley/porcelain-veneers`, lastModified: editedOn("/berkeley/porcelain-veneers"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/berkeley/dental-crowns`, lastModified: editedOn("/berkeley/dental-crowns"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/berkeley/teeth-whitening`, lastModified: editedOn("/berkeley/teeth-whitening"), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE}/berkeley/gum-disease-treatment`, lastModified: editedOn("/berkeley/gum-disease-treatment"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/procedures/cosmetic-dentistry/surgery`, lastModified: editedOn("/procedures/cosmetic-dentistry/surgery"), changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE}/procedures/periodontal-services`, lastModified: editedOn("/procedures/periodontal-services"), changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE}/procedures/periodontal-services/what-is-periodontal-gum-disease`, lastModified: editedOn("/procedures/periodontal-services/what-is-periodontal-gum-disease"), changeFrequency: "monthly", priority: 0.8 },
