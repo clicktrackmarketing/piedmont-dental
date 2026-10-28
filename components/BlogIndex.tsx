@@ -15,7 +15,7 @@ export type Post = {
 };
 
 export const posts: Post[] = [
-  // ---- PREVIEW DRAFTS (local only, do not commit) ----
+  // ---- Month 2 guides ----
   {
     slug: "dental-implant-cost-east-bay",
     title:
@@ -23,8 +23,8 @@ export const posts: Post[] = [
     date: "September 15, 2026",
     dateISO: "2026-09-15",
     category: "Restorative",
-    image: "/img/blog/dental-implants-piedmont-ca/hero.jpg",
-    alt: "Preview placeholder image - needs its own hero before publish",
+    image: "/img/blog/dental-implant-cost-east-bay/hero.jpg",
+    alt: "Illustration of a dental implant: the post, the connector (abutment) and the crown",
     excerpt:
       "What dental implants cost in the East Bay in 2026 \u2014 single tooth, All-on-4 and full mouth, itemised, with what insurance really pays.",
   },
@@ -35,8 +35,8 @@ export const posts: Post[] = [
     date: "September 18, 2026",
     dateISO: "2026-09-18",
     category: "Restorative",
-    image: "/img/blog/dental-implants-piedmont-ca/hero.jpg",
-    alt: "Preview placeholder image - needs its own hero before publish",
+    image: "/img/blog/dental-bridge-vs-implant/hero.jpg",
+    alt: "A dental bridge being fitted onto a model of the teeth",
     excerpt:
       "Bridge or implant for a missing tooth? The real trade-offs \u2014 cost, lifespan, the teeth either side, and why each one eventually fails.",
   },
@@ -47,8 +47,8 @@ export const posts: Post[] = [
     date: "September 21, 2026",
     dateISO: "2026-09-21",
     category: "Cosmetic",
-    image: "/img/blog/what-is-smile-design-consultation/hero.jpg",
-    alt: "Preview placeholder image - needs its own hero before publish",
+    image: "/img/blog/invisalign-cost-east-bay/hero.jpg",
+    alt: "Woman putting in a clear Invisalign aligner",
     excerpt:
       "What Invisalign costs for adults in the East Bay, which tier your quote buys, how insurance really works, and what the research says about speed.",
   },
@@ -59,8 +59,8 @@ export const posts: Post[] = [
     date: "September 24, 2026",
     dateISO: "2026-09-24",
     category: "Periodontal",
-    image: "/img/blog/cosmetic-dentist-piedmont-ca/hero.jpg",
-    alt: "Preview placeholder image - needs its own hero before publish",
+    image: "/img/blog/can-invisalign-fix-a-gummy-smile/hero.jpg",
+    alt: "Smiling woman, illustrating smile and gum-line treatment options",
     excerpt:
       "Sometimes. Aligners help when tooth position causes the gum display, not when gum tissue, lip or jaw does. Here is how to tell which one you have.",
   },
@@ -71,8 +71,8 @@ export const posts: Post[] = [
     date: "September 27, 2026",
     dateISO: "2026-09-27",
     category: "Cosmetic",
-    image: "/img/blog/what-is-smile-design-consultation/hero.jpg",
-    alt: "Preview placeholder image - needs its own hero before publish",
+    image: "/img/blog/same-day-veneers-east-bay/hero.jpg",
+    alt: "CEREC milling unit making a same-day restoration in the office",
     excerpt:
       "Same-day veneers in the East Bay, honestly: what chairside CEREC\u00ae really does in one visit, when lab porcelain is worth the wait, and what research shows.",
   },
@@ -83,8 +83,8 @@ export const posts: Post[] = [
     date: "September 30, 2026",
     dateISO: "2026-09-30",
     category: "Restorative",
-    image: "/img/blog/dental-implants-piedmont-ca/hero.jpg",
-    alt: "Preview placeholder image - needs its own hero before publish",
+    image: "/img/blog/veneers-vs-crowns/hero.jpg",
+    alt: "A porcelain veneer being placed over a discolored front tooth",
     excerpt:
       "Veneer or crown for a chipped or cracked front tooth? The real triage \u2014 surface damage versus structural loss \u2014 with the published survival data.",
   },
@@ -95,8 +95,8 @@ export const posts: Post[] = [
     date: "October 3, 2026",
     dateISO: "2026-10-03",
     category: "Cosmetic",
-    image: "/img/blog/what-is-smile-design-consultation/hero.jpg",
-    alt: "Preview placeholder image - needs its own hero before publish",
+    image: "/img/blog/what-is-facelift-dentistry/hero.jpg",
+    alt: "Smiling mature woman, illustrating lower-face and smile rejuvenation",
     excerpt:
       "Facelift dentistry is a marketing term, not a dental specialty. What the treatment really is, what the evidence shows, and what it cannot do.",
   },
@@ -107,8 +107,8 @@ export const posts: Post[] = [
     date: "October 6, 2026",
     dateISO: "2026-10-06",
     category: "Periodontal",
-    image: "/img/blog/cosmetic-dentist-piedmont-ca/hero.jpg",
-    alt: "Preview placeholder image - needs its own hero before publish",
+    image: "/img/blog/gum-disease-stages/hero.jpg",
+    alt: "Woman showing red, inflamed gums, an early sign of gum disease",
     excerpt:
       "The four stages of gum disease, plainly explained: gingivitis is reversible, periodontitis is not. What each stage looks like and how each is treated.",
   },
@@ -119,8 +119,8 @@ export const posts: Post[] = [
     date: "October 9, 2026",
     dateISO: "2026-10-09",
     category: "Periodontal",
-    image: "/img/blog/cosmetic-dentist-piedmont-ca/hero.jpg",
-    alt: "Preview placeholder image - needs its own hero before publish",
+    image: "/img/blog/when-to-see-a-gum-specialist/hero.jpg",
+    alt: "The Piedmont Dental By Design team at the Grand Avenue office",
     excerpt:
       "Seven signs your gums need a periodontist rather than another cleaning \u2014 what a gum specialist treats, what a referral involves, and what to ask for.",
   },
@@ -131,8 +131,8 @@ export const posts: Post[] = [
     date: "October 12, 2026",
     dateISO: "2026-10-12",
     category: "Periodontal",
-    image: "/img/blog/cosmetic-dentist-piedmont-ca/hero.jpg",
-    alt: "Preview placeholder image - needs its own hero before publish",
+    image: "/img/blog/gum-recession-treatment/hero.jpg",
+    alt: "Illustration of a gum graft covering an exposed tooth root",
     excerpt:
       "Why gums recede, why they do not grow back on their own, and the real treatment ladder from monitoring to grafting, with the evidence behind each step.",
   },

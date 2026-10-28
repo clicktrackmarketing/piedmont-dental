@@ -34,7 +34,6 @@ Treatment is sold in tiers, and the tier is what your quote is really buying.
 | Tier | Suited To | Typical Range | Common Average |
 | --- | --- | --- | --- |
 | Express / Lite | Minor crowding, spacing, or relapse after braces | $1,800 — $3,000 | ~$2,400 |
-| Teen | Adolescent cases, with compliance indicators | $3,000 — $5,000 | ~$3,800 |
 | Comprehensive (adult) | Moderate to complex, unlimited trays | $5,000 — $8,000 | ~$5,700 |
 
 The US average across all cases sits around $5,100, with Bay Area pricing generally running above national figures in line with the rest of dentistry. Treat these as market ranges rather than a price list — only an examination and a scan produce a real number.
@@ -49,7 +48,7 @@ Items that are commonly separate, and are worth confirming in writing:
 
 - **Refinements.** Additional trays if teeth do not track as planned. Comprehensive plans usually include them; limited tiers often do not.
 - **Retainers.** Frequently quoted separately, and you will need them indefinitely.
-- **Attachments and IPR.** Small tooth-coloured bumps and minor enamel reshaping used to grip and create space. Normally included, but confirm.
+- **Attachments and IPR.** Small tooth-colored bumps and minor enamel reshaping used to grip and create space. Normally included, but confirm.
 - **Records and imaging.** The initial scan and photographs.
 - **Missed-tray replacements.** Lost or cracked trays outside the plan.
 
@@ -61,7 +60,7 @@ Case complexity dominates: how far teeth must move, whether the bite is being co
 
 Often, partially — and the mechanism is different from the rest of your dental coverage, which is where people get caught out.
 
-Most plans that include orthodontics apply a **lifetime orthodontic maximum**, commonly $1,000 to $3,000, rather than counting the treatment against your annual maximum. It is once per lifetime, not once per year, so you cannot stage treatment across two benefit years to claim twice. Typical reimbursement is around half the treatment cost up to that ceiling, which on a $5,700 case with a $1,500 lifetime cap leaves roughly $4,200 to fund.
+Most plans that include orthodontics apply a **lifetime orthodontic maximum**, commonly $1,000 to $3,000, rather than counting the treatment against your annual maximum. It is once per lifetime, not once per year, so you cannot stage treatment across two benefit years to claim twice. So on a $5,700 case with a $1,500 lifetime cap, roughly $4,200 is left to fund.
 
 This differs from how implants, crowns and other major work are handled, where the [annual maximum applies and about 65% of dental PPOs cap benefits at $1,500 or more](https://www.nadp.org/about-dental-plans-care/understanding-dental-benefits/), according to the National Association of Dental Plans. Two useful questions for your insurer: does my plan include an orthodontic benefit at all, and is there an age limit on it? Adult orthodontic coverage is far from universal.
 
@@ -95,7 +94,7 @@ A 2026 systematic review and meta-analysis in [*BDJ Open*](https://pmc.ncbi.nlm.
 
 The same meta-analysis found better periodontal outcomes with aligners across three measures: plaque index, gingival index and probing depth all improved relative to fixed appliances, each at p < 0.001. The mechanism is not mysterious — you remove aligners to brush and floss normally, whereas brackets and wires trap plaque.
 
-Quality-of-life scores also favoured aligners early in treatment, though that difference faded by twelve months. Including that fade matters: the advantage is real, and it is front-loaded.
+Quality-of-life scores also favored aligners early in treatment, though that difference faded by twelve months. Including that fade matters: the advantage is real, and it is front-loaded.
 
 ### Where Fixed Braces Still Win
 
@@ -123,7 +122,7 @@ Coffee and tea deserve a specific warning. Hot drinks can warp the plastic, and 
 
 ### How Do I Keep the Trays Clean?
 
-Rinse them every time they come out, brush them gently with a soft brush and cool water, and never use hot water or coloured mouthwash. Trays that are put back over unbrushed teeth trap sugar and acid against enamel for hours, which is how people finish orthodontics with straight teeth and new decay.
+Rinse them every time they come out, brush them gently with a soft brush and cool water, and never use hot water or colored mouthwash. Trays that are put back over unbrushed teeth trap sugar and acid against enamel for hours, which is how people finish orthodontics with straight teeth and new decay.
 
 ## What Happens After Treatment?
 

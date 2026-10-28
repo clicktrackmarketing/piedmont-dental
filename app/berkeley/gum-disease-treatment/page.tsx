@@ -94,7 +94,7 @@ export default function BerkeleyGumDiseaseTreatmentPage() {
               title: "When we'll tell you a deep cleaning isn't the answer",
               body: [
                 "A deep cleaning is a treatment for periodontitis, not a premium cleaning. If your measurements show gingivitis and no bone loss, we will say so, book one or two regular cleanings and coach your home care — and you will have driven down from Berkeley for a smaller answer than you feared, which is the right outcome.",
-                "At the other end, scaling and root planing has limits. If the pockets have not healed at the re-evaluation, repeating the deep cleaning is not the answer; periodontal surgery to reduce the pocket depth may be, because shallower pockets are easier to keep clean and slow the disease. The American Academy of Periodontology's position is the same: when non-surgical treatment does not get the gums healthy, gum surgery may be recommended (American Academy of Periodontology). For advanced surgical care we may refer you on rather than stretch a treatment past what it can do.",
+                "At the other end, scaling and root planing has limits. If the pockets have not healed at the re-evaluation, repeating the deep cleaning is not the answer; periodontal surgery to reduce the pocket depth may be, because shallower pockets are easier to keep clean and slow the disease. The American Academy of Periodontology's position is the same: when non-surgical treatment does not get the gums healthy, gum surgery may be recommended (American Academy of Periodontology). If surgery is needed, Dr. Filippo Cangini, our in-house board-certified periodontist, carries it out here rather than stretching a treatment past what it can do.",
                 "Two more honest notes. Periodontitis is managed, not cured — bone that has been lost does not grow back after a deep cleaning, so anyone promising a one-time fix is promising too much. And the CDC lists smoking, diabetes and poor oral hygiene as the factors associated with serious gum disease (CDC); a deep cleaning removes the tartar, but it does not change those, and we will talk about them plainly.",
               ],
             },
@@ -172,7 +172,7 @@ export default function BerkeleyGumDiseaseTreatmentPage() {
             },
             {
               q: "What if my gums don't heal after the deep cleaning?",
-              a: "At the re-evaluation we measure every pocket again. If some have not healed, repeating the deep cleaning is not the answer; periodontal surgery to reduce the pocket depth may be, and for advanced surgical care we may refer you on. The AAP says the same: gum surgery may be recommended when non-surgical treatment does not get the gums healthy (American Academy of Periodontology).",
+              a: "At the re-evaluation we measure every pocket again. If some have not healed, repeating the deep cleaning is not the answer; periodontal surgery to reduce the pocket depth may be, and it is done here by Dr. Cangini, our in-house board-certified periodontist. The AAP says the same: gum surgery may be recommended when non-surgical treatment does not get the gums healthy (American Academy of Periodontology).",
             },
             {
               q: "How much does gum disease treatment cost in Berkeley?",

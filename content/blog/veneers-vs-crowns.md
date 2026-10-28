@@ -103,7 +103,7 @@ Almost every comparison you will read states that crowns last longer than veneer
 
 ### What the Veneer Data Shows
 
-The pooled clinical evidence for porcelain veneers is unusually good for a cosmetic restoration. The 2021 systematic review above reports a ten-year cumulative survival rate of 95.5% across 6,500 veneers. When individual causes of failure were isolated, the ten-year survival figures were 96.3% against fracture, 99.2% against debonding, 99.3% against secondary decay and 99.0% against the need for further internal treatment. The 2024 meta-analysis of 7,753 anterior veneers gives a pooled survival rate of 97.12% at around five years.
+The pooled clinical evidence for porcelain veneers is unusually good for a cosmetic restoration. The 2021 systematic review above reports a ten-year cumulative survival rate of 95.5% across 6,500 veneers. When individual causes of failure were isolated, the ten-year survival figures were 96.3% against fracture, 99.2% against debonding, 99.3% against secondary decay and 99.0% against the need for further internal treatment. The 2024 meta-analysis gives a pooled survival rate of 97.12% at about five years, based on 3,761 veneers in studies with four to six years of follow-up.
 
 ### What the Crown Data Shows
 
@@ -118,7 +118,7 @@ Set side by side, the veneer figures look better than the crown figures. Ending 
 | Restoration | Survival reported | Source and sample |
 | --- | --- | --- |
 | Porcelain laminate veneers | 95.5% at 10 years | Systematic review, 25 studies, ~6,500 veneers, 2021 |
-| Anterior ceramic laminate veneers | 97.12% at ~5 years; 93.7–96.81% at ~10 years by material | Meta-analysis, 29 studies, 7,753 veneers, 2024 |
+| Anterior ceramic laminate veneers | 97.12% at ~5 years (3,761 veneers); 93.7–96.81% at ~10 years by material | Meta-analysis, 29 studies, 7,753 veneers, 2024 |
 | Ceramic veneers, enamel-only bonding | 96.7% | 672 veneers, 189 patients, 1–15 years, 2025 |
 | Ceramic veneers, >30% dentine exposed | 93.9% | Same study |
 | Tooth-supported single crowns | 89.9% at 5 years; 80.9% at 10; 70.5% at 15; 61.8% at 20 | Retrospective clinical study, 1,037 crowns, 401 patients, 2022 |
@@ -153,7 +153,7 @@ Fees vary widely by region, by material, by laboratory and by how much preparato
 | Permanent crown | $1,100 – $2,000 out of network | Delta Dental |
 | Crown, wider market compilation | $800 – $2,500 | Aggregated market ranges |
 
-Two things are worth noticing. The ranges overlap almost completely, so cost is rarely what decides between them. And the published crown figures disagree with each other: [Delta Dental](https://www.deltadental.com/protect-my-smile/procedures/dental-crowns/treatment-cost/) puts an out-of-network permanent crown at $1,100 to $2,000, while broader market compilations run from around $800 to $2,500. Both are shown rather than averaged, because an average of two ranges is a number nobody actually charges.
+Two things are worth noticing. The ranges overlap almost completely, so cost is rarely what decides between them. And the published crown figures disagree with each other: [Delta Dental](https://www.deltadental.com/protect-my-smile/procedures/dental-crowns/treatment-cost/) puts an out-of-network permanent crown at $1,100 to $2,000, while broader market compilations run from around $800 to $2,500. Both are shown rather than averaged, because an average of two ranges is a number nobody actually charges. Bay Area fees run above these national figures. Current fees are on the [Porcelain Veneers](/procedures/cosmetic-dentistry/porcelain-veneers) and [Crowns](/procedures/restoration/crowns-caps) pages.
 
 For direction of travel, the ADA Health Policy Institute's *State of the U.S. Dental Economy* reports dental fees rising roughly 3–4% year over year, broadly in step with general inflation. A fuller local breakdown for veneers sits in our [East Bay veneer cost guide](/blog/veneers-cost-oakland-2026).
 
@@ -173,7 +173,7 @@ Neither restoration is permanent. The ADA is explicit that a veneer "may chip, c
 
 ## How Each One Looks, and Where Each One Struggles
 
-On appearance alone, a well-made veneer usually has the advantage on a front tooth. Because it is thin and bonded to a translucent tooth, light passes through it in something close to the way it passes through enamel, which is what makes a restored tooth read as real rather than as opaque. A crown has an opaque core to hide, and matching a single crown to its natural neighbours is one of the harder things in dentistry — particularly on an upper central incisor, where the eye has an identical tooth beside it for comparison.
+On appearance alone, a well-made veneer usually has the advantage on a front tooth. Because it is thin and bonded to a translucent tooth, light passes through it in something close to the way it passes through enamel, which is what makes a restored tooth read as real rather than as opaque. A crown has an opaque core to hide, and matching a single crown to its natural neighbors is one of the harder things in dentistry — particularly on an upper central incisor, where the eye has an identical tooth beside it for comparison.
 
 Each struggles somewhere different. A veneer struggles at the margins and under load: it can debond, chip at the edge, or leave a visible line at the gum if the gum recedes. A crown struggles beneath itself, where decay at the margin and fracture of the underlying tooth are recurring failure modes that develop quietly because the tooth is hidden. Both need the same daily care as natural teeth, and both benefit from examinations that check the margins rather than only the surface.
 
@@ -229,6 +229,6 @@ If you have been offered a single-visit option, it is worth reading what [same-d
 
 ## Talk Through Your Options for a Damaged Front Tooth
 
-If a front tooth has chipped, cracked or stopped matching its neighbours, the most useful next step is an examination that establishes how much sound tooth is left. That is the finding the whole decision rests on, and it is not something you can judge from a mirror or a photograph. A consultation should leave you understanding why one option was recommended over the other, and what would change the recommendation.
+If a front tooth has chipped, cracked or stopped matching its neighbors, the most useful next step is an examination that establishes how much sound tooth is left. That is the finding the whole decision rests on, and it is not something you can judge from a mirror or a photograph. A consultation should leave you understanding why one option was recommended over the other, and what would change the recommendation.
 
 Piedmont Dental By Design sees patients from Piedmont, Oakland, Montclair, Rockridge and across the greater East Bay at 1331 Grand Avenue in Piedmont. To arrange a consultation, [get in touch](/contact) or call <a href="tel:5103503937">(510) 350-3937</a>.

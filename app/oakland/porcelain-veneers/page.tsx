@@ -55,7 +55,7 @@ export default function OaklandPorcelainVeneersPage() {
               title: "Why Oakland patients come up Grand Avenue for veneers",
               body: [
                 "Veneers are the most personal thing a dentist makes for you: shape, length, shade and how light passes through the porcelain are all decided face to face. Here the dentist who examines you, chooses the shade with you and bonds the finished veneers is one of the two co-owners, Dr. Martenson or Dr. Ma — not a different clinician at every visit.",
-                "The other reason is geography. Piedmont is the small city Oakland surrounds, and our office at 1331 Grand Avenue sits a few blocks above the city line: about 1.4 miles from Lake Merritt, 2.6 miles from Rockridge BART and 3.1 miles from Montclair Village, six or seven minutes each without traffic. Real veneer cases from this practice, shown with the patients' consent, are in the before-and-after resource on this site.",
+                "The other reason is geography. Piedmont is the small city Oakland surrounds, and our office at 1331 Grand Avenue sits a few blocks above the city line: about 1.4 miles from Lake Merritt, 2.6 miles from Rockridge BART and 3.1 miles from Montclair Village, six or seven minutes each without traffic. Veneer cases from this practice are in the before-and-after resource on this site.",
               ],
             },
             {
@@ -108,7 +108,7 @@ export default function OaklandPorcelainVeneersPage() {
               title: "How long porcelain veneers last — what the evidence says",
               body: [
                 "Most practices say ten to fifteen years; the published evidence is more useful. A 2021 systematic review in the Journal of Clinical Medicine pooled 25 studies and about 6,500 porcelain laminate veneers and put ten-year survival at 95.5 percent — 96.3 percent when only fracture counted as failure, 99.2 percent for debonding and 99.3 percent for new decay under the veneer. Veneers that covered the biting edge failed less often than those that did not, which is how ours are designed.",
-                "Our own veneers page says it in plainer words: veneers are very durable and last many years, but they are not permanent and may someday need replacement. With good care many patients get fifteen to twenty years from a set, and the ADA notes a chipped, worn or loosened veneer can often be re-bonded or repaired rather than replaced (ADA MouthHealthy).",
+                "Porcelain veneers are very durable and, with good care, last 15 years or more, though they may one day need replacing. The ADA notes a chipped, worn or loosened veneer can often be re-bonded or repaired rather than replaced (ADA MouthHealthy).",
               ],
             },
             {
@@ -137,7 +137,7 @@ export default function OaklandPorcelainVeneersPage() {
             {
               title: "Cost and coverage, without the runaround",
               body: [
-                "We will not quote a fee on a web page, because a veneer fee depends on your teeth, the number of veneers and the laboratory work — and because you deserve a number that comes from an examination, in writing. The market picture: Delta Dental puts porcelain laminate veneers at roughly $1,180 to $2,185 per tooth without insurance, moved by the material, the location of the practice and your coverage; it also describes veneers as commonly considered cosmetic and often not covered, though some plans include them (Delta Dental). Check your benefits first. CareCredit financing is available for the balance.",
+                "We will not quote a fee on a web page, because a veneer fee depends on your teeth, the number of veneers and the laboratory work — and because you deserve a number that comes from an examination, in writing. The market picture: Delta Dental puts porcelain laminate veneers at roughly $1,180 to $2,185 per tooth without insurance, moved by the material, the location of the practice and your coverage; it also describes veneers as commonly considered cosmetic and often not covered, though some plans include them (Delta Dental). Bay Area fees run above these national figures. See our current fees on the Porcelain Veneers page. Check your benefits first. CareCredit financing is available for the balance.",
                 "One caution about cheap deals. In May 2024 the American Dental Association warned about unlicensed “veneer technicians,” citing infection from unsterilized adhesives and curing devices, nerve damage from improper trimming of teeth and a choking hazard during placement, and reminded the public that altering the structure of teeth without a dentist's supervision can cause irreversible harm (ADA statement, 14 May 2024). A veneer is a dental procedure, and its price includes the diagnosis behind it.",
               ],
             },
@@ -161,7 +161,7 @@ export default function OaklandPorcelainVeneersPage() {
             },
             {
               q: "How long do porcelain veneers last?",
-              a: "A 2021 systematic review of about 6,500 veneers found 95.5 percent still in place at ten years, and veneers bonded to enamel do best. With good care many patients get fifteen to twenty years from a set. They are not permanent, though, and a chipped one can often be repaired or re-bonded.",
+              a: "A 2021 systematic review of about 6,500 veneers found 95.5 percent still in place at ten years, and veneers bonded to enamel do best. With good care, porcelain veneers last 15 years or more. They are not permanent, though, and a chipped one can often be repaired or re-bonded.",
             },
             {
               q: "Do veneers ruin your natural teeth?",
@@ -173,7 +173,7 @@ export default function OaklandPorcelainVeneersPage() {
             },
             {
               q: "How much do porcelain veneers cost in Oakland?",
-              a: "Delta Dental puts porcelain laminate veneers at about $1,180 to $2,185 per tooth without insurance, and most plans treat them as cosmetic and do not cover them. Your figure depends on how many teeth are involved and the laboratory work, so we quote in writing after the consultation; CareCredit financing is available.",
+              a: "Delta Dental puts porcelain laminate veneers at about $1,180 to $2,185 per tooth without insurance, and most plans treat them as cosmetic and do not cover them. Bay Area fees run above these national figures. See our current fees on the Porcelain Veneers page. Your figure depends on how many teeth are involved and the laboratory work, so we quote in writing after the consultation; CareCredit financing is available.",
             },
             {
               q: "Will my veneers look fake?",
@@ -205,7 +205,7 @@ export default function OaklandPorcelainVeneersPage() {
               href: "https://www.ada.org/about/press-releases/statement-on-recent-reports-of-veneer-technicians",
             },
           ]}
-          featuredImage="/img/procedures/cosmetic-dentistry/_index/figure-1.jpg"
+          featuredImage="/img/home-services/porcelain-veneers.jpg"
           featuredAlt="Porcelain veneers — Piedmont Dental By Design, serving Oakland"
         />
         <AwardsStrip />

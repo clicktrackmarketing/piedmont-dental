@@ -32,7 +32,7 @@ This guide sets out what counts as a gummy smile and how common it is, the cause
 
 There is no single agreed number, which is worth knowing before you decide you have one. A 2023 narrative review in *Cureus* states that [more than 2 to 3 mm of gingival exposure during smiling is considered to be a gummy smile](https://pmc.ncbi.nlm.nih.gov/articles/PMC9941039/). A 2025 review of lip repositioning techniques puts the threshold slightly higher, describing 1 to 3 mm of gum visibility as the ideal smile and [gingival display exceeding 3 mm as regarded as unattractive globally](https://pmc.ncbi.nlm.nih.gov/articles/PMC11704313/). The clinical education journal *Decisions in Dentistry* is more conservative again, stating that [a smile is considered unattractive when more than 4 mm of the gingiva is exposed](https://decisionsindentistry.com/article/correcting-excess-gingival-display/).
 
-So the honest answer is a band rather than a line: somewhere between 2 and 4 mm, with most sources settling on 3 mm. You will see 2 mm quoted confidently on a lot of dental websites, and it sits at the very bottom of the published range — which is worth knowing, because a millimetre either way separates a smile a clinician would call normal from one they would work up for treatment.
+So the honest answer is a band rather than a line: somewhere between 2 and 4 mm, with most sources settling on 3 mm. You will see 2 mm quoted confidently on a lot of dental websites, and it sits at the very bottom of the published range — which is worth knowing, because a millimeter either way separates a smile a clinician would call normal from one they would work up for treatment.
 
 It is also more common than most people assume, and considerably more common in women. The same *Cureus* review reports the incidence at approximately 14% in females and 7% in males, and a separate 2023 cross-sectional study puts the overall prevalence at [10.5% to 29% across young adults, with a higher frequency in women](https://pmc.ncbi.nlm.nih.gov/articles/PMC10823049/). None of that makes it a health problem on its own. It is a proportion question, not a disease.
 
@@ -74,7 +74,7 @@ Years of grinding, acid erosion or ordinary wear shorten the visible tooth witho
 
 Clear aligners help when the answer to "why is the gum showing" is "because the teeth are too far down". The movement that fixes this is intrusion: pushing a tooth back up into the bone so the gumline travels with it. That is a real, documented aligner movement, and it is the mechanism behind every honest yes to this question.
 
-A 2026 retrospective study of 30 adults with deep bite, published in *Bioinformation*, measured what aligners achieved: [overbite reduced from 5.5 ± 0.7 mm to 2.3 ± 0.6 mm, through maxillary incisor intrusion of 1.7 ± 0.4 mm and mandibular incisor intrusion of 1.4 ± 0.3 mm](https://pmc.ncbi.nlm.nih.gov/articles/PMC13150255/), with minimal molar extrusion. Treatment averaged 14.1 ± 2.0 months, and 8 of the 30 needed refinement aligners. That study measured bite correction rather than gum display, so read it as evidence of the movement rather than of the cosmetic result. But a couple of millimetres of intrusion on the upper front teeth is the same couple of millimetres that separates a smile most clinicians would call normal from one they would not.
+A 2026 retrospective study of 30 patients with deep bite, published in *Bioinformation*, measured what aligners achieved: [overbite reduced from 5.5 ± 0.7 mm to 2.3 ± 0.6 mm, through maxillary incisor intrusion of 1.7 ± 0.4 mm and mandibular incisor intrusion of 1.4 ± 0.3 mm](https://pmc.ncbi.nlm.nih.gov/articles/PMC13150255/), with minimal molar extrusion. Treatment averaged 14.1 ± 2.0 months, and 8 of the 30 needed refinement aligners. That study measured bite correction rather than gum display, so read it as evidence of the movement rather than of the cosmetic result. But a couple of millimeters of intrusion on the upper front teeth is the same couple of millimeters that separates a smile most clinicians would call normal from one they would not.
 
 ### How Predictable Is Intrusion With Aligners?
 
@@ -82,7 +82,7 @@ This is where most articles on this topic go quiet, and it is the part worth kno
 
 A 2025 systematic review in the *Journal of Clinical Medicine* pooled eight clinical trials on incisor intrusion with clear aligners and found [mean intrusion values ranging from 0.4 to 1.5 mm, with predictability between 35% and 65%](https://pmc.ncbi.nlm.nih.gov/articles/PMC12429061/). Predictability was notably lower in adults, at 45.3%, than in adolescents, at 63.5%, and accuracy declined once more than 2 mm of intrusion was planned. A 2026 scoping review in *Frontiers in Dental Medicine* reports a similar picture, putting [incisor intrusion accuracy at 33.4% to 53.3% and recommending 50% to 100% overcorrection](https://pmc.ncbi.nlm.nih.gov/articles/PMC13402403/) to land the planned result.
 
-Read plainly: if the plan calls for 2 mm of intrusion, roughly half of it is a realistic expectation from the first series of aligners, and refinements are normal rather than a sign something went wrong. That is not an argument against aligners — it is an argument for asking how much movement your plan requires, and for treating a confident promise of a specific millimetre result with some caution.
+Read plainly: if the plan calls for 2 mm of intrusion, roughly half of it is a realistic expectation from the first series of aligners, and refinements are normal rather than a sign something went wrong. That is not an argument against aligners — it is an argument for asking how much movement your plan requires, and for treating a confident promise of a specific millimeter result with some caution.
 
 ### Where Aligners Stop
 
@@ -94,7 +94,7 @@ What aligners categorically cannot do is change gum tissue, relax a lip muscle o
 
 ## When Is Crown Lengthening the Answer?
 
-When the gum itself is the problem. The American Academy of Periodontology describes the procedure directly for this purpose: for patients whose smile is too gummy or whose gums cover too much of some teeth, [excess gum tissue is removed to expose more of the crown of the tooth](https://www.perio.org/for-patients/periodontal-treatments-and-procedures/cosmetic-procedures/), and the gumline is then sculpted. It is a short procedure under local anaesthetic, and for a cosmetic case it is normally carried out across the visible front teeth — usually six to eight of them — so the new gumline is symmetrical rather than corrected in one spot.
+When the gum itself is the problem. The American Academy of Periodontology describes the procedure directly for this purpose: for patients whose smile is too gummy or whose gums cover too much of some teeth, [excess gum tissue is removed to expose more of the crown of the tooth](https://www.perio.org/for-patients/periodontal-treatments-and-procedures/cosmetic-procedures/), and the gumline is then sculpted. It is a short procedure under local anesthetic, and for a cosmetic case it is normally carried out across the visible front teeth so the new gumline is symmetrical rather than corrected in one spot.
 
 Recovery is measured in weeks rather than months of downtime. Initial soft-tissue healing takes around 10 to 14 days, and the gumline settles into its final position over roughly two to three months. Teeth look noticeably longer straight away, which is the point of the procedure rather than a side effect. You can read the full walkthrough on the [crown lengthening page](/procedures/periodontal-services/crown-lengthening).
 
@@ -136,7 +136,7 @@ Alongside those, a clinician checks where the gum margin sits relative to the po
 Four questions get you most of the way to understanding your own plan, and they work anywhere.
 
 - Which of the four causes is driving mine, and is more than one involved?
-- If the plan involves aligners, how many millimetres of intrusion does it call for?
+- If the plan involves aligners, how many millimeters of intrusion does it call for?
 - Will the result need gum work, restorative work, or both, and in what order?
 - What does the plan look like if the aligner result falls short of the projection?
 

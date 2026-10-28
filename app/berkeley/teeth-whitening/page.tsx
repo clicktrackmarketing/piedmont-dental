@@ -67,7 +67,7 @@ export default function BerkeleyTeethWhiteningPage() {
               bullets: [
                 "Custom take-home trays, the most popular option. At the first visit we take impressions of your teeth and have clear, custom-fitted trays made. At the second you try them on, we adjust the fit, and you go home with professional-strength gel. Depending on how deep the staining is and how white you want to go, you wear the trays either twice a day for 30 minutes or overnight, for a couple of weeks.",
                 "In-office whitening, for patients who want the change in a single appointment. The ADA describes in-office products as concentrated hydrogen peroxide solutions applied for up to 30 minutes (ADA Oral Health Topics), and chairside bleaching usually needs only one visit (ADA MouthHealthy).",
-                "Whichever route you take, the active ingredient is one of two bleaches, hydrogen peroxide or carbamide peroxide (ADA MouthHealthy). Carbamide peroxide, the usual choice for trays, breaks down in the mouth into hydrogen peroxide at roughly a third of its labelled strength, which is part of why tray whitening is gentler (Journal of Applied Oral Science, 2018).",
+                "Whichever route you take, the active ingredient is one of two bleaches, hydrogen peroxide or carbamide peroxide (ADA MouthHealthy). Carbamide peroxide, the usual choice for trays, breaks down in the mouth into hydrogen peroxide at roughly a third of its labeled strength, which is part of why tray whitening is gentler (Journal of Applied Oral Science, 2018).",
                 "You leave with written care instructions for your teeth and the trays, and we ask you to keep up regular check-ups so the result lasts.",
               ],
             },
@@ -210,7 +210,7 @@ export default function BerkeleyTeethWhiteningPage() {
               href: "https://www.carecredit.com/well-u/health-wellness/teeth-whitening-costs/",
             },
           ]}
-          featuredImage="/img/lIVE Piedmont website images/Teeth Whitening.png"
+          featuredImage="/img/lIVE Piedmont website images/Tooth Whitening.png"
           featuredAlt="Teeth whitening — Piedmont Dental By Design, serving Berkeley"
         />
         <AwardsStrip />

@@ -66,33 +66,33 @@ export default function OaklandDentalCrownsPage() {
               ],
               bullets: [
                 "Same-day with CEREC®: we take a 3D digital scan of the prepared tooth, design the crown on screen and mill it from a solid ceramic block in our own office. The crown that goes in is the permanent one, bonded before you leave — about 1.5 to 2 hours in a single appointment, with one round of numbing instead of two and no impressions sent away.",
-                "Lab-made: for larger reconstructions, and for front teeth where we are matching subtle colour and translucency across several teeth, a dental laboratory does the finer work. We take impressions, fit a temporary crown for roughly two weeks, then remove it, clean the tooth and cement the finished crown at a second visit, checking the spacing and the bite.",
+                "Lab-made: for larger reconstructions, and for front teeth where we are matching subtle color and translucency across several teeth, a dental laboratory does the finer work. We take impressions, fit a temporary crown for roughly two weeks, then remove it, clean the tooth and cement the finished crown at a second visit, checking the spacing and the bite.",
                 "Either way you leave with care instructions, and we check the crown at your regular visits from then on.",
               ],
             },
             {
               title: "Porcelain, and why it is the usual choice",
               body: [
-                "Crowns come in several materials, but porcelain — tooth-coloured ceramic — is the one most patients choose. It is matched to the shape, size and shade of the teeth around it, and it is durable enough to last many years. Like most dental restorations it may eventually need replacing, and we would rather say that now than have you discover it later.",
+                "Crowns come in several materials, but porcelain — tooth-colored ceramic — is the one most patients choose. It is matched to the shape, size and shade of the teeth around it, and it is durable enough to last many years. Like most dental restorations it may eventually need replacing, and we would rather say that now than have you discover it later.",
                 "For a same-day crown, the ceramic blocks come in a range of shades and translucencies, and we pick the one closest to your own teeth before milling. For a front tooth between two natural ones, we choose the shade together with a guide and, if the match calls for it, use a laboratory instead.",
               ],
             },
             {
               title: "Who a crown is for",
               body: [
-                "A crown is for a tooth with a sound root that has lost too much of its top to be rebuilt with a filling. The American Dental Association lists the jobs a crown does: strengthen a tooth with a large filling when there isn't enough tooth left to hold the filling, protect a weak tooth from breaking, restore a broken one, cover a discoloured or badly shaped tooth, anchor a bridge or top an implant (ADA MouthHealthy). In our practice the usual reasons are:",
+                "A crown is for a tooth with a sound root that has lost too much of its top to be rebuilt with a filling. The American Dental Association lists the jobs a crown does: strengthen a tooth with a large filling when there isn't enough tooth left to hold the filling, protect a weak tooth from breaking, restore a broken one, cover a discolored or badly shaped tooth, anchor a bridge or top an implant (ADA MouthHealthy). In our practice the usual reasons are:",
               ],
               bullets: [
                 "A broken or fractured tooth.",
                 "Decay too extensive for a filling.",
                 "A filling that has fractured, or a large old filling with thin walls of tooth around it.",
-                "A tooth that is badly shaped or discoloured, where covering it is the right cosmetic answer.",
+                "A tooth that is badly shaped or discolored, where covering it is the right cosmetic answer.",
               ],
             },
             {
               title: "When we'll tell you a crown isn't the answer",
               body: [
-                "A crown means shaping the tooth all the way round, so before we recommend one we ask whether something smaller would do the job. A small cavity gets a filling. A back tooth with a broken cusp but sound walls elsewhere is often a candidate for an onlay, which covers only the damaged part; CEREC® mills onlays as well as crowns. A tooth that is the wrong colour but structurally sound may be better served by a veneer or whitening than by cutting it down.",
+                "A crown means shaping the tooth all the way round, so before we recommend one we ask whether something smaller would do the job. A small cavity gets a filling. A back tooth with a broken cusp but sound walls elsewhere is often a candidate for an onlay, which covers only the damaged part; CEREC® mills onlays as well as crowns. A tooth that is the wrong color but structurally sound may be better served by a veneer or whitening than by cutting it down.",
                 "We will also say so when a crown is the wrong bet for the tooth's future. A practice-based series of 1,037 crowns found that front-tooth placement, a non-vital tooth and grinding all significantly shortened crown survival (European Journal of Oral Sciences, 2022). None of those rules a crown out, but if you clench or grind we plan for it — and if a tooth is too broken down to hold a crown, the honest conversation is about replacing it with an implant or a bridge.",
               ],
             },
@@ -100,7 +100,7 @@ export default function OaklandDentalCrownsPage() {
               title: "Crown vs onlay vs filling",
               body: [
                 "All three answer the same question: how much of the tooth is left. A filling fills a hole and relies on the surrounding tooth for strength. An onlay is made outside the mouth, like a crown, but covers only the chewing surface and the damaged cusp. A full crown covers everything above the gumline. The more tooth that is missing, the further along that line the right answer sits (ADA MouthHealthy).",
-                "The evidence on onlays is reassuring for the middle ground. A 2022 meta-analysis of six studies — one randomised trial, five observational — found no statistically significant difference in survival between tooth-coloured onlays or partial crowns and full crowns on back teeth at one year or three years, and concluded that onlays “performed as excellently as full crowns in posterior region in a short-term period” (Head & Face Medicine, 2022). Short-term is the honest qualifier: onlays have not been followed for as many years as full crowns have.",
+                "The evidence on onlays is reassuring for the middle ground. A 2022 meta-analysis of six studies — one randomised trial, five observational — found no statistically significant difference in survival between tooth-colored onlays or partial crowns and full crowns on back teeth at one year or three years, and concluded that onlays “performed as excellently as full crowns in posterior region in a short-term period” (Head & Face Medicine, 2022). Short-term is the honest qualifier: onlays have not been followed for as many years as full crowns have.",
                 "In the chair, that means: sound walls, we usually suggest the onlay and keep the rest of the tooth; thin, cracked or undermined walls, the crown is the safer investment.",
               ],
             },
@@ -109,14 +109,14 @@ export default function OaklandDentalCrownsPage() {
               body: [
                 "For a same-day crown, set aside about two hours. The tooth is numbed and prepared, the scan takes a few minutes, the design and milling happen while you wait, and the crown is tried in, adjusted, polished and bonded. You leave with the finished tooth and nothing to come back for beyond normal check-ups.",
                 "A lab-made crown means two visits about two weeks apart: preparation, impressions and a temporary crown at the first; at the second, the temporary comes off, the tooth is cleaned and the permanent crown is cemented, with the spacing and bite checked.",
-                "For the first few days a new crown feels new — your tongue notices the shape, and you may feel it when you bite. Most people stop noticing within a week. If it feels tall or rocks against a neighbour, call us for a quick bite adjustment.",
+                "For the first few days a new crown feels new — your tongue notices the shape, and you may feel it when you bite. Most people stop noticing within a week. If it feels tall or rocks against a neighbor, call us for a quick bite adjustment.",
               ],
             },
             {
               title: "Living with a crown",
               body: [
                 "Porcelain cannot decay, but the tooth underneath can. The vulnerable spot is the margin where crown meets tooth, especially where the gum has receded and exposed root surface, which is why we still check every crown at your cleaning visits and on X-rays. Brush and floss around it exactly as you would a natural tooth.",
-                "How long will it last? Many years, not forever. In one practice-based series of 1,037 single crowns followed for an average of more than eleven years, 89.9 percent were still in place at five years, 80.9 percent at ten, 70.5 percent at fifteen and 61.8 percent at twenty (European Journal of Oral Sciences, 2022). That is one series from one institution, not a pooled review — a guide, not a promise. Same-day crowns have long-term data of their own: a prospective study of 34 chairside lithium disilicate crowns, milled on a CEREC® unit, reported 80.1 percent survival after a mean of 15.2 years, which its authors called acceptable (Clinical Oral Investigations, 2023) — a small study, but a long one.",
+                "How long will it last? Many years, not forever. In one practice-based series of 1,037 single crowns followed for an average of more than eleven years, 89.9 percent were still in place at five years, 80.9 percent at ten, 70.5 percent at fifteen and 61.8 percent at twenty (European Journal of Oral Sciences, 2022). That is one series from one institution, not a pooled review — a guide, not a promise. Same-day crowns have long-term data of their own: a prospective study of 34 chairside lithium disilicate crowns, milled on a CEREC® unit, reported 80.1 percent survival after a mean of 15.2 years, which its authors called acceptable (Clinical Oral Investigations, 2023) — a small study, but a long one. With good care, most porcelain crowns last 15 to 25 years, and some last 30 or more.",
               ],
             },
             {
@@ -133,7 +133,7 @@ export default function OaklandDentalCrownsPage() {
             {
               title: "Cost and coverage, without the runaround",
               body: [
-                "The number that matters is the one on your written estimate after the exam, because it depends on the tooth, the material and whether the crown is milled here or made by a laboratory. What we can give you now is the market picture: Delta Dental puts the average out-of-network cost of a permanent crown at $1,100 to $2,000, a price that generally covers the temporary crown, the permanent crown, the numbing, laboratory costs and the dentist's time (Delta Dental). Ranges vary by region, material and complexity.",
+                "The number that matters is the one on your written estimate after the exam, because it depends on the tooth, the material and whether the crown is milled here or made by a laboratory. What we can give you now is the market picture: Delta Dental puts the average out-of-network cost of a permanent crown at $1,100 to $2,000, a price that generally covers the temporary crown, the permanent crown, the numbing, laboratory costs and the dentist's time (Delta Dental). Bay Area fees run above these national figures. See our current fees on the Crowns page. Ranges vary by region, material and complexity.",
                 "Many dental benefit plans help with the cost of a crown, though some do not; Delta Dental's advice is to ask for a pre-treatment estimate so you know what your plan will pay before the work starts (Delta Dental). We verify your benefits before treatment begins, financing including CareCredit is available for anything left over, and the consultation itself is complimentary.",
               ],
             },
@@ -141,11 +141,11 @@ export default function OaklandDentalCrownsPage() {
           faqs={[
             {
               q: "Do you treat crown patients from Oakland?",
-              a: "Yes. Piedmont sits inside Oakland, and our office on Grand Avenue is about 1.4 miles from Lake Merritt. Dr. Martenson and Dr. Ma place crowns for patients from Lake Merritt, Rockridge, Montclair and across the East Bay.",
+              a: "Yes. Piedmont is surrounded by Oakland, and our office on Grand Avenue is about 1.4 miles from Lake Merritt. Dr. Martenson and Dr. Ma place crowns for patients from Lake Merritt, Rockridge, Montclair and across the East Bay.",
             },
             {
               q: "How many trips from Oakland will a crown take?",
-              a: "Often one. When the tooth suits CEREC® milling, we scan, design, mill and bond the permanent crown in a single appointment of about 1.5 to 2 hours. If a laboratory should make it — larger reconstructions, or front teeth where colour must match across several teeth — it is two visits about two weeks apart, with a temporary in between.",
+              a: "Often one. When the tooth suits CEREC® milling, we scan, design, mill and bond the permanent crown in a single appointment of about 1.5 to 2 hours. If a laboratory should make it — larger reconstructions, or front teeth where color must match across several teeth — it is two visits about two weeks apart, with a temporary in between.",
             },
             {
               q: "How long is the drive from Rockridge or Montclair?",
@@ -173,7 +173,7 @@ export default function OaklandDentalCrownsPage() {
             },
             {
               q: "How much does a dental crown cost in Oakland?",
-              a: "Delta Dental puts the average out-of-network cost of a permanent crown at $1,100 to $2,000, covering the temporary, the permanent crown, the numbing, laboratory costs and the dentist's time (Delta Dental); prices vary by region, material and complexity. We quote in writing after the exam, verify your benefits first, and offer financing, including CareCredit, for anything your plan does not cover.",
+              a: "Delta Dental puts the average out-of-network cost of a permanent crown at $1,100 to $2,000, covering the temporary, the permanent crown, the numbing, laboratory costs and the dentist's time (Delta Dental); prices vary by region, material and complexity. Bay Area fees run above these national figures. See our current fees on the Crowns page. We quote in writing after the exam, verify your benefits first, and offer financing, including CareCredit, for anything your plan does not cover.",
             },
           ]}
           sources={[
@@ -201,7 +201,7 @@ export default function OaklandDentalCrownsPage() {
               href: "https://www.deltadental.com/protect-my-smile/procedures/dental-crowns/treatment-cost/",
             },
           ]}
-          featuredImage="/img/lIVE Piedmont website images/63e2da680b885fcdefe302c1_Crown-Lengthening2-scaled.jpg"
+          featuredImage="/img/home-services/cerec.jpg"
           featuredAlt="Dental crowns — Piedmont Dental By Design, serving Oakland"
         />
         <AwardsStrip />

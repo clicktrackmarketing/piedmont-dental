@@ -58,7 +58,7 @@ export default function OaklandGumDiseaseTreatmentPage() {
               body: [
                 "Gum disease is not a one-visit problem. Once it has moved past gingivitis it is managed rather than cured, and the pocket measurements we take this year only mean something if the same people compare them with last year's. Here that is one of the two co-owners, Dr. Jill Martenson or Dr. David Ma, working with the same hygiene team — not whoever happens to be on the schedule. For a condition you will be watching for years, that continuity is worth the extra few minutes up the hill.",
                 "The other reason is that we are barely outside Oakland at all. Our office is at 1331 Grand Avenue in Piedmont, the small city that Oakland wraps around, and the city line is a few blocks away. Grand Avenue runs from Lake Merritt straight to our door, about 1.4 miles. Rockridge BART is about 2.6 miles and Montclair Village about 3.1 miles, each roughly a seven-minute drive without traffic. MacArthur BART is a short drive.",
-                "The evaluation, digital and panoramic X-rays, pocket measurements, cleanings, scaling and root planing and the maintenance visits that follow all happen here, so you are not sent across town for the next step. The one exception is advanced surgical care, which we explain honestly below.",
+                "The evaluation, digital and panoramic X-rays, pocket measurements, cleanings, scaling and root planing and the maintenance visits that follow all happen here, so you are not sent across town for the next step. That includes surgery: if it is needed, it is done here by Dr. Filippo Cangini, our in-house board-certified periodontist.",
               ],
             },
             {
@@ -70,7 +70,7 @@ export default function OaklandGumDiseaseTreatmentPage() {
                 "Gingivitis, with no permanent damage yet: one or two regular cleanings plus specific instruction on daily brushing and flossing and how often to come back. At this stage the disease is reversible with professional treatment and good at-home care (American Academy of Periodontology).",
                 "Periodontitis: scaling and root planing, the deep cleaning. Tartar, plaque and bacterial toxins are removed from above and below the gum line (scaling) and rough spots on the root surfaces are smoothed (planing) so the gum tissue can heal and the pockets shrink. It is usually done one quadrant of the mouth at a time while the area is numb.",
                 "Support for healing: depending on your case, a medication, a medicated mouth rinse or an electric toothbrush may be recommended to help control the infection while the gums recover.",
-                "Pockets that do not heal: periodontal surgery may then be needed to reduce them, which makes the teeth easier to keep clean and slows the disease. For advanced surgical care, we may refer you on.",
+                "Pockets that do not heal: periodontal surgery may then be needed to reduce them, which makes the teeth easier to keep clean and slows the disease. If you need periodontal surgery, it is done here by Dr. Filippo Cangini, our in-house board-certified periodontist.",
               ],
             },
             {
@@ -91,7 +91,7 @@ export default function OaklandGumDiseaseTreatmentPage() {
             {
               title: "Who gum disease treatment is for",
               body: [
-                "More people than expect it. Nearly half of US adults aged 30 and over — 42 percent — have periodontitis, and about 8 percent have severe periodontitis (CDC). The CDC's advice is that a dental check-up at least yearly allows early detection and treatment, which is the quiet argument for keeping regular exams even when nothing hurts.",
+                "More people than expect it. More than four in ten US adults aged 30 and over — 42 percent — have periodontitis, and about 8 percent have severe periodontitis (CDC). The CDC's advice is that a dental check-up at least yearly allows early detection and treatment, which is the quiet argument for keeping regular exams even when nothing hurts.",
                 "Some Oakland adults carry more risk than others. Smoking, diabetes, some medications, stress, genetics, crowded teeth, hormonal changes and poor nutrition all raise the odds of gum disease (CDC), and smoking is first on that list. None of these change whether we will see you; they change how closely we watch you and how we plan your maintenance.",
                 "Treatment is also for people who have had periodontitis before. Bone that has been lost does not grow back on its own, so the disease is stopped and managed rather than reversed — and those patients need periodontal maintenance, not a standard six-monthly cleaning. More on that below.",
               ],
@@ -101,7 +101,7 @@ export default function OaklandGumDiseaseTreatmentPage() {
               body: [
                 "A deep cleaning is not a better cleaning; it is a treatment for a specific stage. If your measurements show gingivitis and no bone loss, we will recommend regular cleanings and better home care, not scaling and root planing, because at that stage the disease is reversible without it (American Academy of Periodontology).",
                 "Much of what you will read about gum disease treatment in Oakland features lasers and prescription trays. The American Academy of Periodontology's position is that controlled studies have found similar results with laser treatment compared with other non-surgical options, including scaling and root planing alone — and that the FDA clearance process did not determine that any medication delivered through a tray system has been proven a safe or effective way to treat gum disease. Neither is a shortcut past the deep cleaning.",
-                "And when the pockets do not heal after scaling and root planing, we say so. That is the point at which periodontal surgery enters the conversation, and where advanced surgical care may mean a referral rather than a promise we cannot keep here.",
+                "And when the pockets do not heal after scaling and root planing, we say so. That is the point at which periodontal surgery enters the conversation, and it is carried out here by Dr. Cangini, our in-house board-certified periodontist.",
               ],
             },
             {
@@ -179,7 +179,7 @@ export default function OaklandGumDiseaseTreatmentPage() {
             },
             {
               q: "Will I need gum surgery?",
-              a: "Most patients do not. The American Academy of Periodontology's position is that many patients need no further treatment after scaling and root planing, though most need ongoing maintenance. Surgery comes into the conversation only when pockets have not healed at the re-evaluation, and for advanced surgical care we may refer you on rather than promise something we cannot deliver here.",
+              a: "Most patients do not. The American Academy of Periodontology's position is that many patients need no further treatment after scaling and root planing, though most need ongoing maintenance. Surgery comes into the conversation only when pockets have not healed at the re-evaluation, and if it is needed, it is done here by Dr. Cangini, our in-house board-certified periodontist.",
             },
             {
               q: "How much does gum disease treatment cost in Oakland?",

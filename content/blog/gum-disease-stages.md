@@ -11,7 +11,7 @@ date: 2026-10-06
 
 ## Quick Answer
 
-Gum disease moves through four recognised stages: gingivitis first, then early, moderate and advanced periodontitis. The line that matters falls between the first and the second. Gingivitis is inflammation of the gum tissue alone, and it is fully reversible with a professional cleaning and consistent home care. Once the disease crosses into periodontitis it has begun destroying the bone and attachment that hold your teeth in place, and that loss does not return on its own — periodontitis can be stopped and controlled for life, but not reversed.
+Gum disease moves through four recognized stages: gingivitis first, then early, moderate and advanced periodontitis. The line that matters falls between the first and the second. Gingivitis is inflammation of the gum tissue alone, and it is fully reversible with a professional cleaning and consistent home care. Once the disease crosses into periodontitis it has begun destroying the bone and attachment that hold your teeth in place, and that loss does not return on its own — periodontitis can be stopped and controlled for life, but not reversed.
 
 ### Key Takeaways
 
@@ -30,7 +30,7 @@ This guide sets out the four stages in plain language: what is happening in each
 
 ## What Are the Four Stages of Gum Disease?
 
-The four-stage description you will find on most health sites summarises a continuous process. Gum disease does not click from one stage into the next on a particular day; the tissue changes gradually as plaque sits undisturbed against the gumline and the body's inflammatory response does collateral damage. The stages name how far that process has travelled and what it will now take to stop it.
+The four-stage description you will find on most health sites summarises a continuous process. Gum disease does not click from one stage into the next on a particular day; the tissue changes gradually as plaque sits undisturbed against the gumline and the body's inflammatory response does collateral damage. The stages name how far that process has traveled and what it will now take to stop it.
 
 | Stage | What Is Happening | What You Might Notice | Reversible? | Usual Treatment |
 | --- | --- | --- | --- | --- |
@@ -125,7 +125,7 @@ Treatment escalates with the stage, and each level reaches something the previou
 | Gingivitis | Professional cleaning plus corrected home care | Full resolution — the gum returns to health |
 | Early periodontitis | Scaling and root planing, then maintenance | Halts progression; pockets shrink as inflammation resolves |
 | Moderate periodontitis | Scaling and root planing, often with pocket reduction surgery | Reaches deposits instruments could not otherwise clear, and makes pockets cleanable |
-| Advanced periodontitis | Surgical and regenerative procedures; extraction where a tooth is not restorable | Stabilises what can be saved and rebuilds selected defects |
+| Advanced periodontitis | Surgical and regenerative procedures; extraction where a tooth is not restorable | Stabilizes what can be saved and rebuilds selected defects |
 
 ### Where Deep Cleaning Starts
 

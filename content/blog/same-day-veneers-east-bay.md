@@ -35,7 +35,7 @@ Four separate products are sold under versions of this phrase, and they differ i
 | What Is Being Sold | How It Is Made | Where It Fits |
 | --- | --- | --- |
 | Chairside milled ceramic veneer | Digitally scanned, designed on screen, milled from a ceramic block in the office, then stained, glazed and bonded the same day | One or two teeth, straightforward cases |
-| Same-visit composite veneer | Tooth-coloured resin applied and shaped by hand at the chair, cured and polished in one appointment | Small corrections, chips, a lower-commitment starting point |
+| Same-visit composite veneer | Tooth-colored resin applied and shaped by hand at the chair, cured and polished in one appointment | Small corrections, chips, a lower-commitment starting point |
 | Lab-made porcelain veneer | Prepared and scanned at the first visit, built by a dental ceramist over roughly two weeks, bonded at the second | Multi-unit smile design and layered shade work |
 | Removable "snap-on" veneer | A moulded plastic shell that clips over the teeth; nothing is prepared and nothing is bonded | Not a restoration — a cosmetic appliance |
 
@@ -45,13 +45,13 @@ This is the one the technology claims are really about. The tooth is prepared, a
 
 ### Same-Visit Composite Veneers
 
-Composite veneers are built directly onto the tooth from tooth-coloured resin, shaped by hand, cured with a light and polished, all in one appointment. They are frequently advertised as same-day veneers without the word composite appearing anywhere prominent, which is where a great deal of expectation mismatch begins. The [American Dental Association's MouthHealthy guide to veneers](https://www.mouthhealthy.org/all-topics-a-z/veneers) describes composite as easier to repair but less stain-resistant than porcelain, and that trade-off is most of the story in one line. The [veneers and bonding comparison](/blog/porcelain-veneers-vs-dental-bonding) goes further into where each one belongs.
+Composite veneers are built directly onto the tooth from tooth-colored resin, shaped by hand, cured with a light and polished, all in one appointment. They are frequently advertised as same-day veneers without the word composite appearing anywhere prominent, which is where a great deal of expectation mismatch begins. The [American Dental Association's MouthHealthy guide to veneers](https://www.mouthhealthy.org/all-topics-a-z/veneers) describes composite as easier to repair but less stain-resistant than porcelain, and that trade-off is most of the story in one line. The [veneers and bonding comparison](/blog/porcelain-veneers-vs-dental-bonding) goes further into where each one belongs.
 
 ## How Does a Chairside Veneer Get Made in One Visit?
 
-The sequence is the same one used for a same-day crown, run on a thinner restoration. The tooth is prepared, which for a veneer means removing a thin layer from the front surface and, in most designs, a small amount of the biting edge. A digital scan replaces the putty impression, and the veneer is designed on screen, where its shape, edge position and contour can be adjusted against the neighbouring teeth before anything is manufactured.
+The sequence is the same one used for a same-day crown, run on a thinner restoration. The tooth is prepared, which for a veneer means removing a thin layer from the front surface and, in most designs, a small amount of the biting edge. A digital scan replaces the putty impression, and the veneer is designed on screen, where its shape, edge position and contour can be adjusted against the neighboring teeth before anything is manufactured.
 
-The design file goes to the milling unit, which cuts the restoration from a ceramic block chosen to match your tooth shade. The milled veneer comes out of the machine a uniform colour, so it is characterised by hand with surface stains and glazed before it is fitted. The fit and the bite are checked, adjustments are made, and the veneer is bonded with adhesive cement and polished.
+The design file goes to the milling unit, which cuts the restoration from a ceramic block chosen to match your tooth shade. The milled veneer comes out of the machine a uniform color, so it is characterised by hand with surface stains and glazed before it is fitted. The fit and the bite are checked, adjustments are made, and the veneer is bonded with adhesive cement and polished.
 
 It is a long appointment by dental standards rather than a quick one. The [CEREC® page](/procedures/cosmetic-dentistry/cerec) puts a single same-day crown at roughly an hour and a half to two hours, split between preparation and scanning, on-screen design, milling, and fitting and bonding. A veneer runs through the same stages. Additional units add time to that appointment; they do not fit inside it.
 
@@ -86,9 +86,9 @@ Two other findings are worth carrying into a consultation. Veneers without incis
 
 ## Are Composite Veneers the Same Thing?
 
-They are not, and the difference is measurable. A 2023 systematic review and meta-analysis by Lim and colleagues in the *Journal of Evidence-Based Dental Practice* pooled the randomised controlled trials on resin composite laminate veneers and reported 88% survival, with a 95% confidence interval of 81% to 94% and follow-up ranging from 24 to 97 months. The most frequently reported complications were surface roughness, colour mismatch and marginal discolouration, and direct composite veneers built at the chair outperformed indirect ones made outside the mouth.
+They are not, and the difference is measurable. A 2023 systematic review and meta-analysis by Lim and colleagues in the *Journal of Evidence-Based Dental Practice* pooled the randomised controlled trials on resin composite laminate veneers and reported 88% survival, with a 95% confidence interval of 81% to 94% and follow-up ranging from 24 to 97 months. The most frequently reported complications were surface roughness, color mismatch and marginal discoloration, and direct composite veneers built at the chair outperformed indirect ones made outside the mouth.
 
-Read against the ceramic figures above, that gives a fair picture. Composite veneers are a reasonable restoration with a shorter expected service life and a different failure pattern: ceramic tends to fracture or debond, while composite tends to roughen, stain at the margins and drift in colour. Composite is also easier to repair and adjust, which is a genuine advantage when a result is being tested rather than committed to, and the [MouthHealthy veneers guide](https://www.mouthhealthy.org/all-topics-a-z/veneers) makes that same point without the numbers attached.
+Read against the ceramic figures above, that gives a fair picture. Composite veneers are a reasonable restoration with a shorter expected service life and a different failure pattern: ceramic tends to fracture or debond, while composite tends to roughen, stain at the margins and drift in color. Composite is also easier to repair and adjust, which is a genuine advantage when a result is being tested rather than committed to, and the [MouthHealthy veneers guide](https://www.mouthhealthy.org/all-topics-a-z/veneers) makes that same point without the numbers attached.
 
 ## When Is Lab-Made Porcelain Worth the Wait?
 
@@ -96,11 +96,11 @@ Nothing above says the laboratory route is obsolete. It says the ceramic is not 
 
 ### Multi-Unit Smile-Zone Cases
 
-Six to ten veneers across the front of the mouth is not six to ten separate restorations. It is one object made in pieces, and it has to be symmetrical, evenly proportioned and consistent in colour across the whole arch. A ceramist working on a model with every unit in front of them can control that in a way that is difficult to reproduce one milled block at a time inside a single appointment.
+Six to ten veneers across the front of the mouth is not six to ten separate restorations. It is one object made in pieces, and it has to be symmetrical, evenly proportioned and consistent in color across the whole arch. A ceramist working on a model with every unit in front of them can control that in a way that is difficult to reproduce one milled block at a time inside a single appointment.
 
 ### Shade That Has to Be Built, Not Painted On
 
-A milled veneer begins as a solid block of one colour. Its character comes from surface staining and glazing, which is skilled work and looks convincing on one or two teeth. A laboratory veneer can have colour built into its depth, with a warmer core, a more translucent edge and subtle internal effects, because it is constructed in layers rather than cut from a uniform block. When a front tooth has to sit next to natural enamel and disappear, that difference is visible, and it is the honest reason most multi-unit cases are still sent out.
+A milled veneer begins as a solid block of one color. Its character comes from surface staining and glazing, which is skilled work and looks convincing on one or two teeth. A laboratory veneer can have color built into its depth, with a warmer core, a more translucent edge and subtle internal effects, because it is constructed in layers rather than cut from a uniform block. When a front tooth has to sit next to natural enamel and disappear, that difference is visible, and it is the honest reason most multi-unit cases are still sent out.
 
 ### When the Shape Needs Rehearsing First
 
@@ -115,17 +115,17 @@ The reverse case is just as real, and it gets undersold by practices that treat 
 | One chipped or worn front tooth | Often a good fit | Also works, over two visits |
 | Two to four teeth, shade already close | Reasonable | Slight aesthetic edge |
 | Six to ten units, smile being redesigned | Not the strongest choice | The better route |
-| Shade needing internal layering or high translucency | Limited by a single-colour block | Where a ceramist's hand shows |
+| Shade needing internal layering or high translucency | Limited by a single-color block | Where a ceramist's hand shows |
 | Shape that should be rehearsed before it is permanent | No rehearsal step | Wax-up and trial smile possible |
 | A second appointment is genuinely difficult for you | The reason the technology exists | Harder to complete |
 
-Three practical advantages come with the single-visit route, and none of them are marketing. There is no temporary veneer to wear, loosen or discolour for two weeks. There is no second round of anaesthetic and no second appointment to arrange. And the prepared tooth spends less total time uncovered, which matters most when the preparation has come close to dentin.
+Three practical advantages come with the single-visit route, and none of them are marketing. There is no temporary veneer to wear, loosen or discolor for two weeks. There is no second round of anesthetic and no second appointment to arrange. And the prepared tooth spends less total time uncovered, which matters most when the preparation has come close to dentin.
 
 ## Are Same-Day Veneers Cheaper Than Lab-Made Ones?
 
 Not automatically, and any advertisement that treats one-visit treatment as inherently the budget option is describing a business model rather than your quote. Removing the laboratory step removes one cost. It adds others, because the scanner, the milling unit and the ceramic blocks are a standing investment for a practice, and chair time is longer when design and manufacture happen while you are sitting there instead of in a laboratory two weeks later.
 
-What genuinely moves the number is the same short list every time: how many teeth are involved, which material is used, whether anything has to be treated or reshaped before veneers go on, and how much design work the case needs. Those factors are set out in more detail in the [Oakland veneer cost guide](/blog/veneers-cost-oakland-2026). The only figure worth acting on is an itemised written plan produced after an examination, because it is the first number that describes your mouth rather than an average.
+What genuinely moves the number is the same short list every time: how many teeth are involved, which material is used, whether anything has to be treated or reshaped before veneers go on, and how much design work the case needs. Those factors are set out in more detail in the [Oakland veneer cost guide](/blog/veneers-cost-oakland-2026). The only figure worth acting on is an itemized written plan produced after an examination, because it is the first number that describes your mouth rather than an average.
 
 ## Who Is Not a Candidate for a Same-Visit Veneer?
 
@@ -133,7 +133,7 @@ Some of the following rule out the same-day approach specifically. Others rule o
 
 Heavy grinding and clenching is the most common. The ADA's patient guidance notes that veneers may not be a good choice if you clench or grind your teeth or have a deep overbite, and fracture is already the leading complication in the survival literature. A deep bite loads the front teeth in a way that thin ceramic tolerates poorly. Active decay or untreated gum disease has to be resolved before any cosmetic work begins, because a veneer bonded over an unhealthy foundation is a short-term result at best.
 
-Two further situations are specific to the one-visit route. If preparation exposes a large area of dentin, because the tooth is worn, previously restored or carrying a large existing filling, the bond is compromised and a different restoration may serve better; the [crowns page](/procedures/restoration/crowns-caps) covers where a crown takes over from a veneer. And if you intend to whiten, that has to happen first. Whitening does not change the colour of ceramic, composite or any other restoration, so the sequence is always to whiten the natural teeth, let the shade settle, then match the veneer to it. The [tooth whitening page](/procedures/cosmetic-dentistry/tooth-whitening) covers that ordering.
+Two further situations are specific to the one-visit route. If preparation exposes a large area of dentin, because the tooth is worn, previously restored or carrying a large existing filling, the bond is compromised and a different restoration may serve better; the [crowns page](/procedures/restoration/crowns-caps) covers where a crown takes over from a veneer. And if you intend to whiten, that has to happen first. Whitening does not change the color of ceramic, composite or any other restoration, so the sequence is always to whiten the natural teeth, let the shade settle, then match the veneer to it. The [tooth whitening page](/procedures/cosmetic-dentistry/tooth-whitening) covers that ordering.
 
 ## What About "No-Prep" and Snap-On Veneers?
 
@@ -156,7 +156,7 @@ A short list, and any practice offering same-visit veneers should be able to ans
 
 Question five separates a candid practice from a promotional one. There is always an answer, and hearing it said plainly is a reasonable thing to expect.
 
-If the tooth in question is chipped or worn rather than simply discoloured, the choice may not be between veneer types at all — [veneers or crowns](/blog/veneers-vs-crowns) walks through which one structural damage actually calls for.
+If the tooth in question is chipped or worn rather than simply discolored, the choice may not be between veneer types at all — [veneers or crowns](/blog/veneers-vs-crowns) walks through which one structural damage actually calls for.
 
 ## Frequently Asked Questions
 
@@ -178,11 +178,11 @@ If the tooth in question is chipped or worn rather than simply discoloured, the 
 </details>
 
 <details class="blog-faq"><summary>Do same-day veneers cost less than lab-made veneers?</summary>
-<p>Not automatically. Removing the laboratory step removes one cost and adds others, including the equipment and the longer chair time. The number that matters is the itemised written plan produced after an examination.</p>
+<p>Not automatically. Removing the laboratory step removes one cost and adds others, including the equipment and the longer chair time. The number that matters is the itemized written plan produced after an examination.</p>
 </details>
 
 <details class="blog-faq"><summary>Can I whiten my teeth after veneers are placed?</summary>
-<p>No. Whitening does not change the colour of ceramic, composite or any other restoration, so the natural teeth are whitened first and the veneer is matched to the settled shade afterwards.</p>
+<p>No. Whitening does not change the color of ceramic, composite or any other restoration, so the natural teeth are whitened first and the veneer is matched to the settled shade afterwards.</p>
 </details>
 
 <details class="blog-faq"><summary>Are snap-on veneers a real alternative to dental veneers?</summary>

@@ -11,12 +11,12 @@ date: 2026-09-18
 
 ## Quick Answer
 
-An implant replaces the root as well as the tooth, leaves the neighbouring teeth untouched, and lasts longer. A [bridge](/procedures/restoration/fixed-bridges) costs less up front, needs no surgery, and is finished in weeks rather than months, but it requires permanently filing down the two healthy teeth either side of the gap. For most people with enough bone and no reason to avoid minor surgery, an implant is the better long-term answer. For people who cannot have surgery, need the gap closed quickly, or have neighbouring teeth that already need crowns, a bridge is genuinely the right call.
+An implant replaces the root as well as the tooth, leaves the neighboring teeth untouched, and lasts longer. A [bridge](/procedures/restoration/fixed-bridges) costs less up front, needs no surgery, and is finished in weeks rather than months, but it requires permanently filing down the two healthy teeth either side of the gap. For most people with enough bone and no reason to avoid minor surgery, an implant is the better long-term answer. For people who cannot have surgery, need the gap closed quickly, or have neighboring teeth that already need crowns, a bridge is genuinely the right call.
 
 ### Key Takeaways
 
 - The decision usually turns on the two teeth either side of the gap, not on the gap itself.
-- A bridge requires removing healthy enamel from both neighbouring teeth. That is irreversible.
+- A bridge requires removing healthy enamel from both neighboring teeth. That is irreversible.
 - Secondary caries — decay under the crowns on those same filed-down teeth — is a leading cause of bridge failure.
 - An implant loads the jawbone and helps preserve it. A bridge spans the gap and leaves the bone underneath unloaded.
 - Insurance is more likely to contribute to a bridge than to an implant, which changes the real out-of-pocket gap.
@@ -31,14 +31,14 @@ This guide covers what you are structurally choosing between, what each costs up
 
 The two options solve the same visible problem in completely different ways, and the difference sits below the gumline.
 
-An implant is a titanium post placed into the jawbone, which fuses with the bone and carries a single replacement crown. Nothing is attached to the neighbouring teeth.
+An implant is a titanium post placed into the jawbone, which fuses with the bone and carries a single replacement crown. Nothing is attached to the neighboring teeth.
 
-A bridge is a run of joined crowns. The middle one fills the gap; the ones either side are cemented onto your own teeth, which have been reshaped to receive them. The gap is covered rather than filled, and the neighbouring teeth carry the load.
+A bridge is a run of joined crowns. The middle one fills the gap; the ones either side are cemented onto your own teeth, which have been reshaped to receive them. The gap is covered rather than filled, and the neighboring teeth carry the load.
 
 | | Implant | Bridge |
 | --- | --- | --- |
 | Replaces the root | Yes | No |
-| Involves neighbouring teeth | No | Yes — both are filed down |
+| Involves neighboring teeth | No | Yes — both are filed down |
 | Surgery required | Yes, minor | No |
 | Typical time to finish | 3 — 6 months | 2 — 3 weeks |
 | Typical East Bay cost | $4,500 — $7,500 | $2,000 — $4,500 |
@@ -50,7 +50,7 @@ Price is the first question most people ask and the least decisive one, but it d
 
 ### The Up-Front Difference
 
-Up front, a bridge is the cheaper option, generally by two to three thousand dollars. A single implant in the East Bay commonly lands between $4,500 and $7,500 all-in, while a conventional bridge more often sits between $2,000 and $4,500 depending on the number of units and the material. Over a longer horizon the comparison narrows and can reverse, because the two are replaced on different schedules.
+Up front, a bridge is the cheaper option, generally by two to three thousand dollars. A single implant in the East Bay commonly lands between $4,500 and $7,500 all-in, while a conventional bridge more often sits between $2,000 and $4,500 depending on the number of units and the material. Bay Area fees run above these figures. Current fees are on the [Fixed Bridges](/procedures/restoration/fixed-bridges) and [Dental Implants](/procedures/restoration/dental-implants) pages. Over a longer horizon the comparison narrows and can reverse, because the two are replaced on different schedules.
 
 ### The Ten-Year View
 
@@ -58,7 +58,7 @@ The honest version is that neither option has a fixed lifespan, so a "ten-year c
 
 ### How Insurance Changes the Gap
 
-One factor genuinely favours the bridge, and it is worth weighing properly. Insurance treats the two differently. Bridges are more commonly covered as a major restorative service, while many plans exclude implants outright or reimburse them at a lower rate. Because roughly 65% of dental PPOs cap annual benefits at $1,500 or more, according to the [National Association of Dental Plans](https://www.nadp.org/about-dental-plans-care/understanding-dental-benefits/), that difference in coverage can close much of the up-front gap between the two options. Ask your insurer for a pre-treatment estimate on both before you decide.
+One factor genuinely favors the bridge, and it is worth weighing properly. Insurance treats the two differently. Bridges are more commonly covered as a major restorative service, while many plans exclude implants outright or reimburse them at a lower rate. Because roughly 65% of dental PPOs cap annual benefits at $1,500 or more, according to the [National Association of Dental Plans](https://www.nadp.org/about-dental-plans-care/understanding-dental-benefits/), that difference in coverage can close much of the up-front gap between the two options. Ask your insurer for a pre-treatment estimate on both before you decide.
 
 ## What Happens to the Teeth Either Side?
 
@@ -72,7 +72,7 @@ If those teeth are healthy and untouched, the calculation changes. Enamel does n
 
 ### Where a Bridge Is Most Likely to Fail
 
-There is a second consequence that closes the loop. The 2026 systematic review [*Influence of Prosthetic Material Type on the Survival of Tooth-Supported Fixed Dental Prostheses*](https://pmc.ncbi.nlm.nih.gov/articles/PMC13544153/), published in *Clinical, Cosmetic and Investigational Dentistry*, identifies secondary caries — new decay forming at the margins of the crowns — as a primary cause of failure in metal-ceramic bridges. In other words, the teeth you filed down to build the bridge are where the bridge is most likely to fail.
+There is a second consequence that closes the loop. The 2026 systematic review [*Influence of Prosthetic Material Type on the Survival of Tooth-Supported Fixed Dental Prostheses*](https://pmc.ncbi.nlm.nih.gov/articles/PMC13544153/), published in *Clinical, Cosmetic and Investigational Dentistry*, identifies secondary caries — new decay forming at the margins of the crowns — as one of the main biological complications of tooth-supported bridges. In other words, the teeth you filed down to build the bridge are where the bridge is most likely to fail.
 
 None of this makes a bridge a bad restoration. It means the question "how are the teeth either side of the gap?" decides more of this than the price does. Bring that question to your consultation and ask for a straight answer about the condition of those two specific teeth.
 
@@ -82,11 +82,11 @@ Both options are durable. They are not equally durable, and bridge longevity dep
 
 ### What the Survival Data Shows
 
-The same 2026 systematic review reports 10-year survival for tooth-supported bridges varying substantially by material: metal-ceramic performed strongest in the studies reviewed, monolithic lithium disilicate came in around 84.4%, and tooth-supported zirconia bridges ranged from 75% (Rinke et al.) to 91.3% (Sailer et al.). At the five-year mark the spread is tighter, with metal-ceramic at 97.6% to 100%, zirconia at 94% to 100%, and all-ceramic at 88% to 100%.
+The same 2026 systematic review reports 10-year survival for tooth-supported bridges varying substantially by material: metal-ceramic performed strongest in the studies reviewed, monolithic lithium disilicate came in around 84.4%, and tooth-supported zirconia bridges ranged from 75% (Rinke et al.) to 91.3% (Sailer et al.). At five years, one trial in the review reports 100% survival for both metal-ceramic and zirconia three-unit bridges, and another reports 97.6% for metal-ceramic against 94% for zirconia single crowns; across all follow-up periods, all-ceramic restorations ranged from 88% to 100%.
 
 For comparison, the large-scale registry study published in the [*Journal of Functional Biomaterials*](https://pmc.ncbi.nlm.nih.gov/articles/PMC11856851/) in 2025, covering 158,824 implants in 53,874 patients, reported overall implant survival of 97.79%.
 
-Two honest caveats belong with those numbers. Implant survival and bridge survival are measured over different periods and in different study designs, so they are not a like-for-like race. And a bridge that fails is usually repairable or replaceable, whereas an implant that fails to integrate is a more involved problem. Longevity favours the implant; it does not make the bridge fragile.
+Two honest caveats belong with those numbers. Implant survival and bridge survival are measured over different periods and in different study designs, so they are not a like-for-like race. And a bridge that fails is usually repairable or replaceable, whereas an implant that fails to integrate is a more involved problem. Longevity favors the implant; it does not make the bridge fragile.
 
 ### Why Each One Fails
 
@@ -112,9 +112,9 @@ If you are undecided, that asymmetry is worth knowing: choosing an implant now k
 
 ## Does Either Option Need Surgery?
 
-A bridge does not. It is prepared and fitted across two visits, typically two to three weeks apart, with local anaesthetic and no incision.
+A bridge does not. It is prepared and fitted across two visits, typically two to three weeks apart, with local anesthetic and no incision.
 
-An implant does, though "surgery" overstates it for most single-tooth cases: the post is placed in a single appointment under local anaesthetic, and the demanding part is the wait rather than the procedure. The [American Dental Association's MouthHealthy guide](https://www.mouthhealthy.org/all-topics-a-z/implants) describes the healing period as osseointegration, where "the bone actually grows around it and holds it in place."
+An implant does, though "surgery" overstates it for most single-tooth cases: the post is placed in a single appointment under local anesthetic, and the demanding part is the wait rather than the procedure. The [American Dental Association's MouthHealthy guide](https://www.mouthhealthy.org/all-topics-a-z/implants) describes the healing period as osseointegration, where "the bone actually grows around it and holds it in place."
 
 | Stage | Implant | Bridge |
 | --- | --- | --- |
@@ -130,7 +130,7 @@ If speed genuinely matters — a wedding, a move, a job that puts you in front o
 
 There are several situations where a bridge is not the compromise option but the correct one:
 
-- **The neighbouring teeth already need crowns.** You are treating them anyway; the bridge adds no structural cost.
+- **The neighboring teeth already need crowns.** You are treating them anyway; the bridge adds no structural cost.
 - **There is not enough bone, and grafting is unwanted or unsuitable.** Grafting adds months and expense, and it is not right for everyone.
 - **A medical reason makes elective surgery inadvisable**, or you take medications that complicate healing. This is a conversation for your dentist and your physician together.
 - **The gap needs closing quickly.** Weeks versus months is a real difference.
@@ -152,7 +152,7 @@ Take the answers, not the averages, to your consultation. You can see how the pr
 
 <div class="blog-faq-list">
 <details class="blog-faq"><summary>Is a bridge or an implant better for a single missing tooth?</summary>
-<p>For most people with healthy neighbouring teeth and adequate bone, an implant is better long term: it lasts longer, preserves bone, and leaves the adjacent teeth untouched. A bridge is better when those teeth already need crowns, when bone is insufficient, or when the gap must be closed quickly.</p>
+<p>For most people with healthy neighboring teeth and adequate bone, an implant is better long term: it lasts longer, preserves bone, and leaves the adjacent teeth untouched. A bridge is better when those teeth already need crowns, when bone is insufficient, or when the gap must be closed quickly.</p>
 </details>
 
 <details class="blog-faq"><summary>Does a bridge damage the teeth either side?</summary>
@@ -160,7 +160,7 @@ Take the answers, not the averages, to your consultation. You can see how the pr
 </details>
 
 <details class="blog-faq"><summary>How long does a dental bridge last compared to an implant?</summary>
-<p>Published 10-year survival for tooth-supported bridges varies by material, with all-ceramic around 84.4% and zirconia between 71% and 91.3%. A large registry study reported overall implant survival of 97.79%. Bridges are expected to be replaced at some point; integrated implants usually are not.</p>
+<p>Published 10-year survival for tooth-supported bridges varies by material: around 84.4% for lithium disilicate and between 75% and 91.3% for zirconia, with metal-ceramic the strongest. A large registry study reported overall implant survival of 97.79%. Bridges are expected to be replaced at some point; integrated implants usually are not.</p>
 </details>
 
 <details class="blog-faq"><summary>Will my insurance cover a bridge but not an implant?</summary>

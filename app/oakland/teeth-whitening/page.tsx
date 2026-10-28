@@ -54,14 +54,14 @@ export default function OaklandTeethWhiteningPage() {
             {
               title: "Why Oakland patients come up Grand Avenue to whiten",
               body: [
-                "Whitening looks like the simplest thing a dentist does — gel, tray, wait — but the results that hold up are planned by someone who has examined the teeth first. Here that is one of the two co-owners, Dr. Jill Martenson or Dr. David Ma: the same dentist checks your enamel and any existing dental work, says whether bleaching will reach the shade you have in mind, fits the trays and sees the result. If you later want a filling, crown or veneer matched to the new colour, it is planned by the person who whitened the teeth around it.",
+                "Whitening looks like the simplest thing a dentist does — gel, tray, wait — but the results that hold up are planned by someone who has examined the teeth first. Here that is one of the two co-owners, Dr. Jill Martenson or Dr. David Ma: the same dentist checks your enamel and any existing dental work, says whether bleaching will reach the shade you have in mind, fits the trays and sees the result. If you later want a filling, crown or veneer matched to the new color, it is planned by the person who whitened the teeth around it.",
                 "The other reason is geography. The address is Piedmont, but the Oakland city line is a few blocks away and Grand Avenue runs from Lake Merritt to our front door — about 1.4 miles, or six minutes without traffic. Rockridge BART is about 2.6 miles and Montclair Village about 3.1, each around seven minutes. For two short visits, that beats crossing town.",
               ],
             },
             {
               title: "How teeth whitening works here",
               body: [
-                "Bleaching changes the colour of natural enamel. It is simple and non-invasive, but it starts with a look rather than a gel: the American Dental Association advises a clinical exam before bleaching, with X-rays where appropriate, because the exam identifies what is causing the discolouration (ADA). That is what the complimentary consultation is for. If whitening is the right tool, the take-home system most of our patients choose runs like this:",
+                "Bleaching changes the color of natural enamel. It is simple and non-invasive, but it starts with a look rather than a gel: the American Dental Association advises a clinical exam before bleaching, with X-rays where appropriate, because the exam identifies what is causing the discoloration (ADA). That is what the complimentary consultation is for. If whitening is the right tool, the take-home system most of our patients choose runs like this:",
               ],
               bullets: [
                 "First visit: impressions of your teeth, from which clear plastic trays are made to fit only you.",
@@ -74,10 +74,10 @@ export default function OaklandTeethWhiteningPage() {
             {
               title: "Who whitening is for",
               body: [
-                "Dentists sort stains into two kinds, and the sorting decides the treatment (ADA). Extrinsic stains sit on the enamel surface — coffee, tea, red wine, tobacco, pigmented foods — and much of that lifts with a professional cleaning or a whitening toothpaste before any bleach is needed. Intrinsic discolouration is inside the tooth, from age, genetics, fluorosis or childhood antibiotics, and that is what bleaching is for. In practice we recommend it for:",
+                "Dentists sort stains into two kinds, and the sorting decides the treatment (ADA). Extrinsic stains sit on the enamel surface — coffee, tea, red wine, tobacco, pigmented foods — and much of that lifts with a professional cleaning or a whitening toothpaste before any bleach is needed. Intrinsic discoloration is inside the tooth, from age, genetics, fluorosis or childhood antibiotics, and that is what bleaching is for. In practice we recommend it for:",
               ],
               bullets: [
-                "Yellow or brown teeth from years of coffee, tea and wine — the discolouration that responds best.",
+                "Yellow or brown teeth from years of coffee, tea and wine — the discoloration that responds best.",
                 "Teeth dulled with age, as the outer enamel wears thin and the yellower dentin shows through.",
                 "Fluorosis marks from too much fluoride while the teeth were forming.",
                 "Tetracycline staining from childhood antibiotics — the hardest case, discussed honestly below.",
@@ -87,8 +87,8 @@ export default function OaklandTeethWhiteningPage() {
             {
               title: "When we'll tell you whitening isn't the answer",
               body: [
-                "Bleach acts only on natural enamel. Crowns, veneers, bonding and tooth-coloured fillings keep the colour they were made in, so whitening around them makes the difference show (ADA MouthHealthy). We tell you which restorations would need replacing before you start, not after.",
-                "Some stains do not move. The ADA's patient guidance says gray-toned teeth may not bleach at all, brown teeth respond less well than yellow, and discolouration from medication or an old injury may not respond (ADA MouthHealthy). Tetracycline sits at the edge — three to four months of nightly treatment on average, by the ADA's clinical summary (ADA). Where a tooth will not bleach, a veneer or crown is the honest alternative, and we say so.",
+                "Bleach acts only on natural enamel. Crowns, veneers, bonding and tooth-colored fillings keep the color they were made in, so whitening around them makes the difference show (ADA MouthHealthy). We tell you which restorations would need replacing before you start, not after.",
+                "Some stains do not move. The ADA's patient guidance says gray-toned teeth may not bleach at all, brown teeth respond less well than yellow, and discoloration from medication or an old injury may not respond (ADA MouthHealthy). Tetracycline sits at the edge — three to four months of nightly treatment on average, by the ADA's clinical summary (ADA). Where a tooth will not bleach, a veneer or crown is the honest alternative, and we say so.",
                 "Two more pauses. The American Academy of Pediatric Dentistry discourages full-arch bleaching while a child still has baby teeth (ADA), so this is an adult treatment; and we suggest postponing during pregnancy and breastfeeding — not because harm has been shown, but because peroxide has not been formally studied in those groups. Sensitive teeth are not a bar: the ADA lists sensitivity history among the pre-bleaching exam's questions, and it shapes the concentration and schedule we recommend.",
               ],
             },
@@ -96,7 +96,7 @@ export default function OaklandTeethWhiteningPage() {
               title: "In-office vs take-home trays vs drugstore strips",
               body: [
                 "The three differ in strength, fit and supervision more than in chemistry. All use hydrogen peroxide or carbamide peroxide, which break stain molecules into smaller, paler pieces (ADA MouthHealthy). Dentist-dispensed take-home systems typically run from 10 to 38 percent carbamide peroxide; in-office treatment uses concentrated hydrogen peroxide applied for up to 30 minutes at a time; over-the-counter strips use the same agents at lower concentrations (ADA).",
-                "Stronger is not automatically better. A triple-blinded trial of 130 people compared two in-office sessions of 35 percent hydrogen peroxide with two weeks of 10 percent carbamide peroxide in custom trays at home, both groups starting with a desensitizing gel. Two weeks on, the at-home group showed a slightly larger colour change; sensitivity was higher in-office only on the first day, and the authors called the rates similar (Journal of Applied Oral Science, 2021). An umbrella review of 24 systematic reviews found the same for the chair: moderate peroxide concentrations whiten as well as the strongest with less sensitivity, and the LED, halogen and laser lights sold as accelerators add no clinically relevant colour change, while lasers may add sensitivity (Saudi Dental Journal, 2026).",
+                "Stronger is not automatically better. A triple-blinded trial of 130 people compared two in-office sessions of 35 percent hydrogen peroxide with two weeks of 10 percent carbamide peroxide in custom trays at home, both groups starting with a desensitizing gel. Two weeks on, the at-home group showed a slightly larger color change; sensitivity was higher in-office only on the first day, and the authors called the rates similar (Journal of Applied Oral Science, 2021). An umbrella review of 24 systematic reviews found the same for the chair: moderate peroxide concentrations whiten as well as the strongest with less sensitivity, and the LED, halogen and laser lights sold as accelerators add no clinically relevant color change, while lasers may add sensitivity (Saudi Dental Journal, 2026).",
                 "So in-office buys speed: one appointment instead of two weeks of trays. Take-home buys control: you stop at the shade you like, keep the trays for touch-ups, and a custom fit keeps gel off the gums — the ADA names poor-fitting trays as the usual cause of gum irritation (ADA). Drugstore products are cheaper and weaker, strips put the gel wherever they land, and the ADA warns that overuse can damage enamel or gums (ADA MouthHealthy). Only the first two come with someone who has examined your teeth.",
               ],
             },
@@ -104,7 +104,7 @@ export default function OaklandTeethWhiteningPage() {
               title: "What the timeline looks like",
               body: [
                 "Take-home whitening is two short visits — impressions, then the fitting — and a couple of weeks of wear. The ADA puts dentist-dispensed at-home whitening at a few days to a few weeks (ADA MouthHealthy); deeper staining takes longer, and you get a specific plan at the fitting rather than a guess before it. In-office whitening is one appointment. Tetracycline is the exception to every timeline: three to four months of nightly trays on average, according to the ADA, and sometimes no response at all.",
-                "If new dental work is part of the plan, whiten first, wait about two weeks for the colour to stabilise, then have the veneer, crown or filling made to match. Restorations cannot be lightened afterwards, so reversing the order means remaking them.",
+                "If new dental work is part of the plan, whiten first, wait about two weeks for the color to stabilize, then have the veneer, crown or filling made to match. Restorations cannot be lightened afterwards, so reversing the order means remaking them.",
               ],
             },
             {
@@ -157,11 +157,11 @@ export default function OaklandTeethWhiteningPage() {
             },
             {
               q: "Is in-office whitening better than take-home trays?",
-              a: "Faster, not better. A 130-person randomised trial found two weeks of 10 percent carbamide peroxide in custom trays produced a slightly larger colour change than two in-office sessions of 35 percent hydrogen peroxide, with similar sensitivity overall (Journal of Applied Oral Science, 2021). Choose in-office for one visit; choose trays for control over the final shade and a kit for touch-ups.",
+              a: "Faster, not better. A 130-person randomised trial found two weeks of 10 percent carbamide peroxide in custom trays produced a slightly larger color change than two in-office sessions of 35 percent hydrogen peroxide, with similar sensitivity overall (Journal of Applied Oral Science, 2021). Choose in-office for one visit; choose trays for control over the final shade and a kit for touch-ups.",
             },
             {
               q: "Will whitening work on my crowns, veneers or fillings?",
-              a: "No. Bleach changes natural enamel only; crowns, veneers, bonding and tooth-coloured fillings keep their original colour (ADA MouthHealthy). If you have visible restorations, we whiten the natural teeth first, wait about two weeks for the shade to settle, then replace the restorations to match.",
+              a: "No. Bleach changes natural enamel only; crowns, veneers, bonding and tooth-colored fillings keep their original color (ADA MouthHealthy). If you have visible restorations, we whiten the natural teeth first, wait about two weeks for the shade to settle, then replace the restorations to match.",
             },
             {
               q: "Will my teeth be sensitive?",

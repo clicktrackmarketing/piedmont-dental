@@ -11,7 +11,7 @@ date: 2026-09-15
 
 ## Quick Answer
 
-A single dental implant in the East Bay typically runs between $4,500 and $7,500 all-in for the three parts you are actually paying for: the implant post, the abutment, and the crown. Published guides disagree at the top end — one Berkeley guide caps it at $6,500, a California-wide guide puts the Bay Area at $7,500 — and that spread is itself worth knowing before you compare quotes. Bay Area pricing generally sits above the national average, and the largest single variable is whether you need [bone grafting](/procedures/periodontal-services/bone-grafting) first. No honest quote exists before an examination and a 3D scan, because the bone is what decides the plan.
+A single dental implant in the East Bay typically runs between $4,500 and $7,500 all-in for the three parts you are actually paying for: the implant post, the abutment, and the crown. Published guides disagree at the top end — one Berkeley guide caps it at $6,500, a California-wide guide puts the Bay Area at $7,500 — and that spread is itself worth knowing before you compare quotes. Bay Area pricing generally sits above the national average, and the largest single variable is whether you need [bone grafting](/procedures/periodontal-services/bone-grafting) first. No honest quote exists before an examination and a 3D scan, because the bone is what decides the plan. Bay Area fees run above these national figures. Current fees are on the [Dental Implants page](/procedures/restoration/dental-implants).
 
 ### Key Takeaways
 
@@ -26,7 +26,7 @@ A single dental implant in the East Bay typically runs between $4,500 and $7,500
 
 If you have been quoted a price for a dental implant and it did not match what you read online, you are not being misled. You are comparing a bundle to a component. The word "implant" is used loosely to mean three different things that get billed separately, and whether a fourth item appears on your treatment plan depends entirely on what your jaw looks like on a scan.
 
-This guide breaks the number apart so you can read your own quote properly, understand what moves it up or down, and know which questions to ask before you agree to anything. It covers the itemised components, the five factors that drive price variation, how insurance actually behaves, the treatment timeline, and what the research says about how long implants last.
+This guide breaks the number apart so you can read your own quote properly, understand what moves it up or down, and know which questions to ask before you agree to anything. It covers the itemized components, the five factors that drive price variation, how insurance actually behaves, the treatment timeline, and what the research says about how long implants last.
 
 ## What Are You Actually Paying For in a Dental Implant?
 
@@ -39,7 +39,7 @@ An implant is three separate manufactured components, plus the surgical and rest
 | Crown | The porcelain tooth you see and chew with | $1,500 — $2,500 |
 | **Complete single implant** | **All three, straightforward case** | **$3,700 — $5,700** |
 
-Those component ranges sum to roughly $3,700 to $5,700 for the parts alone. Published guides then quote a higher all-in figure because a real case includes chair time, imaging and follow-up: one Berkeley guide puts a complete single implant at $4,500 to $6,500, while a California-wide guide puts the Bay Area specifically at $5,000 to $7,500. Both are honest, and the gap between them is exactly why an itemised written plan matters more than a headline number. The only figure that means anything is the one produced after an examination. The [American Dental Association's MouthHealthy guide](https://www.mouthhealthy.org/all-topics-a-z/implants) describes implants as being "made up of titanium and other materials that are compatible with the human body," and you can see how the practice describes the procedure itself on the [dental implants page](/procedures/restoration/dental-implants).
+Those component ranges sum to roughly $3,700 to $5,700 for the parts alone. Published guides then quote a higher all-in figure because a real case includes chair time, imaging and follow-up: one Berkeley guide puts a complete single implant at $4,500 to $6,500, while a California-wide guide puts the Bay Area specifically at $5,000 to $7,500. Both are honest, and the gap between them is exactly why an itemized written plan matters more than a headline number. The only figure that means anything is the one produced after an examination. The [American Dental Association's MouthHealthy guide](https://www.mouthhealthy.org/all-topics-a-z/implants) describes implants as being "made up of titanium and other materials that are compatible with the human body," and you can see how the practice describes the procedure itself on the [dental implants page](/procedures/restoration/dental-implants), along with current fees, which sit above the national figures in this table.
 
 One practical consequence is worth carrying into any consultation. When a headline price looks dramatically lower than the range above, check which of the three components it actually covers. A quote for "an implant" that includes only the post is not comparable to a quote that includes the finished crown, and the gap between them is usually most of the cost.
 
@@ -97,7 +97,6 @@ The three components are the core of the cost, but they are rarely the whole of 
 | Surgical extraction | Broken, impacted or root-fractured tooth | $250 — $600 |
 | Bone grafting | Insufficient bone volume at the site | $500 — $3,000 per site |
 | Sinus lift | Upper back teeth, insufficient vertical bone | $1,500 — $5,000 |
-| Sedation | Anxiety or longer surgical cases | $250 — $1,500 |
 | Temporary tooth | Visible gap during healing | $300 — $800 |
 
 None of these are upsells by definition. Each exists because of something specific about your mouth, and a good treatment plan will say plainly which apply to you and why. What you should not accept is a plan that leaves them unpriced until after treatment has started.
@@ -140,7 +139,7 @@ This is the question almost nobody asks, and for a large case it can matter more
 - **Ask which parts of the plan are covered separately.** Extractions, imaging and sometimes bone grafting can be covered even when the implant itself is not, because they are billed under different codes.
 - **Check whether your plan has a waiting period for major services**, particularly if you have recently changed employers or policies.
 
-Dental costs generally have been drifting upward. The [American Dental Association's Health Policy Institute](https://www.ada.org/resources/research/health-policy-institute/dental-care-market) puts national dental expenditure at $189 billion, up 3.6% on the previous year after adjusting for inflation, with consumer dental spending up 4% in the twelve months to January 2026. Any quote more than a year old is worth refreshing before you budget against it.
+Dental costs generally have been drifting upward. The [American Dental Association's Health Policy Institute](https://www.ada.org/resources/research/health-policy-institute/dental-care-market) puts national dental expenditure at $189 billion in 2024, up 3.6% on 2023 after adjusting for inflation, with consumer dental spending up 4% in the twelve months to January 2026. Any quote more than a year old is worth refreshing before you budget against it.
 
 ## How Long Does the Whole Implant Process Take?
 
@@ -152,7 +151,7 @@ A straightforward case with good bone typically runs three to six months from pl
 | --- | --- | --- |
 | Consultation and 3D scan | Planning; grafting identified or ruled out | 1 appointment |
 | Extraction and/or grafting, if needed | Site prepared and allowed to heal | 3 — 6 months |
-| Implant placement | Post placed, usually under local anaesthetic | 1 appointment |
+| Implant placement | Post placed, usually under local anesthetic | 1 appointment |
 | Osseointegration | Bone fuses to the implant surface | 3 — 6 months |
 | Abutment and crown | Digital scan or impressions, then fitting | 1 — 2 appointments |
 
@@ -162,7 +161,7 @@ If a practice offers you a materially shorter timeline, ask what specifically ab
 
 Very reliable, and the research on this point is unusually good.
 
-A [large-scale electronic dental registry study](https://pmc.ncbi.nlm.nih.gov/articles/PMC11856851/) published in the *Journal of Functional Biomaterials* in 2025 analysed 158,824 implants placed in 53,874 patients. It reported overall implant survival of 97.79%, and an early failure rate during the osseointegration phase, meaning before the crown was ever fitted, of just 1.56%. Real cases the practice has treated are shown in the [implant smile gallery](/smile-gallery/dental-implants).
+A [large-scale electronic dental registry study](https://pmc.ncbi.nlm.nih.gov/articles/PMC11856851/) published in the *Journal of Functional Biomaterials* in 2025 analyzed 158,824 implants placed in 53,874 patients. It reported overall implant survival of 97.79%, and an early failure rate during the osseointegration phase, meaning before the crown was ever fitted, of just 1.56%. Real cases the practice has treated are shown in the [implant smile gallery](/smile-gallery/dental-implants).
 
 The risk factors matter because one of them is entirely within your control. A 2021 systematic review and meta-analysis in [*Medicina*](https://pmc.ncbi.nlm.nih.gov/articles/PMC8780868/), pooling 292 publications and more than 150,000 implants, found smokers had roughly 2.4 times the odds of implant failure (OR 2.402) and greater marginal bone loss than non-smokers. Smoking remains the largest modifiable threat to a placed implant, and that figure comes from the pooled evidence rather than a single cohort.
 
@@ -199,7 +198,7 @@ A practice that answers all six plainly is giving you what you need to compare q
 
 <div class="blog-faq-list">
 <details class="blog-faq"><summary>How much does a single dental implant cost in the East Bay?</summary>
-<p>Published guides put it between $4,500 and $7,500 all-in for the post, abutment and crown, with Bay Area pricing running above national averages. Bone grafting, where needed, is additional and is the most common reason two quotes differ.</p>
+<p>Published guides put it between $4,500 and $7,500 all-in for the post, abutment and crown, with Bay Area pricing running above national averages. Bone grafting, where needed, is additional and is the most common reason two quotes differ. Current fees are on the <a href="/procedures/restoration/dental-implants">Dental Implants page</a>.</p>
 </details>
 
 <details class="blog-faq"><summary>Why is my quote higher than the price I saw advertised?</summary>
@@ -223,7 +222,7 @@ A practice that answers all six plainly is giving you what you need to compare q
 </details>
 
 <details class="blog-faq"><summary>How long do dental implants last?</summary>
-<p>The largest registry study to date reports overall survival of 97.79% across 158,824 implants. Good home care, regular maintenance visits and not smoking are the factors most strongly associated with keeping them.</p>
+<p>A large registry study of 158,824 implants reports overall survival of 97.79%. Good home care, regular maintenance visits and not smoking are the factors most strongly associated with keeping them.</p>
 </details>
 
 </div>

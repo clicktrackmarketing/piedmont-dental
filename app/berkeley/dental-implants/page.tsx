@@ -79,7 +79,7 @@ export default function BerkeleyDentalImplantsPage() {
               ],
               bullets: [
                 "Replace one tooth, or several, without grinding down the healthy teeth on either side.",
-                "Stop the neighbouring teeth drifting into the gap, which can upset the bite and strain the jaw joint.",
+                "Stop the neighboring teeth drifting into the gap, which can upset the bite and strain the jaw joint.",
                 "Chew, speak and digest normally again.",
                 "Support the cheeks and lips where a missing tooth has let the face fall in.",
                 "Anchor a loose partial or full denture so it stays put.",
@@ -96,8 +96,8 @@ export default function BerkeleyDentalImplantsPage() {
             {
               title: "Implants vs bridges vs dentures",
               body: [
-                "A bridge replaces the missing tooth by anchoring a false one to the teeth on either side, which have to be filed down to take crowns. An implant stands alone: the neighbouring teeth are untouched, and the post stimulates the jawbone the way a natural root does, which is why the bone around it holds up. The bridge is quicker — nothing is placed in the bone, so there are no months of healing — and for some mouths it remains the sensible choice; the consultation is where we say which.",
-                "A removable denture is the least invasive option and the least secure. Where several teeth are missing, implants and dentures are not rivals: the ADA notes that custom bridges or dentures can be made to fit your mouth and your implants (ADA MouthHealthy), and a denture anchored to implants stays put in a way a conventional one cannot. Which of the three fits you depends on the bone available, the health of the neighbouring teeth, how long you want the result to last and what you are prepared to go through to get it — we lay those out side by side rather than lead with the most expensive option.",
+                "A bridge replaces the missing tooth by anchoring a false one to the teeth on either side, which have to be filed down to take crowns. An implant stands alone: the neighboring teeth are untouched, and the post stimulates the jawbone the way a natural root does, which is why the bone around it holds up. The bridge is quicker — nothing is placed in the bone, so there are no months of healing — and for some mouths it remains the sensible choice; the consultation is where we say which.",
+                "A removable denture is the least invasive option and the least secure. Where several teeth are missing, implants and dentures are not rivals: the ADA notes that custom bridges or dentures can be made to fit your mouth and your implants (ADA MouthHealthy), and a denture anchored to implants stays put in a way a conventional one cannot. Which of the three fits you depends on the bone available, the health of the neighboring teeth, how long you want the result to last and what you are prepared to go through to get it — we lay those out side by side rather than lead with the most expensive option.",
               ],
             },
             {
@@ -129,7 +129,7 @@ export default function BerkeleyDentalImplantsPage() {
             {
               title: "Cost and coverage, without the runaround",
               body: [
-                "Nobody can quote an implant honestly over the phone, because the price depends on whether a graft is needed, the type of implant and how many teeth are involved. For a sense of scale, Delta Dental puts the cost of an individual implant to replace a single tooth, without dental benefits, at $2,800 to $5,600 — a figure that typically includes the surgical placement, the supporting structure for the crown and the crown itself (Delta Dental). Grafts and multiple implants are priced case by case.",
+                "Nobody can quote an implant honestly over the phone, because the price depends on whether a graft is needed, the type of implant and how many teeth are involved. For a sense of scale, Delta Dental puts the cost of an individual implant to replace a single tooth, without dental benefits, at $2,800 to $5,600 — a figure that typically includes the surgical placement, the supporting structure for the crown and the crown itself (Delta Dental). Bay Area fees run above these national figures. See our current fees on the Dental Implants page. Grafts and multiple implants are priced case by case.",
                 "On coverage, Delta Dental's own guidance is that many dental benefit plans help with the cost of implants but some do not, and that Medicare and Medicaid usually do not cover them, though certain Medicare Advantage plans might (Delta Dental). The real number comes in writing after the consultation and X-rays, not over the phone, and CareCredit financing is available if you would rather spread the balance.",
               ],
             },
@@ -169,7 +169,7 @@ export default function BerkeleyDentalImplantsPage() {
             },
             {
               q: "How much do dental implants cost in Berkeley?",
-              a: "For a market benchmark, Delta Dental puts an individual single-tooth implant without dental benefits at $2,800 to $5,600, typically including placement, the supporting structure and the crown (Delta Dental). Grafts and multiple implants change the number. We give you a written estimate after the consultation and X-rays, and CareCredit financing is available.",
+              a: "For a market benchmark, Delta Dental puts an individual single-tooth implant without dental benefits at $2,800 to $5,600, typically including placement, the supporting structure and the crown (Delta Dental). Bay Area fees run above these national figures. See our current fees on the Dental Implants page. Grafts and multiple implants change the number. We give you a written estimate after the consultation and X-rays, and CareCredit financing is available.",
             },
             {
               q: "Can a dental implant fail?",

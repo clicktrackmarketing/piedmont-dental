@@ -138,7 +138,7 @@ export default function OaklandDentalImplantsPage() {
             {
               title: "Cost and coverage, without the runaround",
               body: [
-                "Delta Dental puts the cost of a single dental implant without dental benefits — the surgical placement, the supporting structure for the crown and the crown itself — at about $2,800 to $5,600, and notes that the price moves with the type of implant, how many are needed, whether your plan covers implants and whether the dentist is in your plan's network (Delta Dental). Anything extra a case needs, such as a graft or an extraction, is its own line in the plan, so read any quote with that in mind.",
+                "Delta Dental puts the cost of a single dental implant without dental benefits — the surgical placement, the supporting structure for the crown and the crown itself — at about $2,800 to $5,600, and notes that the price moves with the type of implant, how many are needed, whether your plan covers implants and whether the dentist is in your plan's network (Delta Dental). Bay Area fees run above these national figures. See our current fees on the Dental Implants page. Anything extra a case needs, such as a graft or an extraction, is its own line in the plan, so read any quote with that in mind.",
                 "On insurance, Delta Dental's own summary is the honest one: many dental benefit plans help with the cost of implants, and some do not, so the first step is to check what your plan actually says (Delta Dental). We give you a complete written estimate after the consultation and X-rays, and financing, including CareCredit, is available for whatever your plan does not cover.",
               ],
             },
@@ -178,7 +178,7 @@ export default function OaklandDentalImplantsPage() {
             },
             {
               q: "How much does a dental implant cost in Oakland?",
-              a: "Delta Dental's published range for a single implant without benefits — placement, supporting structure and crown — is about $2,800 to $5,600, varying with the type of implant, the number needed and your plan (Delta Dental). We quote in writing after the consultation and X-rays. Many plans help with part of the cost and some do not; financing, including CareCredit, is available for the rest.",
+              a: "Delta Dental's published range for a single implant without benefits — placement, supporting structure and crown — is about $2,800 to $5,600, varying with the type of implant, the number needed and your plan (Delta Dental). Bay Area fees run above these national figures. See our current fees on the Dental Implants page. We quote in writing after the consultation and X-rays. Many plans help with part of the cost and some do not; financing, including CareCredit, is available for the rest.",
             },
             {
               q: "Is an implant better than a bridge?",

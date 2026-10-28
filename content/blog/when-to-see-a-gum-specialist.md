@@ -11,7 +11,7 @@ date: 2026-10-09
 
 ## Quick Answer
 
-You should see a gum specialist — a periodontist — when the inflammation in your gums has stopped responding to routine cleaning and good home care, or when it has started to affect the bone that holds your teeth in place. According to the [American Academy of Periodontology](https://www.perio.org/for-patients/what-is-a-periodontist/), a periodontist is a dentist with three additional years of education beyond dental school in the prevention, diagnosis and treatment of periodontal disease, and in the placement of dental implants. Early gum inflammation is normally managed by a general dentist and hygienist; the referral point sits roughly where the disease has moved from the gum surface into the deeper supporting tissue, or where standard treatment has already been tried and has not held. If you recognise more than one of the seven signs below, the right ask at your next appointment is a full periodontal evaluation, not another routine cleaning.
+You should see a gum specialist — a periodontist — when the inflammation in your gums has stopped responding to routine cleaning and good home care, or when it has started to affect the bone that holds your teeth in place. According to the [American Academy of Periodontology](https://www.perio.org/for-patients/what-is-a-periodontist/), a periodontist is a dentist with three additional years of education beyond dental school in the prevention, diagnosis and treatment of periodontal disease, and in the placement of dental implants. Early gum inflammation is normally managed by a general dentist and hygienist; the referral point sits roughly where the disease has moved from the gum surface into the deeper supporting tissue, or where standard treatment has already been tried and has not held. If you recognize more than one of the seven signs below, the right ask at your next appointment is a full periodontal evaluation, not another routine cleaning.
 
 ### Key Takeaways
 
@@ -30,7 +30,7 @@ This guide is written to help you ask it. It covers what a gum specialist actual
 
 ## What Does a Gum Specialist Actually Do?
 
-"Gum specialist" is the plain-English name for a periodontist. The [American Academy of Periodontology](https://www.perio.org/for-patients/what-is-a-periodontist/) defines one as a dentist who specialises in the prevention, diagnosis and treatment of periodontal disease — the chronic inflammatory condition that affects the gums and the bone supporting the teeth — and who also places dental implants. The training is three years on top of a full dental degree, and it is concentrated almost entirely on the tissues around the tooth rather than the tooth itself.
+"Gum specialist" is the plain-English name for a periodontist. The [American Academy of Periodontology](https://www.perio.org/for-patients/what-is-a-periodontist/) defines one as a dentist who specializes in the prevention, diagnosis and treatment of periodontal disease — the chronic inflammatory condition that affects the gums and the bone supporting the teeth — and who also places dental implants. The training is three years on top of a full dental degree, and it is concentrated almost entirely on the tissues around the tooth rather than the tooth itself.
 
 That focus changes what the appointment is about. A general check-up is largely concerned with the teeth: decay, wear, existing restorations, whether anything is cracked. A periodontal assessment is concerned with the foundation those teeth sit in — how deep the space between gum and tooth measures at several points around each tooth, whether it bleeds when measured, whether the bone on an x-ray has changed shape since the last set, and whether any tooth has begun to move.
 
@@ -97,7 +97,7 @@ Gum disease is not usually painful, which is what makes pain informative when it
 
 ### 7. A Cleaning That Has Been Called "Deep" More Than Once
 
-This is the most reliable sign on the list, and the one patients are least likely to recognise as a sign at all. Scaling and root planing — the deep cleaning below the gumline — is the standard first-line treatment for periodontitis, and it works well for a great many people. If the same sites are being treated a second or third time, the first course did not achieve what it was meant to. That is not a reason to lose confidence in the treatment; it is a reason to change the level at which the case is reviewed. The AAP is direct about the limitation: non-surgical procedures "do have limitations," and when they do not achieve optimal periodontal health, gum surgery may be recommended. The practice's [scaling and root planing](/procedures/periodontal-services/periodontal-scaling-root-planing) page sets out what the non-surgical stage involves.
+This is the most reliable sign on the list, and the one patients are least likely to recognize as a sign at all. Scaling and root planing — the deep cleaning below the gumline — is the standard first-line treatment for periodontitis, and it works well for a great many people. If the same sites are being treated a second or third time, the first course did not achieve what it was meant to. That is not a reason to lose confidence in the treatment; it is a reason to change the level at which the case is reviewed. The AAP is direct about the limitation: non-surgical procedures "do have limitations," and when they do not achieve optimal periodontal health, gum surgery may be recommended. The practice's [scaling and root planing](/procedures/periodontal-services/periodontal-scaling-root-planing) page sets out what the non-surgical stage involves.
 
 ## Why Do These Signs Get Missed for So Long?
 
@@ -138,9 +138,9 @@ Treatment escalates in a fairly predictable order, and knowing the sequence make
 
 ### Non-Surgical Treatment Is the Starting Point
 
-Scaling and root planing comes first in almost every case. The AAP describes it as a deep cleaning of the tooth root surfaces, removing bacterial deposits from below the gumline and smoothing the root so that they are less able to reattach. It is usually done under local anaesthetic, often across more than one appointment, and it is genuinely effective. The AAP's own position is encouraging on this point: [many patients do not require additional treatment](https://www.perio.org/for-patients/periodontal-treatments-and-procedures/non-surgical-treatments/) after scaling and root planing.
+Scaling and root planing comes first in almost every case. The AAP describes it as a deep cleaning of the tooth root surfaces, removing bacterial deposits from below the gumline and smoothing the root so that they are less able to reattach. It is usually done under local anesthetic, often across more than one appointment, and it is genuinely effective. The AAP's own position is encouraging on this point: [many patients do not require additional treatment](https://www.perio.org/for-patients/periodontal-treatments-and-procedures/non-surgical-treatments/) after scaling and root planing.
 
-The honest qualifier that belongs with it is the one in the same AAP sentence: the majority of patients will require ongoing maintenance therapy afterwards to sustain the result. Treatment stabilises the condition. It does not close the file.
+The honest qualifier that belongs with it is the one in the same AAP sentence: the majority of patients will require ongoing maintenance therapy afterwards to sustain the result. Treatment stabilizes the condition. It does not close the file.
 
 ### When Surgery Enters the Conversation
 
@@ -160,11 +160,9 @@ No — periodontists accept patients directly as well as by referral, so you can
 
 If you do arrange it yourself, ask your current practice to send your periodontal chart and your most recent x-rays across beforehand. It is a routine request, it avoids repeating a full set of images unnecessarily, and it lets the specialist see whether a reading of a given depth has been stable for three years or arrived in the last six months — which changes the interpretation completely.
 
-## What a Referral Actually Involves in the East Bay
+## Seeing a Gum Specialist at Piedmont Dental By Design
 
-A referral is rarely one appointment. It is usually a consultation, then treatment across one or more visits, then a re-evaluation, then a decision about where ongoing maintenance happens — and each of those is a separate journey, a separate parking problem, and often a separate wait for an available slot. For someone working in San Francisco and living in Piedmont, Montclair or Rockridge, the practical cost of periodontal care is measured in weekday mornings at least as much as anything else.
-
-That is worth factoring into the conversation rather than discovering it later. Two questions are useful at the point a referral is first mentioned: which parts of the plan can be carried out where you already go, and where your maintenance visits will happen once active treatment is finished. Care split across two practices works well when the charting moves properly between them, and badly when it does not — so ask how that will be handled.
+At Piedmont Dental By Design you don't need to go anywhere else. [Dr. Filippo Cangini](/about/dr-cangini), the practice's in-house board-certified periodontist, handles surgical cases, so the assessment, deep cleaning, gum and bone grafting, and long-term maintenance all happen at the same Grand Avenue office, working from one set of charts and x-rays. The practice's [periodontal services](/procedures/periodontal-services) page sets out each treatment.
 
 If you are not yet sure which stage you are at, our guide to the [stages of gum disease](/blog/gum-disease-stages) sets out what separates gingivitis from periodontitis and which of the two is still reversible.
 
@@ -192,7 +190,7 @@ If you are not yet sure which stage you are at, our guide to the [stages of gum 
 </details>
 
 <details class="blog-faq"><summary>What does periodontal treatment cost?</summary>
-<p>It depends almost entirely on how many sites are affected and whether treatment stays non-surgical, so no meaningful figure exists before an examination and a full set of readings. Ask for an itemised written treatment plan, and ask your insurer for a pre-treatment estimate against it — coverage for periodontal care varies considerably between plans.</p>
+<p>It depends almost entirely on how many sites are affected and whether treatment stays non-surgical, so no meaningful figure exists before an examination and a full set of readings. Ask for an itemized written treatment plan, and ask your insurer for a pre-treatment estimate against it — coverage for periodontal care varies considerably between plans.</p>
 </details>
 
 <details class="blog-faq"><summary>My gums do not hurt at all. Can I still have a problem?</summary>

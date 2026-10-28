@@ -119,7 +119,7 @@ export default function BerkeleyDentalCrownsPage() {
               body: [
                 "A porcelain crown cannot decay, but the tooth under it can, at the margin where crown meets tooth — and more so if the gum has receded and exposed root surface. So a crown is looked after the way a tooth is: brush twice a day with fluoride toothpaste, floss every day, and keep your regular visits (Delta Dental). We check every crown at every cleaning and on your X-rays, because a new cavity at the margin is what fails first, not the porcelain.",
                 "On lifespan, we would rather give you the published numbers than a promise. A retrospective series of 1,037 single crowns in 401 patients, followed for an average of about eleven years, found 89.9 percent still in place at five years, 80.9 percent at ten, 70.5 percent at fifteen and 61.8 percent at twenty; the main reasons for failure were loss of retention, loss of the tooth and fracture, and the crown material made no measurable difference (European Journal of Oral Sciences, 2022). That is one teaching clinic's caseload over decades, not a systematic review, and it includes the front-tooth and dead-nerve cases the same study found fail sooner.",
-                "Delta Dental's plainer summary is that a crown lasts around 10 to 15 years on average and can last closer to 30 depending on the material and how well it is cared for (Delta Dental). Our own crowns page says the same thing more simply: porcelain crowns are highly durable and last many years, and like most dental restorations they may eventually need to be replaced.",
+                "Delta Dental's plainer summary is that a crown lasts around 10 to 15 years on average and can last closer to 30 depending on the material and how well it is cared for (Delta Dental). With good care, most porcelain crowns last 15 to 25 years, and some last 30 or more.",
               ],
             },
             {
@@ -137,7 +137,7 @@ export default function BerkeleyDentalCrownsPage() {
             {
               title: "Cost and coverage, without the runaround",
               body: [
-                "The honest number for your tooth comes after the exam and X-rays, in writing — never over the phone. What we can give you now is the published market picture. Delta Dental puts the average out-of-network cost of a permanent crown at $1,100 to $2,000, and notes that the price generally includes the temporary crown, the permanent crown, the local anesthetic, the dental laboratory's charges and the dentist's time — two of which, the temporary and the laboratory, a same-day crown does not involve (Delta Dental). Ranges like that move with the material, the tooth and the region, so treat them as a bracket, not a bill.",
+                "The honest number for your tooth comes after the exam and X-rays, in writing — never over the phone. What we can give you now is the published market picture. Delta Dental puts the average out-of-network cost of a permanent crown at $1,100 to $2,000, and notes that the price generally includes the temporary crown, the permanent crown, the local anesthetic, the dental laboratory's charges and the dentist's time — two of which, the temporary and the laboratory, a same-day crown does not involve (Delta Dental). Bay Area fees run above these national figures. See our current fees on the Crowns page. Ranges like that move with the material, the tooth and the region, so treat them as a bracket, not a bill.",
                 "On insurance, Delta Dental's own guidance is that many dental plans help with the cost of crowns but some do not, that an in-network dentist can mean considerable savings, that deductibles or waiting periods may have to be met before benefits begin, and that you should ask your dentist for a pre-treatment estimate (Delta Dental). We verify your benefits and give you the exact quote before anything starts, and for whatever a plan does not cover, CareCredit financing is available.",
               ],
             },
@@ -177,7 +177,7 @@ export default function BerkeleyDentalCrownsPage() {
             },
             {
               q: "How much does a dental crown cost in Berkeley?",
-              a: "We quote in writing after the exam, never over the phone, and the figure depends on the tooth and the material. As a market bracket, Delta Dental puts the average out-of-network cost of a permanent crown at $1,100 to $2,000 and notes that many plans help with crowns while some do not (Delta Dental). We verify your benefits before treatment starts, and CareCredit financing is available for what a plan does not cover.",
+              a: "We quote in writing after the exam, never over the phone, and the figure depends on the tooth and the material. As a market bracket, Delta Dental puts the average out-of-network cost of a permanent crown at $1,100 to $2,000 and notes that many plans help with crowns while some do not (Delta Dental). Bay Area fees run above these national figures. See our current fees on the Crowns page. We verify your benefits before treatment starts, and CareCredit financing is available for what a plan does not cover.",
             },
             {
               q: "Will the crown look and feel like my own tooth?",
@@ -207,7 +207,7 @@ export default function BerkeleyDentalCrownsPage() {
               href: "https://www.deltadental.com/us/en/protect-my-smile/procedures/dental-crowns/treatment-cost.html",
             },
           ]}
-          featuredImage="/img/lIVE Piedmont website images/63e2da680b885fcdefe302c1_Crown-Lengthening2-scaled.jpg"
+          featuredImage="/img/home-services/cerec.jpg"
           featuredAlt="Dental Crowns — Piedmont Dental By Design, serving Berkeley"
         />
         <AwardsStrip />

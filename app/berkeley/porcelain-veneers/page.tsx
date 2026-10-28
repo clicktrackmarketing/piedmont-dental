@@ -137,7 +137,7 @@ export default function BerkeleyPorcelainVeneersPage() {
             {
               title: "Cost and coverage, without the runaround",
               body: [
-                "Delta Dental puts the range for porcelain laminate veneers at about $1,180 to $2,185 per tooth without insurance, and notes that the price moves with the material, the location of the practice and your coverage (Delta Dental). Multiply that by the number of teeth that show when you smile and a full set is a real investment, which is why we give a complete written quote after the consultation — never a figure over the phone.",
+                "Delta Dental puts the range for porcelain laminate veneers at about $1,180 to $2,185 per tooth without insurance, and notes that the price moves with the material, the location of the practice and your coverage (Delta Dental). Bay Area fees run above these national figures. See our current fees on the Porcelain Veneers page. Multiply that by the number of teeth that show when you smile and a full set is a real investment, which is why we give a complete written quote after the consultation — never a figure over the phone.",
                 "On insurance, be realistic: veneers are commonly treated as cosmetic and are often not covered by employer, family or individual dental plans, though some plans do include them, so check your benefit details (Delta Dental). For whatever your plan does not pay, CareCredit financing is available.",
               ],
             },
@@ -165,7 +165,7 @@ export default function BerkeleyPorcelainVeneersPage() {
             },
             {
               q: "How much do porcelain veneers cost in Berkeley?",
-              a: "Delta Dental's published range for porcelain laminate veneers is about $1,180 to $2,185 per tooth without insurance, varying with material, location and coverage. We quote in writing after the consultation, never over the phone. Veneers are usually classed as cosmetic and often not covered, so check your plan; CareCredit financing is available.",
+              a: "Delta Dental's published range for porcelain laminate veneers is about $1,180 to $2,185 per tooth without insurance, varying with material, location and coverage. Bay Area fees run above these national figures. See our current fees on the Porcelain Veneers page. We quote in writing after the consultation, never over the phone. Veneers are usually classed as cosmetic and often not covered, so check your plan; CareCredit financing is available.",
             },
             {
               q: "How long do porcelain veneers last?",
@@ -209,7 +209,7 @@ export default function BerkeleyPorcelainVeneersPage() {
               href: "https://www.deltadental.com/protect-my-smile/procedures/veneers/cost-and-insurance-coverage/",
             },
           ]}
-          featuredImage="/img/procedures/cosmetic-dentistry/_index/figure-1.jpg"
+          featuredImage="/img/home-services/porcelain-veneers.jpg"
           featuredAlt="Porcelain Veneers — Piedmont Dental By Design, serving Berkeley"
         />
         <AwardsStrip />

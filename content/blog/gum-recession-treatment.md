@@ -34,11 +34,11 @@ Gum recession is the migration of the gum margin away from the crown of the toot
 
 It is far more common than most people expect, and it accumulates with age. United States national survey data, summarised in a review published in *Case Reports in Dentistry*, found that [88% of adults aged 65 and over and 50% of adults aged 18 to 64 had recession at one or more sites](https://pmc.ncbi.nlm.nih.gov/articles/PMC3467775/). The same review shows how sharply it climbs: at ages 30 to 39, prevalence was 37.8% and affected 8.6% of teeth on average, while by ages 80 to 90 prevalence reached 90.4% and the average extent had risen to 56.3% of teeth. It is not only an older person's problem either — a study of 1,430 Greek adults aged 18 to 38 found an [overall prevalence of 63.9% in that young adult group](https://pmc.ncbi.nlm.nih.gov/articles/PMC4134852/).
 
-So what matters clinically is not whether you have any recession, but how much, where, whether it is progressing, and what is driving it. Recession is measured in millimetres from a fixed landmark on the tooth and recorded site by site, and the number that counts is the change between one visit and the next. A single measurement tells you where you are. Two measurements a year apart tell you whether you have a problem.
+So what matters clinically is not whether you have any recession, but how much, where, whether it is progressing, and what is driving it. Recession is measured in millimeters from a fixed landmark on the tooth and recorded site by site, and the number that counts is the change between one visit and the next. A single measurement tells you where you are. Two measurements a year apart tell you whether you have a problem.
 
 ## Why Do Gums Recede?
 
-Recession is not one condition with one cause. It is an end point that several different processes arrive at, and the useful question is which process is at work in your mouth. The recognised contributing factors include plaque and calculus, aggressive toothbrushing, a high frenal attachment, tooth position in the arch, orthodontic tooth movement, poorly designed partial dentures, smoking, and restoration margins that sit below the gumline — a list set out in the same *Case Reports in Dentistry* review.
+Recession is not one condition with one cause. It is an end point that several different processes arrive at, and the useful question is which process is at work in your mouth. The recognized contributing factors include plaque and calculus, aggressive toothbrushing, a high frenal attachment, tooth position in the arch, orthodontic tooth movement, poorly designed partial dentures, smoking, and restoration margins that sit below the gumline — a list set out in the same *Case Reports in Dentistry* review.
 
 ### Periodontal Disease
 
@@ -52,7 +52,7 @@ Aggressive brushing is the cause most articles name first. It is real, but it is
 
 Frequency is not the risk factor. In the Greek study, frequent toothbrushing carried an odds ratio of 0.98 — effectively no association — and the authors noted a weak negative relationship between brushing frequency and recession. The wider evidence is genuinely mixed: they cite the systematic review by Rajapakse and colleagues, published in the *Journal of Clinical Periodontology* in 2007, which found that of 17 studies examined, eight reported a positive association while two found none.
 
-What is not in doubt is the instrument and the pressure. The [American Dental Association recommends a soft-bristled toothbrush specifically because soft bristles minimise the risk of gingival abrasion](https://www.ada.org/resources/ada-library/oral-health-topics/toothbrushes), and advises gentle pressure for the same reason, noting that medium bristles remove plaque effectively but carry more risk to the tissue. So brushing twice a day is not damaging your gums, and stopping will make things worse. Scrubbing hard, sawing horizontally and using a firm brush plausibly are. If nobody has ever watched you brush, the practice's guide to [proper brushing and flossing technique](/procedures/cleanings-prevention/how-to-properly-brush-floss) is a reasonable place to check yourself against.
+What is not in doubt is the instrument and the pressure. The [American Dental Association recommends a soft-bristled toothbrush specifically because soft bristles minimize the risk of gingival abrasion](https://www.ada.org/resources/ada-library/oral-health-topics/toothbrushes), and advises gentle pressure for the same reason, noting that medium bristles remove plaque effectively but carry more risk to the tissue. So brushing twice a day is not damaging your gums, and stopping will make things worse. Scrubbing hard, sawing horizontally and using a firm brush plausibly are. If nobody has ever watched you brush, the practice's guide to [proper brushing and flossing technique](/procedures/cleanings-prevention/how-to-properly-brush-floss) is a reasonable place to check yourself against.
 
 ### Grinding and Clenching
 
@@ -98,7 +98,7 @@ Recession treatment is a ladder, not a single procedure, and most people never n
 | Bond the exposed root | Sensitivity plus a visible or notched root surface | Covers and protects the root with composite | Restore gum tissue |
 | Gum graft | Progressive, sensitive, aesthetically significant, or thin tissue at risk | Adds tissue and covers the root | Guarantee complete coverage |
 
-The first rung deserves more respect than it usually gets. Recession that has stopped moving, does not hurt and does not show when you smile is a legitimate candidate for accurate measurement and review rather than intervention. The comparison over time is the treatment. Committing to surgery for a stable two-millimetre recession on a back tooth is not automatically the conservative choice.
+The first rung deserves more respect than it usually gets. Recession that has stopped moving, does not hurt and does not show when you smile is a legitimate candidate for accurate measurement and review rather than intervention. The comparison over time is the treatment. Committing to surgery for a stable two-millimeter recession on a back tooth is not automatically the conservative choice.
 
 ### Treating the Underlying Gum Disease
 
@@ -112,7 +112,7 @@ The comparative evidence is better than most people assume. A 2026 systematic re
 
 ### Bonding to Cover the Root
 
-Where the exposed root is notched, visibly darker than the crown, or persistently sensitive, tooth-coloured composite can be bonded directly onto the root surface. It seals the exposed dentine, restores the contour and makes the transition far less noticeable. It is quicker than surgery, needs no healing period, and can be replaced or removed later.
+Where the exposed root is notched, visibly darker than the crown, or persistently sensitive, tooth-colored composite can be bonded directly onto the root surface. It seals the exposed dentine, restores the contour and makes the transition far less noticeable. It is quicker than surgery, needs no healing period, and can be replaced or removed later.
 
 What it does not do is add gum tissue or address the cause. Composite placed at the gumline also needs maintaining well, because a rough or overhanging margin in that exact location is itself a risk to the tissue around it. The practice's page on [composite fillings](/procedures/restoration/composite-fillings) covers the material. For many people with mild recession, bonding plus a brushing change is the whole of the treatment.
 
@@ -122,11 +122,11 @@ Grafting is the only way to put tissue back over an exposed root. The [American 
 
 Several techniques exist. A connective tissue graft takes a layer from beneath the surface of the palate and places it over the root, usually under a flap of your own gum drawn upward to cover it. A free gingival graft places a full-thickness piece of palatal tissue directly, more often to thicken tissue than to cover a root. A coronally advanced flap moves existing gum upward over the root, with or without a graft beneath it, and tunnelling techniques do the same through small access points rather than a full flap. Donor tissue and collagen matrices can substitute for palatal tissue, avoiding a second surgical site.
 
-The Cochrane review *Root coverage procedures for treating localised and multiple recession-type defects*, updated by Chambrone and colleagues in 2018, drew on 48 randomised controlled trials in 1,227 adults and concluded that where root coverage is indicated, subepithelial connective tissue grafts should be considered the gold standard. The [gum grafting page](/procedures/periodontal-services/gum-grafting) sets out the procedure in more detail.
+The Cochrane review *Root coverage procedures for treating localised and multiple recession-type defects*, updated by Chambrone and colleagues in 2018, drew on 48 randomised controlled trials in 1,227 adults and concluded that several procedures can be used, with subepithelial connective tissue grafts showing a slight improvement where both root coverage and a gain in keratinized tissue are wanted. The [gum grafting page](/procedures/periodontal-services/gum-grafting) sets out the procedure in more detail.
 
 ## How Well Does Gum Grafting Actually Work?
 
-This is the question patients ask and articles rarely answer with a number, so here are the numbers. A 2026 systematic review and meta-analysis in *Periodontology 2000* pooled [32 randomised controlled trials covering 1,012 patients and 3,589 recession defects](https://pmc.ncbi.nlm.nih.gov/articles/PMC13428093/) treated with root coverage procedures.
+This is the question patients ask and articles rarely answer with a number, so here are the numbers. A 2026 systematic review and meta-analysis in *Periodontology 2000* pooled [32 randomised controlled trials covering 1,012 patients and 3,589 recession defects](https://pmc.ncbi.nlm.nih.gov/articles/PMC13428093/) in people with multiple adjacent recessions.
 
 | Outcome | Pooled result | Confidence interval |
 | --- | --- | --- |
@@ -141,11 +141,11 @@ Read those figures honestly. Most cases get most of the root covered, around six
 
 One finding there is unusually reassuring. Patient-rated aesthetic satisfaction was high, pooling at 8.59 out of 10, and showed no meaningful correlation with how much root was actually covered. Patients whose coverage was incomplete were, on the whole, still happy with the result. Complete coverage is the clinical target. It is not the threshold for a good outcome.
 
-A separate 2024 meta-analysis in *Dentistry Journal*, covering [612 patients and 1,708 recession sites](https://pmc.ncbi.nlm.nih.gov/articles/PMC11592634/), compared the coronally advanced flap with the tunnel technique and concluded both are effective, with the flap offering slightly better mean coverage and keratinised tissue gain, and the tunnel offering advantages in aesthetics, healing and comfort. There is no single correct technique, and the choice is properly made at the chair after the site has been examined.
+A separate 2024 meta-analysis in *Dentistry Journal*, covering [612 patients and 1,708 recession sites](https://pmc.ncbi.nlm.nih.gov/articles/PMC11592634/), compared the coronally advanced flap with the tunnel technique and found the tunnel technique with a connective tissue graft gave significantly better mean root coverage than the flap with a graft, while the flap produced more keratinized tissue gain; the authors also note the tunnel's advantages in appearance and healing. There is no single correct technique, and the choice is properly made at the chair after the site has been examined.
 
 ## What Is Recovery From Gum Grafting Like?
 
-Grafting is done under local anaesthetic, and most people describe the days afterwards as uncomfortable rather than painful. The pooled post-operative pain score in the *Periodontology 2000* analysis was 2.67 on a ten-point scale, consistent with what patients report: manageable with ordinary pain relief. Where tissue has been taken from the palate, the palate is usually the sore part rather than the graft site — one reason donor tissue and collagen matrices are attractive for larger cases. Expect a soft diet at first, and expect to be told not to brush the surgical site for a period, using a prescribed rinse instead. Most people are back to normal function within a couple of weeks, with the tissue continuing to mature and blend for several months after that.
+Grafting is done under local anesthetic, and most people describe the days afterwards as uncomfortable rather than painful. The pooled post-operative pain score in the *Periodontology 2000* analysis was 2.67 on a ten-point scale, consistent with what patients report: manageable with ordinary pain relief. Where tissue has been taken from the palate, the palate is usually the sore part rather than the graft site — one reason donor tissue and collagen matrices are attractive for larger cases. Expect a soft diet at first, and expect to be told not to brush the surgical site for a period, using a prescribed rinse instead. Most people are back to normal function within a couple of weeks, with the tissue continuing to mature and blend for several months after that.
 
 What happens afterwards decides the long-term result. A graft placed over a root still being scrubbed with a firm brush, still loaded by grinding, or still surrounded by inflammation has to survive the conditions that caused the problem in the first place. Ongoing [periodontal maintenance](/procedures/periodontal-services/maintenance) at the interval you are given is not an upsell after gum surgery. It is the thing that protects the work.
 
@@ -161,7 +161,7 @@ Two things apply to everyone. Stop smoking if you smoke, given the doubled odds 
 
 Bring these, because they turn a vague worry into a plan:
 
-- How many millimetres of recession do I have, and on which teeth?
+- How many millimeters of recession do I have, and on which teeth?
 - Has it changed since my last recorded measurement?
 - What do you think is causing mine?
 - Is there active gum disease that needs treating first?
@@ -211,6 +211,6 @@ Recession is sometimes a symptom of gum disease and sometimes entirely separate.
 
 ## Have Your Recession Measured Before You Decide Anything
 
-Every question above resolves to the same two facts: how many millimetres you have lost, and what caused it. Those two answers decide whether you need nothing but a review date, a change to how you brush, treatment of active gum disease, a bonded repair, or a graft. It is a short appointment, and it replaces guesswork with a number you can track.
+Every question above resolves to the same two facts: how many millimeters you have lost, and what caused it. Those two answers decide whether you need nothing but a review date, a change to how you brush, treatment of active gum disease, a bonded repair, or a graft. It is a short appointment, and it replaces guesswork with a number you can track.
 
 [Piedmont Dental By Design](/contact) is at 1331 Grand Avenue in Piedmont, and sees patients from across Piedmont, Oakland, Montclair and the greater East Bay. Call <a href="tel:5103503937">(510) 350-3937</a> to arrange an assessment.
