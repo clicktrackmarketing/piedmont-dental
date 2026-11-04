@@ -208,6 +208,7 @@ export default function StructuredData() {
         "https://www.instagram.com/piedmontdentalbydesign/",
         "https://www.youtube.com/@piedmontdentalbydesign",
         "https://www.yelp.com/biz/piedmont-dental-by-design-piedmont-6",
+        "https://www.linkedin.com/company/piedmont-dental-by-design/",
         "https://www.google.com/maps/place/Piedmont+Dental+By+Design",
       ],
     },

@@ -25,8 +25,12 @@ export type IndexNowResult = {
 };
 
 export async function submitToIndexNow(urls: string[]): Promise<IndexNowResult> {
-  const SITE_URL = process.env.SITE_URL?.replace(/\/$/, "");
-  const INDEXNOW_KEY = process.env.INDEXNOW_KEY;
+  // Fallbacks: the key is public by design (it is served at /<key>.txt from
+  // public/), so defaulting to it means the revalidate route still notifies
+  // Bing when the Vercel env vars were never set.
+  const SITE_URL = (process.env.SITE_URL || "https://piedmontdentalbydesign.com").replace(/\/$/, "");
+  const INDEXNOW_KEY =
+    process.env.INDEXNOW_KEY || "7bb2c343bc539dc991ef15bea8eac7563bee49575b8acf160d78923d1b123348";
 
   if (!SITE_URL || !INDEXNOW_KEY) {
     return {
