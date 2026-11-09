@@ -276,7 +276,10 @@ export default function ProcedureDetail({
 
             {/* Inline mid-page CTA */}
             <aside className="proc-mid-cta">
-              <h3>Have questions about {title.toLowerCase()}?</h3>
+              {/* Keep the title's own casing so brand names (CEREC®, Invisalign®)
+                  and acronyms (X-Rays) survive, and drop a trailing "?" so a
+                  question title doesn't end in "??". */}
+              <h3>Have questions about {title.replace(/\?+$/, "")}?</h3>
               <p>
                 Book a free consultation with Dr. Martenson or Dr. Ma —
                 we&apos;ll review your goals, walk through what&apos;s involved,

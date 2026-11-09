@@ -32,7 +32,7 @@ export default function DrMaPage() {
           index="i"
           pronoun="he"
           name="Dr. David Ma"
-          role="Cosmetic & General Dentistry"
+          role="Co-owner · Cosmetic & General Dentistry"
           intro="Dr. David Ma is a compassionate, highly skilled dentist caring for patients at our Piedmont practice — combining advanced clinical expertise with a personalized approach to comprehensive, patient-focused care."
           photo="/team/dr-ma.webp"
           photoAlt="Dr. David Ma, cosmetic and general dentist"
@@ -57,7 +57,7 @@ export default function DrMaPage() {
             },
             {
               date: "Residency",
-              text: "General Practice Residency at the Northern California Veteran Affairs Hospital — extensive experience in full mouth rehabilitations and complex treatment planning.",
+              text: "General Practice Residency at the Northern California Veterans Affairs Hospital — extensive experience in full mouth rehabilitations and complex treatment planning.",
             },
           ]}
           specializations={[

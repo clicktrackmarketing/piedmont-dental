@@ -40,10 +40,10 @@ const SUB_GALLERIES = [
   },
   {
     href: "/smile-gallery/composite-fillings",
-    image: "/img/cosmetic/bonding.png",
+    image: "/img/cosmetic/composite-filling-curing.jpg",
     title: "Composite Fillings",
     blurb: "Tooth-colored composite for chips, gaps, and reshaping — invisible repairs.",
-    badge: "Multiple cases",
+    badge: "Case study",
   },
 ];
 

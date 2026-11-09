@@ -46,7 +46,7 @@ const CATEGORIES: Category[] = [
   {
     href: "/resources/restorations/crowns-caps",
     image: "/img/restorations/crowns.png",
-    imageAlt: "Porcelain crown over a prepared tooth",
+    imageAlt: "Dental models used to plan crown and bridge work",
     title: "Crowns & Caps",
     blurb:
       "All-porcelain crowns crafted to match the rest of your smile — shape, color, and contour.",
@@ -65,7 +65,7 @@ const CATEGORIES: Category[] = [
   },
   {
     href: "/procedures/restoration/composite-fillings",
-    image: "/img/restorations/composite.png",
+    image: "/img/cosmetic/composite-filling-curing.jpg",
     imageAlt: "Composite filling restoration",
     title: "Composite Fillings",
     blurb:
@@ -124,7 +124,7 @@ export default function RestorationsResourcePage() {
                 <span>Restoration disciplines under one roof</span>
               </div>
               <div>
-                <strong>20+ yrs</strong>
+                <strong>15–25 yrs</strong>
                 <span>Expected lifespan of a porcelain crown</span>
               </div>
               <div>

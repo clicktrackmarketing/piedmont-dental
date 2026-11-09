@@ -11,7 +11,7 @@ const DOCTORS = [
   {
     role: "Co-owner",
     name: "Dr. Jill Martenson, DDS",
-    bio: "Trained at UCLA and the University of the Pacific, with over 30 years in practice in cosmetic and general dentistry.",
+    bio: "Trained at UCLA and the University of the Pacific, with 30 years in practice in cosmetic and general dentistry.",
     href: "/about/dr-martenson",
     cta: "Meet Dr. Martenson",
   },
@@ -203,8 +203,8 @@ export function OaklandAreas() {
           </ul>
           <div className="oak-photo">
             <Image
-              src="/img/about/practice-main.jpg"
-              alt="Inside Piedmont Dental By Design on Grand Avenue"
+              src="/img/about/full-team.jpg"
+              alt="The Piedmont Dental By Design team, including Dr. Martenson and Dr. Ma"
               fill
               sizes="(max-width: 900px) 100vw, 540px"
               style={{ objectFit: "cover" }}

@@ -53,7 +53,7 @@ export default function FluorideTreatmentPage() {
               title: "How fluoride works",
               body: [
                 "Topical fluoride strengthens the teeth once they have erupted by seeping into the outer surface of the tooth enamel, making the teeth more resistant to decay. We gain topical fluoride by using fluoride-containing dental products such as toothpaste, mouth rinses, and gels. We generally recommend that children have a professional application of fluoride twice a year during dental check-ups.",
-                "Systemic fluoride strengthens teeth that have erupted as well as those still developing under the gums. Most systemic fluoride comes from foods and community water supplies. It's also available as a supplement in drop or gel form. Generally, fluoride drops are recommended for infants, and tablets are best suited for children up through the teen years.",
+                "Systemic fluoride strengthens teeth that have erupted as well as those still developing under the gums. Most systemic fluoride comes from foods and community water supplies. It's also available as a supplement in drop or tablet form. Generally, fluoride drops are recommended for infants, and tablets are best suited for children up through the teen years.",
                 "It is very important to monitor the amount of fluoride a child ingests. If too much fluoride is consumed while teeth are developing, a condition called fluorosis (white spots on the teeth) may result.",
               ],
             },

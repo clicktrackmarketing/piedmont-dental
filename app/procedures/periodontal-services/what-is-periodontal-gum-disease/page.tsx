@@ -39,7 +39,7 @@ export default function WhatIsPeriodontalDiseasePage() {
           tagline="A 'silent' disease — warning signs are subtle, but the consequences aren't."
           featuredImage="/img/lIVE Piedmont website images/gum disease.png"
           intro={[
-            "Periodontists are dentists with three additional years of specialized training in the prevention, diagnosis, and treatment of gum disease. Our practice works closely with a board-certified periodontist to provide the full continuum of care.",
+            "Periodontists are dentists with three additional years of specialized training in the prevention, diagnosis, and treatment of gum disease. Our periodontist, Dr. Filippo Cangini, works alongside our dentists to provide the full continuum of care.",
             "Gum disease is often described as a 'silent' disease because pain doesn't always accompany the warning signs. Recognizing them early is the most important thing you can do to protect your teeth.",
           ]}
           stats={[

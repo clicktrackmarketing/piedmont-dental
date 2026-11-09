@@ -42,8 +42,4 @@ If you have questions about this Notice or your privacy rights, please contact o
 
 This website includes the **complete, updated Notice of Privacy Practices**, which contains additional details regarding our privacy practices and your rights.
 
-## CTA
 
-- [Full Notice of Privacy Practices PDF Link](https://piedmontdentalbydesign.com/wp-content/uploads/2026/02/Piedmont%20Dental%20by%20Design%20-%20NOTICE%20OF%20PRIVACY%20PRACTICES%20%282%29.pdf)
-
-Note: PARTIAL - Full legal document text on the page is summarized; complete details are in the linked PDF, which was not extracted separately.

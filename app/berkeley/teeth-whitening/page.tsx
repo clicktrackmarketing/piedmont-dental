@@ -127,7 +127,7 @@ export default function BerkeleyTeethWhiteningPage() {
             {
               title: "Getting here from Berkeley",
               body: [
-                "Our office is at 1331 Grand Avenue, Piedmont, CA 94610. It is a two-storey building: the practice occupies the upper level and the parking entrance is underneath it. We share the address with The Oldershaw Clinic, so look for our name on the railing and take the planted walkway from the parking area up to the front door.",
+                "Our office is at 1331 Grand Avenue, Piedmont, CA 94610. It is a two-story building: the practice occupies the upper level and the parking entrance is underneath it. We share the address with The Oldershaw Clinic, so look for our name on the railing and take the planted walkway from the parking area up to the front door.",
               ],
               bullets: [
                 "Driving from the nearest end of Berkeley: about 2.8 miles from Elmwood (College and Ashby), roughly nine minutes without traffic, and about 3.6 miles from Claremont (Ashby and Domingo), around eleven minutes.",
@@ -160,7 +160,7 @@ export default function BerkeleyTeethWhiteningPage() {
             },
             {
               q: "Is there parking at the office?",
-              a: "Street parking is generally available on Grand Avenue near the entrance. The parking entrance is on the lower level of our two-storey building, and a planted walkway leads from the parking area up to the practice on the upper level. Look for our sign on the railing — we share the address with The Oldershaw Clinic.",
+              a: "Street parking is generally available on Grand Avenue near the entrance. The parking entrance is on the lower level of our two-story building, and a planted walkway leads from the parking area up to the practice on the upper level. Look for our sign on the railing — we share the address with The Oldershaw Clinic.",
             },
             {
               q: "How many trips down from Berkeley will whitening take?",

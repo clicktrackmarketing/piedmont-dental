@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       "Staged gum disease care for Oakland adults a few minutes up Grand Avenue: exam and pocket measurements, scaling and root planing, and periodontal maintenance under one roof.",
     url: "https://piedmontdentalbydesign.com/oakland/gum-disease-treatment",
     type: "article",
-    images: ["/img/lIVE Piedmont website images/periodental treatment .png"],
+    images: ["/img/procedures/shared/inflamed-gums.png"],
   },
 };
 
@@ -131,7 +131,7 @@ export default function OaklandGumDiseaseTreatmentPage() {
             {
               title: "Getting here from Oakland",
               body: [
-                "We are at 1331 Grand Avenue, Piedmont, in a two-storey building: the practice is on the upper level and the parking entrance sits below it. We share the address with The Oldershaw Clinic, so look for our sign on the railing and follow the planted walkway from the parking area to the front door.",
+                "We are at 1331 Grand Avenue, Piedmont, in a two-story building: the practice is on the upper level and the parking entrance sits below it. We share the address with The Oldershaw Clinic, so look for our sign on the railing and follow the planted walkway from the parking area to the front door.",
               ],
               bullets: [
                 "Driving: Grand Avenue runs from Lake Merritt to our door — about 1.4 miles, or six minutes without traffic. Rockridge BART is about 2.6 miles and Montclair Village about 3.1 miles, each around seven minutes. MacArthur BART is a short drive.",
@@ -218,7 +218,7 @@ export default function OaklandGumDiseaseTreatmentPage() {
               href: "https://www.deltadental.com/protect-my-smile/procedures/dental-cleanings/cost-and-insurance-coverage/",
             },
           ]}
-          featuredImage="/img/lIVE Piedmont website images/periodental treatment .png"
+          featuredImage="/img/procedures/shared/inflamed-gums.png"
           featuredAlt="Gum disease treatment — Piedmont Dental By Design, serving Oakland"
         />
         <AwardsStrip />

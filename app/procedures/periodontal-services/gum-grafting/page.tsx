@@ -51,7 +51,7 @@ export default function GumGraftingPage() {
               title: "Common types of gum grafts",
               body: [
                 "Free gingival graft — often used to thicken gum tissue. A layer of tissue is removed from the palate and relocated to the area affected by gum recession. Both sites heal quickly without permanent damage.",
-                "Subepithelial connective tissue graft — commonly used to cover exposed roots. Tissue is removed fairly painlessly from the outer layer of the palate and relocated to the site of gum recession.",
+                "Subepithelial connective tissue graft — commonly used to cover exposed roots. Tissue is taken fairly painlessly from just beneath the outer layer of the palate and relocated to the site of gum recession.",
                 "Acellular dermal matrix allograft — uses medically processed, donated human tissue as the graft source. The advantage is that no donor site from your palate is required, meaning less post-procedure discomfort.",
               ],
             },
@@ -79,7 +79,7 @@ export default function GumGraftingPage() {
             },
             {
               q: "Is a gum graft painful?",
-              a: "The procedure itself is done under local anesthesia and is comfortable during. Most discomfort comes from the donor site (your palate) if a free or connective tissue graft was used — feels like a pizza burn for about a week. If we use an allograft (donated tissue), there's no second site and discomfort is much milder. Most patients return to work the next day.",
+              a: "The procedure itself is done under local anesthesia and is comfortable throughout. Most discomfort comes from the donor site (your palate) if a free or connective tissue graft was used — feels like a pizza burn for about a week. If we use an allograft (donated tissue), there's no second site and discomfort is much milder. Most patients return to work the next day.",
             },
             {
               q: "How long does it take to heal after gum grafting?",
@@ -87,7 +87,7 @@ export default function GumGraftingPage() {
             },
             {
               q: "Where does the tissue come from for a gum graft?",
-              a: "Three sources: your own palate (free gingival graft or connective tissue graft — most common, predictable healing), or processed donor tissue from a tissue bank (acellular dermal matrix allograft — no second site, slightly less predictable). Dr. Cangini will recommend the right approach for your case during consultation.",
+              a: "Two main sources: your own palate (free gingival graft or connective tissue graft — most common, predictable healing), or processed donor tissue from a tissue bank (acellular dermal matrix allograft — no second site, slightly less predictable). Dr. Cangini will recommend the right approach for your case during consultation.",
             },
             {
               q: "Can gums grow back without a graft?",

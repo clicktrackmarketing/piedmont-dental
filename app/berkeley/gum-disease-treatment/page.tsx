@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       "Scaling and root planing, re-evaluation and quarterly maintenance under one roof — a short drive down from Elmwood, Claremont and Downtown Berkeley.",
     url: "https://piedmontdentalbydesign.com/berkeley/gum-disease-treatment",
     type: "article",
-    images: ["/img/lIVE Piedmont website images/periodental treatment .png"],
+    images: ["/img/procedures/shared/inflamed-gums.png"],
   },
 };
 
@@ -124,7 +124,7 @@ export default function BerkeleyGumDiseaseTreatmentPage() {
             {
               title: "Getting here from Berkeley",
               body: [
-                "Our office is at 1331 Grand Avenue, Piedmont, CA 94610, in a two-storey building: the practice is on the upper level and the parking entrance sits below it. We share the address with The Oldershaw Clinic — look for our sign on the railing — and a planted walkway leads from the parking area to the front door.",
+                "Our office is at 1331 Grand Avenue, Piedmont, CA 94610, in a two-story building: the practice is on the upper level and the parking entrance sits below it. We share the address with The Oldershaw Clinic — look for our sign on the railing — and a planted walkway leads from the parking area to the front door.",
               ],
               bullets: [
                 "Driving from the Berkeley side: Elmwood (College & Ashby) about 2.8 miles, nine minutes; Ashby BART about 3.3 miles, nine minutes; Claremont (Ashby & Domingo) about 3.6 miles, eleven minutes; Downtown Berkeley BART about 4.3 miles and UC Berkeley about 4.4 miles, thirteen minutes; North Berkeley (Shattuck & Vine) about 4.9 miles, fifteen minutes — all without traffic.",
@@ -210,7 +210,7 @@ export default function BerkeleyGumDiseaseTreatmentPage() {
               href: "https://www.carecredit.com/well-u/health-wellness/scaling-and-root-planing-cost-financing/",
             },
           ]}
-          featuredImage="/img/lIVE Piedmont website images/periodental treatment .png"
+          featuredImage="/img/procedures/shared/inflamed-gums.png"
           featuredAlt="Gum Disease Treatment — Piedmont Dental By Design, serving Berkeley"
         />
         <AwardsStrip />

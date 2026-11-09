@@ -74,8 +74,8 @@ const CASES: ImplantCase[] = [
     id: "case-1",
     number: "01",
     title: "Single-tooth implant restoration",
-    before: "/img/full-mouth/case2-before.jpg",
-    after: "/img/full-mouth/case2-after.jpg",
+    before: "/img/crowns-caps/case2-before.jpg",
+    after: "/img/crowns-caps/case2-after.jpg",
     procedures: ["Dental Implants", "Porcelain Crown"],
     blurb:
       "A single missing tooth replaced with an implant and porcelain crown — the kind of fix that&apos;s invisible to anyone but the patient and dentist.",

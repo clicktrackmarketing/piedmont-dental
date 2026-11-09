@@ -10,12 +10,12 @@ import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "Dr. Jill Martenson — Cosmetic & General Dentistry",
   description:
-    "Dr. Jill A. Martenson of Piedmont Dental By Design. UCLA & UOP-trained, with over 30 years of cosmetic and general dentistry experience.",
+    "Dr. Jill A. Martenson of Piedmont Dental By Design. UCLA & UOP-trained, with 30 years of cosmetic and general dentistry experience.",
   alternates: { canonical: "/about/dr-martenson" },
   openGraph: {
     title: "Dr. Jill Martenson — Piedmont Dental By Design",
     description:
-      "Cosmetic & general dentistry · over 30 years in Piedmont · Best of the East Bay 2024, 2025 & 2026.",
+      "Cosmetic & general dentistry · 30 years in Piedmont · Best of the East Bay 2024, 2025 & 2026.",
     url: "https://piedmontdentalbydesign.com/about/dr-martenson",
     type: "profile",
     images: ["/team/dr-martenson.webp"],
@@ -32,8 +32,8 @@ export default function DrMartensonPage() {
           index="i"
           pronoun="she"
           name="Dr. Jill A. Martenson"
-          role="Cosmetic & General Dentistry"
-          intro="For over 30 years, Dr. Jill Martenson has been a trusted, award-winning dentist serving the Piedmont community with exceptional, patient-centered care focused on preventative, restorative, and cosmetic dentistry."
+          role="Co-owner · Cosmetic & General Dentistry"
+          intro="For 30 years, Dr. Jill Martenson has been a trusted, award-winning dentist serving the Piedmont community with exceptional, patient-centered care focused on preventative, restorative, and cosmetic dentistry."
           photo="/team/dr-martenson.webp"
           photoAlt="Dr. Jill Martenson"
           credentials={[
@@ -43,7 +43,7 @@ export default function DrMartensonPage() {
             { value: "2025 & 2026", label: "Best Dental Practice" },
           ]}
           bioParagraphs={[
-            "For over 30 years, Dr. Jill Martenson has been a trusted, award-winning dentist proudly serving the Piedmont community with exceptional, patient-centered care. Known for her dedication to excellence and compassionate approach, Dr. Martenson has built a reputation as a highly respected leader in dentistry.",
+            "For 30 years, Dr. Jill Martenson has been a trusted, award-winning dentist proudly serving the Piedmont community with exceptional, patient-centered care. Known for her dedication to excellence and compassionate approach, Dr. Martenson has built a reputation as a highly respected leader in dentistry.",
             "She graduated with honors from UCLA in 1991 with a Bachelor of Science degree in Kinesiology, followed by earning her Doctor of Dental Surgery degree with high honors from the University of the Pacific School of Dentistry in 1996. Dr. Martenson's deep commitment to her profession, advanced expertise, and passion for creating healthy, confident smiles have made her a cornerstone of dental care in the community.",
           ]}
           education={[
@@ -71,7 +71,7 @@ export default function DrMartensonPage() {
             },
             {
               date: "2014",
-              text: "After Dr. Herrero's retirement, Dr. Martenson acquired the practice and continues to provide high-quality dental care.",
+              text: "After Dr. Herrero's retirement, Dr. Martenson acquired the practice. Today she co-owns it with Dr. David Ma, and together they continue to provide high-quality dental care.",
             },
           ]}
           specializations={[
@@ -99,7 +99,7 @@ export default function DrMartensonPage() {
           ]}
           personal={[
             "Married to Mike McDonald, with two daughters — Jenner and Erin.",
-            "Family enjoys exploring the East Bay's parks, lakes, and local farmer's markets.",
+            "Family enjoys exploring the East Bay's parks, lakes, and local farmers' markets.",
             "Loves skiing trips to Lake Tahoe, beach outings to Santa Cruz, and traveling across the country to visit family.",
           ]}
         />

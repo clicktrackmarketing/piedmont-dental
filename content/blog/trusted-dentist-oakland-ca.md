@@ -25,7 +25,7 @@ sectionHeadings:
 
 ## Welcome to Piedmont Dental by Design
 
-Located at 1331 Grand Ave, Piedmont, CA 94610, Piedmont Dental by Design has served the Oakland and Piedmont communities for over 30 years. The practice is led by Dr. Jill Martenson, a renowned cosmetic dentist committed to personalized treatments that enhance both dental health and smile aesthetics.
+Located at 1331 Grand Ave, Piedmont, CA 94610, Piedmont Dental by Design has served the Oakland and Piedmont communities for over 30 years. The practice is led by its co-owners, Dr. Jill Martenson and Dr. David Ma, cosmetic and general dentists committed to personalized treatments that enhance both dental health and smile aesthetics.
 
 The team recognizes that each patient has unique dental needs and offers comprehensive services ranging from routine cleanings to cosmetic enhancements and restorative procedures.
 

@@ -24,7 +24,7 @@ If you have a suggestion for a new link, please send us an email, as we are alwa
 
 The following links provide some good general information on dentistry.
 
-- [**Academy of General Dentistry**](https://knowyourteeth.com/default.asp) — The AGD's consumer information site "Know Your Teeth" provides information on more than 50 oral dental health topics.
+- [**Academy of General Dentistry**](https://www.agd.org) — The AGD's consumer information site "Know Your Teeth" provides information on more than 50 oral dental health topics.
 - [**American Dental Association**](https://www.ada.org/) — Provides information for the general public including dental care articles, dental insurance information, and information for students interested in dentistry.
 
 ## Oral Health Care & Products

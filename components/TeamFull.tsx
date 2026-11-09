@@ -29,7 +29,7 @@ const team: Omit<Member, "bg">[] = [
     initials: "C",
     photo: "/img/team/christine.jpg",
     quote:
-      "I graduated at the Dental Assisting Program at College of Alameda in 2008 and started working here at Piedmont Dental by Design right after graduation. I worked as an assistant for many years until recently I have transitioned up front to work as Patient Services Manager. My many years in the back caring for patients chair side has helped me in my new role of Patient Services Manager in helping educate patients on their oral health and I have a better understanding of how the practice works together front and back. When I am not at work I enjoy spending time with my husband and kids at family get-togethers, camping, and visiting fun places.",
+      "I graduated from the Dental Assisting Program at College of Alameda in 2008 and started working here at Piedmont Dental by Design right after graduation. I worked as an assistant for many years until I recently transitioned up front to work as Patient Services Manager. My many years in the back caring for patients chairside have helped me in my new role of Patient Services Manager in helping educate patients on their oral health and I have a better understanding of how the practice works together front and back. When I am not at work I enjoy spending time with my husband and kids at family get-togethers, camping, and visiting fun places.",
   },
   {
     name: "Elaina",
@@ -45,7 +45,7 @@ const team: Omit<Member, "bg">[] = [
     initials: "M",
     photo: "/img/team/michelle.jpg",
     quote:
-      "I am a registered dental hygienist and have been working for Piedmont Dental by Design since 1999. I truly have a passion for my profession and love educating patients about their oral health. On my time off I enjoy spending time with my husband and two sons. We enjoy outdoor events such as boating, swimming and hiking. My sons play sports such as soccer, basketball and baseball so we spend a lot of times at games and practice. I also enjoy kickboxing and working out.",
+      "I am a registered dental hygienist and have been working for Piedmont Dental by Design since 1999. I truly have a passion for my profession and love educating patients about their oral health. On my time off I enjoy spending time with my husband and two sons. We enjoy outdoor events such as boating, swimming and hiking. My sons play sports such as soccer, basketball and baseball so we spend a lot of time at games and practice. I also enjoy kickboxing and working out.",
   },
   {
     name: "Kelley",
@@ -61,7 +61,7 @@ const team: Omit<Member, "bg">[] = [
     initials: "C",
     photo: "/img/team/cesar.jpg",
     quote:
-      "I have over 10 years of experience working in the dental field. Started my career as a Dental Assistant and eventually promoted to a management position. After a few years in management, I realized I wanted to further my career in the dental field, so I made the decision to start my journey into the Dental Hygiene Program. I graduated from Diablo Valley College Dental Hygiene Program in 2024. I'm committed to applying my extensive skills in oral care procedures to enhance dental experiences for patients. Outside of work, I enjoy spending time with my wife and two kids. We enjoy traveling and trying new food.",
+      "I have over 10 years of experience working in the dental field. I started my career as a Dental Assistant and was eventually promoted to a management position. After a few years in management, I realized I wanted to further my career in the dental field, so I made the decision to start my journey into the Dental Hygiene Program. I graduated from Diablo Valley College Dental Hygiene Program in 2024. I'm committed to applying my extensive skills in oral care procedures to enhance dental experiences for patients. Outside of work, I enjoy spending time with my wife and two kids. We enjoy traveling and trying new food.",
   },
   {
     name: "Lee'Lannee",
@@ -69,7 +69,7 @@ const team: Omit<Member, "bg">[] = [
     initials: "L",
     photo: "/img/team/lee-lannee.jpg",
     quote:
-      "After graduating College of Alameda Dental Assistant School, I joined Piedmont Dental by Design in 1999, as a Registered Dental Assistant. In 2019, I graduated University of the Pacific: Expanded Functions Program which allows me to utilize additional skills as a Registered Dental Assistant. My goal as working chairside is to make patients feel as ease during treatment as well as to educate patients on their oral health. When not at work, I enjoy spending quality time with my loved ones and vacation!",
+      "After graduating College of Alameda Dental Assistant School, I joined Piedmont Dental by Design in 1999, as a Registered Dental Assistant. In 2019, I graduated University of the Pacific: Expanded Functions Program which allows me to utilize additional skills as a Registered Dental Assistant. My goal as working chairside is to make patients feel at ease during treatment as well as to educate patients on their oral health. When not at work, I enjoy spending quality time with my loved ones and vacation!",
   },
   {
     name: "Susana",
@@ -77,7 +77,7 @@ const team: Omit<Member, "bg">[] = [
     initials: "S",
     photo: "/img/team/susana.jpg",
     quote:
-      "I graduated from College of Alameda Dental Assisting program in 2020. I started my externship here at Piedmont Dental while being in school in February 2020, and in July of 2020 I joined the team! This office has treated me like family and I love being here and making patients smile. On my free time I like getting together with family and friends.",
+      "I graduated from College of Alameda Dental Assisting program in 2020. I started my externship here at Piedmont Dental while being in school in February 2020, and in July of 2020 I joined the team! This office has treated me like family and I love being here and making patients smile. In my free time I like getting together with family and friends.",
   },
 ];
 

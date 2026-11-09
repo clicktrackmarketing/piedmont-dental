@@ -104,7 +104,7 @@ export default function OaklandInvisalignPage() {
             {
               title: "What the timeline looks like",
               body: [
-                "Most adult cases run six to eighteen months. Minor crowding or small gaps can finish in six to nine; deeper crowding or a crossbite typically takes twelve to eighteen. You change trays about every two weeks, and Dr. Martenson gives you a specific estimate after the iTero® scan rather than before it.",
+                "Most adult cases run six to eighteen months. Minor crowding or small gaps can finish in six to nine; deeper crowding or a crossbite typically takes twelve to eighteen. You change trays about every two weeks, and Dr. Martenson or Dr. Ma gives you a specific estimate after the iTero® scan rather than before it.",
                 "When the last tray comes out, the retainer goes in. Teeth drift back toward their old positions after any orthodontic treatment, which is why the ADA describes a retainer period as part of the process itself (ADA MouthHealthy). We make Vivera® retainers, and most patients wear them at night indefinitely.",
               ],
             },
@@ -118,7 +118,7 @@ export default function OaklandInvisalignPage() {
             {
               title: "Getting here from Oakland",
               body: [
-                "We are at 1331 Grand Avenue, Piedmont — a two-storey building; the practice is on the upper level and the parking entrance sits below it. We share the address with The Oldershaw Clinic, so look for our sign on the railing and follow the planted walkway from the parking area to the front door.",
+                "We are at 1331 Grand Avenue, Piedmont — a two-story building; the practice is on the upper level and the parking entrance sits below it. We share the address with The Oldershaw Clinic, so look for our sign on the railing and follow the planted walkway from the parking area to the front door.",
               ],
               bullets: [
                 "Driving: about 1.4 miles from Lake Merritt, 2.6 miles from Rockridge BART and 3.1 miles from Montclair Village — each around seven minutes without traffic. MacArthur BART is a short drive.",

@@ -117,7 +117,7 @@ export default function OaklandTeethWhiteningPage() {
             {
               title: "Getting here from Oakland",
               body: [
-                "We are at 1331 Grand Avenue, Piedmont, CA 94610 — a two-storey building; the practice is on the upper level and the parking entrance sits below it. We share the address with The Oldershaw Clinic: look for our sign on the railing and take the planted walkway from the parking area to the front door.",
+                "We are at 1331 Grand Avenue, Piedmont, CA 94610 — a two-story building; the practice is on the upper level and the parking entrance sits below it. We share the address with The Oldershaw Clinic: look for our sign on the railing and take the planted walkway from the parking area to the front door.",
               ],
               bullets: [
                 "From Lake Merritt: follow Grand Avenue up from the lake — about 1.4 miles, or six minutes without traffic.",
@@ -157,7 +157,7 @@ export default function OaklandTeethWhiteningPage() {
             },
             {
               q: "Is in-office whitening better than take-home trays?",
-              a: "Faster, not better. A 130-person randomised trial found two weeks of 10 percent carbamide peroxide in custom trays produced a slightly larger color change than two in-office sessions of 35 percent hydrogen peroxide, with similar sensitivity overall (Journal of Applied Oral Science, 2021). Choose in-office for one visit; choose trays for control over the final shade and a kit for touch-ups.",
+              a: "Faster, not better. A 130-person randomized trial found two weeks of 10 percent carbamide peroxide in custom trays produced a slightly larger color change than two in-office sessions of 35 percent hydrogen peroxide, with similar sensitivity overall (Journal of Applied Oral Science, 2021). Choose in-office for one visit; choose trays for control over the final shade and a kit for touch-ups.",
             },
             {
               q: "Will whitening work on my crowns, veneers or fillings?",

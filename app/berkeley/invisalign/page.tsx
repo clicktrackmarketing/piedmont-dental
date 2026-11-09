@@ -128,7 +128,7 @@ export default function BerkeleyInvisalignPage() {
             {
               title: "Getting here from Berkeley",
               body: [
-                "We are at 1331 Grand Avenue, Piedmont, in a two-storey building we share with The Oldershaw Clinic. The practice is on the upper level and the parking entrance sits below it; look for our sign on the railing, and follow the planted walkway from the parking area to the front door.",
+                "We are at 1331 Grand Avenue, Piedmont, in a two-story building we share with The Oldershaw Clinic. The practice is on the upper level and the parking entrance sits below it; look for our sign on the railing, and follow the planted walkway from the parking area to the front door.",
               ],
               bullets: [
                 "Driving: Elmwood (College & Ashby) is about 2.8 miles and nine minutes without traffic; Claremont (Ashby & Domingo) about 3.6 miles and eleven; Downtown Berkeley and the UC Berkeley campus about 4.3 to 4.4 miles and thirteen; North Berkeley (Shattuck & Vine) about 4.9 miles and fifteen.",

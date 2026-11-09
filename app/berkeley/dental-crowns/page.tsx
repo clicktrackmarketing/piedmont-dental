@@ -125,7 +125,7 @@ export default function BerkeleyDentalCrownsPage() {
             {
               title: "Getting here from Berkeley",
               body: [
-                "We are at 1331 Grand Avenue, Piedmont — a two-storey building with the practice on the upper level and the parking entrance below it. The address is shared with The Oldershaw Clinic, so look for our sign on the railing and follow the planted walkway from the parking area to the front door.",
+                "We are at 1331 Grand Avenue, Piedmont — a two-story building with the practice on the upper level and the parking entrance below it. The address is shared with The Oldershaw Clinic, so look for our sign on the railing and follow the planted walkway from the parking area to the front door.",
               ],
               bullets: [
                 "Driving: about 2.8 miles from Elmwood (College & Ashby) and 3.6 miles from Claremont (Ashby & Domingo) — nine and eleven minutes without traffic. From Downtown Berkeley it is about 4.3 miles and thirteen minutes; from North Berkeley (Shattuck & Vine) about 4.9 miles and fifteen.",
@@ -207,7 +207,7 @@ export default function BerkeleyDentalCrownsPage() {
               href: "https://www.deltadental.com/us/en/protect-my-smile/procedures/dental-crowns/treatment-cost.html",
             },
           ]}
-          featuredImage="/img/home-services/cerec.jpg"
+          featuredImage="/img/home-services/cerec-milling.jpg"
           featuredAlt="Dental Crowns — Piedmont Dental By Design, serving Berkeley"
         />
         <AwardsStrip />

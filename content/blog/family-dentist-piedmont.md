@@ -73,13 +73,13 @@ A: Schedule your child's first appointment by their first birthday or when their
 A: Yes, the practice offers Invisalign® and early orthodontic assessments for children, teens, and adults.
 
 **Q: Do you accept dental insurance?**
-A: The practice accepts most major PPO and HMO plans, plus offers financing and membership options for uninsured patients.
+A: The practice accepts most traditional and PPO plans on an out-of-network basis and handles the paperwork, plus offers financing and membership options for uninsured patients.
 
 **Q: What distinguishes family dentistry from general dentistry?**
 A: Family dentistry treats all age groups, typically following patients through life stages, prioritizing convenience and continuity.
 
 ## Book Your Family Dental Appointment Today
 
-Located in Piedmont, CA. Request an appointment online or call (510) 956-6475.
+Located in Piedmont, CA. Request an appointment online or call (510) 350-3937.
 
 The practice has served the Piedmont community for 30 years and welcomes new patients.

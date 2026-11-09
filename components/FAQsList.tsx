@@ -115,7 +115,7 @@ export const faqs: FAQ[] = [
     "gum-disease",
     "How can I tell if I have gingivitis or periodontitis?",
     "conditions",
-    "Four out of five people have periodontal disease and don't know it. Unlike tooth decay, the early stages of gum disease are usually painless — so it's possible to have it without obvious symptoms. Risk factors and warning signs are listed below; if any apply, schedule an evaluation.",
+    "According to the CDC, about 42% of U.S. adults 30 and older have periodontitis, and many don't know it. Unlike tooth decay, the early stages of gum disease are usually painless — so it's possible to have it without obvious symptoms. Risk factors and warning signs are listed below; if any apply, schedule an evaluation.",
     {
       bullets: {
         title: "Risk factors include:",

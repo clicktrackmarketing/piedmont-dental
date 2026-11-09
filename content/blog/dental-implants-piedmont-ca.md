@@ -24,7 +24,7 @@ sectionHeadings:
 
 Missing teeth create both structural and functional problems. Without treatment, adjacent teeth shift, jawbone deteriorates through resorption, and gum tissue recedes. Dental implants are considered the gold standard solution, as they replace the entire tooth structure, including the root, to function like natural teeth.
 
-At Piedmont Dental by Design, Dr. Jill Martenson provides comprehensive implant care to patients throughout Piedmont, Oakland, Berkeley, and the greater East Bay.
+At Piedmont Dental by Design, co-owners Dr. Jill Martenson and Dr. David Ma provide comprehensive implant care to patients throughout Piedmont, Oakland, Berkeley, and the greater East Bay.
 
 ## What Are Dental Implants?
 

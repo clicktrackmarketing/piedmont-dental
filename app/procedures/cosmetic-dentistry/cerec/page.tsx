@@ -38,7 +38,7 @@ export default function CerecPage() {
           tagline="Chairside ceramic restorations, designed and milled in a single visit."
           intro={[
             "Chairside Economical Restorations of Esthetic Ceramic (CEREC®) has revolutionized dental procedures. Traditionally, if crowns, onlays, inlays, or dental veneers were required to restore damaged teeth, multiple procedures and a great deal of waiting time in-between would be inevitable. CEREC® creates these ceramic restorations within minutes in the dental office. This means that many treatments can be completed in just a single visit.",
-            "CEREC® is comprised of several computer-assisted design (CAD) tools and a milling machine that creates custom ceramic restorative devices. CEREC® can benefit almost anyone needing a ceramic restoration. This is of great benefit to nervous patients, and it can also reduce the cost of treatment.",
+            "CEREC® consists of several computer-assisted design (CAD) tools and a milling machine that creates custom ceramic restorative devices. CEREC® can benefit almost anyone needing a ceramic restoration. This is of great benefit to nervous patients, and it can also reduce the cost of treatment.",
           ]}
           stats={[
             { value: "1 visit", label: "Single appointment" },
@@ -67,7 +67,7 @@ export default function CerecPage() {
             {
               title: "What is the CEREC® system comprised of?",
               body: [
-                "The CEREC® System is a CAD-CAM system — Computer Assisted Design and Computer Assisted Milling. The system has three major components.",
+                "The CEREC® System is a CAD-CAM system — Computer-Aided Design and Computer-Aided Manufacturing. The system has three major components.",
                 "Acquisition device: A high-quality camera and a medical-grade computer. The function of this unit is to photograph the prepared tooth. Three-dimensional images are created of the tooth on the screen, which the dentist uses to design the perfect ceramic restoration.",
                 "Three-dimensional CAD software: Allows the dentist to examine the tooth from every angle. It is the closest possible thing to holding the tooth in the hands and rotating it.",
                 "Milling device: Manufactures the custom restoration from the specifications entered into the computer. A ceramic block that best resembles the existing tooth color is chosen and placed into the unit. Within minutes, the milling device produces the restoration the dentist designed.",

@@ -29,7 +29,7 @@ const DOCTORS: Doctor[] = [
     initials: "JM",
     bg: "var(--teal)",
     name: "Dr. Jill A. Martenson",
-    role: "Cosmetic & General Dentistry",
+    role: "Co-owner · Cosmetic & General Dentistry",
     yearsLabel: "DDS · 30 years",
     awardLabel: "Best Esthetic Dentist 2024, 2025 & 2026",
     photo:
@@ -47,7 +47,7 @@ const DOCTORS: Doctor[] = [
     initials: "DM",
     bg: "var(--teal-deep)",
     name: "Dr. David Ma",
-    role: "Cosmetic & General Dentistry",
+    role: "Co-owner · Cosmetic & General Dentistry",
     yearsLabel: "UPenn-trained",
     awardLabel: "Cosmetic & general dentistry",
     photo: "/team/dr-ma.webp",

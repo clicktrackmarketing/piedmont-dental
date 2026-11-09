@@ -9,7 +9,7 @@ export default function AboutHero() {
           <h1>
             Your trusted dentist in <em>Piedmont</em>
             <br />
-            and the East Bay for over 30 years.
+            and the East Bay for 30 years.
           </h1>
           <p className="page-hero-sub">
             The Piedmont Dental By Design team is committed to providing

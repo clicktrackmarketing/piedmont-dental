@@ -163,7 +163,7 @@ export default function CompositeFillingsGalleryPage() {
                   A composite filling is a tooth-colored resin reinforced with
                   microscopic ceramic or glass particles. It&apos;s sculpted
                   directly onto your tooth in layers, then cured (hardened)
-                  with a small ultraviolet light — bonding chemically to the
+                  with a blue curing light — bonding chemically to the
                   surrounding tooth structure.
                 </p>
                 <p>

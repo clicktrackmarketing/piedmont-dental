@@ -293,8 +293,8 @@ export default function ContactHero() {
               />
 
               <p className="form-disclaimer">
-                <strong>Disclaimer:</strong> We do not accept Medi-cal and
-                Medi-care.
+                <strong>Disclaimer:</strong> We do not accept Medi-Cal and
+                Medicare.
               </p>
 
               {errorMessage && (

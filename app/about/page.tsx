@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Piedmont Dental By Design",
     description:
-      "Meet Dr. Jill Martenson, Dr. David Ma, and the team behind Piedmont Dental By Design — over 30 years of personalized cosmetic and restorative dentistry on Grand Avenue.",
+      "Meet Dr. Jill Martenson, Dr. David Ma, and the team behind Piedmont Dental By Design — 30 years of personalized cosmetic and restorative dentistry on Grand Avenue.",
     url: "https://piedmontdentalbydesign.com/about",
     type: "website",
   },

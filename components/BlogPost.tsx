@@ -38,6 +38,10 @@ export default function BlogPost({
                 <Link href="/about/dr-martenson" rel="author">
                   Dr. Jill Martenson
                 </Link>
+                {" & "}
+                <Link href="/about/dr-ma" rel="author">
+                  Dr. David Ma
+                </Link>
               </span>
             </div>
             <h1 className="post-hero-title">{post.title}</h1>

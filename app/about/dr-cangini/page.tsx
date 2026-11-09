@@ -33,7 +33,7 @@ export default function DrCanginiPage() {
           pronoun="he"
           name="Dr. Filippo Cangini"
           role="Board-Certified Periodontist"
-          intro="Dr. Filippo Cangini is a board-certified periodontist. He graduated from the University of Siena in 1994, earned a Master of Oral Sciences from the University of Buffalo in 2000, and completed specialized training in periodontics and implant dentistry at the University of Rochester in 2011."
+          intro="Dr. Filippo Cangini is a board-certified periodontist. He graduated from the University of Siena in 1994, earned a Master of Oral Sciences from the University at Buffalo in 2000, and completed specialized training in periodontics and implant dentistry at the University of Rochester in 2011."
           photo="/team/dr-cangini.webp"
           photoAlt="Dr. Filippo Cangini, periodontist"
           credentials={[
@@ -43,7 +43,7 @@ export default function DrCanginiPage() {
             { value: "2011", label: "U. Rochester (Eastman Dental)" },
           ]}
           bioParagraphs={[
-            "Dr. Cangini brings over two decades of clinical and academic experience to Piedmont Dental by Design. His training spans three institutions and three specialties — general dentistry at the University of Rochester's Eastman Dental Center, periodontics at the same institution, and oral sciences at the University of Buffalo.",
+            "Dr. Cangini brings over two decades of clinical and academic experience to Piedmont Dental by Design. His training spans three institutions and three specialties — general dentistry at the University of Rochester's Eastman Dental Center, periodontics at the same institution, and oral sciences at the University at Buffalo.",
             "As a board-certified periodontist, his focus is on the gums and supporting structures of the teeth — gum disease treatment, gum and bone grafting, and the surgical placement of dental implants in close coordination with the rest of the practice.",
           ]}
           education={[
@@ -53,7 +53,7 @@ export default function DrCanginiPage() {
             },
             {
               date: "2000",
-              text: "Master of Oral Sciences from the University of Buffalo.",
+              text: "Master of Oral Sciences from the University at Buffalo.",
             },
             {
               date: "2006",
