@@ -51,7 +51,7 @@ Dr. Martenson has built multigenerational relationships with patients. Families 
 
 **Award-Winning Patient Experience**
 
-Piedmont Dental by Design earned recognition as Best of the East Bay 2024 and 2025 based on patient satisfaction and community trust.
+Piedmont Dental by Design earned recognition as Best of the East Bay 2024, 2025 and 2026 based on patient satisfaction and community trust.
 
 **One Practice for the Whole Family**
 

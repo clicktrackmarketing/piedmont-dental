@@ -71,7 +71,7 @@ export default function Hero() {
           </span>
           <span className="dot" />
           <span>
-            Best of the East Bay <b>2024 &amp; 2025</b>
+            Best of the East Bay <b>2024, 2025 &amp; 2026</b>
           </span>
           <span className="dot" />
           <span>Now accepting new patients</span>

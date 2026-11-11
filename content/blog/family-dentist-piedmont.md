@@ -19,7 +19,7 @@ sectionHeadings:
 
 **By Piedmont Dental by Design – Your Trusted Family Dentist in Piedmont, CA**
 
-*Voted Best Dental Practice 2025 and Best Esthetic Dentist 2024 and 2025*
+*Voted Best Dental Practice 2025 and 2026 and Best Esthetic Dentist 2024, 2025 and 2026*
 
 ## Why Choose a Family Dentist?
 
