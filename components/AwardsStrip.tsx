@@ -13,13 +13,13 @@ type Award = {
 const awards: Award[] = [
   {
     badge: "/img/badges/best-of-bay-2025.png",
-    headline: "2024 & 2025",
+    headline: "2024, 2025 & 2026",
     title: "Best Esthetic Dentist",
     meta: "Voted Best of the East Bay",
   },
   {
     badge: "/img/badges/best-of-bay-2025.png",
-    headline: "2025",
+    headline: "2025 & 2026",
     title: "Best Dental Practice",
     meta: "Voted Best of the East Bay",
   },
