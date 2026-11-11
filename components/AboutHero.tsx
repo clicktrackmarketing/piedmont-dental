@@ -30,15 +30,15 @@ export default function AboutHero() {
             <li>
               <span className="meta-num meta-num--badge">
                 <Image
-                  src="/img/badges/best-of-bay-2025.png"
+                  src="/img/badges/best-of-east-bay-2026-icon.webp"
                   alt=""
-                  width={48}
-                  height={48}
+                  width={37}
+                  height={44}
                   aria-hidden="true"
                 />
               </span>
               <span>
-                <b>Best of the East Bay 2024 &amp; 2025</b>
+                <b>Best of the East Bay 2024, 2025 &amp; 2026</b>
                 Best Esthetic Dentist &amp; Best Dental Practice
               </span>
             </li>

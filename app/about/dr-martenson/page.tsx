@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dr. Jill Martenson — Piedmont Dental By Design",
     description:
-      "Cosmetic & general dentistry · over 30 years in Piedmont · Best of the East Bay 2024 & 2025.",
+      "Cosmetic & general dentistry · over 30 years in Piedmont · Best of the East Bay 2024, 2025 & 2026.",
     url: "https://piedmontdentalbydesign.com/about/dr-martenson",
     type: "profile",
     images: ["/team/dr-martenson.webp"],
@@ -38,9 +38,9 @@ export default function DrMartensonPage() {
           photoAlt="Dr. Jill Martenson"
           credentials={[
             { value: "30 yrs", label: "Experience" },
-            { value: "2025", label: "Best of the East Bay" },
-            { value: "2024 & 2025", label: "Best Esthetic Dentist" },
-            { value: "2025", label: "Best Dental Practice" },
+            { value: "2024, 2025 & 2026", label: "Best of the East Bay" },
+            { value: "2024, 2025 & 2026", label: "Best Esthetic Dentist" },
+            { value: "2025 & 2026", label: "Best Dental Practice" },
           ]}
           bioParagraphs={[
             "For over 30 years, Dr. Jill Martenson has been a trusted, award-winning dentist proudly serving the Piedmont community with exceptional, patient-centered care. Known for her dedication to excellence and compassionate approach, Dr. Martenson has built a reputation as a highly respected leader in dentistry.",

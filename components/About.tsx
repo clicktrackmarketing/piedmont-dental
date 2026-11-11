@@ -31,13 +31,13 @@ const DOCTORS: Doctor[] = [
     name: "Dr. Jill A. Martenson",
     role: "Cosmetic & General Dentistry",
     yearsLabel: "DDS · 30 years",
-    awardLabel: "Best Esthetic Dentist 2024 & 2025",
+    awardLabel: "Best Esthetic Dentist 2024, 2025 & 2026",
     photo:
       "/img/lIVE Piedmont website images/Headshot_Dr-Jill-Martenson-scaled.jpg",
     photoAlt: "Dr. Jill Martenson at Piedmont Dental By Design",
     question: "Who is Dr. Jill Martenson?",
     paragraphs: [
-      "Dr. Jill A. Martenson, DDS, has cared for the Piedmont community for 30 years across the full range of cosmetic and general dentistry. She earned her Doctor of Dental Surgery with high honors from the University of the Pacific School of Dentistry in 1996, after graduating with honors from UCLA, and completed a General Practice Residency at the University of Colorado Health Science Center. She was voted Best Esthetic Dentist by Best of the East Bay readers in 2024 and 2025, and is a member of the AACD, ADA, and CDA — three of the professional associations most associated with cosmetic dental standards.",
+      "Dr. Jill A. Martenson, DDS, has cared for the Piedmont community for 30 years across the full range of cosmetic and general dentistry. She earned her Doctor of Dental Surgery with high honors from the University of the Pacific School of Dentistry in 1996, after graduating with honors from UCLA, and completed a General Practice Residency at the University of Colorado Health Science Center. She was voted Best Esthetic Dentist by Best of the East Bay readers in 2024, 2025 and 2026, and is a member of the AACD, ADA, and CDA — three of the professional associations most associated with cosmetic dental standards.",
       "She practices alongside Dr. David Ma, who treats the same full range of cosmetic and general cases; board-certified periodontist Dr. Filippo Cangini completes the team — so patients can stay with one practice for cosmetic, gum, and structural care.",
     ],
     href: "/about/dr-martenson",
