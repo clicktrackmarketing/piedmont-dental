@@ -11640,7 +11640,8 @@ a.gummy-treatment-card:hover .gummy-treatment-cta { color: var(--ink); }
 }
 .award {
   text-align: center;
-  padding: 8px 32px;
+  /* 16px (was 32px) so "2024, 2025 & 2026" fits on one line at 4-up. */
+  padding: 8px 16px;
   border-left: 1px solid var(--rule);
   display: flex;
   flex-direction: column;
@@ -11683,6 +11684,7 @@ a.gummy-treatment-card:hover .gummy-treatment-cta { color: var(--ink); }
   line-height: 1.0;
   color: var(--ink);
   margin-bottom: 14px;
+  white-space: nowrap;
 }
 .award-title {
   font-family: var(--sans);
