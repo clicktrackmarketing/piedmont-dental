@@ -59,7 +59,7 @@ Consolidating care in one welcoming environment simplifies scheduling and enable
 
 **Flexible Scheduling and Insurance Coordination**
 
-The practice works with most major insurance plans and offers flexible appointment options for busy families.
+The practice works with most traditional and PPO insurance plans on an out-of-network basis and offers flexible appointment options for busy families.
 
 ## The Connection Between Oral and Overall Health
 

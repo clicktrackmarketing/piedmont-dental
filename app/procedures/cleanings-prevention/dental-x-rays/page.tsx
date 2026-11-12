@@ -63,7 +63,7 @@ export default function DentalXRaysPage() {
               title: "Are dental X-rays safe?",
               body: [
                 "We are all exposed to natural radiation in our environment. The amount of radiation exposure from a full-mouth series of X-rays is equal to the amount a person receives in a single day from natural sources.",
-                "Dental X-rays produce a low level of radiation and are considered safe. We take necessary precautions to limit your exposure — including lead apron shields to protect the body and modern, fast film that cuts down the exposure time of each X-ray.",
+                "Dental X-rays produce a low level of radiation and are considered safe. We take necessary precautions to limit your exposure — including lead apron shields to protect the body and digital sensors that cut down the exposure time of each X-ray.",
               ],
             },
             {

@@ -60,7 +60,7 @@ export default function HowToBrushFlossPage() {
             {
               title: "The proper way to brush",
               body: [
-                "Brush at least twice a day — ideally in the morning and before bed. The perfect toothbrush is small in size with soft, rounded-end bristles, and replaced every three months. The head needs to be small enough to access all areas of the mouth, and the bristles soft enough not to damage gum tissue. The ADA endorses electric toothbrushes — particularly those with rotating or oscillating heads — as more effective than manual brushes.",
+                "Brush at least twice a day — ideally in the morning and before bed. The perfect toothbrush is small in size with soft, rounded-end bristles, and replaced every three months. The head needs to be small enough to access all areas of the mouth, and the bristles soft enough not to damage gum tissue. The ADA accepts both manual and electric toothbrushes; many patients find a powered brush with a rotating or oscillating head makes thorough brushing easier.",
               ],
               bullets: [
                 "Place the toothbrush at a 45-degree angle where the gums and teeth meet.",

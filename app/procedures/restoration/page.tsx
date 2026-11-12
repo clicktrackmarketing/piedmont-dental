@@ -58,7 +58,7 @@ const DECISION = [
     lead: "Repair what is left",
     win: false,
     points: [
-      ["Composite filling", "Decay, a chip or a small fracture — repaired in one visit, colour-matched to the tooth."],
+      ["Composite filling", "Decay, a chip or a small fracture — repaired in one visit, color-matched to the tooth."],
       ["Porcelain crown", "Too little sound tooth left for a filling: a cracked tooth, a large old filling, or a tooth after root canal treatment. The crown covers what remains and takes the chewing force."],
     ],
   },
@@ -67,7 +67,7 @@ const DECISION = [
     lead: "Replace what is missing",
     win: true,
     points: [
-      ["Dental implant", "Stands alone in the jawbone and leaves the neighbouring teeth untouched — the more conservative choice when those teeth are healthy."],
+      ["Dental implant", "Stands alone in the jawbone and leaves the neighboring teeth untouched — the more conservative choice when those teeth are healthy."],
       ["Fixed bridge", "Anchors to the teeth either side. Faster and usually cheaper, but those anchor teeth are filed down permanently and need crowns from then on."],
       ["Dentures & partials", "Replaces a full arch, or fills larger gaps where several teeth are missing."],
     ],
@@ -77,7 +77,7 @@ const DECISION = [
 const HUB_FAQS = [
   {
     q: "A tooth is missing — should I get an implant or a bridge?",
-    a: "A bridge anchors to the natural teeth either side of the gap; an implant stands alone as an artificial root in the jawbone. Bridges are faster (2–3 weeks against 4–9 months) and usually cost less, but the anchor teeth must be filed down permanently and will need crowns from then on. When those neighbouring teeth are healthy and untouched, an implant is the more conservative choice because it leaves them alone.",
+    a: "A bridge anchors to the natural teeth either side of the gap; an implant stands alone as an artificial root in the jawbone. Bridges are faster (2–3 weeks against 4–9 months) and usually cost less, but the anchor teeth must be filed down permanently and will need crowns from then on. When those neighboring teeth are healthy and untouched, an implant is the more conservative choice because it leaves them alone.",
   },
   {
     q: "How much does each restoration cost?",
@@ -150,7 +150,7 @@ export default function RestorationCategoryPage() {
             "Restorative dentistry repairs teeth that are damaged, decayed or missing. At Piedmont Dental By Design that covers five treatments — composite fillings, porcelain crowns, fixed bridges, dentures and dental implants — chosen according to how much healthy tooth is left and whether the tooth is still there at all.",
             "As a rule: a filling repairs a tooth with decay or a small fracture; a crown covers a tooth too damaged to hold a filling; a bridge or an implant replaces a tooth that is already gone. Dr. Jill Martenson, DDS and Dr. David Ma will tell you which category your tooth falls into and what each option costs before anything is scheduled.",
           ]}
-          image="/img/lIVE Piedmont website images/Fusion-Dental-Care-Raleigh-NC-Oral-Surgery-1596x1024-1.jpeg"
+          image="/img/procedures/shared/dental-exam-consultation.jpeg"
           imageAlt="Restorative dentistry consultation at Piedmont Dental By Design"
           cards={CARDS}
         />

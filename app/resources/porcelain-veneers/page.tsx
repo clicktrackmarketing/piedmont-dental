@@ -37,7 +37,7 @@ const FEATURE_CHANGES = [
   },
   {
     label: "Surface texture micro-detailed",
-    note: "Light scatters the way enamel does — no glossy &ldquo;veneer look.&rdquo;",
+    note: "Light scatters the way enamel does — no glossy “veneer look.”",
   },
 ];
 
@@ -54,7 +54,7 @@ const SECONDARY_CASES: Case[] = [
   {
     id: "case-2",
     number: "02",
-    title: "Worn, discoloured front teeth restored",
+    title: "Worn, discolored front teeth restored",
     before: "/img/cases/veneers/case2-before.jpg",
     after: "/img/cases/veneers/case2-after.jpg",
     procedures: ["Porcelain Veneers"],

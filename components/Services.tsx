@@ -53,8 +53,8 @@ const tiles: Tile[] = [
     title: "CEREC® crowns",
     caption: "Same-day digital crowns, in one visit",
     href: "/procedures/cosmetic-dentistry/cerec",
-    image: "/img/home-services/cerec.jpg",
-    alt: "CEREC same-day porcelain crown technology",
+    image: "/img/home-services/cerec-milling.jpg",
+    alt: "CEREC milling unit making a same-day porcelain crown",
   },
   {
     num: "06",

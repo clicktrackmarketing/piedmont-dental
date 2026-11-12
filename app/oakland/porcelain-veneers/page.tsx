@@ -126,7 +126,7 @@ export default function OaklandPorcelainVeneersPage() {
             {
               title: "Getting here from Oakland",
               body: [
-                "Our office is at 1331 Grand Avenue, Piedmont, in a two-storey building: the practice is on the upper level and the parking entrance is below it. The address is shared with The Oldershaw Clinic — look for our sign on the railing and take the planted walkway from the parking area to the front door.",
+                "Our office is at 1331 Grand Avenue, Piedmont, in a two-story building: the practice is on the upper level and the parking entrance is below it. The address is shared with The Oldershaw Clinic — look for our sign on the railing and take the planted walkway from the parking area to the front door.",
               ],
               bullets: [
                 "Driving: Grand Avenue runs from Lake Merritt straight to our door — about 1.4 miles, roughly six minutes without traffic. Rockridge BART is about 2.6 miles and Montclair Village about 3.1 miles, each around seven minutes; MacArthur BART is a short drive.",
@@ -137,7 +137,7 @@ export default function OaklandPorcelainVeneersPage() {
             {
               title: "Cost and coverage, without the runaround",
               body: [
-                "We will not quote a fee on a web page, because a veneer fee depends on your teeth, the number of veneers and the laboratory work — and because you deserve a number that comes from an examination, in writing. The market picture: Delta Dental puts porcelain laminate veneers at roughly $1,180 to $2,185 per tooth without insurance, moved by the material, the location of the practice and your coverage; it also describes veneers as commonly considered cosmetic and often not covered, though some plans include them (Delta Dental). Bay Area fees run above these national figures. See our current fees on the Porcelain Veneers page. Check your benefits first. CareCredit financing is available for the balance.",
+                "Your exact fee depends on your teeth, the number of veneers and the laboratory work, so the number for your case comes from an examination, in writing. The market picture: Delta Dental puts porcelain laminate veneers at roughly $1,180 to $2,185 per tooth without insurance, moved by the material, the location of the practice and your coverage; it also describes veneers as commonly considered cosmetic and often not covered, though some plans include them (Delta Dental). Bay Area fees run above these national figures. See our current fees on the Porcelain Veneers page. Check your benefits first. CareCredit financing is available for the balance.",
                 "One caution about cheap deals. In May 2024 the American Dental Association warned about unlicensed “veneer technicians,” citing infection from unsterilized adhesives and curing devices, nerve damage from improper trimming of teeth and a choking hazard during placement, and reminded the public that altering the structure of teeth without a dentist's supervision can cause irreversible harm (ADA statement, 14 May 2024). A veneer is a dental procedure, and its price includes the diagnosis behind it.",
               ],
             },

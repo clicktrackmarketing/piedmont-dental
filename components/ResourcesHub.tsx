@@ -35,7 +35,7 @@ const resources: Resource[] = [
     iconPath: ICONS.forms,
   },
   {
-    title: "Post Op Instructions",
+    title: "Post-Op Instructions",
     desc: "Care guidance after your procedure. Contact us for specifics on your treatment.",
     href: "/contact",
     iconPath: ICONS.postOp,
@@ -71,7 +71,7 @@ const resources: Resource[] = [
     iconPath: ICONS.links,
   },
   {
-    title: "FAQ's",
+    title: "FAQs",
     desc: "Common patient questions answered — about visits, procedures, and care.",
     href: "/faqs",
     iconPath: ICONS.faq,

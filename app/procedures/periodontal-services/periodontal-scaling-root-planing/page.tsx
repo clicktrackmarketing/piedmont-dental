@@ -83,7 +83,7 @@ export default function ScalingRootPlaningPage() {
             },
             {
               q: "How long does a scaling and root planing appointment take?",
-              a: "Most cases are split into 2 appointments (one half of the mouth at each), each lasting about 60–75 minutes. Spreading the work allows us to be thorough and gives one side of your mouth a break between visits. Severe cases may need 4 quarterly appointments.",
+              a: "Most cases are split into 2 appointments (one half of the mouth at each), each lasting about 60–75 minutes. Spreading the work allows us to be thorough and gives one side of your mouth a break between visits. Severe cases may need 4 appointments, one quadrant (a quarter of the mouth) at a time.",
             },
             {
               q: "Will I need antibiotics after the procedure?",

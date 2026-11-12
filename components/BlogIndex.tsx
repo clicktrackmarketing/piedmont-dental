@@ -26,7 +26,7 @@ export const posts: Post[] = [
     image: "/img/blog/dental-implant-cost-east-bay/hero.jpg",
     alt: "Illustration of a dental implant: the post, the connector (abutment) and the crown",
     excerpt:
-      "What dental implants cost in the East Bay in 2026 \u2014 single tooth, All-on-4 and full mouth, itemised, with what insurance really pays.",
+      "What dental implants cost in the East Bay in 2026 \u2014 single tooth, All-on-4 and full mouth, itemized, with what insurance really pays.",
   },
   {
     slug: "dental-bridge-vs-implant",

@@ -51,7 +51,7 @@ const CASES: Case[] = [
     before: "/img/dentures/case2-before.jpg",
     after: "/img/dentures/case2-after.jpg",
     beforeText:
-      "Patient needs upper and lower arch rehabilitation — addressing both function and aesthetics across the full mouth.",
+      "Patient needed upper and lower arch rehabilitation — addressing both function and aesthetics across the full mouth.",
     afterText:
       "A great smile, restored chewing function, and proper facial tissue support — achieved with an upper denture supported by implants, plus lower implants and porcelain crowns.",
     procedures: [

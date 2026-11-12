@@ -38,7 +38,7 @@ const cols = [
   },
 ];
 
-const LAST_UPDATED = "May 2026";
+const LAST_UPDATED = "November 2026";
 
 export default function SiteFooter() {
   return (

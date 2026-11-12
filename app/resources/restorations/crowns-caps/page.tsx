@@ -40,7 +40,7 @@ const CASES: Case[] = [
     before: "/img/cases/crowns/case1-before.jpg",
     after: "/img/cases/crowns/case1-after.jpg",
     description:
-      "Two existing front crowns sat brighter and bulkier than the teeth either side of them, so they read as obvious dental work against worn, darker neighbours. Rebuilt in all-porcelain (no metal) and re-shaded across the arch, so shape, texture and colour now run evenly from tooth to tooth.",
+      "Two existing front crowns sat brighter and bulkier than the teeth either side of them, so they read as obvious dental work against worn, darker neighbors. Rebuilt in all-porcelain (no metal) and re-shaded across the arch, so shape, texture and color now run evenly from tooth to tooth.",
     procedures: ["Porcelain Crown", "No-Metal"],
   },
   {

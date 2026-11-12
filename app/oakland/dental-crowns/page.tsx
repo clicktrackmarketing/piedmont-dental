@@ -100,7 +100,7 @@ export default function OaklandDentalCrownsPage() {
               title: "Crown vs onlay vs filling",
               body: [
                 "All three answer the same question: how much of the tooth is left. A filling fills a hole and relies on the surrounding tooth for strength. An onlay is made outside the mouth, like a crown, but covers only the chewing surface and the damaged cusp. A full crown covers everything above the gumline. The more tooth that is missing, the further along that line the right answer sits (ADA MouthHealthy).",
-                "The evidence on onlays is reassuring for the middle ground. A 2022 meta-analysis of six studies — one randomised trial, five observational — found no statistically significant difference in survival between tooth-colored onlays or partial crowns and full crowns on back teeth at one year or three years, and concluded that onlays “performed as excellently as full crowns in posterior region in a short-term period” (Head & Face Medicine, 2022). Short-term is the honest qualifier: onlays have not been followed for as many years as full crowns have.",
+                "The evidence on onlays is reassuring for the middle ground. A 2022 meta-analysis of six studies — one randomized trial, five observational — found no statistically significant difference in survival between tooth-colored onlays or partial crowns and full crowns on back teeth at one year or three years, and concluded that onlays “performed as excellently as full crowns in posterior region in a short-term period” (Head & Face Medicine, 2022). Short-term is the honest qualifier: onlays have not been followed for as many years as full crowns have.",
                 "In the chair, that means: sound walls, we usually suggest the onlay and keep the rest of the tooth; thin, cracked or undermined walls, the crown is the safer investment.",
               ],
             },
@@ -122,7 +122,7 @@ export default function OaklandDentalCrownsPage() {
             {
               title: "Getting here from Oakland",
               body: [
-                "We are at 1331 Grand Avenue, Piedmont, in a two-storey building: the practice is on the upper level and the parking entrance sits below it. The address is shared with The Oldershaw Clinic, so look for our sign on the railing and take the planted walkway from the parking area to the front door.",
+                "We are at 1331 Grand Avenue, Piedmont, in a two-story building: the practice is on the upper level and the parking entrance sits below it. The address is shared with The Oldershaw Clinic, so look for our sign on the railing and take the planted walkway from the parking area to the front door.",
               ],
               bullets: [
                 "By car: Lake Merritt is about 1.4 miles away, around six minutes without traffic — from the lake, Grand Avenue runs straight to us. Rockridge BART is about 2.6 miles and Montclair Village about 3.1 miles, each about seven minutes. MacArthur BART is a short drive.",
@@ -201,7 +201,7 @@ export default function OaklandDentalCrownsPage() {
               href: "https://www.deltadental.com/protect-my-smile/procedures/dental-crowns/treatment-cost/",
             },
           ]}
-          featuredImage="/img/home-services/cerec.jpg"
+          featuredImage="/img/home-services/cerec-milling.jpg"
           featuredAlt="Dental crowns — Piedmont Dental By Design, serving Oakland"
         />
         <AwardsStrip />

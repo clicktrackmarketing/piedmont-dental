@@ -11,7 +11,7 @@ import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "Cosmetic Bonding — Before & After",
   description:
-    "Drag-to-compare cosmetic bonding cases from Dr. David Ma and Dr. Jill Martenson — chips, gaps and worn edges rebuilt in tooth-coloured composite, usually in a single visit.",
+    "Drag-to-compare cosmetic bonding cases from Dr. David Ma and Dr. Jill Martenson — chips, gaps and worn edges rebuilt in tooth-colored composite, usually in a single visit.",
   alternates: { canonical: "/resources/cosmetic-bonding" },
   openGraph: {
     title: "Cosmetic Bonding — Before & After | Piedmont Dental By Design",
@@ -44,9 +44,9 @@ const CASES: BondingCase[] = [
     procedures: ["Cosmetic Bonding"],
     duration: "Single visit",
     beforeStory:
-      "One upper front tooth had darkened noticeably against its neighbours, and uneven spacing between the front teeth drew the eye straight to it. The patient wanted the discolouration handled without cutting the tooth down for a crown.",
+      "One upper front tooth had darkened noticeably against its neighbors, and uneven spacing between the front teeth drew the eye straight to it. The patient wanted the discoloration handled without cutting the tooth down for a crown.",
     afterStory:
-      "Tooth-coloured composite was bonded directly to the tooth and shaped by hand, masking the darkness and closing the spacing at the same time. No drilling of healthy enamel, and the whole case was finished in one appointment.",
+      "Tooth-colored composite was bonded directly to the tooth and shaped by hand, masking the darkness and closing the spacing at the same time. No drilling of healthy enamel, and the whole case was finished in one appointment.",
   },
   {
     id: "case-2",
@@ -72,7 +72,7 @@ const CASES: BondingCase[] = [
     beforeStory:
       "Open spaces between the lower front teeth showed as dark triangles at the gumline, and a small gap had opened between the two upper front teeth. The spaces, rather than the teeth themselves, were what drew the eye.",
     afterStory:
-      "Tooth-coloured composite was bonded to the sides of the lower front teeth and the upper centrals, widening each just enough to close the spaces. No teeth were moved and no healthy enamel was cut away — the gaps were filled by adding material, not removing it.",
+      "Tooth-colored composite was bonded to the sides of the lower front teeth and the upper centrals, widening each just enough to close the spaces. No teeth were moved and no healthy enamel was cut away — the gaps were filled by adding material, not removing it.",
   },
 ];
 
@@ -113,8 +113,8 @@ export default function CosmeticBondingPage() {
               <h1 className="resource-hero-title">Cosmetic Bonding</h1>
               <p className="resource-hero-description">
                 Real before-and-after cosmetic bonding cases from Dr. Ma and
-                Dr. Martenson — chips, gaps, discolouration and worn edges
-                rebuilt in tooth-coloured composite, shaped by hand and
+                Dr. Martenson — chips, gaps, discoloration and worn edges
+                rebuilt in tooth-colored composite, shaped by hand and
                 usually finished in a single visit. Drag any slider below to
                 compare.
               </p>
@@ -246,7 +246,7 @@ export default function CosmeticBondingPage() {
                   <h3>Porcelain Veneers</h3>
                   <p>
                     When the change needed is larger, or you want a result that
-                    holds its colour for longer.
+                    holds its color for longer.
                   </p>
                   <span>View gallery →</span>
                 </Link>

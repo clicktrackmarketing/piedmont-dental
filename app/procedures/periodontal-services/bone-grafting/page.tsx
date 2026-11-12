@@ -50,8 +50,8 @@ export default function BoneGraftingPage() {
             {
               title: "Types of dental bone grafts",
               body: [
-                "Autogenous bone graft — bone is removed from elsewhere in the body and implanted in the mouth. Common donor sites include the iliac section of the pelvis, the chin, and the posterior molar areas of the jaw. For larger amounts, the hip or shin bone may be used.",
-                "Allograft — synthetic bone (man-made) created in the laboratory. Bone can also be obtained from a tissue bank.",
+                "Autogenous bone graft — bone is removed from elsewhere in the body and implanted in the mouth. Common donor sites include the chin and the posterior molar areas of the jaw. For larger amounts, the hip (iliac crest) or shin bone may be used.",
+                "Allograft — donated human bone obtained from a tissue bank, processed and sterilized for safety. Synthetic (man-made) bone substitutes, called alloplasts, are another option.",
                 "Xenograft — implantation of bovine (cow) bone. A xenograft is perfectly safe, has been used successfully for many years, and avoids the need for a secondary donor site.",
               ],
             },

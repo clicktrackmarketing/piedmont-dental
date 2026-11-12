@@ -50,7 +50,7 @@ export default function PanoramicXRaysPage() {
             {
               title: "When panoramic X-rays are used",
               body: [
-                "Unlike bite-wing X-rays that need to be taken every few years, panoramic X-rays are generally only taken on an as-needed basis. They aren't a detailed view of each tooth — instead they provide a better view of the sinus areas, nasal areas, and mandibular nerve.",
+                "Unlike bite-wing X-rays, which are typically taken once or twice a year, panoramic X-rays are generally only taken on an as-needed basis. They aren't a detailed view of each tooth — instead they provide a better view of the sinus areas, nasal areas, and mandibular nerve.",
                 "Panoramic X-rays are preferable to bite-wing X-rays when a patient is in extreme pain, and when a sinus problem is suspected to have caused dental issues. The most common uses are revealing the positioning of wisdom teeth and checking whether dental implants will affect the mandibular nerve (the nerve extending toward the lower lip).",
               ],
             },
@@ -70,7 +70,7 @@ export default function PanoramicXRaysPage() {
               title: "How the imaging works",
               body: [
                 "The Panorex equipment consists of a rotating arm that holds the X-ray generator and a moving film attachment that holds the pictures. Your head is positioned between these two devices. The X-ray generator moves around the head taking pictures as orthogonally as possible.",
-                "The positioning of the head and body determines how sharp, clear, and useful the X-rays will be. The pictures are magnified by as much as 30% to ensure that even the minutest detail is visible.",
+                "The positioning of the head and body determines how sharp, clear, and useful the X-rays will be. Correct positioning also keeps distortion of the image to a minimum.",
                 "Panoramic X-rays are an important diagnostic tool and are also valuable for planning future treatment. They are safer than other types of X-rays because less radiation enters the body.",
               ],
             },

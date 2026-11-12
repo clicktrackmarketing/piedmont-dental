@@ -37,7 +37,8 @@ export default function SinusAugmentationPage() {
           slug="sinus-augmentation"
           title="Sinus Augmentation"
           tagline="Raise the sinus floor to make room for upper-jaw implants."
-          featuredImage="/img/lIVE Piedmont website images/Sinus Augmentation.png"
+          featuredImage="/img/procedures/shared/implant-in-bone-model.png"
+          featuredAlt="Model of a dental implant set in the jawbone"
           intro={[
             "A dental implant serves as an artificial tooth root attached to the jawbone, with a replacement tooth or bridge securely fixed on top to restore complete tooth function. Successful, long-lasting implants depend on adequate jawbone quality and quantity.",
             "When bone has been lost due to injury or periodontal disease, a sinus augmentation can raise the sinus floor to enable new bone formation — making implant placement possible in the upper jaw where it otherwise wouldn't be safe.",
@@ -65,7 +66,7 @@ export default function SinusAugmentationPage() {
             },
             {
               q: "Is sinus augmentation surgery painful?",
-              a: "The procedure is done with local anesthesia (sometimes IV sedation for larger cases) and is comfortable during. Postoperative discomfort for 5–7 days is typical — most patients describe it as similar to a sinus infection, well-managed with over-the-counter pain relief. Mild swelling and occasional minor nosebleed is normal in the first few days.",
+              a: "The procedure is done with local anesthesia (sometimes IV sedation for larger cases) and is comfortable throughout. Postoperative discomfort for 5–7 days is typical — most patients describe it as similar to a sinus infection, well-managed with over-the-counter pain relief. Mild swelling and occasional minor nosebleed is normal in the first few days.",
             },
             {
               q: "How long does it take to heal before I can get implants?",

@@ -74,7 +74,7 @@ export default function InvisalignPage() {
               title: "Invisalign® benefits you can expect",
               body: [
                 "There is no question that straighter teeth make for a stunning smile. They also usually enable greater long-term oral health. Teeth in their ideal positions are easier to clean, making the removal of harmful dental plaque, tartar, and bacteria easier. Being able to clean your smile more effectively helps reduce your chances of gum disease and tooth decay.",
-                "When teeth meet correctly, they are at fewer risks for abnormal wear and other concerns like TMJ disorders. An aligned bite can prevent the need for more complex treatment in the future.",
+                "When teeth meet correctly, they are at less risk of abnormal wear and other concerns like TMJ disorders. An aligned bite can prevent the need for more complex treatment in the future.",
                 "When you choose to straighten your smile with Invisalign®, you may continue to enjoy your favorite foods and beverages. You need only remove your aligners before eating and drinking. The treatment also allows you to go about your daily life without interruptions and compromises.",
               ],
             },
@@ -93,7 +93,7 @@ export default function InvisalignPage() {
             {
               title: "How do I care for my Invisalign® trays?",
               body: [
-                "Cleaning and caring for your aligners is simple and straightforward. Be sure to remove them before eating and clean them using a soft-bristled toothbrush and an approved rinse or toothpaste. Make sure to rinse your trays after removal and before putting them back in your smile. You may do this with room-temperature water.",
+                "Cleaning and caring for your aligners is simple and straightforward. Be sure to remove them before eating and clean them using a soft-bristled toothbrush and clear soap or an approved cleaning rinse (not toothpaste, which can scratch them). Make sure to rinse your trays after removal and before putting them back in your smile. You may do this with room-temperature water.",
               ],
             },
           ]}

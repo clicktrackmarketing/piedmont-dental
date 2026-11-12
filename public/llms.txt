@@ -1,13 +1,14 @@
 # Piedmont Dental By Design — Cosmetic & Restorative Dentist in Piedmont, CA
 
-> A small, intentional cosmetic and restorative dental practice on Grand Avenue in Piedmont, California. Led by Dr. Jill Martenson, DDS, since 2000. Voted Best Esthetic Dentist 2024, 2025 & 2026 and Best Dental Practice 2025 & 2026 by Best of the East Bay readers.
+> A small, intentional cosmetic and restorative dental practice on Grand Avenue in Piedmont, California, since 1996. Co-owned by Dr. Jill Martenson, DDS and Dr. David Ma. Voted Best Esthetic Dentist 2024, 2025 & 2026 and Best Dental Practice 2025 & 2026 by Best of the East Bay readers.
 
 ## Practice
 
 - **Name:** Piedmont Dental By Design
 - **Address:** 1331 Grand Ave, Piedmont, CA 94610
 - **Phone:** (510) 350-3937
-- **Founded:** 2000
+- **Founded:** 1996
+- **Co-owners:** Dr. Jill A. Martenson, DDS and Dr. David Ma
 - **Website:** https://piedmontdentalbydesign.com
 - **Service area:** Piedmont, Oakland, Lake Merritt, Montclair, Rockridge, Berkeley
 
@@ -19,9 +20,9 @@
 
 ## Practitioners
 
-- **Dr. Jill A. Martenson, DDS** — Lead dentist, cosmetic dentistry. Founded the practice in 2000. Voted Best Esthetic Dentist 2024, 2025 & 2026 (Best of the East Bay).
+- **Dr. Jill A. Martenson, DDS** — Co-owner · cosmetic & general dentistry. 30 years in practice. Voted Best Esthetic Dentist 2024, 2025 & 2026 (Best of the East Bay).
+- **Dr. David Ma** — Co-owner · cosmetic & general dentistry
 - **Dr. Filippo Cangini** — Periodontics
-- **Dr. David Ma** — Restorative dentistry
 
 ## Services
 
@@ -81,9 +82,9 @@
 
 - Home: https://piedmontdentalbydesign.com/
 - About: https://piedmontdentalbydesign.com/about — practice values, team, doctor bio
-- About > Dr. Martenson: https://piedmontdentalbydesign.com/about/dr-martenson — owner & lead dentist
+- About > Dr. Martenson: https://piedmontdentalbydesign.com/about/dr-martenson — co-owner · cosmetic & general dentist
 - About > Dr. Cangini: https://piedmontdentalbydesign.com/about/dr-cangini — board-certified periodontist
-- About > Dr. Ma: https://piedmontdentalbydesign.com/about/dr-ma — restorative & cosmetic dentist
+- About > Dr. Ma: https://piedmontdentalbydesign.com/about/dr-ma — co-owner · cosmetic & general dentist
 - About > Team: https://piedmontdentalbydesign.com/about/team — full practice team (3 dentists + 9 staff)
 - About > Office Tour: https://piedmontdentalbydesign.com/about/tour — practice photos and location
 - Procedures: https://piedmontdentalbydesign.com/procedures — full list of dental procedures by category
@@ -118,9 +119,9 @@
 ## Practice Team (full)
 
 ### Dentists
-- Dr. Jill A. Martenson, DDS — Owner & lead dentist · cosmetic dentistry · 29 years experience
+- Dr. Jill A. Martenson, DDS — Co-owner · cosmetic & general dentistry · 30 years experience
+- Dr. David Ma — Co-owner · cosmetic & general dentistry
 - Dr. Filippo Cangini — Periodontics
-- Dr. David Ma — Restorative dentistry
 
 ### Hygienists
 - Michelle — Registered Dental Hygienist

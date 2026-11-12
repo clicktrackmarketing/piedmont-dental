@@ -126,7 +126,7 @@ export default function OaklandDentalImplantsPage() {
             {
               title: "Getting here from Oakland",
               body: [
-                "We are at 1331 Grand Avenue, Piedmont, CA 94610 — a two-storey building with the practice on the upper level and the parking entrance below it. The address is shared with The Oldershaw Clinic, so look for our sign on the railing; a planted walkway leads from the parking area to the front door.",
+                "We are at 1331 Grand Avenue, Piedmont, CA 94610 — a two-story building with the practice on the upper level and the parking entrance below it. The address is shared with The Oldershaw Clinic, so look for our sign on the railing; a planted walkway leads from the parking area to the front door.",
               ],
               bullets: [
                 "Driving: Grand Avenue runs from Lake Merritt straight up to us — about 1.4 miles, around six minutes without traffic. Rockridge BART is about 2.6 miles and Montclair Village about 3.1 miles, each roughly seven minutes. MacArthur BART is a short drive.",

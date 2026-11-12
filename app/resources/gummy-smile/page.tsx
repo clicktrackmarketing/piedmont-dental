@@ -56,7 +56,7 @@ export default function GummySmilePage() {
               <div className="gummy-lead-image">
                 <Image
                   src="/img/gummy-smile-hero.png"
-                  alt="A confident patient smiling after cosmetic gum treatment"
+                  alt="Woman with a confident, balanced smile"
                   fill
                   sizes="(max-width: 1080px) 100vw, 520px"
                   style={{ objectFit: "cover" }}
@@ -185,7 +185,7 @@ export default function GummySmilePage() {
                 </Link>
 
                 <Link
-                  href="/procedures/periodontal-services/gum-grafting"
+                  href="/procedures/cosmetic-dentistry/surgery"
                   className="gummy-treatment-card"
                 >
                   <span className="gummy-treatment-icon" aria-hidden>

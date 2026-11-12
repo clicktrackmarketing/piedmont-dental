@@ -78,7 +78,7 @@ export default function CrownLengtheningPage() {
             },
             {
               q: "Is crown lengthening painful?",
-              a: "The procedure is done with local anesthesia and is comfortable during. Postoperative soreness for 3–5 days is typical, well-managed with over-the-counter pain relief. The surgical site is protected with a periodontal bandage for the first week.",
+              a: "The procedure is done with local anesthesia and is comfortable throughout. Postoperative soreness for 3–5 days is typical, well-managed with over-the-counter pain relief. The surgical site is protected with a periodontal bandage for the first week.",
             },
             {
               q: "Why is crown lengthening needed before a crown?",

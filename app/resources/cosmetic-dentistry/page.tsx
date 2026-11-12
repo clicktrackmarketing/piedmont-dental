@@ -78,16 +78,16 @@ const PROCEDURES: Procedure[] = [
   {
     href: "/resources/gummy-smile",
     image: "/img/cosmetic/gum-reshaping.png",
-    imageAlt: "Patient after cosmetic gum reshaping",
+    imageAlt: "Woman with a balanced, confident smile",
     title: "Gum Reshaping",
     tag: "Gum Line",
     blurb:
-      "Cosmetic contouring or surgical reshaping of the gum line — for &ldquo;gummy smiles&rdquo; or asymmetry between teeth.",
+      "Cosmetic contouring or surgical reshaping of the gum line — for “gummy smiles” or asymmetry between teeth.",
     cta: "Learn more →",
   },
   {
-    href: "/procedures/restoration/composite-fillings",
-    image: "/img/cosmetic/bonding.png",
+    href: "/resources/cosmetic-bonding",
+    image: "/img/cosmetic/composite-filling-curing.jpg",
     imageAlt: "Composite bonding restoration",
     title: "Composite Bonding",
     tag: "Quick Fix",

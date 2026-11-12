@@ -38,7 +38,7 @@ const STEPS = [
   },
   {
     title: "Sculpt in layers",
-    body: "Composite is applied in thin layers, each one shaped to your tooth's natural contour. Between layers, a small UV light cures the material — bonding it permanently in place.",
+    body: "Composite is applied in thin layers, each one shaped to your tooth's natural contour. Between layers, a blue curing light hardens the material — bonding it permanently in place.",
   },
   {
     title: "Polish to a natural shine",
@@ -108,7 +108,7 @@ export default function CompositeFillingsRecentPage() {
             <div className="surgery-consent" role="note">
               <span className="surgery-consent-tag">Note</span>
               <p>
-                Patient depicted in this case study has provided their consent
+                The patient depicted in this case study has provided their consent
                 to display their photos online. Results vary by case — schedule
                 a consultation to discuss what&apos;s possible for your smile.
               </p>

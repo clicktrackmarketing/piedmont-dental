@@ -220,7 +220,7 @@ export default function StructuredData() {
       givenName: "Jill",
       familyName: "Martenson",
       honorificSuffix: "DDS",
-      jobTitle: "Cosmetic & General Dentist",
+      jobTitle: "Co-owner, Cosmetic & General Dentist",
       worksFor: { "@id": `${SITE}/#org` },
       /* A degree marked up as EducationalOccupationalCredential is a verifiable,
          machine-readable qualification an answer engine can cite when asked who
@@ -279,7 +279,7 @@ export default function StructuredData() {
       "@type": "Person",
       "@id": `${SITE}/#dr-ma`,
       name: "David Ma",
-      jobTitle: "Cosmetic & General Dentist",
+      jobTitle: "Co-owner, Cosmetic & General Dentist",
       worksFor: { "@id": `${SITE}/#org` },
       knowsAbout: [
         "Cosmetic Dentistry",

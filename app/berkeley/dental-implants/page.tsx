@@ -117,7 +117,7 @@ export default function BerkeleyDentalImplantsPage() {
             {
               title: "Getting here from Berkeley",
               body: [
-                "We are at 1331 Grand Avenue, Piedmont — a two-storey building with the practice on the upper level and the parking entrance below it. The address is shared with The Oldershaw Clinic, so look for our sign on the railing, then follow the planted walkway from the parking area to the front door.",
+                "We are at 1331 Grand Avenue, Piedmont — a two-story building with the practice on the upper level and the parking entrance below it. The address is shared with The Oldershaw Clinic, so look for our sign on the railing, then follow the planted walkway from the parking area to the front door.",
               ],
               bullets: [
                 "Driving: about 2.8 miles from Elmwood (College and Ashby) and 3.3 miles from Ashby BART, each around nine minutes without traffic; about 3.6 miles and eleven minutes from Claremont (Ashby and Domingo); about 4.3 miles and thirteen minutes from Downtown Berkeley BART, 4.4 miles from the UC Berkeley campus, and 4.9 miles and fifteen minutes from North Berkeley at Shattuck and Vine.",

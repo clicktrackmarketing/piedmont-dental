@@ -6,7 +6,7 @@ export type DoctorProfileProps = {
   // Hero
   eyebrow?: string;           // "— Dr. Jill Martenson —" — optional; usually omitted because it duplicates the H1
   name: string;               // "Dr. Jill A. Martenson, DDS"
-  role: string;               // "Owner & Lead Dentist · Cosmetic Dentistry"
+  role: string;               // "Co-owner · Cosmetic & General Dentistry"
   intro: string;              // 1-2 sentence bio summary
   photo: string;              // /team/dr-martenson.webp
   photoAlt: string;

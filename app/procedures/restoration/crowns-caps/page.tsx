@@ -63,7 +63,7 @@ export default function CrownsCapsPage() {
               body: [
                 "For many crowns we do not need a dental laboratory at all. We take a 3D digital scan of the prepared tooth, design the crown on screen, and mill it from a solid ceramic block in our own office while you wait. The crown that goes in is the permanent one — there is no temporary to look after and nothing to come back for.",
                 "Start to finish this takes about 1.5 to 2 hours in a single appointment. It also means one round of numbing instead of two, and no risk of a temporary crown coming loose in the meantime.",
-                "Not every case suits same-day milling. Larger reconstructions, and front teeth where we are matching subtle colour and translucency across several teeth, are often better served by a dental laboratory. We will tell you which route we recommend for your tooth, and why, before any treatment starts.",
+                "Not every case suits same-day milling. Larger reconstructions, and front teeth where we are matching subtle color and translucency across several teeth, are often better served by a dental laboratory. We will tell you which route we recommend for your tooth, and why, before any treatment starts.",
               ],
             },
             {
@@ -99,7 +99,7 @@ export default function CrownsCapsPage() {
             },
             {
               q: "Can I get my crown in one visit?",
-              a: "For many crowns, yes. With CEREC® we scan, design, and mill the permanent crown in our office and bond it the same day — about 1.5 to 2 hours, one appointment, no temporary. If your case is better suited to a dental laboratory (larger reconstructions, or front teeth where we are matching colour across several teeth), the lab route takes two appointments about 2 weeks apart, and you wear a temporary in between. We will tell you which we recommend for your tooth before treatment starts.",
+              a: "For many crowns, yes. With CEREC® we scan, design, and mill the permanent crown in our office and bond it the same day — about 1.5 to 2 hours, one appointment, no temporary. If your case is better suited to a dental laboratory (larger reconstructions, or front teeth where we are matching color across several teeth), the lab route takes two appointments about 2 weeks apart, and you wear a temporary in between. We will tell you which we recommend for your tooth before treatment starts.",
             },
             {
               q: "Will a crown feel different from my natural tooth?",

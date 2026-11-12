@@ -63,7 +63,7 @@ export default function TreatmentPage() {
             {
               title: "When pockets don't heal",
               body: [
-                "If the pockets do not heal after scaling and root planing, periodontal surgery may be needed to reduce pocket depths — making teeth easier to clean and slowing further disease. We may also refer you to a periodontist (a specialist of the gums and supporting bone) for advanced surgical care.",
+                "If the pockets do not heal after scaling and root planing, periodontal surgery may be needed to reduce pocket depths — making teeth easier to clean and slowing further disease. For advanced surgical care, you may also see Dr. Cangini, our periodontist (a specialist of the gums and supporting bone).",
               ],
             },
           ]}
@@ -78,7 +78,7 @@ export default function TreatmentPage() {
             },
             {
               q: "What does 'stage' mean in periodontal disease?",
-              a: "Stages describe how advanced the disease is: Stage I is the mildest (1–2mm bone loss), Stage IV is the most severe (>5mm bone loss with potential tooth mobility). We also describe disease as gingivitis (just gum inflammation, no bone involvement) or periodontitis (bone loss has started). Treatment intensity scales with stage.",
+              a: "Stages describe how advanced the disease is: Stage I is the mildest (1–2mm of attachment loss), Stage IV is the most severe (5mm or more, with tooth loss or loose teeth). We also describe disease as gingivitis (just gum inflammation, no bone involvement) or periodontitis (bone loss has started). Treatment intensity scales with stage.",
             },
             {
               q: "Why is scaling and root planing done one quadrant at a time?",

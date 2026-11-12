@@ -55,7 +55,7 @@ const GALLERIES: GalleryCard[] = [
     image: "/img/cases/bonding/case1-after.jpg",
     imageAlt: "Cosmetic bonding case",
     title: "Cosmetic Bonding",
-    blurb: "Chips, gaps and worn edges rebuilt in tooth-coloured composite — usually in one visit.",
+    blurb: "Chips, gaps and worn edges rebuilt in tooth-colored composite — usually in one visit.",
     count: "3 cases",
   },
   {
@@ -108,11 +108,11 @@ const GALLERIES: GalleryCard[] = [
   },
   {
     href: "/smile-gallery/composite-fillings",
-    image: "/img/cosmetic/bonding.png",
+    image: "/img/cosmetic/composite-filling-curing.jpg",
     imageAlt: "Composite filling case",
     title: "Composite Fillings",
     blurb: "Tooth-colored fillings that blend invisibly — for chips, decay, and small reshaping.",
-    count: "Multiple cases",
+    count: "Case study",
   },
 ];
 

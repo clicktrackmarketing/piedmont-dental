@@ -174,7 +174,7 @@ export default function SurgeryPage() {
                   <span>Learn more →</span>
                 </Link>
                 <Link
-                  href="/procedures/restoration/composite-fillings"
+                  href="/resources/cosmetic-bonding"
                   className="surgery-related-card"
                 >
                   <h3>Composite Bonding</h3>

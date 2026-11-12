@@ -121,4 +121,4 @@ The best oral hygiene routine is one that is effective, comfortable, and sustain
 
 It's not about choosing one over the other—it's about finding what works best for you. Both tools can maintain healthy teeth and gums when combined with regular professional cleanings and checkups.
 
-Call (510) 956-6475 or schedule your visit online.
+Call (510) 350-3937 or schedule your visit online.
