@@ -15,18 +15,18 @@ Porcelain veneers are one of the most transformative cosmetic dental procedures 
 
 This 2026 guide covers everything Oakland and Piedmont-area patients need to know about veneer costs, what drives price differences, how to evaluate value versus price, and what financing options exist.
 
-## Average Veneer Costs in Oakland and the East Bay (2026)
+## Veneer Costs at Our Practice (2026)
 
-Based on current market data in the Oakland, Piedmont, and greater East Bay area, here is what patients can expect to pay for porcelain veneers:
+Here is what veneers cost at Piedmont Dental By Design, alongside typical East Bay pricing for options we don't publish a fee for:
 
-| Veneer Type | Estimated Cost Per Tooth (2026) |
+| Veneer Type | Cost Per Tooth (2026) |
 | --- | --- |
-| Porcelain / Ceramic Veneers | $1,200 — $2,500 |
-| No-Prep Veneers (e.g., Lumineers) | $900 — $2,000 |
-| Composite Resin Veneers | $300 — $700 |
-| Full Smile (8—10 veneers) | $10,000 — $25,000+ |
+| Porcelain / Ceramic Veneers, our fee | From $2,379 |
+| No-Prep Veneers (e.g., Lumineers) | Quoted at consultation |
+| Composite Resin Veneers (East Bay market) | $300 — $700 |
+| Full Smile (8—10 porcelain veneers), our fee | From about $19,000 (8 veneers at $2,379+ each) |
 
-These are estimates. Your actual quote will depend on your specific case, the number of teeth involved, and any preparatory work needed. A consultation at Piedmont Dental By Design will give you a precise, no-obligation estimate.
+Porcelain fees depend on case complexity, the lab used, and how much shape design is involved; current fees are on the [Porcelain Veneers](/procedures/cosmetic-dentistry/porcelain-veneers) page. Your actual quote will depend on your specific case, the number of teeth involved, and any preparatory work needed. A consultation at Piedmont Dental By Design will give you a precise, no-obligation estimate.
 
 ## What Factors Affect Veneer Pricing?
 
@@ -75,7 +75,7 @@ For patients on a tighter budget, composite veneers or dental bonding offer a lo
 
 | Factor | Porcelain Veneers | Composite / Bonding |
 | --- | --- | --- |
-| Cost Per Tooth | $1,200—$2,500 | $300—$700 |
+| Cost Per Tooth | From $2,379 (our fee) | $300—$700 (East Bay market) |
 | Lifespan | 10—20 years | 5—10 years |
 | Stain Resistance | Excellent | Moderate |
 | Natural Appearance | Superior | Good |

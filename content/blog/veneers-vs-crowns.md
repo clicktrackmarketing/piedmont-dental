@@ -145,15 +145,15 @@ For the smallest chips there is a third option that is neither of these: direct 
 
 ## What Do They Cost?
 
-Fees vary widely by region, by material, by laboratory and by how much preparatory work the tooth needs, so treat every published figure as a market range rather than a quote. Only an examination produces a real number for your tooth.
+Fees vary by material, by laboratory and by how much preparatory work the tooth needs, so only an examination produces a real number for your tooth. These are our current fees per tooth:
 
-| | Published market range, per tooth | Source |
-| --- | --- | --- |
-| Porcelain laminate veneer | $1,180 – $2,185 without insurance | Delta Dental |
-| Permanent crown | $1,100 – $2,000 out of network | Delta Dental |
-| Crown, wider market compilation | $800 – $2,500 | Aggregated market ranges |
+| | Our fee, per tooth |
+| --- | --- |
+| Porcelain veneer | From $2,379 |
+| Porcelain crown, back tooth | $1,949 – $2,351 |
+| Porcelain crown, front tooth | From $2,379 |
 
-Two things are worth noticing. The ranges overlap almost completely, so cost is rarely what decides between them. And the published crown figures disagree with each other: [Delta Dental](https://www.deltadental.com/protect-my-smile/procedures/dental-crowns/treatment-cost/) puts an out-of-network permanent crown at $1,100 to $2,000, while broader market compilations run from around $800 to $2,500. Both are shown rather than averaged, because an average of two ranges is a number nobody actually charges. Bay Area fees run above these national figures. Current fees are on the [Porcelain Veneers](/procedures/cosmetic-dentistry/porcelain-veneers) and [Crowns](/procedures/restoration/crowns-caps) pages.
+The thing worth noticing is that the two sit close together, especially on a front tooth, so cost is rarely what decides between them. Current fees are on the [Porcelain Veneers](/procedures/cosmetic-dentistry/porcelain-veneers) and [Crowns](/procedures/restoration/crowns-caps) pages.
 
 For direction of travel, the ADA Health Policy Institute's *State of the U.S. Dental Economy* reports dental fees rising roughly 3–4% year over year, broadly in step with general inflation. A fuller local breakdown for veneers sits in our [East Bay veneer cost guide](/blog/veneers-cost-oakland-2026).
 

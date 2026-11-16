@@ -70,8 +70,8 @@ Implants offer advantages in bone preservation, natural appearance, durability, 
 
 ## Frequently Asked Questions
 
-**Cost in the East Bay**
-A single implant typically ranges from $3,000-$5,500, including post, abutment, and crown. Some insurance covers portions of treatment.
+**Cost at Our Practice**
+A single implant starts at $8,474, including post, abutment, and crown. Cases that need bone grafting or a sinus lift cost more. Some insurance covers portions of treatment.
 
 **Surgical Pain**
 Procedures use local anesthesia, ensuring no pain during placement. Mild soreness afterward is normal and manageable with over-the-counter pain relievers.

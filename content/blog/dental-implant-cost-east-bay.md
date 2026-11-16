@@ -11,7 +11,7 @@ date: 2026-09-15
 
 ## Quick Answer
 
-A single dental implant in the East Bay typically runs between $4,500 and $7,500 all-in for the three parts you are actually paying for: the implant post, the abutment, and the crown. Published guides disagree at the top end — one Berkeley guide caps it at $6,500, a California-wide guide puts the Bay Area at $7,500 — and that spread is itself worth knowing before you compare quotes. Bay Area pricing generally sits above the national average, and the largest single variable is whether you need [bone grafting](/procedures/periodontal-services/bone-grafting) first. No honest quote exists before an examination and a 3D scan, because the bone is what decides the plan. Bay Area fees run above these national figures. Current fees are on the [Dental Implants page](/procedures/restoration/dental-implants).
+At Piedmont Dental By Design, a single dental implant starts at $8,474 all-in for the three parts you are actually paying for: the implant post, the abutment, and the crown. The largest single variable on top of that is whether you need [bone grafting](/procedures/periodontal-services/bone-grafting) or a sinus lift first; those cases are priced individually. No honest quote exists before an examination and a 3D scan, because the bone is what decides the plan. Current fees are on the [Dental Implants page](/procedures/restoration/dental-implants).
 
 ### Key Takeaways
 
@@ -32,16 +32,16 @@ This guide breaks the number apart so you can read your own quote properly, unde
 
 An implant is three separate manufactured components, plus the surgical and restorative chair time to place and fit them. Understanding the split is what allows you to compare two quotes honestly, because a practice quoting only the post is not quoting the same thing as a practice quoting the finished tooth.
 
-| Component | What It Does | Typical East Bay Range |
-| --- | --- | --- |
-| Implant post (fixture) | Titanium screw placed in the jawbone, acting as the replacement root | $1,800 — $2,500 |
-| Abutment | Connector that screws into the post and carries the visible tooth | $400 — $700 |
-| Crown | The porcelain tooth you see and chew with | $1,500 — $2,500 |
-| **Complete single implant** | **All three, straightforward case** | **$3,700 — $5,700** |
+| Component | What It Does |
+| --- | --- |
+| Implant post (fixture) | Titanium screw placed in the jawbone, acting as the replacement root |
+| Abutment | Connector that screws into the post and carries the visible tooth |
+| Crown | The porcelain tooth you see and chew with |
+| **Complete single implant, our fee** | **All three, straightforward case: from $8,474** |
 
-Those component ranges sum to roughly $3,700 to $5,700 for the parts alone. Published guides then quote a higher all-in figure because a real case includes chair time, imaging and follow-up: one Berkeley guide puts a complete single implant at $4,500 to $6,500, while a California-wide guide puts the Bay Area specifically at $5,000 to $7,500. Both are honest, and the gap between them is exactly why an itemized written plan matters more than a headline number. The only figure that means anything is the one produced after an examination. The [American Dental Association's MouthHealthy guide](https://www.mouthhealthy.org/all-topics-a-z/implants) describes implants as being "made up of titanium and other materials that are compatible with the human body," and you can see how the practice describes the procedure itself on the [dental implants page](/procedures/restoration/dental-implants), along with current fees, which sit above the national figures in this table.
+Our fee covers all three components plus the surgical and restorative chair time, imaging and follow-up that a real case includes. That is why an itemized written plan matters more than a headline number, and why the only figure that means anything is the one produced after an examination. The [American Dental Association's MouthHealthy guide](https://www.mouthhealthy.org/all-topics-a-z/implants) describes implants as being "made up of titanium and other materials that are compatible with the human body," and you can see how the practice describes the procedure itself on the [dental implants page](/procedures/restoration/dental-implants), along with current fees.
 
-One practical consequence is worth carrying into any consultation. When a headline price looks dramatically lower than the range above, check which of the three components it actually covers. A quote for "an implant" that includes only the post is not comparable to a quote that includes the finished crown, and the gap between them is usually most of the cost.
+One practical consequence is worth carrying into any consultation. When a headline price looks dramatically lower than a complete implant, check which of the three components it actually covers. A quote for "an implant" that includes only the post is not comparable to a quote that includes the finished crown, and the gap between them is usually most of the cost.
 
 ## Why Does the Price of a Dental Implant Vary So Much?
 
@@ -57,7 +57,7 @@ A front tooth is an aesthetic problem as well as a structural one. Matching the 
 
 ### 3. How Many Implants You Are Placing
 
-Per-tooth cost typically falls when several implants are placed during one surgical visit, because the fixed costs of the procedure are shared across them. Multiple adjacent implants often land in the $3,500 to $5,500 per-tooth range rather than the single-tooth range, which is why replacing three teeth rarely costs three times as much as replacing one.
+Per-tooth cost typically falls when several implants are placed during one surgical visit, because the fixed costs of the procedure are shared across them. We price multiple-implant cases individually, and the per-tooth figure usually comes in below the single-tooth fee, which is why replacing three teeth rarely costs three times as much as replacing one.
 
 ### 4. Complexity and Number of Appointments
 
@@ -67,9 +67,11 @@ Extraction first, a healing period, a temporary tooth, or a sinus lift near the 
 
 Replacing every tooth in an arch is priced completely differently from replacing one, because you are no longer buying one implant per tooth. Four to six implants carry a single fixed bridge, which is why the per-tooth economics improve dramatically even though the headline number is larger.
 
-| Option | What It Is | Typical Range |
+We quote full-arch cases individually after a 3D scan, so the figures below are published market ranges for comparing quotes, not our fees.
+
+| Option | What It Is | Published Market Range |
 | --- | --- | --- |
-| Multiple adjacent implants | Individual implants placed in one surgical visit | $3,500 — $5,500 per tooth |
+| Multiple adjacent implants | Individual implants placed in one surgical visit | Priced individually; per tooth usually below the single-tooth fee |
 | Implant-supported denture (overdenture) | A denture that clips onto 2 — 4 implants, still removable | $6,000 — $15,000 per arch |
 | All-on-4 / All-on-6, acrylic hybrid | Fixed full-arch bridge on 4 — 6 implants | $15,000 — $25,000 per arch |
 | All-on-4 / All-on-6, zirconia | Same, in a harder and more lifelike material | $25,000 — $38,000 per arch |
@@ -90,7 +92,9 @@ Full-arch quotes are frequently given as a clean per-arch figure that assumes a 
 
 The three components are the core of the cost, but they are rarely the whole of it. These items appear routinely and are worth anticipating rather than being surprised by.
 
-| Line Item | When It Applies | Typical Range |
+These are also published market ranges rather than our fees; your written plan prices each item that applies to you.
+
+| Line Item | When It Applies | Published Market Range |
 | --- | --- | --- |
 | Consultation and 3D imaging | Almost always, for planning | $200 — $400 (sometimes included) |
 | Simple extraction | The tooth is still in place | $150 — $300 |
@@ -198,7 +202,7 @@ A practice that answers all six plainly is giving you what you need to compare q
 
 <div class="blog-faq-list">
 <details class="blog-faq"><summary>How much does a single dental implant cost in the East Bay?</summary>
-<p>Published guides put it between $4,500 and $7,500 all-in for the post, abutment and crown, with Bay Area pricing running above national averages. Bone grafting, where needed, is additional and is the most common reason two quotes differ. Current fees are on the <a href="/procedures/restoration/dental-implants">Dental Implants page</a>.</p>
+<p>At our practice a single implant starts at $8,474 all-in for the post, abutment and crown. Bone grafting or a sinus lift, where needed, is additional and is the most common reason two quotes differ. Current fees are on the <a href="/procedures/restoration/dental-implants">Dental Implants page</a>.</p>
 </details>
 
 <details class="blog-faq"><summary>Why is my quote higher than the price I saw advertised?</summary>
@@ -210,7 +214,7 @@ A practice that answers all six plainly is giving you what you need to compare q
 </details>
 
 <details class="blog-faq"><summary>Are All-on-4 implants cheaper than replacing every tooth individually?</summary>
-<p>Substantially, yes. A fixed full-arch bridge on four to six implants typically runs $15,000 to $38,000 per arch depending on material, against $60,000 to $90,000 or more for 16 to 20 individual implants. The material matters more than the implant count: an acrylic hybrid arch and a zirconia arch can be ten thousand dollars apart.</p>
+<p>Substantially, yes. Published market ranges put a fixed full-arch bridge on four to six implants at $15,000 to $38,000 per arch depending on material, against $60,000 to $90,000 or more for 16 to 20 individual implants. The material matters more than the implant count: an acrylic hybrid arch and a zirconia arch can be ten thousand dollars apart.</p>
 </details>
 
 <details class="blog-faq"><summary>What is not included in a full-arch implant quote?</summary>

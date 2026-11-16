@@ -11,7 +11,7 @@ date: 2026-09-21
 
 ## Quick Answer
 
-Comprehensive Invisalign® for an adult typically runs $5,000 to $8,000, with the US average around $5,700; shorter Express or Lite treatment for minor movement runs roughly $1,800 to $3,000. Most adult cases are quoted at 12 to 18 months. Orthodontic coverage usually sits under a separate **lifetime** maximum of $1,000 to $3,000 rather than your annual dental maximum, which is the single most misunderstood part of the bill.
+At Piedmont Dental By Design, most Invisalign® cases run $4,500 to $7,500, depending on complexity: how many trays, total treatment length, and whether refinements are needed. Shorter Express or Lite treatment for minor movement is quoted individually after your scan. Most adult cases are quoted at 12 to 18 months. Orthodontic coverage usually sits under a separate **lifetime** maximum of $1,000 to $3,000 rather than your annual dental maximum, which is the single most misunderstood part of the bill.
 
 ### Key Takeaways
 
@@ -31,12 +31,12 @@ This guide sets out what each tier costs, what is and is not included, how ortho
 
 Treatment is sold in tiers, and the tier is what your quote is really buying.
 
-| Tier | Suited To | Typical Range | Common Average |
-| --- | --- | --- | --- |
-| Express / Lite | Minor crowding, spacing, or relapse after braces | $1,800 — $3,000 | ~$2,400 |
-| Comprehensive (adult) | Moderate to complex, unlimited trays | $5,000 — $8,000 | ~$5,700 |
+| Tier | Suited To | Our Fee |
+| --- | --- | --- |
+| Express / Lite | Minor crowding, spacing, or relapse after braces | Quoted after your scan |
+| Comprehensive (adult) | Moderate to complex, unlimited trays | $4,500 — $7,500 for most cases |
 
-The US average across all cases sits around $5,100, with Bay Area pricing generally running above national figures in line with the rest of dentistry. Treat these as market ranges rather than a price list — only an examination and a scan produce a real number.
+Where your case falls in that range depends on its complexity, and only an examination and an iTero scan produce a real number. We give you a complete written quote after the consultation, and current fees are on the [Invisalign page](/procedures/cosmetic-dentistry/invisalign).
 
 ### Which Tier Does Your Quote Actually Buy?
 
@@ -134,7 +134,7 @@ Expect to wear retainers nightly, indefinitely. Confirm before you sign whether 
 
 <div class="blog-faq-list">
 <details class="blog-faq"><summary>How much does Invisalign cost for an adult in the East Bay?</summary>
-<p>Comprehensive adult treatment typically runs $5,000 to $8,000, averaging around $5,700 nationally, with Bay Area pricing generally above national figures. Minor Express or Lite cases run roughly $1,800 to $3,000. The tier you are quoted matters more than the practice you ask.</p>
+<p>At our practice most cases run $4,500 to $7,500, depending on how many trays you need, total treatment length, and whether refinements are needed. Minor Express or Lite cases are quoted individually after your scan. The tier you are quoted matters more than the practice you ask.</p>
 </details>
 
 <details class="blog-faq"><summary>Is Invisalign faster than braces?</summary>
