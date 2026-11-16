@@ -45,9 +45,9 @@ Labelled in the posts as market ranges, not our fees:
 - **Composite bonding / composite veneers** in the two veneer posts.
 - **Insurance figures** (PPO annual maximums, the orthodontic lifetime maximum) and the Waterpik device price.
 
-## Not fixable in this repo: BabyLoveGrowth posts
+## BabyLoveGrowth posts
 
-These two live posts come from the BabyLoveGrowth feed (`lib/blog-remote.ts`), not from `content/blog`. Both state wrong numbers as **"our published fee"**, so they need editing in the BabyLoveGrowth dashboard:
+These two live posts come from the BabyLoveGrowth feed, not from `content/blog`. Both state wrong numbers as **"our published fee"**. `lib/blog-remote.ts` (`FEE_FIXES`) now rewrites those exact ranges for these two slugs only, in the body, excerpt and FAQ JSON-LD, so the site shows the correct fees once deployed. The articles should still be corrected in the BabyLoveGrowth dashboard, because BLG may syndicate the original text elsewhere. After that, the override simply stops matching.
 
 | Post | Says (as "our published fee") | Should be |
 | --- | --- | --- |

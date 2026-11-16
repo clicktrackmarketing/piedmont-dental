@@ -65,7 +65,7 @@ Scope: every page in the sitemap (100 URLs), checked for typos, inconsistencies,
 ## Still open: needs the client or the team
 
 1. **"Since 1996"**: Dr. Martenson joined Dr. Herrero's existing practice in 1997. What does 1996 refer to (her DDS, or the practice's founding)? It is used as the founding date in schema and hero copy.
-2. **Blog prices contradict the procedure-page fees.** Examples:
+2. **RESOLVED 2026-11-16, see `docs/blog-prices-2026-11-16.md`.** Daniel chose to match the blog to the practice fees rather than ask the client. **Blog prices contradict the procedure-page fees.** Examples:
    - implants: $3,000–5,500 in a post vs from $8,474 on the procedure page
    - veneers: $1,200–2,500 vs from $2,379
    - CEREC crowns: $1,200–1,800 vs $1,949–2,351
