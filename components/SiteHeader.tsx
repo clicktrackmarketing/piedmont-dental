@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import SocialLinks from "@/components/SocialLinks";
 
 const ABOUT_DROPDOWN = [
   { href: "/about/dr-martenson", label: "Dr. Jill Martenson" },
@@ -431,6 +432,11 @@ export default function SiteHeader() {
             <Link href="/blog" className="mobile-menu-link">Blog</Link>
             <Link href="/faqs" className="mobile-menu-link">FAQs</Link>
             <Link href="/contact" className="mobile-menu-link">Contact</Link>
+          </div>
+
+          <div className="mobile-menu-section">
+            <span className="mobile-menu-heading">Follow us</span>
+            <SocialLinks variant="menu" showLabel={false} />
           </div>
 
           <div className="mobile-menu-cta">

@@ -1,3 +1,5 @@
+import SocialLinks from "@/components/SocialLinks";
+
 type DayRow = { day: string; hours: string; closed?: boolean };
 
 const SCHEDULE: DayRow[] = [
@@ -74,6 +76,7 @@ export default function ContactDetails() {
               <a href="tel:5103503937">(510) 350-3937</a> or{" "}
               <a href="#form">send a message</a>.
             </p>
+            <SocialLinks variant="card" />
           </div>
         </div>
       </div>

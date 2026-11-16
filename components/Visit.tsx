@@ -1,3 +1,5 @@
+import SocialLinks from "@/components/SocialLinks";
+
 const SERVICE_AREAS = [
   "Piedmont",
   "Oakland",
@@ -87,6 +89,11 @@ export default function Visit() {
                 Or text the practice — we usually reply within an hour during open
                 hours.
               </p>
+            </article>
+
+            <article className="visit-card">
+              <div className="lbl">Follow us</div>
+              <SocialLinks variant="card" showLabel={false} />
             </article>
           </div>
         </div>
