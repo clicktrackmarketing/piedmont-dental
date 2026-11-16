@@ -1,3 +1,5 @@
+import SocialLinks from "@/components/SocialLinks";
+
 const cols = [
   {
     heading: "Care",
@@ -61,6 +63,7 @@ export default function SiteFooter() {
             <br />
             (510) 350-3937 · Mon–Thu
           </p>
+          <SocialLinks variant="footer" />
         </div>
         {cols.map((col) => (
           <div key={col.heading}>
@@ -86,20 +89,6 @@ export default function SiteFooter() {
           <a href="/privacy-policy-2">Privacy</a>
           <a href="/notice-of-privacy-practices">Notice of Privacy Practices</a>
         </nav>
-        <div className="footer-social">
-          <a href="https://www.instagram.com/piedmontdentalbydesign/" aria-label="Instagram">
-            IG
-          </a>
-          <a href="https://www.facebook.com/piedmontdentalbydesign/" aria-label="Facebook">
-            FB
-          </a>
-          <a href="https://www.youtube.com/" aria-label="YouTube">
-            YT
-          </a>
-          <a href="https://www.google.com/maps" aria-label="Google">
-            G
-          </a>
-        </div>
         <p className="footer-credit">
           <a
             href="https://clicktrackmarketing.com/?utm_source=piedmont-dental&utm_medium=referral&utm_campaign=footer-credit"

@@ -222,6 +222,110 @@ a { color: inherit; text-decoration: none; }
   text-underline-offset: 3px;
 }
 .announce a:hover { text-decoration-color: var(--teal); }
+/* The message stays optically centred on the full bar; the "Follow us" group
+   is pinned to the right edge so it never pushes the message off centre. */
+.announce { position: relative; }
+.announce-msg { margin: 0; }
+
+/* ============================================================
+   Social icon groups (components/SocialLinks.tsx, links in lib/social.ts)
+   ============================================================ */
+.social { display: flex; align-items: center; gap: 12px; }
+.social-label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  white-space: nowrap;
+}
+/* `.social ul.social-list` / `.social .social-list > li` out-rank the generic
+   `.footer-inner ul` (column stack) and `.contact-schedule li` (bordered rows)
+   rules that would otherwise turn the icon row into a vertical list. */
+.social ul.social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.social .social-list > li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.social-link {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.social-link svg { display: block; }
+.social-link:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+/* Announcement bar (dark strip on top of the nav, every page) */
+.social--announce {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  gap: 10px;
+}
+.social--announce .social-label { color: rgba(250, 246, 239, 0.55); font-size: 10px; }
+.social--announce .social-list { gap: 2px; }
+.announce .social-link {
+  width: 26px;
+  height: 26px;
+  color: rgba(250, 246, 239, 0.75);
+  text-decoration: none;
+}
+.announce .social-link svg { width: 14px; height: 14px; }
+.announce .social-link:hover { color: var(--teal); }
+/* Under ~1180px the centred message needs the full width; the mobile drawer
+   carries its own "Follow us" group from 1099px down. */
+@media (max-width: 1179px) {
+  .social--announce .social-label { display: none; }
+}
+@media (max-width: 1099px) {
+  .social--announce { display: none; }
+}
+
+/* Footer (dark ink background) */
+.social--footer { margin-top: 20px; flex-direction: column; align-items: flex-start; gap: 10px; }
+.social--footer .social-label { color: rgba(250, 246, 239, 0.45); }
+.social--footer .social-link {
+  border: 1px solid rgba(250, 246, 239, 0.2);
+  color: rgba(250, 246, 239, 0.7);
+}
+.social--footer .social-link:hover { background: var(--teal); border-color: var(--teal); color: #fff; }
+
+/* Mobile drawer + light cards (contact page, homepage Visit) */
+.social--menu .social-link,
+.social--card .social-link {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  color: var(--ink);
+}
+.social--menu .social-link svg,
+.social--card .social-link svg { width: 18px; height: 18px; }
+.social--menu .social-link:hover,
+.social--card .social-link:hover { background: var(--teal); border-color: var(--teal); color: #fff; }
+.social--card .social-label { color: var(--ink-faint); }
+.contact-schedule .social--card {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
 
 /* ============================================================
    Site header (sticky)
@@ -13356,20 +13460,6 @@ footer.site-footer {
   transition: color 0.18s ease;
 }
 .footer-legal a:hover { color: var(--paper); }
-.footer-social { display: flex; gap: 14px; }
-.footer-social a {
-  width: 32px;
-  height: 32px;
-  border: 1px solid rgba(250, 246, 239, 0.2);
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  color: rgba(250, 246, 239, 0.65);
-  transition: all 0.2s ease;
-}
-.footer-social a:hover { background: var(--teal); border-color: var(--teal); color: white; }
 .footer-credit {
   margin: 0;
   font-size: 11px;
