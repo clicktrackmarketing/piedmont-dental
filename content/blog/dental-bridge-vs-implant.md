@@ -41,7 +41,7 @@ A bridge is a run of joined crowns. The middle one fills the gap; the ones eithe
 | Involves neighboring teeth | No | Yes — both are filed down |
 | Surgery required | Yes, minor | No |
 | Typical time to finish | 3 — 6 months | 2 — 3 weeks |
-| Typical East Bay cost | $4,500 — $7,500 | $2,000 — $4,500 |
+| Our fee | From $8,474 (single tooth) | $5,847 — $6,651 (three-unit) |
 | Cleaned like | A natural tooth | Requires threading under the span |
 
 ## What Does Each One Cost, Now and Later?
@@ -50,7 +50,7 @@ Price is the first question most people ask and the least decisive one, but it d
 
 ### The Up-Front Difference
 
-Up front, a bridge is the cheaper option, generally by two to three thousand dollars. A single implant in the East Bay commonly lands between $4,500 and $7,500 all-in, while a conventional bridge more often sits between $2,000 and $4,500 depending on the number of units and the material. Bay Area fees run above these figures. Current fees are on the [Fixed Bridges](/procedures/restoration/fixed-bridges) and [Dental Implants](/procedures/restoration/dental-implants) pages. Over a longer horizon the comparison narrows and can reverse, because the two are replaced on different schedules.
+Up front, a bridge is the cheaper option, generally by around two thousand dollars or more. At our practice a single implant (post, abutment and crown) starts at $8,474, while a typical three-unit bridge is $5,847 to $6,651; larger bridges and cases that need bone grafting cost more. Current fees are on the [Fixed Bridges](/procedures/restoration/fixed-bridges) and [Dental Implants](/procedures/restoration/dental-implants) pages. Over a longer horizon the comparison narrows and can reverse, because the two are replaced on different schedules.
 
 ### The Ten-Year View
 

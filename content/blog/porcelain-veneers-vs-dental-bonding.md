@@ -51,7 +51,7 @@ Bonding is often called the "sculptor's approach" to cosmetic dentistry because 
 | Longevity | 10—20 years | 5—10 years |
 | Stain Resistance | Excellent | Moderate |
 | Tooth Prep Required | Minimal enamel removal | Usually none |
-| Cost (per tooth) | $1,000—$2,500+ | $300—$600 |
+| Cost (per tooth) | From $2,379 (our fee) | $300—$600 (East Bay market) |
 | Reversibility | Not reversible | Reversible |
 | Best For | Comprehensive smile makeover | Single tooth repairs |
 | Strength | Very strong | Moderately strong |
@@ -106,7 +106,7 @@ Bonding requires little to no preparation. Your dentist selects a composite resi
 
 ## Cost Considerations in the East Bay
 
-Cosmetic dentistry is an investment, and pricing varies across the East Bay based on the complexity of your case and the materials used. In the Oakland and Piedmont area, porcelain veneers typically range from $1,000 to $2,500 per tooth, while composite bonding ranges from $300 to $600 per tooth. Most cosmetic procedures are not covered by dental insurance, but many practices, including ours, offer flexible financing options through third-party lenders.
+Cosmetic dentistry is an investment, and pricing varies across the East Bay based on the complexity of your case and the materials used. At our practice, porcelain veneers start at $2,379 per tooth (current fees are on the [Porcelain Veneers](/procedures/cosmetic-dentistry/porcelain-veneers) page), while composite bonding in the Oakland and Piedmont area typically ranges from $300 to $600 per tooth. Most cosmetic procedures are not covered by dental insurance, but many practices, including ours, offer flexible financing options through third-party lenders.
 
 We encourage you to schedule a consultation so we can give you an accurate, personalized estimate based on your specific needs.
 

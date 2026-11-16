@@ -40,7 +40,7 @@ Modern braces are far sleeker than the "railroad tracks" of decades past, and ce
 | Comfort | Smooth plastic trays | Occasional wire irritation |
 | Oral Hygiene | Easier (remove to brush) | More effort required |
 | Dietary Restrictions | None | Avoid hard/sticky foods |
-| Cost | $4,000—$8,500 | $3,000—$7,500 |
+| Cost | $4,500—$7,500 (our fee, most cases) | $3,000—$7,500 (East Bay market) |
 | Compliance Required | High (22 hrs/day) | None (fixed in place) |
 
 ## The Adult Invisalign Experience: What East Bay Patients Say
@@ -67,12 +67,14 @@ Despite Invisalign's many advantages, traditional braces remain the superior cho
 
 ## Cost of Invisalign vs. Braces in the East Bay (2026)
 
-| Treatment Option | Estimated Cost Range (East Bay, 2026) |
+| Treatment Option | Cost (2026) |
 | --- | --- |
-| Invisalign Comprehensive | $4,500 — $8,500 |
-| Invisalign Lite (minor cases) | $3,000 — $5,000 |
-| Traditional Metal Braces | $3,000 — $6,500 |
-| Ceramic (Tooth-Colored) Braces | $3,500 — $7,500 |
+| Invisalign, our fee | $4,500 — $7,500 for most cases |
+| Invisalign Lite (minor cases), our fee | Quoted after your scan |
+| Traditional Metal Braces (East Bay market) | $3,000 — $6,500 |
+| Ceramic (Tooth-Colored) Braces (East Bay market) | $3,500 — $7,500 |
+
+We offer Invisalign® rather than braces, so the braces figures are typical East Bay ranges for comparison. Current Invisalign fees are on the [Invisalign page](/procedures/cosmetic-dentistry/invisalign).
 
 Both Invisalign and braces may be partially covered by dental plans that include orthodontic benefits. We recommend confirming your coverage before scheduling a consultation. Most practices in the East Bay offer monthly payment plans to make treatment accessible.
 

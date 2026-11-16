@@ -86,13 +86,13 @@ If you are updating an old porcelain-fused-to-metal crown with a grey metal marg
 
 ## Cost of CEREC Crowns in Oakland (2026)
 
-| Crown Type | Estimated Cost in Oakland (2026) |
+| Crown Type | Our Fee (2026) |
 | --- | --- |
-| CEREC / Same-Day Crown | $1,200 — $1,800 per tooth |
-| Traditional Lab Crown | $1,000 — $1,700 per tooth |
+| Porcelain crown, back tooth (same-day CEREC or lab-made) | $1,949 — $2,351 per tooth |
+| Porcelain crown, front tooth | From $2,379 per tooth |
 | Insurance Coverage | Varies — typically 50% of allowed amount |
 
-CEREC crowns are often priced similarly to traditional lab crowns, sometimes slightly higher due to the technology investment, but the elimination of a second visit and temporary crown can offset this in terms of time and convenience. Most dental insurance plans that cover crowns will apply benefits to CEREC crowns similarly to traditional crowns.
+At our practice a CEREC crown is priced the same as a lab-made porcelain crown; front teeth cost more because they take extra shade-matching and shaping. Current fees are on the [Crowns (Caps)](/procedures/restoration/crowns-caps) page. The elimination of a second visit and temporary crown is the real difference, in time and convenience. Most dental insurance plans that cover crowns will apply benefits to CEREC crowns similarly to traditional crowns.
 
 ## Caring for Your CEREC Crown
 

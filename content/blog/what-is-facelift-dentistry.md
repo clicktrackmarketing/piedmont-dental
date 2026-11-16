@@ -131,15 +131,15 @@ The other caution is sequencing. A responsible plan tests a new bite before comm
 
 ## What Does Full-Mouth Rejuvenation Cost?
 
-There is no single price, because there is no single procedure. What follows are illustrative market ranges drawn from published guides — not this practice's figures and not an ADA fee schedule. Dental fees have been rising roughly 3 to 4% year over year, about in step with general inflation, according to the ADA Health Policy Institute's *State of the U.S. Dental Economy*. Only an examination produces a number that means anything, and any written plan should itemize what is included.
+There is no single price, because there is no single procedure. What follows are our fees for the individual pieces we publish, plus an illustrative market range for full-arch work, which we quote case by case. Dental fees have been rising roughly 3 to 4% year over year, about in step with general inflation, according to the ADA Health Policy Institute's *State of the U.S. Dental Economy*. Only an examination produces a number that means anything, and any written plan should itemize what is included.
 
-| Element | Illustrative US market range | Note |
+| Element | Cost | Note |
 | --- | --- | --- |
-| Single porcelain crown | $800 — $2,500 per tooth | Varies widely by material |
-| Single dental implant, all-in | $4,500 — $7,500 | Post, abutment and crown together |
-| Fixed full-arch bridge on 4 — 6 implants | $15,000 — $38,000 per arch | Acrylic hybrid at the low end, zirconia at the high end |
+| Single porcelain crown | $1,949 — $2,351 per back tooth; front teeth from $2,379 (our fee) | Front teeth take more shade-matching and shaping |
+| Single dental implant, all-in | From $8,474 (our fee) | Post, abutment and crown together |
+| Fixed full-arch bridge on 4 — 6 implants | $15,000 — $38,000 per arch (US market range) | Acrylic hybrid at the low end, zirconia at the high end; we quote these individually |
 
-These are published national figures. Bay Area fees run above them; current fees are on the [Crowns](/procedures/restoration/crowns-caps) and [Dental Implants](/procedures/restoration/dental-implants) pages.
+Current fees are on the [Crowns](/procedures/restoration/crowns-caps) and [Dental Implants](/procedures/restoration/dental-implants) pages.
 
 Two things follow. A full-mouth plan is assembled from individually priced items, so ask for the itemized version rather than a headline number. And a branded program name is a marketing choice, not a different kind of dentistry, so compare the itemized plan rather than the label. For the veneer side of the arithmetic, our [Oakland veneer cost guide](/blog/veneers-cost-oakland-2026) breaks those numbers down separately.
 
