@@ -116,7 +116,7 @@ export default function InvisalignPage() {
             },
             {
               q: "Are there age restrictions for Invisalign®?",
-              a: "Invisalign® is recommended for adults 18+ in our practice — the 22-hour daily wear requirement is the make-or-break factor, and adults are typically more reliable about compliance. Teen versions exist but require strong family support. The aligners work mechanically the same at any age.",
+              a: "Invisalign® is recommended for adults 18+ in our practice — the 22-hour daily wear requirement is the make-or-break factor, and adults are typically more reliable about compliance. For teens, we refer to a trusted orthodontist for Invisalign® consultation and treatment. The aligners work mechanically the same at any age.",
             },
             {
               q: "Does Invisalign® hurt?",

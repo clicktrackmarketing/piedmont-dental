@@ -79,12 +79,12 @@ export const faqs: FAQ[] = [
   ),
   f(
     "amalgam-safe",
-    "Are amalgam (silver) fillings safe?",
+    "Do you place amalgam (silver) fillings?",
     "conditions",
-    "Yes. The American Dental Association, the CDC, the World Health Organization, the FDA, and other authorities all support amalgam fillings as safe, durable, and cost-effective. Studies have not found any link between amalgam fillings and any medical disorder.",
+    "No. Piedmont Dental By Design is a fully amalgam-free practice. We use tooth-colored composite fillings, which match your natural teeth and bond directly to the tooth.",
     {
       outro:
-        "An amalgam is a blend of copper, silver, tin, and zinc, bound by elemental mercury. Dentists have used this blend for more than 100 years; up to 76% of dentists still use it. The only reason not to use silver fillings is if you have an allergy to one of the components — fewer than 100 such cases have ever been reported. Alternative options include composite (tooth-colored), porcelain, and gold fillings.",
+        "If you have older silver fillings that have cracked, worn, or leaked, we can replace them with tooth-colored composite.",
     }
   ),
   f(
