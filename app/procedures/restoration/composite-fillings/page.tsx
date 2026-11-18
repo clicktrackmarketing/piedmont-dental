@@ -74,7 +74,7 @@ export default function CompositeFillingsPage() {
             },
             {
               q: "Are composite fillings better than silver (amalgam) fillings?",
-              a: "Modern composite is comparable in strength to amalgam for small-to-medium fillings, with major aesthetic advantages: it matches your tooth color and bonds directly to the tooth (no mechanical wedging needed). For very large fillings or in high-stress molar areas, amalgam still has some advantages in durability — but we use composite for the vast majority of our cases.",
+              a: "Modern composite is comparable in strength to amalgam for small-to-medium fillings, with major aesthetic advantages: it matches your tooth color and bonds directly to the tooth (no mechanical wedging needed). Our practice is fully amalgam-free, so we don’t place silver fillings.",
             },
             {
               q: "Why are my teeth sensitive after getting a filling?",
