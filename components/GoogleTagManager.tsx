@@ -1,5 +1,7 @@
 import Script from "next/script";
 
+import { CONSENT_BOOTSTRAP } from "@/lib/consentBootstrap";
+
 export const GTM_ID = "GTM-PLVLXN8R";
 
 /**
@@ -31,5 +33,25 @@ export function GTMNoScript() {
         title="Google Tag Manager"
       />
     </noscript>
+  );
+}
+
+/**
+ * Consent Mode v2 defaults, GPC and the stored cookie-banner choice.
+ *
+ * strategy="beforeInteractive" so Next hoists it ahead of everything that
+ * reads consent. ct.js (ClickTrackAnalytics) is beforeInteractive too and
+ * would otherwise initialise before the defaults existed; GTMScript above is
+ * afterInteractive and runs later still. Render this FIRST among the
+ * beforeInteractive scripts — Next preserves their source order.
+ *
+ * Google treats an undeclared signal as GRANTED, so without this every consent
+ * gate on every tag in GTM-PLVLXN8R is inert.
+ */
+export function ConsentBootstrap() {
+  return (
+    <Script id="consent-bootstrap" strategy="beforeInteractive">
+      {CONSENT_BOOTSTRAP}
+    </Script>
   );
 }

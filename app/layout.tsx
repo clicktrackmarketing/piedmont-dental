@@ -3,7 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 import StructuredData from "@/components/StructuredData";
 import AwardBanner from "@/components/AwardBanner";
 import BestOfBayBadge from "@/components/BestOfBayBadge";
-import { GTMScript, GTMNoScript } from "@/components/GoogleTagManager";
+import { ConsentBootstrap, GTMScript, GTMNoScript } from "@/components/GoogleTagManager";
 import AttributionCapture from "@/components/AttributionCapture";
 import VirtualPageview from "@/components/VirtualPageview";
 import { ClickTrackAnalytics } from "@/components/ClickTrackAnalytics";
@@ -160,6 +160,9 @@ export default function RootLayout({
   return (
     <html lang="en-US" className={`${fraunces.variable} ${inter.variable}`}>
       <body>
+        {/* Must precede ClickTrackAnalytics: both are beforeInteractive
+            and Next keeps them in source order. */}
+        <ConsentBootstrap />
         <ClickTrackAnalytics />
         <GTMNoScript />
         <AttributionCapture />
