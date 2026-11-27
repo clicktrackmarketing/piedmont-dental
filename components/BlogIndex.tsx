@@ -15,6 +15,128 @@ export type Post = {
 };
 
 export const posts: Post[] = [
+  // ---- Release 3 guides (Dec 2026) ----
+  {
+    slug: "dental-crown-cost-east-bay",
+    title:
+      "What a Dental Crown Costs \u2014 And Why Two Quotes Can Differ by Hundreds",
+    date: "December 1, 2026",
+    dateISO: "2026-12-01",
+    category: "Restorative",
+    image: "/img/blog/dental-crown-cost-east-bay/hero.jpg",
+    alt: "Dental crown models on a dental technician's gloved hands",
+    excerpt:
+      "What a dental crown costs in the East Bay, by material, with the build-ups, lab fees and insurance clauses that make two quotes hundreds apart.",
+  },
+  {
+    slug: "dental-bridge-cost-east-bay",
+    title:
+      "What a Dental Bridge Costs in the East Bay",
+    date: "December 4, 2026",
+    dateISO: "2026-12-04",
+    category: "Restorative",
+    image: "/img/blog/dental-bridge-cost-east-bay/hero.jpg",
+    alt: "Model of a three-unit dental bridge being placed",
+    excerpt:
+      "What a dental bridge costs in 2026: why it is priced per unit, how material changes the price, and what insurance actually pays.",
+  },
+  {
+    slug: "dentures-cost-east-bay",
+    title:
+      "What Dentures Cost in the East Bay \u2014 And What Changes the Number",
+    date: "December 7, 2026",
+    dateISO: "2026-12-07",
+    category: "Restorative",
+    image: "/img/blog/dentures-cost-east-bay/hero.jpg",
+    alt: "Dental technician holding a full upper denture",
+    excerpt:
+      "What dentures cost in the East Bay: full versus partial, materials, extractions, relines and remakes, with published ranges and what insurance really pays.",
+  },
+  {
+    slug: "full-mouth-reconstruction-cost-east-bay",
+    title:
+      "What a Full-Mouth Reconstruction Costs in the East Bay",
+    date: "December 10, 2026",
+    dateISO: "2026-12-10",
+    category: "Restorative",
+    image: "/img/blog/full-mouth-reconstruction-cost-east-bay/hero.jpg",
+    alt: "Dentist examining a patient during a full-mouth assessment",
+    excerpt:
+      "What a full-mouth reconstruction costs in the East Bay \u2014 the stages, what drives the range, and what dental insurance realistically pays.",
+  },
+  {
+    slug: "does-insurance-cover-veneers",
+    title:
+      "Does Dental Insurance Cover Veneers?",
+    date: "December 13, 2026",
+    dateISO: "2026-12-13",
+    category: "Cosmetic",
+    image: "/img/blog/does-insurance-cover-veneers/hero.jpg",
+    alt: "Porcelain veneer shade being checked against a patient's smile",
+    excerpt:
+      "Usually no \u2014 veneers are classed as cosmetic. The exceptions two national carriers actually publish, and the questions to put to your own plan.",
+  },
+  {
+    slug: "is-invisalign-worth-it",
+    title:
+      "Is Invisalign Worth It? An Honest Cost-Benefit",
+    date: "December 16, 2026",
+    dateISO: "2026-12-16",
+    category: "Cosmetic",
+    image: "/img/blog/is-invisalign-worth-it/hero.jpg",
+    alt: "Clear aligner trays held in a gloved hand",
+    excerpt:
+      "Who clear aligners are genuinely worth it for, who does better in fixed braces, and what the research shows on comfort, gum health and compliance.",
+  },
+  {
+    slug: "how-do-dental-implants-work",
+    title:
+      "How Do Dental Implants Actually Work? The Four Parts, Explained",
+    date: "December 19, 2026",
+    dateISO: "2026-12-19",
+    category: "Restorative",
+    image: "/img/blog/how-do-dental-implants-work/hero.jpg",
+    alt: "Model showing a dental implant post in the jawbone beside natural teeth",
+    excerpt:
+      "How dental implants work: the post, the abutment, the crown and the bone that holds them, plus what osseointegration is and how long fusing takes.",
+  },
+  {
+    slug: "deep-cleaning-vs-regular-cleaning",
+    title:
+      "Deep Cleaning vs Regular Cleaning: What's the Real Difference?",
+    date: "December 22, 2026",
+    dateISO: "2026-12-22",
+    category: "Periodontal",
+    image: "/img/blog/deep-cleaning-vs-regular-cleaning/hero.jpg",
+    alt: "Smiling older patient after periodontal care",
+    excerpt:
+      "A regular cleaning works above the gumline. A deep cleaning treats diagnosed gum disease below it. What decides which one you actually need.",
+  },
+  {
+    slug: "dental-cleaning-cost-east-bay",
+    title:
+      "What a Dental Cleaning Costs in the East Bay",
+    date: "December 25, 2026",
+    dateISO: "2026-12-25",
+    category: "Prevention",
+    image: "/img/blog/dental-cleaning-cost-east-bay/hero.jpg",
+    alt: "Dentist examining a patient during a routine cleaning visit",
+    excerpt:
+      "A cleaning visit is billed as three line items: cleaning, exam and X-rays. Published ranges, why first visits cost more, and what insurance covers.",
+  },
+  {
+    slug: "is-gum-disease-contagious",
+    title:
+      "Is Gum Disease Contagious? What The Evidence Actually Shows",
+    date: "December 28, 2026",
+    dateISO: "2026-12-28",
+    category: "Periodontal",
+    image: "/img/blog/is-gum-disease-contagious/hero.jpg",
+    alt: "Close-up of red, inflamed gums typical of gum disease",
+    excerpt:
+      "The bacteria behind gum disease do pass between people through saliva. The disease itself is not simply caught. Here is what the research found.",
+  },
+  // ---- END Release 3 ----
   // ---- Month 2 guides ----
   {
     slug: "dental-implant-cost-east-bay",
@@ -275,7 +397,7 @@ export const posts: Post[] = [
     image: "/img/blog/waterpik-vs-flossing/hero.jpg",
     alt: "Waterpik vs traditional dental floss",
     excerpt:
-      "Brushing is only half the battle. Traditional floss or a Waterpik — here's how they compare, and which actually cleans between your teeth better.",
+      "Waterpik vs flossing: what the research shows, who should use which, and how to use each properly, from a dental practice in Piedmont, CA.",
   },
   {
     slug: "family-dentist-piedmont",

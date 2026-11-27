@@ -55,7 +55,7 @@ Piedmont Dental by Design earned recognition as Best of the East Bay 2024, 2025 
 
 **One Practice for the Whole Family**
 
-Consolidating care in one welcoming environment simplifies scheduling and enables consistent health tracking across all ages.
+Consolidating care in one welcoming environment simplifies scheduling and enables consistent health tracking across all ages. From cleanings to [dental crowns in Piedmont](/procedures/restoration/crowns-caps), including same-day CEREC® crowns, and [teeth whitening](/procedures/cosmetic-dentistry/tooth-whitening), most care happens under one roof.
 
 **Flexible Scheduling and Insurance Coordination**
 
