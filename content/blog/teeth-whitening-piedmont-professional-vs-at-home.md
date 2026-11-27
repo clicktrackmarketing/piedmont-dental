@@ -138,4 +138,4 @@ Whitening is often the first step in a broader cosmetic treatment plan. If you a
 
 If you are ready for a brighter smile, we invite you to schedule a whitening consultation at Piedmont Dental By Design. Our team will evaluate your teeth, discuss your goals, and recommend the most effective whitening protocol for your unique situation, whether that is an in-office treatment, custom take-home trays, or a combination approach.
 
-Explore all our cosmetic services
+Read more about [teeth whitening in Piedmont](/procedures/cosmetic-dentistry/tooth-whitening), or explore all our [cosmetic dentistry services](/procedures/cosmetic-dentistry).

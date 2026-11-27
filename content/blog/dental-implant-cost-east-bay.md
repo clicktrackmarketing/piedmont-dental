@@ -235,4 +235,6 @@ A practice that answers all six plainly is giving you what you need to compare q
 
 Every figure above is a market range, and ranges are only useful until you have had a scan. What actually determines your cost is how much bone you have, where the tooth sits, and whether anything needs rebuilding first, and none of that can be judged from a price list.
 
+Our own current fees for implants, crowns, bridges and dentures are listed with our [Piedmont dental prices](/procedures/restoration) on the restorative dentistry page.
+
 If you would like a straight answer for your own situation, [Piedmont Dental By Design](/contact) is at 1331 Grand Avenue in Piedmont, about five minutes from MacArthur BART, and sees patients from across Piedmont, Oakland, Montclair and the greater East Bay. Call <a href="tel:5103503937">(510) 350-3937</a> to arrange a consultation.

@@ -136,4 +136,4 @@ We serve patients from across the East Bay, including Piedmont, Oakland, Montcla
 
 If you are searching for a cosmetic dentist in the East Bay, we would love the opportunity to show you what is possible for your smile. Schedule a consultation at Piedmont Dental By Design and experience the difference that expertise, technology, and genuine care make.
 
-Explore our full cosmetic services here
+Explore our full range of [cosmetic dentistry in the East Bay](/procedures/cosmetic-dentistry), from porcelain veneers and whitening to Invisalign®.
