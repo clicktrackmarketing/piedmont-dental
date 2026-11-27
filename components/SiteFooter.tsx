@@ -88,6 +88,8 @@ export default function SiteFooter() {
           <a href="/terms-and-conditions">Terms</a>
           <a href="/privacy-policy-2">Privacy</a>
           <a href="/notice-of-privacy-practices">Notice of Privacy Practices</a>
+          {/* CPRA §1798.135 requires this link to be clear and conspicuous. Do not remove. */}
+          <a href="/do-not-sell">Do Not Sell or Share My Personal Information</a>
         </nav>
         <p className="footer-credit">
           <a
