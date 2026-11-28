@@ -1,4 +1,5 @@
 import { REAPPLY_BANNER_CHOICE } from "./bannerConsent";
+import { DO_NOT_SELL_REPLAY } from "./doNotSell";
 
 /**
  * Google Consent Mode v2 defaults. This must run BEFORE gtm.js loads.
@@ -64,5 +65,6 @@ gtag('consent','default',{
   wait_for_update:500
 });
 try{if(navigator.globalPrivacyControl===true){gtag('consent','update',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});}}catch(e){}
+${DO_NOT_SELL_REPLAY}
 ${REAPPLY_BANNER_CHOICE}
 `.trim();
